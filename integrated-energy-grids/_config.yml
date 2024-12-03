@@ -5,10 +5,10 @@
 
 #######################################################################################
 # Book settings
-title: integrated-energy-grids                         # The title of the book. Will be placed in the left navbar.
-author: Marta Victoria                        		# The author of the book
-copyright: "2025"                     			# Copyright year to be placed in the footer
-logo: DTUlogo.jpg                          		# A path to the book logo
+title: integrated-energy-grids  # The title of the book. Will be placed in the left navbar.
+author: Marta Victoria          # The author of the book
+copyright: "2025"               # Copyright year to be placed in the footer
+logo: DTUlogo.jpg               # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
