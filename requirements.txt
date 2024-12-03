@@ -1,0 +1,9 @@
+jupyter-book
+cookiecutter
+pytest
+black
+numpy
+pandas>=2
+atlite>=0.2.11
+matplotlib
+openpyxl

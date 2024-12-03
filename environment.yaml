@@ -1,0 +1,29 @@
+name: pv-textbook
+channels:
+- conda-forge
+dependencies:
+- python>=3.11
+- pip
+
+  # main packages
+- numpy
+- pandas
+- atlite>=0.2.11
+- matplotlib
+- openpyxl
+
+
+  # interactive python
+- ipython
+- jupyterlab
+
+  # reading excel tables
+- xlrd
+
+  # plotting
+- matplotlib>=3.6
+
+  # publishing
+- jupyter-book
+
+
