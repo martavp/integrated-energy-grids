@@ -385,7 +385,7 @@
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-environments-with-conda">Managing environments with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#speeding-things-up-with-mamba">Speeding things up with Mamba</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment-for-this-book-pv-texbook">Python environment for this book: <code class="docutils literal notranslate"><span class="pre">pv-texbook</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment-for-this-book-integrated-energy-grids">Python environment for this book: <code class="docutils literal notranslate"><span class="pre">integrated-energy-grids</span></code></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#with-conda-or-mamba">With <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-pip">With <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
 </ul>
@@ -412,10 +412,9 @@
 <p><a class="reference external" href="https://earth-env-data-science.github.io/lectures/environment/python_environments.html">Earth and Environmental Data Science: Python Environments</a></p>
 <p><a class="reference external" href="https://fneum.github.io/data-science-for-esm/intro.html"> Data Science for Energy System Modelling</a></p>
 </div>
-<p>Python is a programming language. Packages are built using this language, e.g. <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, and <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> .
+<p>Python is a programming language. Packages are built using this language, e.g. <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.
 When we are writing a piece of code, we can benefit from functions that are included in packages previously developed by others. To do that we need to (a) install that package on our computer and (b) import it into our script.</p>
-<p>Python and nearly all of the software packages in the scientific python
-ecosystem including <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/">pvlib</a> are <a class="reference external" href="https://opensource.org/">open-source</a>. Coordinating the compatibility between these different packages and their multiple versions used to be a nightmare! Fortunately, the problem is solved by using a Python
+<p>Python and nearly all of the software packages in the scientific python ecosystem including are <a class="reference external" href="https://opensource.org/">open-source</a>. Coordinating the compatibility between these different packages and their multiple versions used to be a nightmare! Fortunately, the problem is solved by using a Python
 <em>distribution</em> and/or <em>package manager</em>. You should use a package manager!</p>
 </section>
 <section id="installing-the-package-manager-conda">
@@ -525,13 +524,13 @@ To install it, just run:</p>
 <p>Now you can install environments and packages as before, but using the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command
 instead of <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Everything will be faster.</p>
 </section>
-<section id="python-environment-for-this-book-pv-texbook">
-<h1>Python environment for this book: <code class="docutils literal notranslate"><span class="pre">pv-texbook</span></code><a class="headerlink" href="#python-environment-for-this-book-pv-texbook" title="Link to this heading">#</a></h1>
+<section id="python-environment-for-this-book-integrated-energy-grids">
+<h1>Python environment for this book: <code class="docutils literal notranslate"><span class="pre">integrated-energy-grids</span></code><a class="headerlink" href="#python-environment-for-this-book-integrated-energy-grids" title="Link to this heading">#</a></h1>
 </section>
 <section id="with-conda-or-mamba">
 <h1>With <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code><a class="headerlink" href="#with-conda-or-mamba" title="Link to this heading">#</a></h1>
 <p>The latest environment specification for this course can be downloaded under the following link as a <a class="reference external" href="https://en.wikipedia.org/wiki/YAML"><code class="docutils literal notranslate"><span class="pre">YAML</span></code>-file</a>:</p>
-<p><a class="github reference external" href="https://github.com/martavp/pv-textbook/blob/main/environment.yaml">martavp/pv-textbook</a></p>
+<p><a class="github reference external" href="https://github.com/martavp/integrated-energy-grids/blob/main/environment.yaml">martavp/integrated-energy-grids</a></p>
 <p>There is a download button at the top-right corner.</p>
 <p>After navigating to the folder where the <code class="docutils literal notranslate"><span class="pre">environment.yaml</span></code> file is stored,
 you can reate this environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code> (faster)</p>
@@ -543,7 +542,7 @@ you can reate this environment using <code class="docutils literal notranslate">
 </pre></div>
 </div>
 <p>Activate this environment</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mamba activate pv-textbook
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mamba activate integrated-energy-grids
 </pre></div>
 </div>
 <p>This environment should be sufficient for all of the problems in this repository.</p>
@@ -555,7 +554,7 @@ you can reate this environment using <code class="docutils literal notranslate">
 <section id="with-pip">
 <h2>With <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#with-pip" title="Link to this heading">#</a></h2>
 <p>If you want to use <code class="docutils literal notranslate"><span class="pre">pip</span></code> for managing your environment, download</p>
-<p><a class="github reference external" href="https://github.com/martavp/pv-textbook/blob/main/requirements.txt">martavp/pv-textbook</a></p>
+<p><a class="github reference external" href="https://github.com/martavp/integrated-energy-grids/blob/main/requirements.txt">martavp/integrated-energy-grids</a></p>
 <p>There is a download button at the top-right corner.</p>
 <p>After navigating to the folder where the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file is stored,
 you can install the required packages with</p>
@@ -670,7 +669,7 @@ Here are some useful references on Markdown syntax.</p>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-environments-with-conda">Managing environments with <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#speeding-things-up-with-mamba">Speeding things up with Mamba</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment-for-this-book-pv-texbook">Python environment for this book: <code class="docutils literal notranslate"><span class="pre">pv-texbook</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment-for-this-book-integrated-energy-grids">Python environment for this book: <code class="docutils literal notranslate"><span class="pre">integrated-energy-grids</span></code></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#with-conda-or-mamba">With <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-pip">With <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
 </ul>
