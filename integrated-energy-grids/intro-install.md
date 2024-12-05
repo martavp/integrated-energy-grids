@@ -10,11 +10,10 @@ This material is mostly adapted from the following resources:
 
 :::
 
-Python is a programming language. Packages are built using this language, e.g. `numpy`, `matplotlib`, `pandas`, and `pvlib` .
+Python is a programming language. Packages are built using this language, e.g. `numpy`, `matplotlib`, `pandas`.
 When we are writing a piece of code, we can benefit from functions that are included in packages previously developed by others. To do that we need to (a) install that package on our computer and (b) import it into our script.  
  
-Python and nearly all of the software packages in the scientific python
-ecosystem including [pvlib](https://pvlib-python.readthedocs.io/en/stable/) are [open-source](https://opensource.org/). Coordinating the compatibility between these different packages and their multiple versions used to be a nightmare! Fortunately, the problem is solved by using a Python
+Python and nearly all of the software packages in the scientific python ecosystem including are [open-source](https://opensource.org/). Coordinating the compatibility between these different packages and their multiple versions used to be a nightmare! Fortunately, the problem is solved by using a Python
 _distribution_ and/or _package manager_. You should use a package manager!
 
 ## Installing the package manager `conda`
@@ -131,13 +130,13 @@ To install it, just run:
 Now you can install environments and packages as before, but using the `mamba` command
 instead of `conda`. Everything will be faster.
 
-## Python environment for this book: `pv-texbook`
+## Python environment for this book: `integrated-energy-grids`
 
 ## With `conda` or `mamba`
 
 The latest environment specification for this course can be downloaded under the following link as a [`YAML`-file](https://en.wikipedia.org/wiki/YAML):
 
-https://github.com/martavp/pv-textbook/blob/main/environment.yaml
+https://github.com/martavp/integrated-energy-grids/blob/main/environment.yaml
 
 There is a download button at the top-right corner.
 
@@ -152,7 +151,7 @@ or
 
 Activate this environment
 
-    mamba activate pv-textbook
+    mamba activate integrated-energy-grids
 
 This environment should be sufficient for all of the problems in this repository.
 
@@ -165,7 +164,7 @@ The environment has to be activated whenever you open a new terminal,
 
 If you want to use `pip` for managing your environment, download
 
-https://github.com/martavp/pv-textbook/blob/main/requirements.txt
+https://github.com/martavp/integrated-energy-grids/blob/main/requirements.txt
 
 There is a download button at the top-right corner.
 

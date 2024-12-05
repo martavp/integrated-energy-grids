@@ -1,4 +1,4 @@
-name: pv-textbook
+name: integrated-energy-grids
 channels:
 - conda-forge
 dependencies:
