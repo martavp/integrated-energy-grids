@@ -1,0 +1,5 @@
+CC-BY-4.0
+Wind and Solar time series were generated via model.energy 
+which uses data from ECMWF ERA5 retrieved via the Copernicus Climate Change Service 
+
+https://model.energy/
