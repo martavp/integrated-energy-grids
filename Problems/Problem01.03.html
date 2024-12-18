@@ -423,8 +423,8 @@
 <h1>Problem 1.3<a class="headerlink" href="#problem-1-3" title="Link to this heading">#</a></h1>
 <p><strong>Integrated Energy Grids</strong></p>
 <p><strong>Problem 1.3</strong></p>
-<p>This problem is based on the paper by Heide et al., <em>Seasonal optimal mix of wind and solar power in a future, highly renewable Europe</em>, Renewable Energy 35 (2010) <a class="reference external" href="https://doi.org/10.1016/j.renene.2010.03.012">https://doi.org/10.1016/j.renene.2010.03.012</a></p>
-<p><strong>Using the sinusoidal waves defined in Problem 14.1, we want to investigate the impact of wind and solar capacities on the balancing needs of a power system. To that end, we define the following parameters:</strong></p>
+<p><strong>Note: This problem is based on the paper by Heide et al., <em>Seasonal optimal mix of wind and solar power in a future, highly renewable Europe</em>, Renewable Energy 35 (2010) <a class="reference external" href="https://doi.org/10.1016/j.renene.2010.03.012">https://doi.org/10.1016/j.renene.2010.03.012</a></strong></p>
+<p><strong>Using the sinusoidal waves defined in Problem 1.2, we want to investigate the impact of wind and solar capacities on the balancing needs of a power system. To that end, we define the following parameters:</strong></p>
 <p><strong>The parameter <span class="math notranslate nohighlight">\(\gamma\)</span> is defined as the ratio between the average renewable generation (sum of wind and solar) and the average electricity demand.</strong></p>
 <p><span class="math notranslate nohighlight">\( \gamma= \frac{&lt;g^S_t&gt;+&lt;g^W_t&gt;}{&lt;d_t&gt;}\)</span></p>
 <p><strong>where &lt;&gt; indicates annually averaged values.</strong></p>
@@ -433,13 +433,19 @@
 <p><strong>We define the mismatch <span class="math notranslate nohighlight">\(\Delta_t\)</span> as the difference in every hour, between the renewable generation and
 the load, that is,</strong>
 <span class="math notranslate nohighlight">\(\Delta_t = g^W_t + g^S_t - d_t\)</span></p>
-<p><strong>a) Assume that the installed capacities for solar PV and wind power are those required to produce, on average, 50% of the annual electricity demand with every technology (i.e., the capacities are 0.5 times the values calculated in sections (a) and (b) in Problem 14.1). Calculate total backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span>, and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span>.</strong></p>
-<p><strong>(b) Assuming <span class="math notranslate nohighlight">\(\gamma\)</span> = 1, calculate and plot the total backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span> and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span> for α values ranging from 0 to 1. Which combination of solar and wind generation (i.e., which <span class="math notranslate nohighlight">\(\alpha\)</span> value) minimizes the required backup energy? Which combination of solar and wind generation minimizes the required backup capacity?</strong></p>
-<p><strong>(c) Calculate and plot the backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span>, and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span> for <span class="math notranslate nohighlight">\(\alpha\)</span> values ranging from 0 to 1 and <span class="math notranslate nohighlight">\(\gamma\)</span> values ranging from 0 to 1 and discuss the results.</strong></p>
+<p><strong>a) Assume that the installed capacities for solar PV and wind power are those required to produce, on average, 50% of the annual electricity demand with every technology (i.e., the capacities are 0.5 times the values calculated in sections (a) and (b) in Problem 1.2). Calculate total backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span>, and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span>.</strong></p>
 <p>The mismatch is defined as the difference between the renewable generation and electricity load.</p>
 <p><span class="math notranslate nohighlight">\(\Delta_t = g^W_t + g^S_t - d_t = C_S · CF_S (1+sin (\frac{2\pi}{24}t)) + C_W · CF_W (1+sin (\frac{2\pi}{168}t))-d_t\)</span></p>
 <p>The capacity factors for solar and wind are <span class="math notranslate nohighlight">\(CF_S\)</span>=0.15 and <span class="math notranslate nohighlight">\(CF_W\)</span>=0.25. The installed capacities for solar and wind are <span class="math notranslate nohighlight">\(C_S\)</span>=3.33 GW and <span class="math notranslate nohighlight">\(C_W\)</span>=2GW</p>
 <p>We will use the packages <a class="reference external" href="https://numpy.org/">numpy</a> to operate with arrays and <a class="reference external" href="https://matplotlib.org/stable/index.html">matplotlib.pyplot</a> to plot the results</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
+<p>Then install <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> by executing the following command in a Jupyter cell at the top of the notebook.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -526,7 +532,7 @@ the load, that is,</strong>
 </div>
 </div>
 <p>The curtailed energy will be 1,776 GWh. Required backup energy and curtailed energy are equal in this system since, on average, renewable generation is equal to  demand.</p>
-<p><strong>b) Assuming <span class="math notranslate nohighlight">\(\gamma\)</span>=1, calculate and plot the total backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span>, and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span>, for <span class="math notranslate nohighlight">\(\alpha\)</span> values ranging from 0 to 1.</strong></p>
+<p><strong>(b) Assuming <span class="math notranslate nohighlight">\(\gamma\)</span> = 1, calculate and plot the total backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span> and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span> for <span class="math notranslate nohighlight">\(\alpha\)</span> values ranging from 0 to 1. Which combination of solar and wind generation (i.e., which <span class="math notranslate nohighlight">\(\alpha\)</span> value) minimizes the required backup energy? Which combination of solar and wind generation minimizes the required backup capacity?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
@@ -598,7 +604,7 @@ the load, that is,</strong>
 <img alt="../_images/5449cc766621e3fb183fa8863cfa6e57b353b45ee062eaccac89434f8bba5e51.png" src="../_images/5449cc766621e3fb183fa8863cfa6e57b353b45ee062eaccac89434f8bba5e51.png" />
 </div>
 </div>
-<p><strong>c) Calculate and plot the total backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span>, and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span>, for <span class="math notranslate nohighlight">\(\alpha\)</span> values ranging from 0 to 1 and <span class="math notranslate nohighlight">\(\gamma\)</span> values ranging from 0 to 1.</strong></p>
+<p><strong>(c) Calculate and plot the backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span>, and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span> for <span class="math notranslate nohighlight">\(\alpha\)</span> values ranging from 0 to 1 and <span class="math notranslate nohighlight">\(\gamma\)</span> values ranging from 0 to 1 and discuss the results.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CF_W</span> <span class="o">=</span> <span class="mf">0.25</span>
