@@ -1021,6 +1021,7 @@ Name: Bhadla, dtype: object
 </table>
 </div></div></div>
 </div>
+<p>We can operate with values in DataFrame</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">capacity</span> <span class="o">*</span> <span class="mf">0.8</span>
@@ -1288,15 +1289,11 @@ Name: capacity, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># backward (upwards) fill from non-nan values</span>
-<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;bfill&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2192/532230991.py:2: FutureWarning: DataFrame.fillna with &#39;method&#39; is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
-  df.fillna(method=&quot;bfill&quot;)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
