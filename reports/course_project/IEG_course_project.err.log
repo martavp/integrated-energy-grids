@@ -18,14 +18,40 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pypsa
+network = pypsa.Network()
+hours_in_2015 = pd.date_range('2015-01-01T00:00Z',
+                              '2015-12-31T23:00Z',
+                              freq='h')
+
+network.set_snapshots(hours_in_2015)
+
+network.add("Bus","electricity bus")
+
+network.snapshots
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpypsa[39;00m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[2], line 6[0m
+[1;32m      1[0m network [38;5;241m=[39m pypsa[38;5;241m.[39mNetwork()
+[1;32m      2[0m hours_in_2015 [38;5;241m=[39m pd[38;5;241m.[39mdate_range([38;5;124m'[39m[38;5;124m2015-01-01T00:00Z[39m[38;5;124m'[39m,
+[1;32m      3[0m                               [38;5;124m'[39m[38;5;124m2015-12-31T23:00Z[39m[38;5;124m'[39m,
+[1;32m      4[0m                               freq[38;5;241m=[39m[38;5;124m'[39m[38;5;124mh[39m[38;5;124m'[39m)
+[0;32m----> 6[0m [43mnetwork[49m[38;5;241;43m.[39;49m[43mset_snapshots[49m[43m([49m[43mhours_in_2015[49m[43m)[49m
+[1;32m      8[0m network[38;5;241m.[39madd([38;5;124m"[39m[38;5;124mBus[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124melectricity bus[39m[38;5;124m"[39m)
+[1;32m     10[0m network[38;5;241m.[39msnapshots
 
-[0;31mModuleNotFoundError[0m: No module named 'pypsa'
+File [0;32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/components.py:685[0m, in [0;36mNetwork.set_snapshots[0;34m(self, snapshots, default_snapshot_weightings, weightings_from_timedelta)[0m
+[1;32m    679[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(snapshots, pd[38;5;241m.[39mDatetimeIndex) [38;5;129;01mand[39;00m snapshots[38;5;241m.[39mtz [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    680[0m     msg [38;5;241m=[39m (
+[1;32m    681[0m         [38;5;124m"[39m[38;5;124mNumpy datetime64[ns] objects with timezones are not supported and are [39m[38;5;124m"[39m
+[1;32m    682[0m         [38;5;124m"[39m[38;5;124mthus not allowed in snapshots. Please pass timezone-naive timestamps [39m[38;5;124m"[39m
+[1;32m    683[0m         [38;5;124m"[39m[38;5;124m(e.g. via ds.values).[39m[38;5;124m"[39m
+[1;32m    684[0m     )
+[0;32m--> 685[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(msg)
+[1;32m    687[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(snapshots, pd[38;5;241m.[39mMultiIndex):
+[1;32m    688[0m     [38;5;28;01mif[39;00m snapshots[38;5;241m.[39mnlevels [38;5;241m!=[39m [38;5;241m2[39m:
+
+[0;31mValueError[0m: Numpy datetime64[ns] objects with timezones are not supported and are thus not allowed in snapshots. Please pass timezone-naive timestamps (e.g. via ds.values).
 
