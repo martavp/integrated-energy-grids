@@ -13,7 +13,7 @@ This material is mostly adapted from the following resources:
 Python is a programming language. Packages are built using this language, e.g. `numpy`, `matplotlib`, `pandas`.
 When we are writing a piece of code, we can benefit from functions that are included in packages previously developed by others. To do that we need to (a) install that package on our computer and (b) import it into our script.  
  
-Python and nearly all of the software packages in the scientific python ecosystem including are [open-source](https://opensource.org/). Coordinating the compatibility between these different packages and their multiple versions used to be a nightmare! Fortunately, the problem is solved by using a Python
+Python and nearly all of the software packages in the scientific python ecosystem are [open source](https://opensource.org/). Coordinating the compatibility between these different packages and their multiple versions used to be a nightmare! Fortunately, the problem is solved by using a Python
 _distribution_ and/or _package manager_. You should use a package manager!
 
 ## Installing the package manager `conda`
@@ -28,34 +28,34 @@ For instance, you can install on your computer the popular
 [Anaconda Python Distribution](https://www.anaconda.com/download/).
 Follow the link to obtain a one-click installer for your operating system.
 
-The instructions below  assume you have access to a command line. For **Linux and MacOS users**, you can access the command line by opening the _terminal_ program. For **Windows users**, you should first install Anaconda (described above) or miniconda/micromamba (described below), which gives you access to the "Anaconda Prompt" desktop application. (Instructions for this are given on the [Anaconda Website](https://docs.anaconda.com/anaconda/user-guide/getting-started/#write-a-python-program-using-anaconda-prompt-or-terminal).) Alternatively, you can use the Anaconda Navigator. 
+The instructions below  assume you have access to a command line. For **Linux and MacOS users**, you can access the command line by opening the _terminal_ program. For **Windows users**, you should first install Anaconda (described above) or miniconda/micromamba (described below), which gives you access to the "Anaconda Prompt" desktop application. (Instructions for this are given on the [Anaconda Website](https://docs.anaconda.com/anaconda/user-guide/getting-started/#write-a-python-program-using-anaconda-prompt-or-terminal).) Alternatively, you can use the Anaconda Navigator (described below). 
 
 ### Anaconda Navigator
 
 If you do not want to use the command line, [Anaconda navigator](https://docs.anaconda.com/free/navigator/overview/) can also be used to create environments and install packages using a graphical user interface. 
 
-To create new enviroment, open the Anaconda navigator, select `Environments` on the left menu and use the button `+` to create a new environment. You can add new channels by selecting `Channels` on the top menu where you can also search and install packages.
+To create a new enviroment, open the Anaconda navigator, select `Environments` on the left menu and use the button `+` to create a new environment. You can add new channels by selecting `Channels` on the top menu where you can also search and install packages.
 
 
 ### Lightweight alternatives: micromamba and miniconda
 
-If you don't want to download a large file like the Anaconda Python Distribution (ca. 800 MB), there are
+If you don't want to download a large file like the Anaconda Python Distribution (around 800 MB), there are
 lightweight alternative installation methods (like `micromamba` and `miniconda`).
 
-1. [Micromamba Installation](https://mamba.readthedocs.io/en/latest/installation.html#micromamba)
+1. [Micromamba Installation](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
+
 2. [Miniconda Installation](https://docs.conda.io/en/latest/miniconda.html)
 
 ### Installing Python without a package manager
 
 If you do not wish to install a package manager (not recommended), an
-alternative is to directly install official Python distributions.
+alternative is to install official Python distributions directly.
 
 A good tutorial for this can be found [here](https://realpython.com/installing-python/).
 
 ### Using Python without a local installation
 
-You can even read the solution to the problems without a local Python installation using online services like  [Google Colab (colab.google)](https://colab.google) which provide an online Python version
-in a [Jupyter Notebook](jupyter.org/) environment.
+You can even read the solution to the problems without a local Python installation using online services like  [Google Colab (colab.google)](https://colab.google) which provide an online Python versión in a [Jupyter Notebook](https://jupyter.org/) environment.
 
 ## Managing environments with `conda`
 
@@ -104,7 +104,7 @@ associated with it:
 
 A conda environment can also be defined through an `environment.yaml` file. With that file, a new environment with the exact configuration can be installed by executing
 
-    conda env create -f my_environment.yml
+    conda env create -f environment.yml
 
 Below we will see an example of an environment file.
 
@@ -141,7 +141,7 @@ https://github.com/martavp/integrated-energy-grids/blob/main/environment.yaml
 There is a download button at the top-right corner.
 
 After navigating to the folder where the `environment.yaml` file is stored,
-you can reate this environment using `conda` or `mamba` (faster)
+you can create this environment using `conda` or `mamba`
 
     conda env create -f environment.yml
 
@@ -162,7 +162,7 @@ The environment has to be activated whenever you open a new terminal,
 
 ### With `pip`
 
-If you want to use `pip` for managing your environment, download
+If you want to use `pip` for managing your environment, download the `requirements.txt` file
 
 https://github.com/martavp/integrated-energy-grids/blob/main/requirements.txt
 
@@ -181,7 +181,7 @@ This should allow you to start a new Jupyter window:
 
 [JupyterLab](https://jupyterlab.readthedocs.io) will be our primary method for
 solving the problems. JupyterLab contains a complete environment for
-interactive data science which runs in your web browser.
+interactive programming which runs in your web browser.
 
 JupyterLab has excellent documentation. Rather than repeat that documentation
 here, we point you to their docs. The following pages are particularly relevant:

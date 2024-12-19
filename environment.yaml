@@ -11,6 +11,8 @@ dependencies:
 - atlite>=0.2.11
 - matplotlib
 - openpyxl
+- pypsa
+- networkx
 
 
   # interactive python
