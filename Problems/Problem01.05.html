@@ -186,7 +186,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro-pandas.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem01.01.html">Problem 1.1</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Problem01.01b.html">Problem 1.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem01.03.html">Problem 1.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem01.04.html">Problem 1.4</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 1.5</a></li>
@@ -423,9 +422,9 @@
 <h1>Problem 1.5<a class="headerlink" href="#problem-1-5" title="Link to this heading">#</a></h1>
 <p><strong>Integrated Energy Grids</strong></p>
 <p><strong>Problem 1.5</strong></p>
-<p><strong>The objective of this problem is to calculate the local correlation length for wind velocity and solar radiation.
+<p><strong>The objective of this problem is to calculate the local correlation length for wind velocity and solar irradiation.
 We will use the reanalysis dataset ERA5 and weather data corresponding to 2013 that can be downloaded from</strong> <a class="reference external" href="https://zenodo.org/record/6382570">https://zenodo.org/record/6382570</a></p>
-<p><strong>(a) Select one location in Europe, identify in which grid cell is located and calculate the distance from the other grid cells.</strong></p>
+<p><strong>(a) Select one location in Europe, identify on which grid cell is located and calculate the distance from the other grid cells.</strong></p>
 <p><strong>(b) Calculate the Person correlation coefficient from the wind velocity time series and plot the coefficients vs the distance.</strong></p>
 <p><strong>(c) Fit the data to an exponential curve and determine the correlation length.</strong></p>
 <p><strong>(d) Repeat sections (b) and (c) using the solar irradiation time series.</strong></p>
@@ -457,7 +456,7 @@ We will use the reanalysis dataset ERA5 and weather data corresponding to 2013 t
 <p>We load the reanlysis data containing information on wind velocity, solar irradiation, latitude and longitude of the grid cells.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nc</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;../../../../../../Downloads/europe-2013-era5.nc&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nc</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;Data/europe-2013-era5.nc&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -484,8 +483,8 @@ We will use the reanalysis dataset ERA5 and weather data corresponding to 2013 t
 <span class="n">longitude</span> <span class="o">=</span> <span class="mf">2.34</span>
 <span class="n">index_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span><span class="o">-</span><span class="n">latitude</span><span class="p">))</span>
 <span class="n">index_lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span><span class="o">-</span><span class="n">longitude</span><span class="p">))</span>
-<span class="n">lon_ref</span><span class="o">=</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][</span><span class="n">index_lon</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
-<span class="n">lat_ref</span><span class="o">=</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][</span><span class="n">index_lat</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="n">lon_ref</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][</span><span class="n">index_lon</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="n">lat_ref</span> <span class="o">=</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][</span><span class="n">index_lat</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -493,7 +492,7 @@ We will use the reanalysis dataset ERA5 and weather data corresponding to 2013 t
 <p>The wind velocity and solar radiation in the reference grid cell can be calculated.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_ref</span><span class="o">=</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;wnd100m&#39;</span><span class="p">][:,</span><span class="n">index_lat</span><span class="p">,</span><span class="n">index_lon</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_ref</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;wnd100m&#39;</span><span class="p">][:,</span><span class="n">index_lat</span><span class="p">,</span><span class="n">index_lon</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 <span class="n">radiation_ref</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;influx_direct&#39;</span><span class="p">][:,</span><span class="n">index_lat</span><span class="p">,</span><span class="n">index_lon</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">+</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;influx_diffuse&#39;</span><span class="p">][:,</span><span class="n">index_lat</span><span class="p">,</span><span class="n">index_lon</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 </div>
@@ -503,15 +502,15 @@ We will use the reanalysis dataset ERA5 and weather data corresponding to 2013 t
 <p>To reduce computational time, we select one grid cell every 10 in both latitude and longitud.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i_min</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">index_lon</span><span class="o">-</span><span class="mi">75</span><span class="p">)</span>
-<span class="n">i_max</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span><span class="p">),</span><span class="n">index_lon</span><span class="o">+</span><span class="mi">75</span><span class="p">)</span>
-<span class="n">j_min</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">index_lat</span><span class="o">-</span><span class="mi">75</span><span class="p">)</span>
-<span class="n">j_max</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span><span class="p">),</span><span class="n">index_lat</span><span class="o">+</span><span class="mi">75</span><span class="p">)</span>
-<span class="n">k</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i_min</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">index_lon</span><span class="o">-</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">i_max</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span><span class="p">),</span><span class="n">index_lon</span><span class="o">+</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">j_min</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">index_lat</span><span class="o">-</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">j_max</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span><span class="p">),</span><span class="n">index_lat</span><span class="o">+</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">i_min</span><span class="p">,</span><span class="n">i_max</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>        
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">j_min</span><span class="p">,</span><span class="n">j_max</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>    
-        <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span>
-        <span class="n">lon</span><span class="o">=</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
         <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lon</span>
         
         <span class="n">lat</span><span class="o">=</span><span class="n">nc</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
@@ -531,7 +530,7 @@ We will use the reanalysis dataset ERA5 and weather data corresponding to 2013 t
 <p>The correlation coefficient for wind time series can be plotted as a function of the distance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;rho_wind&#39;</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;rho_wind&#39;</span><span class="p">],</span>
          <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> 
          <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
          <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
@@ -547,7 +546,7 @@ We will use the reanalysis dataset ERA5 and weather data corresponding to 2013 t
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;distance (km)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/af292d79787f169356972968b594395d322933a8fe6b03681a1583ecd6ca4cfe.png" src="../_images/af292d79787f169356972968b594395d322933a8fe6b03681a1583ecd6ca4cfe.png" />
+<img alt="../_images/1f47847f8d99137fbd0097fe73824e124d012a2051413fcead2cddfcaa221f21.png" src="../_images/1f47847f8d99137fbd0097fe73824e124d012a2051413fcead2cddfcaa221f21.png" />
 </div>
 </div>
 <p>The correlation coefficient can be approach to follow the formula <span class="math notranslate nohighlight">\(\rho_{i,j}=exp(\frac{-1}{\xi_c}·d_{i,j}\)</span>) where <span class="math notranslate nohighlight">\(\xi_c\)</span> is the correlation length.
@@ -572,10 +571,10 @@ We can check that <span class="math notranslate nohighlight">\(\xi_c\)</span> =6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1f5a53e9608&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x19d7be60d70&gt;]
 </pre></div>
 </div>
-<img alt="../_images/062fef1fa05d6b42bb00a29101763ffbf50bacbdeb745eb92dabf093cb324e2b.png" src="../_images/062fef1fa05d6b42bb00a29101763ffbf50bacbdeb745eb92dabf093cb324e2b.png" />
+<img alt="../_images/79ad1246d5ccacdeb5843995032c02679ef2eeeaf2f51873b424a3ccbde51056.png" src="../_images/79ad1246d5ccacdeb5843995032c02679ef2eeeaf2f51873b424a3ccbde51056.png" />
 </div>
 </div>
 <p>We can plot now the correlation coefficient for solar irradiation and show that the correlation length is much larger in this case.</p>
@@ -597,7 +596,7 @@ We can check that <span class="math notranslate nohighlight">\(\xi_c\)</span> =6
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;distance (km)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/4a61999fd7e7255ec99d3500bce274b656d6ed493cb052463ffdbe2706e6e6bc.png" src="../_images/4a61999fd7e7255ec99d3500bce274b656d6ed493cb052463ffdbe2706e6e6bc.png" />
+<img alt="../_images/3a674034944689eb293a1f0b272dee4060a20d66a55af10906c2170ce493c38f.png" src="../_images/3a674034944689eb293a1f0b272dee4060a20d66a55af10906c2170ce493c38f.png" />
 </div>
 </div>
 </section>
