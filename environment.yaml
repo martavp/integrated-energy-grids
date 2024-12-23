@@ -13,7 +13,7 @@ dependencies:
 - openpyxl
 - pypsa
 - networkx
-
+- geopy
 
   # interactive python
 - ipython
