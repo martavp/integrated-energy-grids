@@ -18,19 +18,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-data_pv = pd.read_csv('data/pv_optimal.csv',sep=';')
-data_pv.index = pd.DatetimeIndex(data_pv['utc_time'])
-data_wind = pd.read_csv('data/onshore_wind_1979-2017.csv',sep=';')
-data_wind.index = pd.DatetimeIndex(data_onshore['utc_time'])
+duration_heat = data_heat['2015':'2016']['DNK'].sort_values(ascending=False,ignore_index=True)
+px.line(x=duration_heat.index,y=duration_heat.values,
+        labels={'x':'Hours in year', 'y':'Demand [MW]'},
+        title='Heating demand duration curve')
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[2], line 4[0m
-[1;32m      2[0m data_pv[38;5;241m.[39mindex [38;5;241m=[39m pd[38;5;241m.[39mDatetimeIndex(data_pv[[38;5;124m'[39m[38;5;124mutc_time[39m[38;5;124m'[39m])
-[1;32m      3[0m data_wind [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mdata/onshore_wind_1979-2017.csv[39m[38;5;124m'[39m,sep[38;5;241m=[39m[38;5;124m'[39m[38;5;124m;[39m[38;5;124m'[39m)
-[0;32m----> 4[0m data_wind[38;5;241m.[39mindex [38;5;241m=[39m pd[38;5;241m.[39mDatetimeIndex([43mdata_onshore[49m[[38;5;124m'[39m[38;5;124mutc_time[39m[38;5;124m'[39m])
+Cell [0;32mIn[42], line 2[0m
+[1;32m      1[0m duration_heat [38;5;241m=[39m data_heat[[38;5;124m'[39m[38;5;124m2015[39m[38;5;124m'[39m:[38;5;124m'[39m[38;5;124m2016[39m[38;5;124m'[39m][[38;5;124m'[39m[38;5;124mDNK[39m[38;5;124m'[39m][38;5;241m.[39msort_values(ascending[38;5;241m=[39m[38;5;28;01mFalse[39;00m,ignore_index[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m----> 2[0m [43mpx[49m[38;5;241m.[39mline(x[38;5;241m=[39mduration_heat[38;5;241m.[39mindex,y[38;5;241m=[39mduration_heat[38;5;241m.[39mvalues,
+[1;32m      3[0m         labels[38;5;241m=[39m{[38;5;124m'[39m[38;5;124mx[39m[38;5;124m'[39m:[38;5;124m'[39m[38;5;124mHours in year[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124my[39m[38;5;124m'[39m:[38;5;124m'[39m[38;5;124mDemand [MW][39m[38;5;124m'[39m},
+[1;32m      4[0m         title[38;5;241m=[39m[38;5;124m'[39m[38;5;124mHeating demand duration curve[39m[38;5;124m'[39m)
 
-[0;31mNameError[0m: name 'data_onshore' is not defined
+[0;31mNameError[0m: name 'px' is not defined
 
