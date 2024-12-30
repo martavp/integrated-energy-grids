@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 chapters:
 - file: intro-install
+- file: intro-gurobi
 - file: intro-python
 - file: intro-numpy
 - file: intro-matplotlib
