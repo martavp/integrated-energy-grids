@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome &#8212; integrated-energy-grids</title>
+    <title>Gurobi &#8212; integrated-energy-grids</title>
   
   
   
@@ -60,13 +60,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro-gurobi';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python and Conda" href="intro-install.html" />
+    <link rel="next" title="Introduction to Python" href="intro-python.html" />
+    <link rel="prev" title="Python and Conda" href="intro-install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -118,8 +117,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -139,7 +136,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -166,13 +163,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Welcome
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro-install.html">Python and Conda</a></li>
 
 
@@ -181,7 +178,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="intro-gurobi.html">Gurobi</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Gurobi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-python.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Python</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-numpy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
@@ -271,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2Fintro-gurobi.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +298,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/intro-gurobi.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +372,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome</h1>
+    <h1>Gurobi</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,22 +386,19 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
-<p>Welcome to the website accompanying the course <a class="reference external" href="https://kurser.dtu.dk/course/2024-2025/46770?menulanguage=en">Integrated Energy Grids course</a>. This course has been developed by <a class="reference external" href="https://martavictoria.org">Assoc. Prof. Marta Victoria</a> and offered at <a class="reference external" href="https://www.dtu.dk/english/">DTU</a>.</p>
-<p>On this website, you will find tutorials for different topics covered in the course, as well as detailed solutions for some of the problems proposed in the course. Python and packages such as <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">networkx</span></code>, and <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> are used to obtain the solution. The facilitate the starting process, practical introductions to those packages are also provided.</p>
-<p>The topics covered in the problems include:</p>
-<ul class="simple">
-<li><p>Time series analysis applied to wind and solar generation</p></li>
-<li><p>Optimization problems and interpretation of KKT/Lagrange multipliers</p></li>
-<li><p>Optimal economic dispatch</p></li>
-<li><p>Incidence matrix representing a network topology and susceptance matrix</p></li>
-<li><p>Power flow and linearized power flow</p></li>
-<li><p>Capacity and dispatch optimization in a single node and a network</p></li>
-<li><p>Multi-carrier energy systems integration</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+  <section id="gurobi">
+<h1>Gurobi<a class="headerlink" href="#gurobi" title="Link to this heading">#</a></h1>
+<p>In this course, we will use an external solver to solve optimization problems. We Will use Gurobi as solver and we need to get a license for that.</p>
+<p>To install Gurobi, you execute the following commands in the terminal</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda config --add channels http://conda.anaconda.org/gurobi
+
+    conda install gurobi
+</pre></div>
 </div>
+<p>Now, you need to get a free academic license to use Gurobi, follow the instructions in <a class="reference external" href="https://www.gurobi.com/downloads/free-academic-license/">Gurobi webpage</a> . You will need to register and log in to get a license.</p>
+<p>Once you have registered, run the grbgetkey command to install the license on your computer:</p>
+<p>Go to “My Account”  “My Licenses”  “Review your current licenses”  click on the license that you have created  At the bottom, you will see the exact command.</p>
+<p>grbgetkey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -437,12 +431,21 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
+    <a class="left-prev"
        href="intro-install.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python and Conda</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="intro-python.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python and Conda</p>
+        <p class="prev-next-title">Introduction to <code class="docutils literal notranslate"><span class="pre">Python</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
