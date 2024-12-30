@@ -14,7 +14,7 @@ Now, you need to get a free academic license to use Gurobi, follow the instructi
 
 Once you have registered, run the grbgetkey command to install the license on your computer:
 
-Go to Account  Licenses   click on the license that you have created  At the bottom, you will see the exact command.
+Go to Account - Licenses -  click on the license that you have created - At the bottom, you will see the exact command.
 
 grbgetkey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
