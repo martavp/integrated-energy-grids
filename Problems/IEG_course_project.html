@@ -1,0 +1,1938 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Course project &#8212; integrated-energy-grids</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/IEG_course_project';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/DTUlogo.jpg" class="logo__image only-light" alt="integrated-energy-grids - Home"/>
+    <img src="../_static/DTUlogo.jpg" class="logo__image only-dark pst-js-only" alt="integrated-energy-grids - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro-install.html">Python and Conda</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../intro-gurobi.html">Gurobi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-python.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Python</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-numpy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-pandas.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.01.html">Problem 1.1</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Problem01.03.html">Problem 1.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.04.html">Problem 1.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.05.html">Problem 1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.01.html">Problem 3.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.02.html">Problem 3.2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/IEG_course_project.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/martavp/integrated-energy-grids" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/IEG_course_project.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Problems/IEG_course_project.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Course project</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Course project</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-instructions">PROJECT INSTRUCTIONS</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="course-project">
+<h1>Course project<a class="headerlink" href="#course-project" title="Link to this heading">#</a></h1>
+<p>This notebook includes the steps to optimize the capacity and dispatch of generators in a stylized energy system. It has been prepared to serve as a tutorial for a simple PyPSA model representing the energy system in one country.</p>
+<p>For the (optional) project of the course <a class="reference external" href="https://kurser.dtu.dk/course/2024-2025/46770?menulanguage=en">Integrated Energy Grids</a> you need to deliver a report including the sections described at the end of this notebook.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
+<p>Then install <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> by executing the following command in a Jupyter cell at the top of the notebook.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>pypsa
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pypsa
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pypsa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pypsa in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (0.32.0)
+Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.26.4)
+Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.14.1)
+Requirement already satisfied: pandas&gt;=0.24 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2.2.3)
+Requirement already satisfied: xarray in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2024.11.0)
+Requirement already satisfied: netcdf4 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.7.2)
+Requirement already satisfied: linopy&gt;=0.4 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (0.4.4)
+Requirement already satisfied: matplotlib in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (3.10.0)
+Requirement already satisfied: geopandas&gt;=0.9 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.0.1)
+Requirement already satisfied: networkx&gt;=2 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (3.4.2)
+Requirement already satisfied: deprecation in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2.1.0)
+Requirement already satisfied: validators in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (0.34.0)
+Requirement already satisfied: highspy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.9.0)
+Requirement already satisfied: pyogrio&gt;=0.7.2 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from geopandas&gt;=0.9-&gt;pypsa) (0.10.0)
+Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from geopandas&gt;=0.9-&gt;pypsa) (24.2)
+Requirement already satisfied: pyproj&gt;=3.3.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from geopandas&gt;=0.9-&gt;pypsa) (3.7.0)
+Requirement already satisfied: shapely&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from geopandas&gt;=0.9-&gt;pypsa) (2.0.6)
+Requirement already satisfied: bottleneck in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.4.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: toolz in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.0.0)
+Requirement already satisfied: numexpr in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (2.10.2)
+Requirement already satisfied: dask&gt;=0.18.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (2024.12.1)
+Requirement already satisfied: polars in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.18.0)
+Requirement already satisfied: tqdm in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (4.67.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2024.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2024.2)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (1.3.1)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (4.55.3)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (1.4.8)
+Requirement already satisfied: pillow&gt;=8 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (11.0.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (3.2.0)
+Requirement already satisfied: cftime in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from netcdf4-&gt;pypsa) (1.6.4.post1)
+Requirement already satisfied: certifi in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from netcdf4-&gt;pypsa) (2024.12.14)
+Requirement already satisfied: click&gt;=8.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.1.8)
+Requirement already satisfied: cloudpickle&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (3.1.0)
+Requirement already satisfied: fsspec&gt;=2021.09.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (2024.12.0)
+Requirement already satisfied: partd&gt;=1.4.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.4.2)
+Requirement already satisfied: pyyaml&gt;=5.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (6.0.2)
+Requirement already satisfied: importlib_metadata&gt;=4.13.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=0.24-&gt;pypsa) (1.17.0)
+Requirement already satisfied: zipp&gt;=3.20 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from importlib_metadata&gt;=4.13.0-&gt;dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (3.21.0)
+Requirement already satisfied: locket in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from partd&gt;=1.4.0-&gt;dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.0.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We start by creating the network. In this example, the country is modelled as a single node, so the network includes only one bus.</p>
+<p>We select the year 2015 and set the hours in that year as snapshots.</p>
+<p>We select a country, in this case Denmark (DNK), and add one node (electricity bus) to the network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">()</span>
+<span class="n">hours_in_2015</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2015-01-01 00:00Z&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;2015-12-31 23:00Z&#39;</span><span class="p">,</span>
+                              <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+
+<span class="n">network</span><span class="o">.</span><span class="n">set_snapshots</span><span class="p">(</span><span class="n">hours_in_2015</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;electricity bus&quot;</span><span class="p">)</span>
+
+<span class="n">network</span><span class="o">.</span><span class="n">snapshots</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2015-01-01 00:00:00&#39;, &#39;2015-01-01 01:00:00&#39;,
+               &#39;2015-01-01 02:00:00&#39;, &#39;2015-01-01 03:00:00&#39;,
+               &#39;2015-01-01 04:00:00&#39;, &#39;2015-01-01 05:00:00&#39;,
+               &#39;2015-01-01 06:00:00&#39;, &#39;2015-01-01 07:00:00&#39;,
+               &#39;2015-01-01 08:00:00&#39;, &#39;2015-01-01 09:00:00&#39;,
+               ...
+               &#39;2015-12-31 14:00:00&#39;, &#39;2015-12-31 15:00:00&#39;,
+               &#39;2015-12-31 16:00:00&#39;, &#39;2015-12-31 17:00:00&#39;,
+               &#39;2015-12-31 18:00:00&#39;, &#39;2015-12-31 19:00:00&#39;,
+               &#39;2015-12-31 20:00:00&#39;, &#39;2015-12-31 21:00:00&#39;,
+               &#39;2015-12-31 22:00:00&#39;, &#39;2015-12-31 23:00:00&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;snapshot&#39;, length=8760, freq=None)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The demand is represented by the historical electricity demand in 2015 with hourly resolution.</p>
+<p>The file with historical hourly electricity demand for every European country is available in the data folder.</p>
+<p>The electricity demand time series were obtained from ENTSOE through the very convenient compilation carried out by the Open Power System Data (OPSD). <a class="reference external" href="https://data.open-power-system-data.org/time_series/">https://data.open-power-system-data.org/time_series/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load electricity demand data</span>
+<span class="n">df_elec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/electricity_demand.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># in MWh</span>
+<span class="n">df_elec</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_elec</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="c1">#change index to datatime</span>
+<span class="n">country</span><span class="o">=</span><span class="s1">&#39;DNK&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_elec</span><span class="p">[</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>utc_time
+2015-01-01 00:00:00+00:00    3210.98
+2015-01-01 01:00:00+00:00    3100.02
+2015-01-01 02:00:00+00:00    2980.39
+2015-01-01 03:00:00+00:00    2933.49
+2015-01-01 04:00:00+00:00    2941.54
+Name: DNK, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add load to the bus</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;load&quot;</span><span class="p">,</span>
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;electricity bus&quot;</span><span class="p">,</span>
+            <span class="n">p_set</span><span class="o">=</span><span class="n">df_elec</span><span class="p">[</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;load&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print the load time series to check that it has been properly added (you should see numbers and not ‘NaN’)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Load</th>
+      <th>load</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-01 00:00:00</th>
+      <td>3210.98</td>
+    </tr>
+    <tr>
+      <th>2015-01-01 01:00:00</th>
+      <td>3100.02</td>
+    </tr>
+    <tr>
+      <th>2015-01-01 02:00:00</th>
+      <td>2980.39</td>
+    </tr>
+    <tr>
+      <th>2015-01-01 03:00:00</th>
+      <td>2933.49</td>
+    </tr>
+    <tr>
+      <th>2015-01-01 04:00:00</th>
+      <td>2941.54</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 19:00:00</th>
+      <td>3687.87</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 20:00:00</th>
+      <td>3535.55</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 21:00:00</th>
+      <td>3389.26</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 22:00:00</th>
+      <td>3262.27</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 23:00:00</th>
+      <td>3158.85</td>
+    </tr>
+  </tbody>
+</table>
+<p>8760 rows × 1 columns</p>
+</div></div></div>
+</div>
+<p>In the optimization, we will minimize the annualized system costs.</p>
+<p>We will need to annualize the cost of every generator, we build a function to do it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">annuity</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculate the annuity factor for an asset with lifetime n years and</span>
+<span class="sd">    discount rate  r &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="mf">1.</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We include solar PV and onshore wind generators.</p>
+<p>The capacity factors representing the availability of those generators for every European country can be downloaded from the following repositories (select ‘optimal’ for PV and onshore for wind).</p>
+<p><a class="reference external" href="https://zenodo.org/record/3253876#.XSiVOEdS8l0">https://zenodo.org/record/3253876#.XSiVOEdS8l0</a></p>
+<p><a class="reference external" href="https://zenodo.org/record/2613651#.XSiVOkdS8l0">https://zenodo.org/record/2613651#.XSiVOkdS8l0</a></p>
+<p>We include also Open Cycle Gas Turbine (OCGT) generators</p>
+<p>The cost assumed for the generators are the same as in Table 1 in the paper <a class="reference external" href="https://doi.org/10.1016/j.enconman.2019.111977">https://doi.org/10.1016/j.enconman.2019.111977</a> (open version:  <a class="reference external" href="https://arxiv.org/pdf/1906.06936.pdf">https://arxiv.org/pdf/1906.06936.pdf</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add the different carriers, only gas emits CO2</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="s2">&quot;gas&quot;</span><span class="p">,</span> <span class="n">co2_emissions</span><span class="o">=</span><span class="mf">0.19</span><span class="p">)</span> <span class="c1"># in t_CO2/MWh_th</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="s2">&quot;onshorewind&quot;</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="s2">&quot;solar&quot;</span><span class="p">)</span>
+
+<span class="c1"># add onshore wind generator</span>
+<span class="n">df_onshorewind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/onshore_wind_1979-2017.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_onshorewind</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_onshorewind</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">CF_wind</span> <span class="o">=</span> <span class="n">df_onshorewind</span><span class="p">[</span><span class="n">country</span><span class="p">][[</span><span class="n">hour</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%SZ&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">snapshots</span><span class="p">]]</span>
+<span class="n">capital_cost_onshorewind</span> <span class="o">=</span> <span class="n">annuity</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mf">0.07</span><span class="p">)</span><span class="o">*</span><span class="mi">910000</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.033</span><span class="p">)</span> <span class="c1"># in €/MW</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;onshorewind&quot;</span><span class="p">,</span>
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;electricity bus&quot;</span><span class="p">,</span>
+            <span class="n">p_nom_extendable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">carrier</span><span class="o">=</span><span class="s2">&quot;onshorewind&quot;</span><span class="p">,</span>
+            <span class="c1">#p_nom_max=1000, # maximum capacity can be limited due to environmental constraints</span>
+            <span class="n">capital_cost</span> <span class="o">=</span> <span class="n">capital_cost_onshorewind</span><span class="p">,</span>
+            <span class="n">marginal_cost</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">p_max_pu</span> <span class="o">=</span> <span class="n">CF_wind</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="c1"># add solar PV generator</span>
+<span class="n">df_solar</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/pv_optimal.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_solar</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_solar</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">CF_solar</span> <span class="o">=</span> <span class="n">df_solar</span><span class="p">[</span><span class="n">country</span><span class="p">][[</span><span class="n">hour</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%SZ&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">snapshots</span><span class="p">]]</span>
+<span class="n">capital_cost_solar</span> <span class="o">=</span> <span class="n">annuity</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mf">0.07</span><span class="p">)</span><span class="o">*</span><span class="mi">425000</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.03</span><span class="p">)</span> <span class="c1"># in €/MW</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;solar&quot;</span><span class="p">,</span>
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;electricity bus&quot;</span><span class="p">,</span>
+            <span class="n">p_nom_extendable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">carrier</span><span class="o">=</span><span class="s2">&quot;solar&quot;</span><span class="p">,</span>
+            <span class="c1">#p_nom_max=1000, # maximum capacity can be limited due to environmental constraints</span>
+            <span class="n">capital_cost</span> <span class="o">=</span> <span class="n">capital_cost_solar</span><span class="p">,</span>
+            <span class="n">marginal_cost</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">p_max_pu</span> <span class="o">=</span> <span class="n">CF_solar</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="c1"># add OCGT (Open Cycle Gas Turbine) generator</span>
+<span class="n">capital_cost_OCGT</span> <span class="o">=</span> <span class="n">annuity</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mf">0.07</span><span class="p">)</span><span class="o">*</span><span class="mi">560000</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.033</span><span class="p">)</span> <span class="c1"># in €/MW</span>
+<span class="n">fuel_cost</span> <span class="o">=</span> <span class="mf">21.6</span> <span class="c1"># in €/MWh_th</span>
+<span class="n">efficiency</span> <span class="o">=</span> <span class="mf">0.39</span> <span class="c1"># MWh_elec/MWh_th</span>
+<span class="n">marginal_cost_OCGT</span> <span class="o">=</span> <span class="n">fuel_cost</span><span class="o">/</span><span class="n">efficiency</span> <span class="c1"># in €/MWh_el</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;OCGT&quot;</span><span class="p">,</span>
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;electricity bus&quot;</span><span class="p">,</span>
+            <span class="n">p_nom_extendable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">carrier</span><span class="o">=</span><span class="s2">&quot;gas&quot;</span><span class="p">,</span>
+            <span class="c1">#p_nom_max=1000,</span>
+            <span class="n">capital_cost</span> <span class="o">=</span> <span class="n">capital_cost_OCGT</span><span class="p">,</span>
+            <span class="n">marginal_cost</span> <span class="o">=</span> <span class="n">marginal_cost_OCGT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;OCGT&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print the generator Capacity factor time series to check that it has been properly added (you should see numbers and not ‘NaN’)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p_max_pu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Generator</th>
+      <th>onshorewind</th>
+      <th>solar</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-01-01 00:00:00</th>
+      <td>0.460</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2015-01-01 01:00:00</th>
+      <td>0.465</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2015-01-01 02:00:00</th>
+      <td>0.478</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2015-01-01 03:00:00</th>
+      <td>0.548</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2015-01-01 04:00:00</th>
+      <td>0.593</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 19:00:00</th>
+      <td>0.174</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 20:00:00</th>
+      <td>0.145</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 21:00:00</th>
+      <td>0.141</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 22:00:00</th>
+      <td>0.164</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2015-12-31 23:00:00</th>
+      <td>0.204</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>8760 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>We find the optimal solution using Gurobi as solver.</p>
+<p>In this case, we are optimizing the installed capacity and dispatch of every generator to minimize the total system cost.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s1">&#39;gurobi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Gurobi solver
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s1">&#39;gurobi&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:628,</span> in <span class="ni">OptimizationAccessor.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">626</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">optimize</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">628</span>     <span class="k">return</span> <span class="n">optimize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:600,</span> in <span class="ni">optimize</span><span class="nt">(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">598</span> <span class="k">if</span> <span class="n">extra_functionality</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">599</span>     <span class="n">extra_functionality</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sns</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">600</span> <span class="n">status</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="n">solver_name</span><span class="p">,</span> <span class="o">**</span><span class="n">solver_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;ok&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span>     <span class="n">assign_solution</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1112,</span> in <span class="ni">Model.solve</span><span class="nt">(self, solver_name, io_api, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1109</span>     <span class="n">solver_name</span> <span class="o">=</span> <span class="n">available_solvers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1111</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Solve problem using </span><span class="si">{</span><span class="n">solver_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> solver&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1112</span> <span class="k">assert</span> <span class="n">solver_name</span> <span class="ow">in</span> <span class="n">available_solvers</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Solver </span><span class="si">{</span><span class="n">solver_name</span><span class="si">}</span><span class="s2"> not installed&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1114</span> <span class="c1"># reset result</span>
+<span class="g g-Whitespace">   </span><span class="mi">1115</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_solution</span><span class="p">()</span>
+
+<span class="ne">AssertionError</span>: Solver gurobi not installed
+</pre></div>
+</div>
+</div>
+</div>
+<p>The message (‘ok’ , ‘optimal”) indicates that the optimizer has found an optimal solution.</p>
+<p>The total cost can be read from the network objetive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">objective</span><span class="o">/</span><span class="mi">1000000</span><span class="p">)</span> <span class="c1">#in 10^6 €</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1699.4058099821536
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cost per MWh of electricity produced can also be calculated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">objective</span><span class="o">/</span><span class="n">network</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="c1"># EUR/MWh</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Load
+load    51.789144
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The optimal capacity for every generator can be shown.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">p_nom_opt</span> <span class="c1"># in MW</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generator
+onshorewind    7010.549199
+solar          2871.404793
+OCGT           5405.382311
+Name: p_nom_opt, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can plot now the dispatch of every generator during the first week of the year and the electricity demand.
+We import the matplotlib package which is very useful to plot results.</p>
+<p>We can also plot the electricity mix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;load&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;demand&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;onshorewind&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;onshore wind&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;solar&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;solar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;OCGT&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gas (OCGT)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x22306532fc0&gt;
+</pre></div>
+</div>
+<img alt="../_images/e0b571de61e09239adf53c0361df6d1324ff2bbc8a027e8fc70f4f49f5f55fd3.png" src="../_images/e0b571de61e09239adf53c0361df6d1324ff2bbc8a027e8fc70f4f49f5f55fd3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;onshore wind&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;solar&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;gas (OCGT)&#39;</span><span class="p">]</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;onshorewind&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+         <span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;solar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+         <span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;OCGT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()]</span>
+
+<span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span>
+        <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+        <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+        <span class="n">wedgeprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Electricity mix&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.07</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.07, &#39;Electricity mix&#39;)
+</pre></div>
+</div>
+<img alt="../_images/0b37df49101afd082d93e36c9e1ece69da8f46064b8ed6372a047c6b12873988.png" src="../_images/0b37df49101afd082d93e36c9e1ece69da8f46064b8ed6372a047c6b12873988.png" />
+</div>
+</div>
+<p>We can add a global CO2 constraint and solve again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_limit</span><span class="o">=</span><span class="mi">1000000</span> <span class="c1">#tonCO2</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;GlobalConstraint&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;co2_limit&quot;</span><span class="p">,</span>
+            <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;primary_energy&quot;</span><span class="p">,</span>
+            <span class="n">carrier_attribute</span><span class="o">=</span><span class="s2">&quot;co2_emissions&quot;</span><span class="p">,</span>
+            <span class="n">sense</span><span class="o">=</span><span class="s2">&quot;&lt;=&quot;</span><span class="p">,</span>
+            <span class="n">constant</span><span class="o">=</span><span class="n">co2_limit</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s1">&#39;gurobi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+INFO:linopy.model: Solve problem using Gurobi solver
+INFO:linopy.io:Writing objective.
+Writing constraints.: 100%|██████████| 6/6 [00:00&lt;00:00, 15.87it/s]
+Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 28.01it/s]
+INFO:linopy.io: Writing time: 0.49s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set parameter Username
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Set parameter Username
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set parameter LicenseID to value 2604332
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Set parameter LicenseID to value 2604332
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Academic license - for non-commercial use only - expires 2025-12-30
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Academic license - for non-commercial use only - expires 2025-12-30
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file C:\Users\34620\AppData\Local\Temp\linopy-problem-sxx7u7tj.lp
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file C:\Users\34620\AppData\Local\Temp\linopy-problem-sxx7u7tj.lp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.11 seconds
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Reading time = 0.11 seconds
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 61324 rows, 26283 columns, 109510 nonzeros
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:obj: 61324 rows, 26283 columns, 109510 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 11.0 (22631.2))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 11.0 (22631.2))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU model: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, instruction set [SSE2|AVX|AVX2]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:CPU model: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, instruction set [SSE2|AVX|AVX2]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimize a model with 61324 rows, 26283 columns and 109510 nonzeros
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Optimize a model with 61324 rows, 26283 columns and 109510 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model fingerprint: 0x985d7065
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Model fingerprint: 0x985d7065
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient statistics:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Coefficient statistics:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Matrix range     [1e-03, 1e+00]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  Matrix range     [1e-03, 1e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Objective range  [6e+01, 8e+04]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  Objective range  [6e+01, 8e+04]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Bounds range     [0e+00, 0e+00]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  Bounds range     [0e+00, 0e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  RHS range        [2e+03, 1e+06]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  RHS range        [2e+03, 1e+06]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve removed 35029 rows and 8746 columns
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Presolve removed 35029 rows and 8746 columns
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.07s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Presolve time: 0.07s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolved: 26295 rows, 17537 columns, 65735 nonzeros
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Presolved: 26295 rows, 17537 columns, 65735 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Concurrent LP optimizer: dual simplex and barrier
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Concurrent LP optimizer: dual simplex and barrier
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Showing barrier log only...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Showing barrier log only...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ordering time: 0.01s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Ordering time: 0.01s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Barrier statistics:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Barrier statistics:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Dense cols : 3
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy: Dense cols : 3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> AA&#39; NZ     : 5.696e+04
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy: AA&#39; NZ     : 5.696e+04
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Factor NZ  : 1.536e+05 (roughly 20 MB of memory)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy: Factor NZ  : 1.536e+05 (roughly 20 MB of memory)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Factor Ops : 9.458e+05 (less than 1 second per iteration)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy: Factor Ops : 9.458e+05 (less than 1 second per iteration)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Threads    : 1
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy: Threads    : 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                  Objective                Residual
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:                  Objective                Residual
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iter       Primal          Dual         Primal    Dual     Compl     Time
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Iter       Primal          Dual         Primal    Dual     Compl     Time
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   0   2.94119004e+11 -1.11451635e+11  4.49e+07 0.00e+00  1.02e+09     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   0   2.94119004e+11 -1.11451635e+11  4.49e+07 0.00e+00  1.02e+09     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1   5.33634949e+11 -1.53566777e+11  4.86e+06 2.13e+02  1.43e+08     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   1   5.33634949e+11 -1.53566777e+11  4.86e+06 2.13e+02  1.43e+08     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   2   3.71030736e+11 -1.46538231e+11  1.26e+05 7.20e-10  1.05e+07     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   2   3.71030736e+11 -1.46538231e+11  1.26e+05 7.20e-10  1.05e+07     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   3   6.16870731e+10 -5.84407747e+10  1.73e+04 1.05e-09  2.20e+06     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   3   6.16870731e+10 -5.84407747e+10  1.73e+04 1.05e-09  2.20e+06     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   4   5.08966419e+10 -5.10672255e+10  1.39e+04 8.26e-10  1.86e+06     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   4   5.08966419e+10 -5.10672255e+10  1.39e+04 8.26e-10  1.86e+06     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   5   2.25693425e+10 -3.00006735e+10  4.85e+03 1.44e-09  9.39e+05     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   5   2.25693425e+10 -3.00006735e+10  4.85e+03 1.44e-09  9.39e+05     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   6   1.63203080e+10 -1.89676442e+10  3.11e+03 6.29e-10  6.27e+05     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   6   1.63203080e+10 -1.89676442e+10  3.11e+03 6.29e-10  6.27e+05     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   7   9.31801285e+09 -1.09558254e+10  1.29e+03 7.17e-10  3.58e+05     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   7   9.31801285e+09 -1.09558254e+10  1.29e+03 7.17e-10  3.58e+05     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   8   6.95861133e+09 -8.61403926e+09  7.48e+02 5.46e-11  2.75e+05     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   8   6.95861133e+09 -8.61403926e+09  7.48e+02 5.46e-11  2.75e+05     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   9   5.90046566e+09 -4.47912849e+09  5.46e+02 4.65e-10  1.83e+05     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:   9   5.90046566e+09 -4.47912849e+09  5.46e+02 4.65e-10  1.83e+05     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  10   5.02948120e+09 -1.77188711e+09  4.14e+02 1.30e-10  1.20e+05     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  10   5.02948120e+09 -1.77188711e+09  4.14e+02 1.30e-10  1.20e+05     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  11   4.50201254e+09 -1.30587343e+09  3.32e+02 3.07e-10  1.02e+05     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  11   4.50201254e+09 -1.30587343e+09  3.32e+02 3.07e-10  1.02e+05     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  12   3.95933836e+09 -7.66635420e+08  2.58e+02 3.15e-10  8.32e+04     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  12   3.95933836e+09 -7.66635420e+08  2.58e+02 3.15e-10  8.32e+04     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  13   3.61608472e+09  3.47505627e+08  2.03e+02 6.75e-14  5.76e+04     0s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  13   3.61608472e+09  3.47505627e+08  2.03e+02 6.75e-14  5.76e+04     0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  14   3.39761330e+09  5.37286458e+08  1.72e+02 2.95e-10  5.04e+04     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  14   3.39761330e+09  5.37286458e+08  1.72e+02 2.95e-10  5.04e+04     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  15   3.18459805e+09  1.10818850e+09  1.42e+02 4.63e-10  3.66e+04     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  15   3.18459805e+09  1.10818850e+09  1.42e+02 4.63e-10  3.66e+04     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  16   2.94747283e+09  1.42691087e+09  1.05e+02 1.08e-10  2.68e+04     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  16   2.94747283e+09  1.42691087e+09  1.05e+02 1.08e-10  2.68e+04     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  17   2.78443852e+09  1.67783788e+09  7.72e+01 1.94e-10  1.95e+04     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  17   2.78443852e+09  1.67783788e+09  7.72e+01 1.94e-10  1.95e+04     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  18   2.68794375e+09  1.81199310e+09  6.15e+01 5.29e-10  1.54e+04     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  18   2.68794375e+09  1.81199310e+09  6.15e+01 5.29e-10  1.54e+04     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  19   2.61234531e+09  1.95343943e+09  4.82e+01 5.33e-14  1.16e+04     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  19   2.61234531e+09  1.95343943e+09  4.82e+01 5.33e-14  1.16e+04     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  20   2.55185932e+09  2.06355566e+09  3.74e+01 2.36e-10  8.60e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  20   2.55185932e+09  2.06355566e+09  3.74e+01 2.36e-10  8.60e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  21   2.51217334e+09  2.13702686e+09  2.93e+01 1.16e-10  6.61e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  21   2.51217334e+09  2.13702686e+09  2.93e+01 1.16e-10  6.61e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  22   2.49097303e+09  2.19740759e+09  2.55e+01 3.71e-10  5.17e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  22   2.49097303e+09  2.19740759e+09  2.55e+01 3.71e-10  5.17e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  23   2.46855656e+09  2.24076505e+09  2.08e+01 6.52e-10  4.01e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  23   2.46855656e+09  2.24076505e+09  2.08e+01 6.52e-10  4.01e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  24   2.42512256e+09  2.26502741e+09  1.15e+01 9.65e-14  2.82e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  24   2.42512256e+09  2.26502741e+09  1.15e+01 9.65e-14  2.82e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  25   2.40616534e+09  2.29949405e+09  7.53e+00 6.81e-13  1.88e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  25   2.40616534e+09  2.29949405e+09  7.53e+00 6.81e-13  1.88e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  26   2.39551855e+09  2.31735585e+09  5.34e+00 3.08e-10  1.38e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  26   2.39551855e+09  2.31735585e+09  5.34e+00 3.08e-10  1.38e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  27   2.38887715e+09  2.32269809e+09  4.04e+00 1.48e-11  1.16e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  27   2.38887715e+09  2.32269809e+09  4.04e+00 1.48e-11  1.16e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  28   2.38711106e+09  2.32718049e+09  3.69e+00 6.90e-10  1.05e+03     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  28   2.38711106e+09  2.32718049e+09  3.69e+00 6.90e-10  1.05e+03     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  29   2.37843114e+09  2.33290536e+09  1.73e+00 3.89e-10  8.00e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  29   2.37843114e+09  2.33290536e+09  1.73e+00 3.89e-10  8.00e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  30   2.37530087e+09  2.34558289e+09  1.19e+00 3.75e-10  5.23e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  30   2.37530087e+09  2.34558289e+09  1.19e+00 3.75e-10  5.23e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  31   2.37139601e+09  2.34991112e+09  6.19e-01 2.41e-10  3.78e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  31   2.37139601e+09  2.34991112e+09  6.19e-01 2.41e-10  3.78e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  32   2.37067269e+09  2.35123788e+09  4.72e-01 5.17e-10  3.42e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  32   2.37067269e+09  2.35123788e+09  4.72e-01 5.17e-10  3.42e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  33   2.37036798e+09  2.35323691e+09  4.24e-01 4.72e-10  3.01e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  33   2.37036798e+09  2.35323691e+09  4.24e-01 4.72e-10  3.01e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  34   2.36922899e+09  2.35749118e+09  2.48e-01 2.72e-10  2.06e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  34   2.36922899e+09  2.35749118e+09  2.48e-01 2.72e-10  2.06e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  35   2.36905260e+09  2.35886492e+09  2.27e-01 1.85e-10  1.79e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  35   2.36905260e+09  2.35886492e+09  2.27e-01 1.85e-10  1.79e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  36   2.36819216e+09  2.36099671e+09  8.77e-02 3.33e-10  1.26e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  36   2.36819216e+09  2.36099671e+09  8.77e-02 3.33e-10  1.26e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  37   2.36780558e+09  2.36153934e+09  5.64e-02 3.47e-10  1.10e+02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  37   2.36780558e+09  2.36153934e+09  5.64e-02 3.47e-10  1.10e+02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  38   2.36768197e+09  2.36367083e+09  4.29e-02 3.79e-10  7.05e+01     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  38   2.36768197e+09  2.36367083e+09  4.29e-02 3.79e-10  7.05e+01     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  39   2.36744955e+09  2.36518750e+09  2.43e-02 1.85e-10  3.97e+01     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  39   2.36744955e+09  2.36518750e+09  2.43e-02 1.85e-10  3.97e+01     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  40   2.36736254e+09  2.36561000e+09  1.78e-02 4.16e-10  3.08e+01     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  40   2.36736254e+09  2.36561000e+09  1.78e-02 4.16e-10  3.08e+01     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  41   2.36726249e+09  2.36607289e+09  1.02e-02 1.21e-10  2.09e+01     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  41   2.36726249e+09  2.36607289e+09  1.02e-02 1.21e-10  2.09e+01     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  42   2.36717325e+09  2.36649479e+09  1.80e-03 1.43e-10  1.19e+01     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  42   2.36717325e+09  2.36649479e+09  1.80e-03 1.43e-10  1.19e+01     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  43   2.36715257e+09  2.36666615e+09  9.92e-04 1.14e-10  8.54e+00     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  43   2.36715257e+09  2.36666615e+09  9.92e-04 1.14e-10  8.54e+00     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  44   2.36712257e+09  2.36712165e+09  4.03e-08 2.06e-11  1.61e-02     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  44   2.36712257e+09  2.36712165e+09  4.03e-08 2.06e-11  1.61e-02     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  45   2.36712251e+09  2.36712251e+09  6.50e-08 1.11e-08  2.46e-08     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  45   2.36712251e+09  2.36712251e+09  6.50e-08 1.11e-08  2.46e-08     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  46   2.36712251e+09  2.36712251e+09  4.64e-11 1.11e-08  2.46e-14     1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  46   2.36712251e+09  2.36712251e+09  4.64e-11 1.11e-08  2.46e-14     1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Barrier solved model in 46 iterations and 1.34 seconds (0.45 work units)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Barrier solved model in 46 iterations and 1.34 seconds (0.45 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective 2.36712251e+09
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Optimal objective 2.36712251e+09
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crossover log...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Crossover log...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       3 DPushes remaining with DInf 0.0000000e+00                 1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:       3 DPushes remaining with DInf 0.0000000e+00                 1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       0 DPushes remaining with DInf 0.0000000e+00                 1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:       0 DPushes remaining with DInf 0.0000000e+00                 1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: Markowitz tolerance tightened to 0.25
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Warning: Markowitz tolerance tightened to 0.25
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    3212 PPushes remaining with PInf 0.0000000e+00                 1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:    3212 PPushes remaining with PInf 0.0000000e+00                 1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       0 PPushes remaining with PInf 0.0000000e+00                 1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:       0 PPushes remaining with PInf 0.0000000e+00                 1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Push phase complete: Pinf 0.0000000e+00, Dinf 1.1673364e-09      1s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  Push phase complete: Pinf 0.0000000e+00, Dinf 1.1673364e-09      1s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved with barrier
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Solved with barrier
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration    Objective       Primal Inf.    Dual Inf.      Time
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Iteration    Objective       Primal Inf.    Dual Inf.      Time
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    3218    2.3671225e+09   0.000000e+00   0.000000e+00      2s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:    3218    2.3671225e+09   0.000000e+00   0.000000e+00      2s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 3218 iterations and 1.61 seconds (0.84 work units)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Solved in 3218 iterations and 1.61 seconds (0.84 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective  2.367122510e+09
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Optimal objective  2.367122510e+09
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 26283 primals, 61324 duals
+Objective: 2.37e+09
+Solver model: available
+Solver message: 2
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper were not assigned to the network.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">p_nom_opt</span> <span class="c1">#in MW</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generator
+onshorewind    19572.434599
+solar           8874.293348
+OCGT            5229.515916
+Name: p_nom_opt, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;load&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;demand&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;onshorewind&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;onshore wind&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;solar&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;solar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;OCGT&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gas (OCGT)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2230842ae70&gt;
+</pre></div>
+</div>
+<img alt="../_images/f2d5c2256747db935ef96ad6768a6073f7053f9994aafb7f6b383cd752a0a5ef.png" src="../_images/f2d5c2256747db935ef96ad6768a6073f7053f9994aafb7f6b383cd752a0a5ef.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;onshore wind&#39;</span><span class="p">,</span> <span class="s1">&#39;solar&#39;</span><span class="p">,</span> <span class="s1">&#39;gas (OCGT)&#39;</span> <span class="p">]</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;onshorewind&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+         <span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;solar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+         <span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;OCGT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()]</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span>
+        <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+        <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+        <span class="n">wedgeprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Electricity mix&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.07</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.07, &#39;Electricity mix&#39;)
+</pre></div>
+</div>
+<img alt="../_images/ab59f3c1320a2932acb93e034a9f7da8d48dcd93d76c3328e89c279789a766be.png" src="../_images/ab59f3c1320a2932acb93e034a9f7da8d48dcd93d76c3328e89c279789a766be.png" />
+</div>
+</div>
+<section id="project-instructions">
+<h2>PROJECT INSTRUCTIONS<a class="headerlink" href="#project-instructions" title="Link to this heading">#</a></h2>
+<p>Based on the previous example, you are asked to carry out the following tasks:</p>
+<p>A. Choose a different country/region and calculate the optimal capacities for renewable and non-renewable generators. You can add as many technologies as you want. Remember to provide a reference for the cost assumptions. Plot the dispatch time series for a week in summer and winter. Plot the annual electricity mix. Use the duration curves or the capacity factor to investigate the contribution of different technologies.</p>
+<p>B. Investigate how sensitive the optimum capacity mix is to the global CO2 constraint. E.g., plot the generation mix as a function of the CO2 constraint that you impose. Search for the CO2 emissions in your country (today or in 1990) and refer to the emissions allowance to that historical data.</p>
+<p>C. Investigate how sensitive your results are to the interannual variability of solar and wind generation. Plot the average capacity and variability obtained for every generator using different weather years.</p>
+<p>D. Add some storage technology/ies and investigate how they behave and what their impact is on the optimal system configuration. Discuss what strategies is your system using to balance the renewable generation at different time scales (intraday, seasonal, etc.)</p>
+<p>E. Select one target for decarbonization (i.e., one CO2 allowance limit). What is the CO2 price required to achieve that decarbonization level? Search for information on the existing CO2 tax in your country (if any) and discuss your results.</p>
+<p>F. Connect your country with, at least, two neighbouring countries. You can connect them using HVACl ines, HVDC links or gas pipelines. Use a linear representation of power flow or gas flow.
+You can assume that the generation capacities in the neighbouring countries are fixed or optimize the whole system. You can also include fixed interconnection capacities or optimize them with the generators’ capacities. Discuss your results.</p>
+<p>G. Connect the electricity sector with, at least, another sector( e.g. heating or transport), and co-optimize all the sectors. Discuss your results.</p>
+<p>H. Finally, select one topic that is under discussion in your region. Design and implement some experiment to obtain relevant information regarding that topic. E.g.</p>
+<p>[-] What are the consequences if Denmark decides not to install more onshore wind?</p>
+<p>[-] Would it be more expensive if France decides to close its nuclear power plants?</p>
+<p>[-] What will be the main impacts of the Viking link?</p>
+<p>[-] How does gas scarcity impact the optimal system configuration?</p>
+<p><strong>Write a short report (maximum length 10 pages) in groups of 4 students including your main findings.</strong></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="hints">
+<h1>Hints<a class="headerlink" href="#hints" title="Link to this heading">#</a></h1>
+<p><em>TIP 1: You can add a link with the following code</em></p>
+<p>The efficiency will be 1 if you are connecting two countries and different from one if, for example, you are connecting the electricity bus to the heating bus using a heat pump.
+Setting p_min_pu=-1 makes the link reversible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span>
+             <span class="s1">&#39;country a - country b&#39;</span><span class="p">,</span>
+             <span class="n">bus0</span><span class="o">=</span><span class="s2">&quot;electricity bus country a&quot;</span><span class="p">,</span>
+             <span class="n">bus1</span><span class="o">=</span><span class="s2">&quot;electricity bus country b&quot;</span><span class="p">,</span>
+             <span class="n">p_nom_extendable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># capacity is optimised</span>
+             <span class="n">p_min_pu</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+             <span class="n">length</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="c1"># length (in km) between country a and country b</span>
+             <span class="n">capital_cost</span><span class="o">=</span><span class="mi">400</span><span class="o">*</span><span class="mi">600</span><span class="p">)</span> <span class="c1"># capital cost * length</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.io:The following Link have buses which are not defined:
+Index([&#39;country a - country b&#39;], dtype=&#39;object&#39;)
+WARNING:pypsa.io:The following Link have buses which are not defined:
+Index([&#39;country a - country b&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;country a - country b&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>TIP 2: You can check the KKT multiplier associated with the constraint with the following code</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">global_constraints</span><span class="o">.</span><span class="n">constant</span><span class="p">)</span> <span class="c1"># CO2 limit (constant in the constraint)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">global_constraints</span><span class="o">.</span><span class="n">mu</span><span class="p">)</span> <span class="c1"># CO2 price (Lagrance multiplier in the constraint)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GlobalConstraint
+co2_limit    1000000.0
+Name: constant, dtype: float64
+GlobalConstraint
+co2_limit   -1404.832604
+Name: mu, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>TIP 3: You can add a H2 store connected to the electricity bus via an electrolyzer and a fuel cell with the following code</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a new carrier</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Carrier&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;H2&quot;</span><span class="p">)</span>
+
+<span class="c1">#Create a new bus</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;H2&quot;</span><span class="p">,</span>
+          <span class="n">carrier</span> <span class="o">=</span> <span class="s2">&quot;H2&quot;</span><span class="p">)</span>
+
+<span class="c1">#Connect the store to the bus</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Store&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;H2 Tank&quot;</span><span class="p">,</span>
+          <span class="n">bus</span> <span class="o">=</span> <span class="s2">&quot;H2&quot;</span><span class="p">,</span>
+          <span class="n">e_nom_extendable</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="n">e_cyclic</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="n">capital_cost</span> <span class="o">=</span> <span class="n">annuity</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">)</span><span class="o">*</span><span class="mi">57000</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.011</span><span class="p">))</span>
+
+<span class="c1">#Add the link &quot;H2 Electrolysis&quot; that transport energy from the electricity bus (bus0) to the H2 bus (bus1)</span>
+<span class="c1">#with 80% efficiency</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;H2 Electrolysis&quot;</span><span class="p">,</span>
+          <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;electricity bus&quot;</span><span class="p">,</span>
+          <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;H2&quot;</span><span class="p">,</span>
+          <span class="n">p_nom_extendable</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="n">efficiency</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span>
+          <span class="n">capital_cost</span> <span class="o">=</span> <span class="n">annuity</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">)</span><span class="o">*</span><span class="mi">600000</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.05</span><span class="p">))</span>
+
+<span class="c1">#Add the link &quot;H2 Fuel Cell&quot; that transports energy from the H2 bus (bus0) to the electricity bus (bus1)</span>
+<span class="c1">#with 58% efficiency</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;H2 Fuel Cell&quot;</span><span class="p">,</span>
+          <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;H2&quot;</span><span class="p">,</span>
+          <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;electricity bus&quot;</span><span class="p">,</span>
+          <span class="n">p_nom_extendable</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="n">efficiency</span> <span class="o">=</span> <span class="mf">0.58</span><span class="p">,</span>
+          <span class="n">capital_cost</span> <span class="o">=</span> <span class="n">annuity</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">)</span><span class="o">*</span><span class="mi">1300000</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.05</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Course project</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-instructions">PROJECT INSTRUCTIONS</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marta Victoria
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
