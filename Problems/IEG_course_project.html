@@ -1737,7 +1737,7 @@ You can assume that the generation capacities in the neighbouring countries are 
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="hints">
 <h1>Hints<a class="headerlink" href="#hints" title="Link to this heading">#</a></h1>
-<p><em>TIP 1: You can add a link with the following code</em></p>
+<p><em>HINT 1: You can add a link with the following code</em></p>
 <p>The efficiency will be 1 if you are connecting two countries and different from one if, for example, you are connecting the electricity bus to the heating bus using a heat pump.
 Setting p_min_pu=-1 makes the link reversible.</p>
 <div class="cell docutils container">
@@ -1765,7 +1765,7 @@ Index([&#39;country a - country b&#39;], dtype=&#39;object&#39;)
 </div>
 </div>
 </div>
-<p><em>TIP 2: You can check the KKT multiplier associated with the constraint with the following code</em></p>
+<p><em>HINT 2: You can check the KKT multiplier associated with the constraint with the following code</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">global_constraints</span><span class="o">.</span><span class="n">constant</span><span class="p">)</span> <span class="c1"># CO2 limit (constant in the constraint)</span>
@@ -1784,7 +1784,7 @@ Name: mu, dtype: float64
 </div>
 </div>
 </div>
-<p><em>TIP 3: You can add a H2 store connected to the electricity bus via an electrolyzer and a fuel cell with the following code</em></p>
+<p><em>HINT 3: You can add a H2 store connected to the electricity bus via an electrolyzer and a fuel cell with the following code</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a new carrier</span>
@@ -1827,7 +1827,7 @@ Name: mu, dtype: float64
 </div>
 </div>
 </div>
-<p><em>TIP 4: You can get inspiration for plotting the flows in the network in the following example</em></p>
+<p><em>HINT 4: You can get inspiration for plotting the flows in the network in the following example</em></p>
 <p><a class="reference external" href="https://pypsa.readthedocs.io/en/latest/examples/flow-plot.html">https://pypsa.readthedocs.io/en/latest/examples/flow-plot.html</a></p>
 </section>
 
