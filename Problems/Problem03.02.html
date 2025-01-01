@@ -66,7 +66,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Course project" href="IEG_course_project.html" />
+    <link rel="next" title="Introduction to networkx" href="../intro-networkx.html" />
     <link rel="prev" title="Problem 3.1" href="Problem03.01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,6 +192,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem01.05.html">Problem 1.5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem03.01.html">Problem 3.1</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 3.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.01.html">Problem 4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 </ul>
@@ -423,6 +425,9 @@
 <h1>Problem 3.2<a class="headerlink" href="#problem-3-2" title="Link to this heading">#</a></h1>
 <p><strong>Integrated Energy Grids</strong></p>
 <p><strong>Problem 3.2</strong></p>
+<p><strong>Consider the simplified network plotted in Fig. \ref{fig_network}, which represents Denmark and its neighbouring countries. Let us assume the following convention names for the regions Germany=0, DK1=1, DK2=2, Norway=3, and Sweden=4.</strong>
+<strong>a) Create a list of the nodes and links. Sort the nodes and links in ascending order. Link (0,1) before (1,2), before (1,3) etc.</strong></p>
+<p>We will use the package <a class="reference external" href="https://numpy.org/">numpy</a> to operate with matrices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -440,6 +445,7 @@
 </div>
 </div>
 </div>
+<p><strong>b) Calculate the degree of each node <span class="math notranslate nohighlight">\(k_i\)</span>  and the average degree of the network 〈k〉.</strong></p>
 <p>Degree of each node and average degree of the network</p>
 <p><span class="math notranslate nohighlight">\(k_1\)</span>= 1, <span class="math notranslate nohighlight">\(k_1\)</span>=4, <span class="math notranslate nohighlight">\(k_2\)</span>=2, <span class="math notranslate nohighlight">\(k_3\)</span>=1, <span class="math notranslate nohighlight">\(k_4\)</span>=2</p>
 <p>Average degree of the network</p>
@@ -456,6 +462,7 @@
 </div>
 </div>
 </div>
+<p><strong>c) Create the degree matrix <span class="math notranslate nohighlight">\(D_{ij}\)</span>. Create the adjacency matrix <span class="math notranslate nohighlight">\(A_{ij}\)</span> and check that it is symmetric.</strong></p>
 <p><strong>Degree matrix</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,7 +507,24 @@
 </div>
 </div>
 </div>
-<p><strong>Incidence matrix</strong></p>
+<p>We can check that matrix A is symmetric by checking that its transpose is equal to the original matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">-</span><span class="n">A</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>d) Create the incidence matrix <span class="math notranslate nohighlight">\(K_{ij}\)</span>, assuming that the links are always directed from low-number node to high-number node.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)))</span>
@@ -523,7 +547,7 @@
 </div>
 </div>
 </div>
-<p><strong>Laplacian matrix</strong></p>
+<p><strong>Create the Laplacian matrix <span class="math notranslate nohighlight">\(L_{ij}\)</span> using the adjacency matrix. Create the Laplacian matrix using the incidence matrix. Check that the two definitions agree.</strong></p>
 <p>a) using the adjacency matrix</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -662,11 +686,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="IEG_course_project.html"
+       href="../intro-networkx.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Course project</p>
+        <p class="prev-next-title">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
