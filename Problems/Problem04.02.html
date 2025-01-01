@@ -508,22 +508,17 @@
 <span class="math notranslate nohighlight">\(PTDF_{li}=K_{lj}(L^{-1})_{ji}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PTDF</span><span class="o">=</span><span class="n">K</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PTDF</span><span class="o">=</span><span class="n">K</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
 <span class="n">PTDF</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.50119988e+15,  0.00000000e+00,  0.00000000e+00,
-         0.00000000e+00,  0.00000000e+00],
-       [-1.50119988e+15,  1.50119988e+15,  1.50119988e+15,
-         1.50119988e+15,  0.00000000e+00],
-       [ 0.00000000e+00, -1.50119988e+15,  0.00000000e+00,
-         0.00000000e+00,  1.50119988e+15],
-       [ 0.00000000e+00,  0.00000000e+00, -1.50119988e+15,
-         0.00000000e+00,  0.00000000e+00],
-       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
-        -1.50119988e+15, -1.50119988e+15]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.76      , -0.04      , -0.24      , -0.24      , -0.24      ],
+       [-1.28      ,  0.12      ,  0.38666667,  0.72      ,  0.05333333],
+       [-0.2       , -0.2       ,  0.13333333, -0.2       ,  0.46666667],
+       [ 0.24      ,  0.04      , -0.42666667,  0.24      , -0.09333333],
+       [ 0.48      ,  0.08      ,  0.14666667, -0.52      , -0.18666667]])
 </pre></div>
 </div>
 </div>
@@ -534,22 +529,14 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">power_injection</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">-</span><span class="mi">800</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">]</span>
-<span class="n">P_l</span><span class="o">=</span><span class="n">PTDF</span><span class="o">*</span><span class="n">power_injection</span>
+<span class="n">P_l</span><span class="o">=</span><span class="n">PTDF</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">power_injection</span><span class="p">)</span>
 <span class="n">P_l</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-3.00239975e+17,  0.00000000e+00,  0.00000000e+00,
-        -0.00000000e+00, -0.00000000e+00],
-       [ 3.00239975e+17,  7.50599938e+17,  9.00719925e+17,
-        -1.20095990e+18, -0.00000000e+00],
-       [-0.00000000e+00, -7.50599938e+17,  0.00000000e+00,
-        -0.00000000e+00, -1.50119988e+17],
-       [-0.00000000e+00,  0.00000000e+00, -9.00719925e+17,
-        -0.00000000e+00, -0.00000000e+00],
-       [-0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
-         1.20095990e+18,  1.50119988e+17]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-100.        ,  -33.33333333,  133.33333333, -466.66666667,
+        466.66666667])
 </pre></div>
 </div>
 </div>
