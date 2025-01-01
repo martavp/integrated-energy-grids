@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Problem 4.1 &#8212; integrated-energy-grids</title>
+    <title>Problem 4.2 &#8212; integrated-energy-grids</title>
   
   
   
@@ -62,12 +62,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/Problem04.01';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/Problem04.02';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Course project" href="IEG_course_project.html" />
-    <link rel="prev" title="Introduction to networkx" href="../intro-networkx.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -118,6 +116,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -171,7 +171,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-install.html">Python and Conda</a></li>
 
 
@@ -193,7 +193,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem03.01.html">Problem 3.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem03.02.html">Problem 3.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 4.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.01.html">Problem 4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 </ul>
@@ -255,7 +255,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/Problem04.01.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/Problem04.02.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +303,7 @@
       
       
       
-      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/Problem04.01.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/Problem04.02.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +333,7 @@
       
       
       
-      <li><a href="../_sources/Problems/Problem04.01.ipynb" target="_blank"
+      <li><a href="../_sources/Problems/Problem04.02.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -407,7 +407,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem 4.1</h1>
+    <h1>Problem 4.2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -421,13 +421,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-4-1">
-<h1>Problem 4.1<a class="headerlink" href="#problem-4-1" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-4-2">
+<h1>Problem 4.2<a class="headerlink" href="#problem-4-2" title="Link to this heading">#</a></h1>
 <p><strong>Integrated Energy Grids</strong></p>
-<p><strong>Problem 4.1</strong></p>
-<p><strong>This is a continuation of Problem 3.2 from Lecture 3:
-Let us assume now that we are in an hour with an excess of wind generation in Denmark and a deficit in other countries so that the power injection <span class="math notranslate nohighlight">\(P_i\)</span> of the different countries is as follows: Germany= - 200 MW, DK1=500 MW, DK2=600 MW, Norway = - 800 MW, Sweden = -100 MW.</strong></p>
-<p><strong>Determine the voltage angles <span class="math notranslate nohighlight">\(\theta_i\)</span>  and the flows <span class="math notranslate nohighlight">\(P_l\)</span> in the lines of the network. Assume that <span class="math notranslate nohighlight">\(\theta_0\)</span>=0; i.e. the reference bus is at node 0 (Germany); and the reactance in all links are <span class="math notranslate nohighlight">\(x_l\)</span>=1.</strong></p>
+<p><strong>Problem 4.2</strong></p>
+<p><strong>Assuming that the reactance in all links is <span class="math notranslate nohighlight">\(x_l\)</span>=1, Calculate the Power Transfer Distribution Factor (PTDF) matrix for the network described in Problem 3.2.</strong></p>
 <p>We will use the package <a class="reference external" href="https://numpy.org/">numpy</a> to operate with matrices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -506,68 +504,56 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 </div>
 </div>
 </div>
+<p>The Power Transfer Distribution Factor (PTDF) matrix can be calculated as
+<span class="math notranslate nohighlight">\(PTDF_{li}=K_{lj}(L^{-1})_{ji}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PTDF</span><span class="o">=</span><span class="n">K</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">PTDF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.50119988e+15,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  0.00000000e+00],
+       [-1.50119988e+15,  1.50119988e+15,  1.50119988e+15,
+         1.50119988e+15,  0.00000000e+00],
+       [ 0.00000000e+00, -1.50119988e+15,  0.00000000e+00,
+         0.00000000e+00,  1.50119988e+15],
+       [ 0.00000000e+00,  0.00000000e+00, -1.50119988e+15,
+         0.00000000e+00,  0.00000000e+00],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        -1.50119988e+15, -1.50119988e+15]])
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Power flow analysis</strong></p>
-<p>We know the power injection pattern for the nodes <span class="math notranslate nohighlight">\(P_i\)</span> and we want to determine the power flows <span class="math notranslate nohighlight">\(P_l\)</span> in the lines of the network</p>
-<p>The reactance in every link is <span class="math notranslate nohighlight">\(x_l\)</span>=1 so <span class="math notranslate nohighlight">\(L_{ij}=\sum_{l} K_{il} \frac{1}{x_l}K_{lj}=\sum_{l} K_{il} K_{lj}\)</span> or  <span class="math notranslate nohighlight">\(L_{ij}=D_{ij}-A{i,j}\)</span></p>
-<p>First, we calculate the voltage angles
-<span class="math notranslate nohighlight">\(P_i=\sum L_{i,j} \theta_j\)</span></p>
+<p>The power flows <span class="math notranslate nohighlight">\(P_l\)</span> in the lines of the network can be determined knowing the power injection pattern for the nodes <span class="math notranslate nohighlight">\(P_i\)</span> and the PTDF matrix.</p>
+<p><span class="math notranslate nohighlight">\(P_l=PTDF_{li}=K_{lj}(L^{-1})_{ji}P_i\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">power_injection</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">-</span><span class="mi">800</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The node 0 (Germany) is the slack bus, so <span class="math notranslate nohighlight">\(\theta_0\)</span>=0.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="mi">1</span><span class="p">:],</span> <span class="n">power_injection</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span>
-<span class="n">theta</span>
+<span class="n">P_l</span><span class="o">=</span><span class="n">PTDF</span><span class="o">*</span><span class="n">power_injection</span>
+<span class="n">P_l</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   0.        ,  200.        ,  566.66666667, -600.        ,
-        333.33333333])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-3.00239975e+17,  0.00000000e+00,  0.00000000e+00,
+        -0.00000000e+00, -0.00000000e+00],
+       [ 3.00239975e+17,  7.50599938e+17,  9.00719925e+17,
+        -1.20095990e+18, -0.00000000e+00],
+       [-0.00000000e+00, -7.50599938e+17,  0.00000000e+00,
+        -0.00000000e+00, -1.50119988e+17],
+       [-0.00000000e+00,  0.00000000e+00, -9.00719925e+17,
+        -0.00000000e+00, -0.00000000e+00],
+       [-0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         1.20095990e+18,  1.50119988e+17]])
 </pre></div>
 </div>
 </div>
 </div>
-<p>Second, we use the voltage angles to compute the flows.
-<span class="math notranslate nohighlight">\(f_l=\frac{1}{x_l}\sum_{j}K_{lj}\theta_j\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flows</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="n">flows</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-200.        , -366.66666667,  800.        , -133.33333333,
-        233.33333333])
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Additional discussion on the inversion of the Laplacian matrix</strong></p>
-<p>The Laplacian matrix is not invertible because it has one zero eigenvalue with eigenvector (1,1,1,1,1).</p>
-<p>We can only invert a matrix if it is non-singular, i.e., determinant should not be zero.</p>
-<p>You can also check that the rank of the matrix is 4 but the matrix has 5 columns, so the determinant is zero and we can not find the inverse</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_rank</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-<p>The fact that np.linalg.inv(L) should give an error but it does not might be confusing. The reason behind this is the method to calculate the inverse of a matrix in numpy, as discussed here <a class="reference external" href="https://stackoverflow.com/questions/41841509/numpy-inverts-a-non-invertible-matrix">https://stackoverflow.com/questions/41841509/numpy-inverts-a-non-invertible-matrix</a></p>
-<p><strong>Additional discussion on the magnitud of theta</strong></p>
-<p>For the sake of simplicity, we are indicating the power injection in MW (instead in per unit) which causes theta not to be expressed in radians.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -600,24 +586,6 @@ Let us assume now that we are in an hour with an excess of wind generation in De
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../intro-networkx.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="IEG_course_project.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Course project</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
