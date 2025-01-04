@@ -17,9 +17,9 @@ chapters:
 - file: intro-linopy
 - file: Problems/Problem03.01
 - file: Problems/Problem03.02
+- file: intro-networkx
 - file: Problems/Problem03.03
 - file: Problems/Problem03.04
-- file: intro-networkx
 - file: Problems/Problem04.01
 - file: Problems/Problem04.02
 - file: Problems/Problem04.03
