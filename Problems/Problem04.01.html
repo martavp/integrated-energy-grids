@@ -66,7 +66,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Course project" href="IEG_course_project.html" />
+    <link rel="next" title="Problem 4.2" href="Problem04.02.html" />
     <link rel="prev" title="Introduction to networkx" href="../intro-networkx.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,10 +190,16 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem01.03.html">Problem 1.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem01.04.html">Problem 1.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem01.05.html">Problem 1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-linopy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">linopy</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem03.01.html">Problem 3.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem03.02.html">Problem 3.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.03.html">Problem 3.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.04.html">Problem 3.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 4.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.02.html">Problem 4.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.03.html">Problem 4.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.04.html">Problem 3.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 </ul>
@@ -508,12 +514,12 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 </div>
 <p><strong>Power flow analysis</strong></p>
 <p>We know the power injection pattern for the nodes <span class="math notranslate nohighlight">\(P_i\)</span> and we want to determine the power flows <span class="math notranslate nohighlight">\(P_l\)</span> in the lines of the network</p>
-<p>The reactance in every link is <span class="math notranslate nohighlight">\(x_l\)</span>=1 so <span class="math notranslate nohighlight">\(L_{ij}=\sum_{l} K_{il} \frac{1}{x_l}K_{lj}=\sum_{l} K_{il} K_{lj}\)</span> or  <span class="math notranslate nohighlight">\(L_{ij}=D_{ij}-A{i,j}\)</span></p>
-<p>First, we calculate the voltage angles
+<p>The reactance in every link is <span class="math notranslate nohighlight">\(x_l\)</span>=1 so <span class="math notranslate nohighlight">\(L_{ij}=\sum_{l} K_{il} \frac{1}{x_l}K_{lj}=\sum_{l} K_{il} K_{lj}\)</span> or  <span class="math notranslate nohighlight">\(L_{ij}=D_{ij}-A_{i,j}\)</span></p>
+<p>First, we calculate the voltage angles, by solving the set of linear equations.
 <span class="math notranslate nohighlight">\(P_i=\sum L_{i,j} \theta_j\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">power_injection</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">-</span><span class="mi">800</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_i</span> <span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">-</span><span class="mi">800</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -521,7 +527,7 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 <p>The node 0 (Germany) is the slack bus, so <span class="math notranslate nohighlight">\(\theta_0\)</span>=0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="mi">1</span><span class="p">:],</span> <span class="n">power_injection</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="mi">1</span><span class="p">:],</span> <span class="n">P_i</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span>
 <span class="n">theta</span>
 </pre></div>
 </div>
@@ -533,12 +539,12 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 </div>
 </div>
 </div>
-<p>Second, we use the voltage angles to compute the flows.
-<span class="math notranslate nohighlight">\(f_l=\frac{1}{x_l}\sum_{j}K_{lj}\theta_j\)</span></p>
+<p>Second, we use the voltage angles to compute the flows.</p>
+<p><span class="math notranslate nohighlight">\(P_l=\frac{1}{x_l}\sum_{j}K_{lj}\theta_j\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flows</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="n">flows</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_l</span><span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">P_l</span>
 </pre></div>
 </div>
 </div>
@@ -551,7 +557,7 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 </div>
 <p><strong>Additional discussion on the inversion of the Laplacian matrix</strong></p>
 <p>The Laplacian matrix is not invertible because it has one zero eigenvalue with eigenvector (1,1,1,1,1).</p>
-<p>We can only invert a matrix if it is non-singular, i.e., determinant should not be zero.</p>
+<p>We can only invert a matrix if it is non-singular, i.e., the determinant should not be zero.</p>
 <p>You can also check that the rank of the matrix is 4 but the matrix has 5 columns, so the determinant is zero and we can not find the inverse</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -565,9 +571,38 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 </div>
 </div>
 </div>
-<p>The fact that np.linalg.inv(L) should give an error but it does not might be confusing. The reason behind this is the method to calculate the inverse of a matrix in numpy, as discussed here <a class="reference external" href="https://stackoverflow.com/questions/41841509/numpy-inverts-a-non-invertible-matrix">https://stackoverflow.com/questions/41841509/numpy-inverts-a-non-invertible-matrix</a></p>
-<p><strong>Additional discussion on the magnitud of theta</strong></p>
-<p>For the sake of simplicity, we are indicating the power injection in MW (instead in per unit) which causes theta not to be expressed in radians.</p>
+<p>Instead of selecting Germany as the slack bus, we could have used the <a class="reference external" href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">Moore Penrose pseudo-inverse</a> to invert the Laplacian.</p>
+<p>In this case, we don’t get bus zero as slack and the theta values in the solution are shifted with respect to the previous solution, but we get the same results for the power flows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">P_i</span><span class="p">)</span>
+<span class="n">theta_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-100.        ,  100.        ,  466.66666667, -700.        ,
+        233.33333333])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_l</span><span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta_</span><span class="p">)</span>
+<span class="n">P_l</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-200.        , -366.66666667,  800.        , -133.33333333,
+        233.33333333])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Additional discussion on the magnitude of theta</strong></p>
+<p>For the sake of simplicity, in this problem, we are indicating the power injection in MW (instead of in per unit) which causes <span class="math notranslate nohighlight">\(\theta\)</span> not to be expressed in radians.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -610,11 +645,11 @@ Let us assume now that we are in an hour with an excess of wind generation in De
       </div>
     </a>
     <a class="right-next"
-       href="IEG_course_project.html"
+       href="Problem04.02.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Course project</p>
+        <p class="prev-next-title">Problem 4.2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
