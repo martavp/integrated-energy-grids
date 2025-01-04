@@ -11,15 +11,19 @@ chapters:
 - file: intro-matplotlib
 - file: intro-pandas
 - file: Problems/Problem01.01
-- file: Problems/Problem01.01b
 - file: Problems/Problem01.03
 - file: Problems/Problem01.04
 - file: Problems/Problem01.05
+- file: intro-linopy
 - file: Problems/Problem03.01
 - file: Problems/Problem03.02
+- file: Problems/Problem03.03
+- file: Problems/Problem03.04
 - file: intro-networkx
 - file: Problems/Problem04.01
-- file: Problems/Problem04.01
+- file: Problems/Problem04.02
+- file: Problems/Problem04.03
+- file: Problems/Problem04.04
 - file: Problems/IEG_course_project
 
 
