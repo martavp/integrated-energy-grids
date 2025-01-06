@@ -1,0 +1,185 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{hyperref}
+\title{IEG_Problems_Lecture1}
+\author{martavictoriaperez }
+\date{December 2024}
+
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{\textbf{Lecture 1: Balancing Renewable Generation}}
+\author{
+%Your name\\
+DTU Course 46770: Integrated Energy Grids }
+\maketitle
+ 
+\begin{problem}{1.1. Analyzing solar and wind generation time series}
+
+\
+
+\textit{Note: It is a good idea to use this problem to familiarize yourself with pandas and matplotlib (the Python packages to work with data and plot it). If you don't have previous experience, you can use the tutorials at \url{https://martavp.github.io/integrated-energy-grids/intro-pandas.html} to start.}
+
+\
+
+This exercise aims to investigate the variability of wind and solar generation at different time scales. To that end, you are asked to select one country and plot the different representations described below.
+
+\
+
+\textbf{Accessing the data}
+
+Time series for onshore wind capacity factors in European countries in the period 1979-2017 can be downloaded from \url{https://zenodo.org/record/3253876#.XSiVOEdS8l0}
+
+\
+
+Time series for solar PV capacity factors in European countries in the period 1979-2017 can be downloaded from \url{https://zenodo.org/record/2613651#.X0kbhDVS-uV} (select the file ‘pvoptimal.csv’)
+
+\
+
+If you want to model a different country or region, you can get access to solar generation data using PVGIS. Search for your location in the map, select “hourly data”, and turn on the option “PV power”. For the database PVGIS-SARAH (satellite-image data), you will be able to download data for the period 2005-2023. \url{https://re.jrc.ec.europa.eu/pvg_tools/en/tools.html#HR}
+
+\
+
+You can get access to wind generation time series through the web renewables.ninja which is based on reanalysis data (MERRA-2). After registering, you will be able to download data for the period 2000-2018. \href{https://www.renewables.ninja/}{https://www.renewables.ninja/}
+
+\
+
+Electricity and heating demand time series are available at \url{https://github.com/martavp/integrated-energy-grids/tree/main/data}
+
+\
+
+\textbf{Plotting and analyzing the data}
+
+\begin{enumerate}
+
+\item Start by plotting the capacity factors for wind and solar throughout the first two weeks in January and the first two weeks in July. Do this for the most recent year for which you have available data.  
+
+\item Calculate the average capacity factor for every day of the year and plot them. Do the same for capacity factors averaged by week and month. Based on steps 1 and 2, what are the dominant frequencies for every technology?
+
+\item One useful way of investigating the previous question is by calculating the Fast Fourier Transform (FTT) power spectra of the time series. Do so and plot the power spectra for wind and solar capacity factor time series. Are these results in agreement with Sections 1 and 2?
+
+\item Plot the duration curve (sorted capacity factors values) for every technology. What percentage of the potential wind and solar energy will be lost if the potential generation is curtailed for the 10 hours with the highest capacity factors? What about if curtailment affects the 100 hours with the highest capacity factors?
+
+\item Calculate the ramps for every technology for every hour of the year. We define ramp as the difference between the capacity factor in an hour and the capacity factor in the previous hour. Plot the distribution of ramps for wind and solar. Which technology shows the highest values?
+
+\item Let’s look now at the interannual variability. For every technology, calculate the annual average capacity factor for the most recent year for which you have data. Then, calculate the annual capacity factor for every year for which you have data. Estimate the average value for all the years and the year-to-year variance.
+
+\item Repeat steps 1 to 5 for the electricity and heating demand time series. 
+
+\end{enumerate}
+
+\end{problem}
+
+\
+
+\begin{problem}{1.2.}
+The solar and wind generation in a country can be represented, respectively, by the sinusoidal waves $g_S(t)$ and $g_W(t)$. 
+
+\
+
+$g_S(t)=C_S \dot CF_S (1+\sin{\frac{2\pi}{24} t})$  GW
+
+\
+
+$g_W (t)=C_W \dot CF_W (1+0.9·\sin{\frac{2\pi}{168} t})$  GW
+
+\
+
+Where $C_S$ and $C_W$ represent the installed capacity of solar and wind energy. $CF_S$=0.15 and $CF_W$=0.25 represent the annual capacity factors for solar and wind and $t$ the hour throughout the year, i.e., $t$ takes values from 0 to 8,759. The country has a constant electricity load of 1 GW.
+
+\begin{enumerate}
+\item[a)] Calculate the installed solar capacity that would be necessary to cover the electricity load, on average.  
+\item[b)] Calculate the installed wind capacity that would be necessary to cover the electricity load, on average.  
+\item[c)] Calculate the main characteristics of the ideal storage (power capacity, energy capacity, and charge time) that balances the mismatch between solar generation and load in section (a).
+\item[d)] Calculate the main characteristics of the ideal storage (power capacity, energy capacity, and charge time) that balances the mismatch between wind generation and load in section (b).
+
+\end{enumerate}
+
+\end{problem}
+
+\
+
+\begin{problem}{1.3}
+
+\end{problem}
+Using the sinusoidal waves defined in Problem 1.2, we want to investigate the impact of the wind and solar capacities on the balancing needs of a power system. To that end, we define the following parameters:
+
+The parameter $\gamma$ is defined as the ratio between the average renewable generation (sum of wind and solar) and the average electricity demand 
+
+$\gamma=\frac{<g_t^S>+<g_t^W>}{<d_t>}$
+
+where $<>$ indicates annually averaged values. 
+
+The parameter $\alpha$ is defined as the average share of wind in renewable energy generation.
+
+$\alpha=\frac{<g_t^W>}{<g_t^S>+<g_t^W>}$
+
+\
+
+We define the mismatch $\Delta_t$ as the difference in every hour, between the renewable generation and the load, that is, $\Delta_t=g_t^S+g_t^W-d_t$.
+
+\
+
+The total backup energy $E_B$ that needs to be produced to ensure that demand is supplied every hour can be calculated as the sum of negative mismatch values. $E_B=\sum_0^{8759} \Delta_t^{-}$.
+
+\
+
+The capacity of the backup generation $C_B$ that is needed to ensure that demand is supplied every hour can be calculated as the maximum of the absolute value of the negative mismatch values. $C_B=\max(|{\Delta_t^-}|)$.
+
+\
+
+The total curtailed energy can be calculated as the sum of positive mismatch values. 
+$E_C=\sum_0^{8759} \Delta_t^{+}$.
+
+\begin{enumerate}
+
+\item[a)] Assume that the installed capacities for solar PV and wind power are those required to produce, on average, 50\% of the annual electricity demand with every technology (i.e., the capacities are 0.5 times the values calculated in sections (a) and (b) in Problem 1.2). Calculate total backup energy $E_B$, backup capacity $C_B$ and curtailed energy $E_C$.
+
+\item[b)] Assuming $\gamma$=1, calculate and plot the total backup energy $E_B$, backup capacity $C_B$ and curtailed energy $E_C$ for $\alpha$ values ranging from 0 to 1. Which combination of solar and wind generation (i.e., which $\alpha$ value) minimizes the required backup energy? Which combination of solar and wind generation minimizes the required backup capacity?
+
+\item[c)] Calculate and plot the backup energy $E_B$, backup capacity $C_B$ and curtailed energy $E_C$ for $\alpha$ values ranging from 0 to 1 and $\gamma$ values ranging from 0 to 1 and discuss the results.
+
+\end{enumerate}
+This problem is based on the paper by \textit{Heide et al., Seasonal optimal mix of wind and solar power in a future, highly renewable Europe, Renewable Energy 35 (2010)} \url{https://doi.org/10.1016/j.renene.2010.03.012}
+
+\
+
+\begin{problem}{1.4 (Optional)}
+Select one country and one city within the country. Plot the duration curve of capacity factor time series for solar PV and wind power in both cases and discuss the results. You can download solar PV and wind time series from \url{https://model.energy/}
+\end{problem}
+
+\
+
+\begin{problem}{1.5 (Optional)}
+
+The objective of this problem is to calculate the local correlation length for wind velocity and solar irradiation. We will use the climate reanalysis dataset ERA5 and weather data corresponding to 2013 that can be downloaded from \url{https://zenodo.org/record/6382570}
+
+\begin{enumerate}
+\item[a)] Select one location in Europe, identify on which grid cell is located and calculate the distance from the other grid cells. 
+\item[b)] Calculate the Person correlation coefficient from the wind time series and plot the coefficients versus the distance.
+\item[c)] Fit the data to an exponential curve and determine the correlation length.
+\item[d)] Repeat sections (b) and (c) using the solar irradiation time series.
+\end{enumerate}
+
+
+\end{problem}
+
+%\begin{proof}[Solution]
+%Write a solution here
+%\end{proof}
+
+\end{document}
+
+
+ 
+
