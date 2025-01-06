@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -464,10 +464,10 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">fftpack</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">fftpack</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -866,7 +866,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1984/3780475453.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1975/3780475453.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -912,7 +912,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1984/2483825668.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1975/2483825668.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -963,7 +963,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">curtailment_loss</span><span class="p">(</span><span class="n">duration_data</span><span class="p">,</span> <span class="n">hours</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">curtailment_loss</span><span class="p">(</span><span class="n">duration_data</span><span class="p">,</span> <span class="n">hours</span><span class="p">):</span>
     <span class="n">full_load_hours_per_year</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">duration_data</span><span class="p">)</span>
     <span class="n">curtailment_loss</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">duration_data</span><span class="p">[:</span><span class="n">hours</span><span class="p">])</span><span class="o">/</span><span class="n">full_load_hours_per_year</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.1f}</span><span class="s1"> </span><span class="si">% a</span><span class="s1">nnual production is lost if the </span><span class="si">{}</span><span class="s1"> hours with highest capacity factor are curtailed&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">curtailment_loss</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="n">hours</span><span class="p">))</span>
@@ -1249,7 +1249,7 @@ Normalized Standar deviation 0.07 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1984/1496012896.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1975/1496012896.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -1287,7 +1287,7 @@ Normalized Standar deviation 0.07 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1984/3748597511.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1975/3748597511.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>

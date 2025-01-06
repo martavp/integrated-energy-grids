@@ -40,7 +40,7 @@ Cell [0;32mIn[23], line 1[0m
 File [0;32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/networkx/classes/graph.py:1138[0m, in [0;36mGraph.remove_edge[0;34m(self, u, v)[0m
 [1;32m   1136[0m         [38;5;28;01mdel[39;00m [38;5;28mself[39m[38;5;241m.[39m_adj[v][u]
 [1;32m   1137[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
-[0;32m-> 1138[0m     [38;5;28;01mraise[39;00m NetworkXError([38;5;124mf[39m[38;5;124m"[39m[38;5;124mThe edge [39m[38;5;132;01m{[39;00mu[38;5;132;01m}[39;00m[38;5;124m-[39m[38;5;132;01m{[39;00mv[38;5;132;01m}[39;00m[38;5;124m is not in the graph[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[0;32m-> 1138[0m     [38;5;28;01mraise[39;00m NetworkXError([38;5;124mf[39m[38;5;124m"[39m[38;5;124mThe edge [39m[38;5;132;01m{[39;00mu[38;5;132;01m}[39;00m[38;5;124m-[39m[38;5;132;01m{[39;00mv[38;5;132;01m}[39;00m[38;5;124m is not in the graph[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01merr[39;00m
 [1;32m   1139[0m nx[38;5;241m.[39m_clear_cache([38;5;28mself[39m)
 
 [0;31mNetworkXError[0m: The edge 2-5 is not in the graph
