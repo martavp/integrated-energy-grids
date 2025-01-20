@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Problem 5.2 &#8212; integrated-energy-grids</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/Problem05.02';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/DTUlogo.jpg" class="logo__image only-light" alt="integrated-energy-grids - Home"/>
+    <img src="../_static/DTUlogo.jpg" class="logo__image only-dark pst-js-only" alt="integrated-energy-grids - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro-install.html">Python and Conda</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../intro-gurobi.html">Gurobi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-python.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Python</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-numpy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-pandas.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.01.html">Problem 1.1</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Problem01.03.html">Problem 1.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.04.html">Problem 1.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.05.html">Problem 1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-linopy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">linopy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.01.html">Problem 3.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.02.html">Problem 3.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.03.html">Problem 3.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.04.html">Problem 3.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.01.html">Problem 4.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.02.html">Problem 4.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.03.html">Problem 4.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.04.html">Problem 4.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/Problem05.02.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/martavp/integrated-energy-grids" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/Problem05.02.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Problems/Problem05.02.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem 5.2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-5-2">
+<h1>Problem 5.2<a class="headerlink" href="#problem-5-2" title="Link to this heading">#</a></h1>
+<p><strong>Integrated Energy Grids</strong></p>
+<p><strong>Problem 5.2</strong></p>
+<p><strong>Assume we have one bus (Denmark) in which there is a gas power generator whose variable cost is 50 EUR/MWh and installed capacity is 50 MW, and a wind generator whose variable cost is zero and whose installed capacity is 30 MW. Using Python for Power System Analysis (PyPSA):</strong></p>
+<p><strong>a) Calculate the optimal dispatch that minimizes the total system cost, the energy produced by each generator, and the electricity price assuming that power demand is 80 MW</strong></p>
+<p><strong>b) Calculate the optimal dispatch that minimizes the total system cost, the energy produced by each generator, and the electricity price assuming that power demand is 20 MW</strong></p>
+<p><em>Note: This is a straightforward problem, whose objective is to show case how to solve economic dispatch problems in PyPSA.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
+<p>Then install the following packages by executing the following command in a Jupyter cell at the top of the notebook.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pypsa
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pypsa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We start by creating the network object and adding the bus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> <span class="s2">&quot;bus Denmark&quot;</span><span class="p">)</span> 
+<span class="n">network</span><span class="o">.</span><span class="n">buses</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v_nom</th>
+      <th>type</th>
+      <th>x</th>
+      <th>y</th>
+      <th>carrier</th>
+      <th>unit</th>
+      <th>v_mag_pu_set</th>
+      <th>v_mag_pu_min</th>
+      <th>v_mag_pu_max</th>
+      <th>control</th>
+      <th>generator</th>
+      <th>sub_network</th>
+    </tr>
+    <tr>
+      <th>Bus</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>bus Denmark</th>
+      <td>1.0</td>
+      <td></td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>AC</td>
+      <td></td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>PQ</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We add the generators</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;gas Denmark&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> 
+            <span class="n">p_nom</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> 
+            <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span> <span class="c1">#EUR/MWh_elec</span>
+    
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;wind Denmark&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> 
+            <span class="n">p_nom</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+            <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">generators</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus</th>
+      <th>control</th>
+      <th>type</th>
+      <th>p_nom</th>
+      <th>p_nom_mod</th>
+      <th>p_nom_extendable</th>
+      <th>p_nom_min</th>
+      <th>p_nom_max</th>
+      <th>p_min_pu</th>
+      <th>p_max_pu</th>
+      <th>...</th>
+      <th>min_up_time</th>
+      <th>min_down_time</th>
+      <th>up_time_before</th>
+      <th>down_time_before</th>
+      <th>ramp_limit_up</th>
+      <th>ramp_limit_down</th>
+      <th>ramp_limit_start_up</th>
+      <th>ramp_limit_shut_down</th>
+      <th>weight</th>
+      <th>p_nom_opt</th>
+    </tr>
+    <tr>
+      <th>Generator</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>gas Denmark</th>
+      <td>bus Denmark</td>
+      <td>PQ</td>
+      <td></td>
+      <td>50.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>wind Denmark</th>
+      <td>bus Denmark</td>
+      <td>PQ</td>
+      <td></td>
+      <td>30.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 37 columns</p>
+</div></div></div>
+</div>
+<p>We add the load</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> <span class="s2">&quot;load Demmark&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> <span class="n">p_set</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">loads</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus</th>
+      <th>carrier</th>
+      <th>type</th>
+      <th>p_set</th>
+      <th>q_set</th>
+      <th>sign</th>
+      <th>active</th>
+    </tr>
+    <tr>
+      <th>Load</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>load Demmark</th>
+      <td>bus Denmark</td>
+      <td></td>
+      <td></td>
+      <td>80.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Calculate the optimal economic dispatch</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus Denmark&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus Denmark&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.01s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 2 primals, 5 duals
+Objective: 2.50e+03
+Solver model: available
+Solver message: optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
+Coefficient ranges:
+  Matrix [1e+00, 1e+00]
+  Cost   [5e+01, 5e+01]
+  Bound  [0e+00, 0e+00]
+  RHS    [3e+01, 8e+01]
+Presolving model
+0 rows, 0 cols, 0 nonzeros  0s
+0 rows, 0 cols, 0 nonzeros  0s
+Presolve : Reductions: rows 0(-5); columns 0(-2); elements 0(-6) - Reduced to empty
+Solving the original LP from the solution after postsolve
+Model name          : linopy-problem-9bu3_bfo
+Model status        : Optimal
+Objective value     :  2.5000000000e+03
+Relative P-D gap    :  0.0000000000e+00
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-5l11fdpb.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can show the optimal dispatch and the electricity price (marginal cost at the bus)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Generator</th>
+      <th>gas Denmark</th>
+      <th>wind Denmark</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>50.0</td>
+      <td>30.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">buses_t</span><span class="o">.</span><span class="n">marginal_price</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Bus</th>
+      <th>bus Denmark</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>50.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We update the load and calculate the economic dispatch again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> <span class="s2">&quot;load Demmark&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> <span class="n">p_set</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus Denmark&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus Denmark&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.01s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 2 primals, 5 duals
+Objective: 0.00e+00
+Solver model: available
+Solver message: optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
+Coefficient ranges:
+  Matrix [1e+00, 1e+00]
+  Cost   [5e+01, 5e+01]
+  Bound  [0e+00, 0e+00]
+  RHS    [2e+01, 5e+01]
+Presolving model
+0 rows, 0 cols, 0 nonzeros  0s
+0 rows, 0 cols, 0 nonzeros  0s
+Presolve : Reductions: rows 0(-5); columns 0(-2); elements 0(-6) - Reduced to empty
+Solving the original LP from the solution after postsolve
+Model name          : linopy-problem-59qzn88p
+Model status        : Optimal
+Objective value     :  0.0000000000e+00
+Relative P-D gap    :  0.0000000000e+00
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-748rkrq5.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Generator</th>
+      <th>gas Denmark</th>
+      <th>wind Denmark</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>-0.0</td>
+      <td>20.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">buses_t</span><span class="o">.</span><span class="n">marginal_price</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Bus</th>
+      <th>bus Denmark</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>-0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marta Victoria
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

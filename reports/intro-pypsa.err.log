@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+n.add(
+    "Carrier",
+    ["coal", "gas", "oil", "hydro", "wind"],
+    co2_emissions=emissions,
+    nice_name=["Coal", "Gas", "Oil", "Hydro", "Onshore Wind"],
+    color=["grey", "indianred", "black", "aquamarine", "dodgerblue"],
+)
+
+n.add("Carrier", ["electricity", "AC"])
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[10], line 4[0m
+[1;32m      1[0m n[38;5;241m.[39madd(
+[1;32m      2[0m     [38;5;124m"[39m[38;5;124mCarrier[39m[38;5;124m"[39m,
+[1;32m      3[0m     [[38;5;124m"[39m[38;5;124mcoal[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mgas[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124moil[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mhydro[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mwind[39m[38;5;124m"[39m],
+[0;32m----> 4[0m     co2_emissions[38;5;241m=[39m[43memissions[49m,
+[1;32m      5[0m     nice_name[38;5;241m=[39m[[38;5;124m"[39m[38;5;124mCoal[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mGas[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mOil[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mHydro[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mOnshore Wind[39m[38;5;124m"[39m],
+[1;32m      6[0m     color[38;5;241m=[39m[[38;5;124m"[39m[38;5;124mgrey[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mindianred[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mblack[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124maquamarine[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mdodgerblue[39m[38;5;124m"[39m],
+[1;32m      7[0m )
+[1;32m      9[0m n[38;5;241m.[39madd([38;5;124m"[39m[38;5;124mCarrier[39m[38;5;124m"[39m, [[38;5;124m"[39m[38;5;124melectricity[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mAC[39m[38;5;124m"[39m])
+
+[0;31mNameError[0m: name 'emissions' is not defined
+
