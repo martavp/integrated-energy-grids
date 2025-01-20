@@ -573,13 +573,13 @@
 <h2>From structured data to optimisation<a class="headerlink" href="#from-structured-data-to-optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For an <em>hourly</em> electricity market simulation, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f485befd-4dc0-489c-b24e-d99604b46bc8">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f485befd-4dc0-489c-b24e-d99604b46bc8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f4c9955-7bfe-4e82-b13c-0ba2793384ca">
+<span class="eqno">(1)<a class="headerlink" href="#equation-6f4c9955-7bfe-4e82-b13c-0ba2793384ca" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{i,s,t}; f_{\ell,t}; g_{i,r,t,\text{charge}}; g_{i,r,t,\text{discharge}}; e_{i,r,t}} \sum_s o_{s} g_{i,s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25404552-6668-4201-b6db-8f4dc7469b95">
-<span class="eqno">(2)<a class="headerlink" href="#equation-25404552-6668-4201-b6db-8f4dc7469b95" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e98516c2-ac5f-45c1-a582-38aecb23989a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e98516c2-ac5f-45c1-a582-38aecb23989a" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{i,s,t} \leq \hat{g}_{i,s,t} G_{i,s}  &amp; \text{generation limits : generator} \\
 -P_\ell &amp;\leq p_{\ell,t} \leq P_\ell &amp; \text{transmission limits : line}  \\
 d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{i,r,t,\text{charge}} - \sum_\ell K_{i\ell} p_{\ell,t} &amp; \text{KCL : bus} \\
@@ -616,13 +616,13 @@ d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{
 <section id="simple-electricity-market-economic-dispatch-example">
 <h2>Simple electricity market (economic dispatch) example<a class="headerlink" href="#simple-electricity-market-economic-dispatch-example" title="Link to this heading">#</a></h2>
 <p>Let’s assume we want to minimize the operational cost of an electricity system representing South Africa and Mozambique subject to generator limits and meeting the loads:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6130eb14-d4a9-4cbd-9f85-3afa95bbf627">
-<span class="eqno">(3)<a class="headerlink" href="#equation-6130eb14-d4a9-4cbd-9f85-3afa95bbf627" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3f4f9763-e169-47f3-bef3-a11f04e0d493">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3f4f9763-e169-47f3-bef3-a11f04e0d493" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \min_{g_s} \sum_s o_s g_s
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ef0e361-0a34-4576-9d7b-cd979b626764">
-<span class="eqno">(4)<a class="headerlink" href="#equation-9ef0e361-0a34-4576-9d7b-cd979b626764" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bc12dc11-f049-4e8a-aef5-c1fe8025be19">
+<span class="eqno">(4)<a class="headerlink" href="#equation-bc12dc11-f049-4e8a-aef5-c1fe8025be19" title="Permalink to this equation">#</a></span>\[\begin{align}
   \sum_s g_s &amp;= d \\
   g_s &amp;\leq G_s \\
   g_s &amp;\geq 0 
