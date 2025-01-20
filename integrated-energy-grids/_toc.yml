@@ -24,6 +24,10 @@ chapters:
 - file: Problems/Problem04.02
 - file: Problems/Problem04.03
 - file: Problems/Problem04.04
+- file: intro-pypsa
+- file: Problems/Problem05.01
+- file: Problems/Problem05.02
+- file: Problems/Problem05.03
 - file: Problems/IEG_course_project
 
 
