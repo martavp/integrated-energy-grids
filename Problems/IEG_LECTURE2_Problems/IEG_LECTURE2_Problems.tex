@@ -1,0 +1,94 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{hyperref}
+\title{IEG_Problems_Lecture3}
+\author{Aleksander Grochowicz}
+\date{January 2025}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{\textbf{Lecture 2: Optimization}}
+\author{
+%Your name\\
+DTU Course 46770: Integrated Energy Grids }
+\maketitle
+\begin{problem}{2.1}
+
+Given the following optimization problem,
+
+
+\begin{align*}
+	\max_{x,y} \quad & 2x + 5y \\
+	\text{s.t.} \quad & -x + y \geq -3, \\
+	& 2x + y \leq 14, \\
+	& -\frac{1}{2}x + y \geq \frac{3}{2}, \\
+	& x \geq 1.
+\end{align*}
+
+
+
+\begin{itemize}
+\item[a)] Solve the optimization problem graphically (pen and paper or on your laptop). Note that it is a maximization problem, whereas we will mostly work with minimizations. Reformulate as a minimization problem.
+\item[b)] Return to the original formulation. Indicate which constraints are binding and calculate the values of the Lagrange multipliers.
+\item[c)] In the above set-up, we have a unique solution to our maximization problem (existence and uniqueness). Adapt the exercise such that this is no longer the case.
+\end{itemize}
+\end{problem}
+
+\
+
+\begin{problem}{2.2}
+	
+	Consider the following economic dispatch problem: 
+	\begin{itemize}
+		\item we have three generators: solar, wind and gas
+		\item solar and wind have no marginal costs, and gas has fuel costs of 60 EUR/MWh.
+		\item we need to cover demand of 13.2 MWh
+		\item the installed capacities are 15 MW, 20 MW and 20 MW for wind, solar, and gas, respectively
+		\item assume the capacity factor for solar is 0.17 and for wind 0.33.
+	\end{itemize}
+
+	
+	\begin{itemize}
+		\item[a)] Use linopy to define and solve the LP and find the optimal solution as well as reading out the Lagrange multipliers as defined in the lecture. 
+		\item[b)] Open \href{problem2b.csv}{\texttt{problem2b.csv}}, and use the values as inputs for capacity factors as well as demand in the dispatch problem. Solve the LP with linopy.
+		\item[c)] Open \href{problem2c.csv}{\texttt{problem2c.csv}}, and use the values as inputs for capacity factors as well as demand in the dispatch problem. Solve the LP with linopy.
+		\item[d)] Compare the share of renewable generation, the dual variables, and the objective from a)-c) [average, median, min, max] and interpret the differences. Compute the curtailment from renewables.
+		\item[e)] Plot the supply and demand curves for the different resources in c). Also consider \texttt{demand - renewable generation} (``net load''). Could transmission or storage be useful for this system? Why or why not?
+	\end{itemize}
+
+\end{problem}
+
+\
+
+\begin{problem}{2.3}
+	
+	We assume the system from Problem 2.2.
+	\begin{itemize}
+		\item[a)] Another system that is connected to ours --- assuming copper-plate --- decides dispatch just before we do and can export utility solar. The results from that dispatch optimization are saved in \href{problem3a.csv}{\texttt{problem3a.csv}}. Create a time series of available imports and their price.
+		\item[b)] Solve the updated problem with the available imports. Think of the imports as a generator with variable, marginal prices corresponding to the dual variables.
+		% \item[c)] Now formulate the two problems as a joint optimization (so, one common demand, and combining all generators), what difference do you see to the previous solutions? Try to interpret what happened.
+	\end{itemize}
+
+\end{problem}
+
+\
+
+%\begin{proof}[Solution]
+%Write a solution here
+%\end{proof}
+
+\end{document}
+
+
+ 
+
