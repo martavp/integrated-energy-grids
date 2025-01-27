@@ -191,6 +191,9 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem01.04.html">Problem 1.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem01.05.html">Problem 1.5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro-linopy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">linopy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem02.01.html">Problem 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem02.02.html">Problem 2.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem02.03.html">Problem 2.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem03.01.html">Problem 3.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem03.02.html">Problem 3.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
@@ -1006,10 +1009,6 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
 Index([&#39;line DK-SW&#39;, &#39;line DK-NO&#39;, &#39;line SW-NO&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
 </pre></div>
@@ -1020,6 +1019,10 @@ Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
 Index([&#39;line DK-SW&#39;, &#39;line DK-NO&#39;, &#39;line SW-NO&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1056,13 +1059,13 @@ Using EKK dual simplex solver - serial
           0    -6.1582334282e-06 Pr: 4(74.75) 0s
           4     1.3000000000e+03 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-xwkmvtqu
+Model name          : linopy-problem-lida6kfm
 Model status        : Optimal
 Simplex   iterations: 4
 Objective value     :  1.3000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-1ar4ky8o.sol
+Writing the solution to /tmp/linopy-solve-chv49j9m.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1130,7 +1133,7 @@ Writing the solution to /tmp/linopy-solve-1ar4ky8o.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing non-linear load-flow on AC sub-network &lt;pypsa.components.SubNetwork object at 0x7f0c35ca16d0&gt; for snapshots Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing non-linear load-flow on AC sub-network &lt;pypsa.components.SubNetwork object at 0x7f332adbb290&gt; for snapshots Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n_iter&#39;: SubNetwork  0
@@ -1299,7 +1302,7 @@ Writing the solution to /tmp/linopy-solve-1ar4ky8o.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing linear load-flow on AC sub-network &lt;pypsa.components.SubNetwork object at 0x7f0c35ca16d0&gt; for snapshot(s) Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing linear load-flow on AC sub-network &lt;pypsa.components.SubNetwork object at 0x7f332ad4c050&gt; for snapshot(s) Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
 </pre></div>
 </div>
 </div>
@@ -1436,13 +1439,13 @@ Using EKK dual simplex solver - serial
           0    -3.5008301912e-05 Pr: 3(470) 0s
           5     1.3000000000e+03 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-404wk7rj
+Model name          : linopy-problem-w_71xtps
 Model status        : Optimal
 Simplex   iterations: 5
 Objective value     :  1.3000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-pludksbx.sol
+Writing the solution to /tmp/linopy-solve-qjyomnzh.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
