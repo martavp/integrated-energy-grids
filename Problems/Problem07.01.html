@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Problem 6.2 &#8212; integrated-energy-grids</title>
+    <title>Problem 7.1 &#8212; integrated-energy-grids</title>
   
   
   
@@ -60,14 +60,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/Problem06.02';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/Problem07.01';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem 7.1" href="Problem07.01.html" />
-    <link rel="prev" title="Problem 6.1" href="Problem06.01.html" />
+    <link rel="next" title="Course project" href="IEG_course_project.html" />
+    <link rel="prev" title="Problem 6.2" href="Problem06.02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -206,8 +204,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem05.03.html">Problem 5.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.04.html">Problem 5.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem06.01.html">Problem 6.1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 6.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problem07.01.html">Problem 7.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.02.html">Problem 6.2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 7.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 </ul>
@@ -269,7 +267,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/Problem06.02.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/Problem07.01.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +315,7 @@
       
       
       
-      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/Problem06.02.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/Problem07.01.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +345,7 @@
       
       
       
-      <li><a href="../_sources/Problems/Problem06.02.ipynb" target="_blank"
+      <li><a href="../_sources/Problems/Problem07.01.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -421,7 +419,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem 6.2</h1>
+    <h1>Problem 7.1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -435,155 +433,23 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-6-2">
-<h1>Problem 6.2<a class="headerlink" href="#problem-6-2" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-7-1">
+<h1>Problem 7.1<a class="headerlink" href="#problem-7-1" title="Link to this heading">#</a></h1>
 <p><strong>Integrated Energy Grids</strong></p>
-<p><strong>Problem 6.2</strong></p>
-<p><strong>Let us assume that the countries in Problem 6.1 are considering repurposing their methane gas network into a hydrogen network. In order to run the existing pipelines with hydrogen, the pressure needs to be reduced to <span class="math notranslate nohighlight">\(P\)</span>=40 bar, and the average flow velocity can be increased to <span class="math notranslate nohighlight">\(u\)</span> = 30 m/s. Calculate the capacity of every pipeline (in MW), and relative to their initial design when they transported methane gas.</strong></p>
-<p><strong>The energy content of <span class="math notranslate nohighlight">\(H_2\)</span> is 120 GJ/tonne. To calculate the speed of sound in hydrogen <span class="math notranslate nohighlight">\(c\)</span>, assume the universal gas constant <span class="math notranslate nohighlight">\(R\)</span>=8.314 J/mol, the molar mass of hydrogen <span class="math notranslate nohighlight">\(M\)</span>=2 g/mol, compression factor <span class="math notranslate nohighlight">\(Z\)</span>=1.03, and 25<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
+<p><strong>Problem 7.1</strong></p>
+<p>**Consider **</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
 <p>Then install the following packages by executing the following command in a Jupyter cell at the top of the notebook.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>numpy
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pypsa
 </pre></div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>For methane, the cross-sectional area <span class="math notranslate nohighlight">\(A\)</span> and the speed of sound in gas <span class="math notranslate nohighlight">\(c\)</span> can be calculated as</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
-<span class="n">u</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># m/s</span>
-<span class="n">P</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="mi">100000</span> <span class="c1">#Pa</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="mf">1.31</span>
-<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/mol</span>
-<span class="n">M</span> <span class="o">=</span> <span class="mf">0.016</span> <span class="c1"># Kg/mol</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mi">273</span><span class="o">+</span><span class="mi">25</span> <span class="c1"># K</span>
-<span class="n">e</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># GJ/t or MJ/kg</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Z</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
-<span class="n">c</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>450.3900615022494
-</pre></div>
-</div>
-</div>
-</div>
-<p>The density can be calculated as</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">P</span> <span class="o">/</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">rho</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.648608512719843
-</pre></div>
-</div>
-</div>
-</div>
-<p>The capacity of every pipeline can be calculated as <span class="math notranslate nohighlight">\(Q = \rho A u e\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_CH4</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">u</span><span class="o">*</span><span class="n">e</span>
-<span class="n">capacity_CH4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5226.922401172076
-</pre></div>
-</div>
-</div>
-</div>
-<p>So, we obtain that the capacity is aproximately 5.2 GW</p>
-<p>For hydrogen, the speed of sound in gas <span class="math notranslate nohighlight">\(c\)</span> can be calculated as</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
-<span class="n">u_H2</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># m/s</span>
-<span class="n">P_H2</span> <span class="o">=</span> <span class="mi">40</span><span class="o">*</span><span class="mi">100000</span> <span class="c1">#Pa</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="mf">1.03</span>
-<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/mol</span>
-<span class="n">M</span> <span class="o">=</span> <span class="mf">0.002</span> <span class="c1"># Kg/mol</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mi">273</span><span class="o">+</span><span class="mi">25</span> <span class="c1"># K</span>
-<span class="n">e_H2</span> <span class="o">=</span> <span class="mi">120</span> <span class="c1"># GJ/t or MJ/kg</span>
-<span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Z</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
-<span class="n">c</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1129.5793818939862
-</pre></div>
-</div>
-</div>
-</div>
-<p>The density can be calculated as</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_H2</span> <span class="o">=</span> <span class="n">P_H2</span> <span class="o">/</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">rho_H2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1349201118119416
-</pre></div>
-</div>
-</div>
-</div>
-<p>The new capacity of every pipeline can be calculated as <span class="math notranslate nohighlight">\(Q = \rho A u e\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_H2</span> <span class="o">=</span> <span class="n">rho_H2</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">u_H2</span><span class="o">*</span><span class="n">e_H2</span>
-<span class="n">capacity_H2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3190.9600056864097
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_H2</span><span class="o">/</span><span class="n">capacity</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">capacity_H2</span><span class="o">/</span><span class="n">capacity</span>
-
-<span class="ne">NameError</span>: name &#39;capacity&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>Even the volumetric energy density for hydrogen is three times lower than that of methane, since the velocity in the pipelines is higher, the transport capacity for hydrogen is only reduced to 60% of that of methane.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">rho_H2</span><span class="o">*</span><span class="n">e_H2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">e</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30524271844660195
+<span class="kn">import</span><span class="w"> </span><span class="nn">pypsa</span>
 </pre></div>
 </div>
 </div>
@@ -621,20 +487,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Problem06.01.html"
+       href="Problem06.02.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problem 6.1</p>
+        <p class="prev-next-title">Problem 6.2</p>
       </div>
     </a>
     <a class="right-next"
-       href="Problem07.01.html"
+       href="IEG_course_project.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem 7.1</p>
+        <p class="prev-next-title">Course project</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

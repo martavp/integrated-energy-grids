@@ -207,6 +207,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem05.04.html">Problem 5.4</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 6.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem06.02.html">Problem 6.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem07.01.html">Problem 7.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 </ul>
@@ -1089,10 +1090,6 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
        &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;],
@@ -1107,6 +1104,10 @@ Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;,
 Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
        &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;],
       dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1138,12 +1139,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-17); columns 0(-6); elements 0(-23) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-8q8d4chm
+Model name          : linopy-problem-go1lnvl1
 Model status        : Optimal
 Objective value     :  1.0000000000e+05
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-5o9xsnd0.sol
+Writing the solution to /tmp/linopy-solve-pqf_jhl3.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1593,10 +1594,6 @@ Name: now, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
        &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;, &#39;pipeline DK1-DE&#39;,
@@ -1615,6 +1612,10 @@ Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-
        &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
        &#39;pipeline SE-DK2&#39;],
       dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1651,13 +1652,13 @@ Using EKK dual simplex solver - serial
           0     5.0487388926e-04 Pr: 4(5012.15) 0s
           6     1.0125636230e+05 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-0vgz67pw
+Model name          : linopy-problem-ngpd4lec
 Model status        : Optimal
 Simplex   iterations: 6
 Objective value     :  1.0125636230e+05
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-u592c8ll.sol
+Writing the solution to /tmp/linopy-solve-x48ypw85.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1910,10 +1911,6 @@ Name: now, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
        &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;, &#39;pipeline DK1-DE&#39;,
@@ -1932,6 +1929,10 @@ Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-
        &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
        &#39;pipeline SE-DK2&#39;],
       dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1968,13 +1969,13 @@ Using EKK dual simplex solver - serial
           0     1.5433270599e-03 Pr: 10(16048.6) 0s
          16     3.2413518056e+05 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-w334rroy
+Model name          : linopy-problem-u691duz9
 Model status        : Optimal
 Simplex   iterations: 16
 Objective value     :  3.2413518056e+05
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-z18pdans.sol
+Writing the solution to /tmp/linopy-solve-lk7vf1d_.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -2318,10 +2319,6 @@ Writing the solution to /tmp/linopy-solve-z18pdans.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index([&#39;linepack DE-DK1&#39;, &#39;linepack DK1-DK2&#39;, &#39;linepack DK1-NO&#39;,
        &#39;linepack DK1-SE&#39;, &#39;linepack DK2-SE&#39;],
@@ -2352,6 +2349,10 @@ Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-
        &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
        &#39;pipeline SE-DK2&#39;],
       dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -2389,13 +2390,13 @@ Using EKK dual simplex solver - serial
           0     0.0000000000e+00 Pr: 13(16000) 0s
          21     3.2413518056e+05 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-trkvm31_
+Model name          : linopy-problem-t3i_y13s
 Model status        : Optimal
 Simplex   iterations: 21
 Objective value     :  3.2413518056e+05
 Relative P-D gap    :  1.7957835004e-16
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-jsx4e3ld.sol
+Writing the solution to /tmp/linopy-solve-pohbkgn7.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
