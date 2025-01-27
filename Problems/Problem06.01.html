@@ -1,0 +1,2524 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Problem 6.1 &#8212; integrated-energy-grids</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/Problem06.01';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Problem 6.2" href="Problem06.02.html" />
+    <link rel="prev" title="Problem 5.4" href="Problem05.04.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/DTUlogo.jpg" class="logo__image only-light" alt="integrated-energy-grids - Home"/>
+    <img src="../_static/DTUlogo.jpg" class="logo__image only-dark pst-js-only" alt="integrated-energy-grids - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro-install.html">Python and Conda</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../intro-gurobi.html">Gurobi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-python.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Python</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-numpy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-pandas.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.01.html">Problem 1.1</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Problem01.03.html">Problem 1.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.04.html">Problem 1.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem01.05.html">Problem 1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-linopy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">linopy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.01.html">Problem 3.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.02.html">Problem 3.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.03.html">Problem 3.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem03.04.html">Problem 3.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.01.html">Problem 4.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.02.html">Problem 4.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.03.html">Problem 4.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem04.04.html">Problem 4.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-pypsa.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem05.01.html">Problem 5.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem05.02.html">Problem 5.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem05.03.html">Problem 5.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem05.04.html">Problem 5.4</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.02.html">Problem 6.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/Problem06.01.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/martavp/integrated-energy-grids" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/Problem06.01.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Problems/Problem06.01.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem 6.1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-6-1">
+<h1>Problem 6.1<a class="headerlink" href="#problem-6-1" title="Link to this heading">#</a></h1>
+<p><strong>Integrated Energy Grids</strong></p>
+<p><strong>Problem 6.1</strong></p>
+<p><strong>Consider the simplified network plotted in Fig. 1, which represents Denmark and its neighbouring countries. Assume that the nodes are connected using transmission methane gas pipelines.</strong></p>
+<p><strong>(a) Calculate the capacity of every pipeline (in MW) assuming that they operate at a pressure <span class="math notranslate nohighlight">\(P\)</span>=50 bar, the average flow velocity is <span class="math notranslate nohighlight">\(u\)</span> = 15 m/s, the diameter of the pipe is <span class="math notranslate nohighlight">\(d\)</span> = 600mm and the energy content of methane is 50 GJ/tonne. To calculate the speed of sound in gas <span class="math notranslate nohighlight">\(c\)</span>, assume the universal gas constant <span class="math notranslate nohighlight">\(R\)</span>=8.314 J/mol, the molar mass of methane <span class="math notranslate nohighlight">\(M\)</span>=16 g/mol, compression factor <span class="math notranslate nohighlight">\(Z\)</span>=1.31, and 25<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
+<p><strong>(b) Assuming steady-state conditions, use link elements in PyPSA to build a network like the one shown in Fig. 1.  Assume that, in the first time step,  in every node, there is a demand for 1 GWh of methane.  In the Norway node, there is a gas generator with a marginal cost of 20 EUR/MWh<span class="math notranslate nohighlight">\(_{th}\)</span>, calculate the optimal gas flows through the network and plot them.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
+<p>Then install the following packages by executing the following command in a Jupyter cell at the top of the notebook.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pypsa
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pypsa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cross-sectional area <span class="math notranslate nohighlight">\(A\)</span> and the speed of sound in gas <span class="math notranslate nohighlight">\(c\)</span> can be calculated as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
+<span class="n">u</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># m/s</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="mi">100000</span> <span class="c1">#Pa</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="mf">1.31</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/mol</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mf">0.016</span> <span class="c1"># Kg/mol</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">273</span><span class="o">+</span><span class="mi">25</span> <span class="c1"># K</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># GJ/t or MJ/kg</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Z</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>450.3900615022494
+</pre></div>
+</div>
+</div>
+</div>
+<p>The density can be calculated as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">P</span> <span class="o">/</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">rho</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.648608512719843
+</pre></div>
+</div>
+</div>
+</div>
+<p>The capacity of every pipeline can be calculated as <span class="math notranslate nohighlight">\(Q = \rho A u e\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">u</span><span class="o">*</span><span class="n">e</span>
+<span class="n">capacity</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5226.922401172076
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, we obtain that the capacity is aproximately 5.2 GW</p>
+<p><strong>(b) Assuming steady-state conditions, use link elements in PyPSA to build a network like the one shown in Fig. 1.  Assume that, in the first time step,  in every node, there is a demand for 5 GWh of methane.  In the Norway node, there is a gas generator with a marginal cost of 20 EUR/MWh<span class="math notranslate nohighlight">\(_{th}\)</span>, in the Sweden node, there is a gas generator with a marginal cost of 10 EUR/<span class="math notranslate nohighlight">\(MWh_{th}\)</span>, calculate the optimal gas flows through the network and plot them.</strong></p>
+<p>We start by creating the network object and adding the buses or nodes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">()</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DE&quot;</span><span class="p">,</span> <span class="s2">&quot;DK1&quot;</span><span class="p">,</span> <span class="s2">&quot;DK2&quot;</span><span class="p">,</span> <span class="s2">&quot;NO&quot;</span><span class="p">,</span> <span class="s2">&quot;SE&quot;</span><span class="p">]</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> <span class="c1"># We add the nodes position only to make the plot later looks pretty</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;bus </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">),</span>
+               <span class="n">x</span><span class="o">=</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+               <span class="n">y</span><span class="o">=</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> 
+<span class="n">network</span><span class="o">.</span><span class="n">buses</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v_nom</th>
+      <th>type</th>
+      <th>x</th>
+      <th>y</th>
+      <th>carrier</th>
+      <th>unit</th>
+      <th>v_mag_pu_set</th>
+      <th>v_mag_pu_min</th>
+      <th>v_mag_pu_max</th>
+      <th>control</th>
+      <th>generator</th>
+      <th>sub_network</th>
+    </tr>
+    <tr>
+      <th>Bus</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>bus DE</th>
+      <td>1.0</td>
+      <td></td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>AC</td>
+      <td></td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>PQ</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>bus DK1</th>
+      <td>1.0</td>
+      <td></td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>AC</td>
+      <td></td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>PQ</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>bus DK2</th>
+      <td>1.0</td>
+      <td></td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>AC</td>
+      <td></td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>PQ</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>bus NO</th>
+      <td>1.0</td>
+      <td></td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>AC</td>
+      <td></td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>PQ</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>bus SE</th>
+      <td>1.0</td>
+      <td></td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>AC</td>
+      <td></td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>PQ</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We add the links representing the gas pipelines</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DE-DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DE&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">,</span> <span class="n">p_min_pu</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#p_min_pu makes the pipeline reversible</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-DK2&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">,</span> <span class="n">p_min_pu</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-NO&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus NO&quot;</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">,</span> <span class="n">p_min_pu</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-SE&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">,</span> <span class="n">p_min_pu</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK2-SE&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">,</span> <span class="n">p_min_pu</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">links</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus0</th>
+      <th>bus1</th>
+      <th>type</th>
+      <th>carrier</th>
+      <th>efficiency</th>
+      <th>active</th>
+      <th>build_year</th>
+      <th>lifetime</th>
+      <th>p_nom</th>
+      <th>p_nom_mod</th>
+      <th>...</th>
+      <th>shut_down_cost</th>
+      <th>min_up_time</th>
+      <th>min_down_time</th>
+      <th>up_time_before</th>
+      <th>down_time_before</th>
+      <th>ramp_limit_up</th>
+      <th>ramp_limit_down</th>
+      <th>ramp_limit_start_up</th>
+      <th>ramp_limit_shut_down</th>
+      <th>p_nom_opt</th>
+    </tr>
+    <tr>
+      <th>Link</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>pipeline DE-DK1</th>
+      <td>bus DE</td>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK1-DK2</th>
+      <td>bus DK1</td>
+      <td>bus DK2</td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK1-NO</th>
+      <td>bus DK1</td>
+      <td>bus NO</td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK1-SE</th>
+      <td>bus DK1</td>
+      <td>bus SE</td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK2-SE</th>
+      <td>bus DK2</td>
+      <td>bus SE</td>
+      <td></td>
+      <td></td>
+      <td>1.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 34 columns</p>
+</div></div></div>
+</div>
+<p>We add the loads and generator</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DE&#39;, &#39;DK1&#39;, &#39;DK2&#39;, &#39;NO&#39;, &#39;SE&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;gas demand </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> 
+                 <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> 
+                 <span class="n">p_set</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">loads</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus</th>
+      <th>carrier</th>
+      <th>type</th>
+      <th>p_set</th>
+      <th>q_set</th>
+      <th>sign</th>
+      <th>active</th>
+    </tr>
+    <tr>
+      <th>Load</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>gas demand DE</th>
+      <td>bus DE</td>
+      <td></td>
+      <td></td>
+      <td>1000.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>gas demand DK1</th>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>1000.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>gas demand DK2</th>
+      <td>bus DK2</td>
+      <td></td>
+      <td></td>
+      <td>1000.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>gas demand NO</th>
+      <td>bus NO</td>
+      <td></td>
+      <td></td>
+      <td>1000.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>gas demand SE</th>
+      <td>bus SE</td>
+      <td></td>
+      <td></td>
+      <td>1000.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;gas&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus NO&quot;</span><span class="p">,</span> 
+            <span class="n">p_nom</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>  <span class="c1">#not relevant, just set so that it is not limiting</span>
+            <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="c1">#EUR/MWh_th</span>
+<span class="n">network</span><span class="o">.</span><span class="n">generators</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus</th>
+      <th>control</th>
+      <th>type</th>
+      <th>p_nom</th>
+      <th>p_nom_mod</th>
+      <th>p_nom_extendable</th>
+      <th>p_nom_min</th>
+      <th>p_nom_max</th>
+      <th>p_min_pu</th>
+      <th>p_max_pu</th>
+      <th>...</th>
+      <th>min_up_time</th>
+      <th>min_down_time</th>
+      <th>up_time_before</th>
+      <th>down_time_before</th>
+      <th>ramp_limit_up</th>
+      <th>ramp_limit_down</th>
+      <th>ramp_limit_start_up</th>
+      <th>ramp_limit_shut_down</th>
+      <th>weight</th>
+      <th>p_nom_opt</th>
+    </tr>
+    <tr>
+      <th>Generator</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>gas</th>
+      <td>bus NO</td>
+      <td>PQ</td>
+      <td></td>
+      <td>10000.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 37 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
+       &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;],
+      dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
+       &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;],
+      dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.02s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 6 primals, 17 duals
+Objective: 1.00e+05
+Solver model: available
+Solver message: optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
+Coefficient ranges:
+  Matrix [1e+00, 1e+00]
+  Cost   [2e+01, 2e+01]
+  Bound  [0e+00, 0e+00]
+  RHS    [1e+03, 1e+04]
+Presolving model
+0 rows, 0 cols, 0 nonzeros  0s
+0 rows, 0 cols, 0 nonzeros  0s
+Presolve : Reductions: rows 0(-17); columns 0(-6); elements 0(-23) - Reduced to empty
+Solving the original LP from the solution after postsolve
+Model name          : linopy-problem-wce15_yo
+Model status        : Optimal
+Objective value     :  1.0000000000e+05
+Relative P-D gap    :  0.0000000000e+00
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-3u8lbim9.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Generator</th>
+      <th>gas</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>5000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gas_flows</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">links_t</span><span class="o">.</span><span class="n">p0</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;now&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span> <span class="c1">#MWh-&gt;GWh</span>
+<span class="n">gas_flows</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Link
+pipeline DE-DK1    -1.000000
+pipeline DK1-DK2   -3.226922
+pipeline DK1-NO    -4.000000
+pipeline DK1-SE     5.226922
+pipeline DK2-SE    -4.226922
+Name: now, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">margin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="c1">#bus_sizes=2,</span>
+    <span class="n">bus_colors</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
+    <span class="n">bus_alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="n">color_geomap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">link_widths</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">gas_flows</span><span class="p">),</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gas pipeline&quot;</span><span class="p">,</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
+  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_land.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_ocean.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<img alt="../_images/ab3c88f83466d9360d9177b6d11c36209c094e9760463416d73e42f0fa4a1347.png" src="../_images/ab3c88f83466d9360d9177b6d11c36209c094e9760463416d73e42f0fa4a1347.png" />
+</div>
+</div>
+<p><strong>(c) Assume the following lengths for the links: DK1-DK2=200 km, DK1-DE=600 km, DK1-NO= 500 km, DK1-SE=600 km, DK2-SE=100 km. If we consider that the losses due to energy consumption to maintain the pressure can be estimated at 2% of the energy flow per 1000 km. Adapt the link elements in PyPSA to include an efficiency that takes compression energy demand into account, and calculate the optimal gas flows through the network and plot them.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">losses_per_1000km</span> <span class="o">=</span> <span class="mf">0.02</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since we want to represent losses by imposing a certain efficiency in the links, we can not anymore define them as reversible by making <code class="docutils literal notranslate"><span class="pre">p_min_pu=-1</span></code> and we need to duplicate and reverse the links.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DE-DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DE&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span> 
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-DK2&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">200</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-NO&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus NO&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">500</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-SE&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK2-SE&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">100</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-DE&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DE&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span> 
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK2-DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">200</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline NO-DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus NO&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">500</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline SE-DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline SE-DK2&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">100</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+
+<span class="n">network</span><span class="o">.</span><span class="n">links</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus0</th>
+      <th>bus1</th>
+      <th>type</th>
+      <th>carrier</th>
+      <th>efficiency</th>
+      <th>active</th>
+      <th>build_year</th>
+      <th>lifetime</th>
+      <th>p_nom</th>
+      <th>p_nom_mod</th>
+      <th>...</th>
+      <th>shut_down_cost</th>
+      <th>min_up_time</th>
+      <th>min_down_time</th>
+      <th>up_time_before</th>
+      <th>down_time_before</th>
+      <th>ramp_limit_up</th>
+      <th>ramp_limit_down</th>
+      <th>ramp_limit_start_up</th>
+      <th>ramp_limit_shut_down</th>
+      <th>p_nom_opt</th>
+    </tr>
+    <tr>
+      <th>Link</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>pipeline DE-DK1</th>
+      <td>bus DE</td>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>0.988</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK1-DK2</th>
+      <td>bus DK1</td>
+      <td>bus DK2</td>
+      <td></td>
+      <td></td>
+      <td>0.996</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK1-NO</th>
+      <td>bus DK1</td>
+      <td>bus NO</td>
+      <td></td>
+      <td></td>
+      <td>0.990</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK1-SE</th>
+      <td>bus DK1</td>
+      <td>bus SE</td>
+      <td></td>
+      <td></td>
+      <td>0.988</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK2-SE</th>
+      <td>bus DK2</td>
+      <td>bus SE</td>
+      <td></td>
+      <td></td>
+      <td>0.998</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK1-DE</th>
+      <td>bus DK1</td>
+      <td>bus DE</td>
+      <td></td>
+      <td></td>
+      <td>0.988</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline DK2-DK1</th>
+      <td>bus DK2</td>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>0.996</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline NO-DK1</th>
+      <td>bus NO</td>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>0.990</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline SE-DK1</th>
+      <td>bus SE</td>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>0.988</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>pipeline SE-DK2</th>
+      <td>bus SE</td>
+      <td>bus DK2</td>
+      <td></td>
+      <td></td>
+      <td>0.998</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>5226.922401</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 34 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
+       &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;, &#39;pipeline DK1-DE&#39;,
+       &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
+       &#39;pipeline SE-DK2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
+       &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;, &#39;pipeline DK1-DE&#39;,
+       &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
+       &#39;pipeline SE-DK2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.02s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 11 primals, 27 duals
+Objective: 1.01e+05
+Solver model: available
+Solver message: optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
+Coefficient ranges:
+  Matrix [1e+00, 1e+00]
+  Cost   [2e+01, 2e+01]
+  Bound  [0e+00, 0e+00]
+  RHS    [1e+03, 1e+04]
+Presolving model
+4 rows, 10 cols, 18 nonzeros  0s
+4 rows, 10 cols, 18 nonzeros  0s
+Presolve : Reductions: rows 4(-23); columns 10(-1); elements 18(-25)
+Solving the presolved LP
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     5.0487388926e-04 Pr: 4(5012.15) 0s
+          6     1.0125636230e+05 Pr: 0(0) 0s
+Solving the original LP from the solution after postsolve
+Model name          : linopy-problem-swn2st62
+Model status        : Optimal
+Simplex   iterations: 6
+Objective value     :  1.0125636230e+05
+Relative P-D gap    :  0.0000000000e+00
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-60nkbz1r.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Generator</th>
+      <th>gas</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>now</th>
+      <td>5062.818115</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gas_flows</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">links_t</span><span class="o">.</span><span class="n">p0</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;now&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span> <span class="c1">#MWh-&gt;GWh</span>
+<span class="n">gas_flows</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Link
+pipeline DE-DK1    -0.000000
+pipeline DK1-DK2    2.010044
+pipeline DK1-NO    -0.000000
+pipeline DK1-SE    -0.000000
+pipeline DK2-SE     1.002004
+pipeline DK1-DE     1.012146
+pipeline DK2-DK1   -0.000000
+pipeline NO-DK1     4.062818
+pipeline SE-DK1    -0.000000
+pipeline SE-DK2    -0.000000
+Name: now, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">margin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="c1">#bus_sizes=2,</span>
+    <span class="n">bus_colors</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
+    <span class="n">bus_alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="n">color_geomap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">link_widths</span><span class="o">=</span><span class="n">gas_flows</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gas pipeline&quot;</span><span class="p">,</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
+  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+</pre></div>
+</div>
+<img alt="../_images/ac25bc5e36020900b08b12dcee963f141c0ad24209f022c245227926c9bed736.png" src="../_images/ac25bc5e36020900b08b12dcee963f141c0ad24209f022c245227926c9bed736.png" />
+</div>
+</div>
+<p><strong>(d) Assuming the following demands in GWh for three consecutive time steps DK1=[1,2,1], DK2=[1,1,1], DE=[1,2,3], NO=[1,1,1], SE=[0,1,0]. Calculate the optimal flows in every time step and the total system costs.</strong></p>
+<p>We create the network again but this time with 3 time steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">=</span><span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">(</span><span class="n">snapshots</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;bus </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">),</span>
+               <span class="n">x</span><span class="o">=</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+               <span class="n">y</span><span class="o">=</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> 
+
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;gas&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus NO&quot;</span><span class="p">,</span> 
+            <span class="n">p_nom</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>  <span class="c1">#not relevant, just set so that it is not limiting</span>
+            <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="c1">#EUR/MWh_th</span>
+
+
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DE-DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DE&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span> 
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-DK2&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">200</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-NO&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus NO&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">500</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-SE&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK2-SE&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">100</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK1-DE&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DE&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span> 
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline DK2-DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">200</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline NO-DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus NO&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">500</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline SE-DK1&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span><span class="s2">&quot;pipeline SE-DK2&quot;</span><span class="p">,</span> <span class="n">bus1</span> <span class="o">=</span> <span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">bus0</span> <span class="o">=</span> <span class="s2">&quot;bus SE&quot;</span><span class="p">,</span> <span class="n">efficiency</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">100</span><span class="o">/</span><span class="mi">1000</span><span class="o">*</span><span class="n">losses_per_1000km</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p_nom</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;pipeline SE-DK2&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We add the load in every node.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads</span><span class="o">=</span><span class="p">[[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">3000</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;gas demand </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> 
+                 <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> 
+                 <span class="n">p_set</span><span class="o">=</span><span class="n">loads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                 <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">loads</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus</th>
+      <th>carrier</th>
+      <th>type</th>
+      <th>p_set</th>
+      <th>q_set</th>
+      <th>sign</th>
+      <th>active</th>
+    </tr>
+    <tr>
+      <th>Load</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>gas demand DE</th>
+      <td>bus DE</td>
+      <td></td>
+      <td></td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>gas demand DK1</th>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>gas demand DK2</th>
+      <td>bus DK2</td>
+      <td></td>
+      <td></td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>gas demand NO</th>
+      <td>bus NO</td>
+      <td></td>
+      <td></td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>gas demand SE</th>
+      <td>bus SE</td>
+      <td></td>
+      <td></td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
+       &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;, &#39;pipeline DK1-DE&#39;,
+       &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
+       &#39;pipeline SE-DK2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
+       &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;, &#39;pipeline DK1-DE&#39;,
+       &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
+       &#39;pipeline SE-DK2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.02s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 33 primals, 81 duals
+Objective: 3.24e+05
+Solver model: available
+Solver message: optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
+Coefficient ranges:
+  Matrix [1e+00, 1e+00]
+  Cost   [2e+01, 2e+01]
+  Bound  [0e+00, 0e+00]
+  RHS    [1e+03, 1e+04]
+Presolving model
+12 rows, 30 cols, 54 nonzeros  0s
+12 rows, 30 cols, 54 nonzeros  0s
+Presolve : Reductions: rows 12(-69); columns 30(-3); elements 54(-75)
+Solving the presolved LP
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     1.5433270599e-03 Pr: 10(16048.6) 0s
+         16     3.2413518056e+05 Pr: 0(0) 0s
+Solving the original LP from the solution after postsolve
+Model name          : linopy-problem-bus89ta5
+Model status        : Optimal
+Simplex   iterations: 16
+Objective value     :  3.2413518056e+05
+Relative P-D gap    :  0.0000000000e+00
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-igbl0ubd.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see the gas flows in every pipeline using</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">links_t</span><span class="o">.</span><span class="n">p0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Link</th>
+      <th>pipeline DE-DK1</th>
+      <th>pipeline DK1-DK2</th>
+      <th>pipeline DK1-NO</th>
+      <th>pipeline DK1-SE</th>
+      <th>pipeline DK2-SE</th>
+      <th>pipeline DK1-DE</th>
+      <th>pipeline DK2-DK1</th>
+      <th>pipeline NO-DK1</th>
+      <th>pipeline SE-DK1</th>
+      <th>pipeline SE-DK2</th>
+    </tr>
+    <tr>
+      <th>snapshot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.0</td>
+      <td>1004.016064</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.000000</td>
+      <td>1012.145749</td>
+      <td>-0.0</td>
+      <td>3046.628094</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.0</td>
+      <td>2010.044185</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1002.004008</td>
+      <td>2024.291498</td>
+      <td>-0.0</td>
+      <td>5085.187558</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.0</td>
+      <td>3012.048193</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.000000</td>
+      <td>1012.145749</td>
+      <td>-0.0</td>
+      <td>5074.943376</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>And the total system cost is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">objective</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>324135.1805602946
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>(d) Assume that the pipeline pressure can be increased from 20 to 25 bar, calculate the linepack, i.e., the energy that can be stored in every pipeline by increasing the pressure. Represent this in your pypsa model by adding a store with that capacity at the beginning of every line, calculate the optimal gas flows in every time step and the total system costs.</strong></p>
+<p>The energy that can be stored by changing the pressure of the pipeline can be calculated as <span class="math notranslate nohighlight">\(L=\frac{\Delta P}{c^2} A·l·e\)</span> (for this example we assume length <span class="math notranslate nohighlight">\(l\)</span>=1000 km), where the energy content (in GJ/tonnes) needs to be converted to (MWh/kg)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># km</span>
+<span class="n">Delta_P</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span><span class="o">*</span><span class="mi">100000</span> <span class="c1"># Pa</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="p">(</span><span class="n">Delta_P</span><span class="o">/</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="n">e</span><span class="o">*</span><span class="mf">0.000277</span>
+<span class="n">L</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9652.383367497767
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Store&quot;</span><span class="p">,</span> <span class="s2">&quot;linepack DE-DK1&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus DE&quot;</span><span class="p">,</span> <span class="n">e_nom</span><span class="o">=</span><span class="n">L</span><span class="o">*</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Store&quot;</span><span class="p">,</span> <span class="s2">&quot;linepack DK1-DK2&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">e_nom</span><span class="o">=</span><span class="n">L</span><span class="o">*</span><span class="mi">200</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Store&quot;</span><span class="p">,</span> <span class="s2">&quot;linepack DK1-NO&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">e_nom</span><span class="o">=</span><span class="n">L</span><span class="o">*</span><span class="mi">500</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Store&quot;</span><span class="p">,</span> <span class="s2">&quot;linepack DK1-SE&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus DK1&quot;</span><span class="p">,</span> <span class="n">e_nom</span><span class="o">=</span><span class="n">L</span><span class="o">*</span><span class="mi">600</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Store&quot;</span><span class="p">,</span> <span class="s2">&quot;linepack DK2-SE&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus DK2&quot;</span><span class="p">,</span> <span class="n">e_nom</span><span class="o">=</span><span class="n">L</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">stores</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bus</th>
+      <th>type</th>
+      <th>carrier</th>
+      <th>e_nom</th>
+      <th>e_nom_mod</th>
+      <th>e_nom_extendable</th>
+      <th>e_nom_min</th>
+      <th>e_nom_max</th>
+      <th>e_min_pu</th>
+      <th>e_max_pu</th>
+      <th>...</th>
+      <th>sign</th>
+      <th>marginal_cost</th>
+      <th>marginal_cost_quadratic</th>
+      <th>marginal_cost_storage</th>
+      <th>capital_cost</th>
+      <th>standing_loss</th>
+      <th>active</th>
+      <th>build_year</th>
+      <th>lifetime</th>
+      <th>e_nom_opt</th>
+    </tr>
+    <tr>
+      <th>Store</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>linepack DE-DK1</th>
+      <td>bus DE</td>
+      <td></td>
+      <td></td>
+      <td>5791.430020</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>linepack DK1-DK2</th>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>1930.476673</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>linepack DK1-NO</th>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>4826.191684</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>linepack DK1-SE</th>
+      <td>bus DK1</td>
+      <td></td>
+      <td></td>
+      <td>5791.430020</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>linepack DK2-SE</th>
+      <td>bus DK2</td>
+      <td></td>
+      <td></td>
+      <td>965.238337</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>inf</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>0</td>
+      <td>inf</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index([&#39;linepack DE-DK1&#39;, &#39;linepack DK1-DK2&#39;, &#39;linepack DK1-NO&#39;,
+       &#39;linepack DK1-SE&#39;, &#39;linepack DK2-SE&#39;],
+      dtype=&#39;object&#39;, name=&#39;Store&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
+       &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;, &#39;pipeline DK1-DE&#39;,
+       &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
+       &#39;pipeline SE-DK2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index([&#39;linepack DE-DK1&#39;, &#39;linepack DK1-DK2&#39;, &#39;linepack DK1-NO&#39;,
+       &#39;linepack DK1-SE&#39;, &#39;linepack DK2-SE&#39;],
+      dtype=&#39;object&#39;, name=&#39;Store&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;, &#39;bus SE&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;pipeline DE-DK1&#39;, &#39;pipeline DK1-DK2&#39;, &#39;pipeline DK1-NO&#39;,
+       &#39;pipeline DK1-SE&#39;, &#39;pipeline DK2-SE&#39;, &#39;pipeline DK1-DE&#39;,
+       &#39;pipeline DK2-DK1&#39;, &#39;pipeline NO-DK1&#39;, &#39;pipeline SE-DK1&#39;,
+       &#39;pipeline SE-DK2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.03s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 63 primals, 126 duals
+Objective: 3.24e+05
+Solver model: available
+Solver message: optimal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Store-fix-e-lower, Store-fix-e-upper, Store-energy_balance were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
+Coefficient ranges:
+  Matrix [1e+00, 1e+00]
+  Cost   [2e+01, 2e+01]
+  Bound  [0e+00, 0e+00]
+  RHS    [1e+03, 1e+04]
+Presolving model
+25 rows, 58 cols, 108 nonzeros  0s
+15 rows, 48 cols, 88 nonzeros  0s
+15 rows, 42 cols, 78 nonzeros  0s
+Presolve : Reductions: rows 15(-111); columns 42(-21); elements 78(-136)
+Solving the presolved LP
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Pr: 13(16000) 0s
+         21     3.2413518056e+05 Pr: 0(0) 0s
+Solving the original LP from the solution after postsolve
+Model name          : linopy-problem-o83t7288
+Model status        : Optimal
+Simplex   iterations: 21
+Objective value     :  3.2413518056e+05
+Relative P-D gap    :  1.7957835004e-16
+HiGHS run time      :          0.00
+Writing the solution to /tmp/linopy-solve-zf75spua.sol
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">objective</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>324135.18056029454
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Problem05.04.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem 5.4</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Problem06.02.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem 6.2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marta Victoria, Aleksander Grochowicz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

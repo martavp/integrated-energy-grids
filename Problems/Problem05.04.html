@@ -66,7 +66,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Course project" href="IEG_course_project.html" />
+    <link rel="next" title="Problem 6.1" href="Problem06.01.html" />
     <link rel="prev" title="Problem 5.3" href="Problem05.03.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -205,6 +205,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem05.02.html">Problem 5.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.03.html">Problem 5.3</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 5.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.01.html">Problem 6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.02.html">Problem 6.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 </ul>
@@ -1004,10 +1006,6 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
 Index([&#39;line DK-SW&#39;, &#39;line DK-NO&#39;, &#39;line SW-NO&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
 </pre></div>
@@ -1018,6 +1016,10 @@ Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
 Index([&#39;line DK-SW&#39;, &#39;line DK-NO&#39;, &#39;line SW-NO&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1054,13 +1056,13 @@ Using EKK dual simplex solver - serial
           0    -6.1582334282e-06 Pr: 4(74.75) 0s
           4     1.3000000000e+03 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-_ihjwtt6
+Model name          : linopy-problem-u1vn3coa
 Model status        : Optimal
 Simplex   iterations: 4
 Objective value     :  1.3000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-bw06j87r.sol
+Writing the solution to /tmp/linopy-solve-nk3acu1w.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1128,7 +1130,7 @@ Writing the solution to /tmp/linopy-solve-bw06j87r.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing non-linear load-flow on AC sub-network &lt;pypsa.components.SubNetwork object at 0x7f0b82672450&gt; for snapshots Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing non-linear load-flow on AC sub-network &lt;pypsa.components.SubNetwork object at 0x7f0e8cb20390&gt; for snapshots Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n_iter&#39;: SubNetwork  0
@@ -1297,7 +1299,7 @@ Writing the solution to /tmp/linopy-solve-bw06j87r.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing linear load-flow on AC sub-network &lt;pypsa.components.SubNetwork object at 0x7f0b8273bb90&gt; for snapshot(s) Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing linear load-flow on AC sub-network &lt;pypsa.components.SubNetwork object at 0x7f0e8c856990&gt; for snapshot(s) Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
 </pre></div>
 </div>
 </div>
@@ -1384,10 +1386,6 @@ Writing the solution to /tmp/linopy-solve-bw06j87r.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;line DK-SW&#39;, &#39;line DK-NO&#39;, &#39;line SW-NO&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
@@ -1398,6 +1396,10 @@ Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;line DK-SW&#39;, &#39;line DK-NO&#39;, &#39;line SW-NO&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;bus Denmark&#39;, &#39;bus Sweden&#39;, &#39;bus Norway&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1434,13 +1436,13 @@ Using EKK dual simplex solver - serial
           0    -3.5008301912e-05 Pr: 3(470) 0s
           5     1.3000000000e+03 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-mzh16whl
+Model name          : linopy-problem-2jj7fy43
 Model status        : Optimal
 Simplex   iterations: 5
 Objective value     :  1.3000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-iczr8rig.sol
+Writing the solution to /tmp/linopy-solve-he79kkqo.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1588,11 +1590,11 @@ Writing the solution to /tmp/linopy-solve-iczr8rig.sol
       </div>
     </a>
     <a class="right-next"
-       href="IEG_course_project.html"
+       href="Problem06.01.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Course project</p>
+        <p class="prev-next-title">Problem 6.1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1612,7 +1614,7 @@ Writing the solution to /tmp/linopy-solve-iczr8rig.sol
   <div class="footer-item">
     
 <p class="component-author">
-By Marta Victoria
+By Marta Victoria, Aleksander Grochowicz
 </p>
 
   </div>

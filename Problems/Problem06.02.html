@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Problem 5.3 &#8212; integrated-energy-grids</title>
+    <title>Problem 6.2 &#8212; integrated-energy-grids</title>
   
   
   
@@ -60,12 +60,14 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/Problem05.03';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Problems/Problem06.02';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem 5.4" href="Problem05.04.html" />
-    <link rel="prev" title="Problem 5.2" href="Problem05.02.html" />
+    <link rel="next" title="Course project" href="IEG_course_project.html" />
+    <link rel="prev" title="Problem 6.1" href="Problem06.01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -201,10 +203,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro-pypsa.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.01.html">Problem 5.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.02.html">Problem 5.2</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 5.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem05.03.html">Problem 5.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.04.html">Problem 5.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem06.01.html">Problem 6.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problem06.02.html">Problem 6.2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 6.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 </ul>
@@ -266,7 +268,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/Problem05.03.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/martavp/integrated-energy-grids/blob/main/integrated-energy-grids/Problems/Problem06.02.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +316,7 @@
       
       
       
-      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/Problem05.03.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/martavp/integrated-energy-grids/issues/new?title=Issue%20on%20page%20%2FProblems/Problem06.02.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +346,7 @@
       
       
       
-      <li><a href="../_sources/Problems/Problem05.03.ipynb" target="_blank"
+      <li><a href="../_sources/Problems/Problem06.02.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,7 +420,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem 5.3</h1>
+    <h1>Problem 6.2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,494 +434,158 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-5-3">
-<h1>Problem 5.3<a class="headerlink" href="#problem-5-3" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-6-2">
+<h1>Problem 6.2<a class="headerlink" href="#problem-6-2" title="Link to this heading">#</a></h1>
 <p><strong>Integrated Energy Grids</strong></p>
-<p><strong>Problem 5.3</strong></p>
-<p><em>Note: This is equivalent to Problem 2.2 which we solved using linopy, but here we will use PyPSA.</em></p>
-<p><strong>Consider the following economic dispatch problem:</strong></p>
-<p><strong>• we have three generators: solar, wind and gas</strong></p>
-<p><strong>• solar and wind have no marginal costs, and gas has fuel costs of 60 EUR/MWh.</strong></p>
-<p><strong>• we need to cover a electricity demand of 13.2 MWh</strong></p>
-<p><strong>• the installed capacities are 15 MW, 20 MW and 20 MW for wind, solar, and gas, respectively</strong></p>
-<p><strong>• assume the capacity factor for solar is 0.17 and for wind 0.33.</strong></p>
-<p><strong>a) Use pypsa to find the optimal solution as well and obtain the electricity price (Lagrange multiplier for the energy balance constraint)</strong></p>
+<p><strong>Problem 6.2</strong></p>
+<p><strong>Let us assume that the countries in Problem 6.1 are considering repurposing their methane gas network into a hydrogen network. In order to run the existing pipelines with hydrogen, the pressure needs to be reduced to <span class="math notranslate nohighlight">\(P\)</span>=40 bar, and the average flow velocity can be increased to <span class="math notranslate nohighlight">\(u\)</span> = 30 m/s. Calculate the capacity of every pipeline (in MW), and relative to their initial design when they transported methane gas.</strong></p>
+<p><strong>The energy content of <span class="math notranslate nohighlight">\(H_2\)</span> is 120 GJ/tonne. To calculate the speed of sound in hydrogen <span class="math notranslate nohighlight">\(c\)</span>, assume the universal gas constant <span class="math notranslate nohighlight">\(R\)</span>=8.314 J/mol, the molar mass of hydrogen <span class="math notranslate nohighlight">\(M\)</span>=2 g/mol, compression factor <span class="math notranslate nohighlight">\(Z\)</span>=1.03, and 25<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
 <p>Then install the following packages by executing the following command in a Jupyter cell at the top of the notebook.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pypsa
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>!pip<span class="w"> </span>install<span class="w"> </span>numpy
 </pre></div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pypsa</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We start by creating the network object and adding the bus.</p>
+<p>For methane, the cross-sectional area <span class="math notranslate nohighlight">\(A\)</span> and the speed of sound in gas <span class="math notranslate nohighlight">\(c\)</span> can be calculated as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> <span class="s2">&quot;my bus&quot;</span><span class="p">)</span> 
-<span class="n">network</span><span class="o">.</span><span class="n">buses</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
+<span class="n">u</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># m/s</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="mi">100000</span> <span class="c1">#Pa</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="mf">1.31</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/mol</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mf">0.016</span> <span class="c1"># Kg/mol</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">273</span><span class="o">+</span><span class="mi">25</span> <span class="c1"># K</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># GJ/t or MJ/kg</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Z</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
+<span class="n">c</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>v_nom</th>
-      <th>type</th>
-      <th>x</th>
-      <th>y</th>
-      <th>carrier</th>
-      <th>unit</th>
-      <th>v_mag_pu_set</th>
-      <th>v_mag_pu_min</th>
-      <th>v_mag_pu_max</th>
-      <th>control</th>
-      <th>generator</th>
-      <th>sub_network</th>
-    </tr>
-    <tr>
-      <th>Bus</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>my bus</th>
-      <td>1.0</td>
-      <td></td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>AC</td>
-      <td></td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>inf</td>
-      <td>PQ</td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>450.3900615022494
+</pre></div>
 </div>
-<p>We add the generators</p>
+</div>
+</div>
+<p>The density can be calculated as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
-            <span class="s2">&quot;solar&quot;</span><span class="p">,</span> 
-            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;my bus&quot;</span><span class="p">,</span> 
-            <span class="n">p_nom</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> 
-            <span class="n">p_max_pu</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span>
-            <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
-    
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
-            <span class="s2">&quot;wind&quot;</span><span class="p">,</span> 
-            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;my bus&quot;</span><span class="p">,</span> 
-            <span class="n">p_nom</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
-            <span class="n">p_max_pu</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span>
-            <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
-
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
-            <span class="s2">&quot;gas&quot;</span><span class="p">,</span> 
-            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;my bus&quot;</span><span class="p">,</span> 
-            <span class="n">p_nom</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
-            <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span> <span class="c1">#EUR/MWh_elec</span>
-<span class="n">network</span><span class="o">.</span><span class="n">generators</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">P</span> <span class="o">/</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">rho</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bus</th>
-      <th>control</th>
-      <th>type</th>
-      <th>p_nom</th>
-      <th>p_nom_mod</th>
-      <th>p_nom_extendable</th>
-      <th>p_nom_min</th>
-      <th>p_nom_max</th>
-      <th>p_min_pu</th>
-      <th>p_max_pu</th>
-      <th>...</th>
-      <th>min_up_time</th>
-      <th>min_down_time</th>
-      <th>up_time_before</th>
-      <th>down_time_before</th>
-      <th>ramp_limit_up</th>
-      <th>ramp_limit_down</th>
-      <th>ramp_limit_start_up</th>
-      <th>ramp_limit_shut_down</th>
-      <th>weight</th>
-      <th>p_nom_opt</th>
-    </tr>
-    <tr>
-      <th>Generator</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>solar</th>
-      <td>my bus</td>
-      <td>PQ</td>
-      <td></td>
-      <td>15.0</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>0.0</td>
-      <td>inf</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>wind</th>
-      <td>my bus</td>
-      <td>PQ</td>
-      <td></td>
-      <td>20.0</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>0.0</td>
-      <td>inf</td>
-      <td>0.0</td>
-      <td>0.33</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>gas</th>
-      <td>my bus</td>
-      <td>PQ</td>
-      <td></td>
-      <td>20.0</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>0.0</td>
-      <td>inf</td>
-      <td>0.0</td>
-      <td>1.00</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>3 rows × 37 columns</p>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.648608512719843
+</pre></div>
 </div>
-<p>We add the load</p>
+</div>
+</div>
+<p>The capacity of every pipeline can be calculated as <span class="math notranslate nohighlight">\(Q = \rho A u e\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> <span class="s2">&quot;electricity demand&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;my bus&quot;</span><span class="p">,</span> <span class="n">p_set</span><span class="o">=</span><span class="mf">13.2</span><span class="p">)</span>
-<span class="n">network</span><span class="o">.</span><span class="n">loads</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_CH4</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">u</span><span class="o">*</span><span class="n">e</span>
+<span class="n">capacity_CH4</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bus</th>
-      <th>carrier</th>
-      <th>type</th>
-      <th>p_set</th>
-      <th>q_set</th>
-      <th>sign</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>Load</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>electricity demand</th>
-      <td>my bus</td>
-      <td></td>
-      <td></td>
-      <td>13.2</td>
-      <td>0.0</td>
-      <td>-1.0</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5226.922401172076
+</pre></div>
 </div>
-<p>Calculate the optimal economic dispatch</p>
+</div>
+</div>
+<p>So, we obtain that the capacity is aproximately 5.2 GW</p>
+<p>For hydrogen, the speed of sound in gas <span class="math notranslate nohighlight">\(c\)</span> can be calculated as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
+<span class="n">u_H2</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># m/s</span>
+<span class="n">P_H2</span> <span class="o">=</span> <span class="mi">40</span><span class="o">*</span><span class="mi">100000</span> <span class="c1">#Pa</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="mf">1.03</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/mol</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mf">0.002</span> <span class="c1"># Kg/mol</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">273</span><span class="o">+</span><span class="mi">25</span> <span class="c1"># K</span>
+<span class="n">e_H2</span> <span class="o">=</span> <span class="mi">120</span> <span class="c1"># GJ/t or MJ/kg</span>
+<span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Z</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
+<span class="n">c</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;my bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;my bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.01s
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
-Status: ok
-Termination condition: optimal
-Solution: 3 primals, 7 duals
-Objective: 2.43e+02
-Solver model: available
-Solver message: optimal
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper were not assigned to the network.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
-Coefficient ranges:
-  Matrix [1e+00, 1e+00]
-  Cost   [6e+01, 6e+01]
-  Bound  [0e+00, 0e+00]
-  RHS    [3e+00, 2e+01]
-Presolving model
-0 rows, 0 cols, 0 nonzeros  0s
-0 rows, 0 cols, 0 nonzeros  0s
-Presolve : Reductions: rows 0(-7); columns 0(-3); elements 0(-9) - Reduced to empty
-Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-fipl0tsw
-Model status        : Optimal
-Objective value     :  2.4300000000e+02
-Relative P-D gap    :  0.0000000000e+00
-HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-bofmdlqp.sol
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1129.5793818939862
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now we can show the optimal dispatch and the electricity price (marginal cost at the bus)</p>
+<p>The density can be calculated as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_H2</span> <span class="o">=</span> <span class="n">P_H2</span> <span class="o">/</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">rho_H2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Generator</th>
-      <th>solar</th>
-      <th>wind</th>
-      <th>gas</th>
-    </tr>
-    <tr>
-      <th>snapshot</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>now</th>
-      <td>2.55</td>
-      <td>6.6</td>
-      <td>4.05</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1349201118119416
+</pre></div>
 </div>
+</div>
+</div>
+<p>The new capacity of every pipeline can be calculated as <span class="math notranslate nohighlight">\(Q = \rho A u e\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">buses_t</span><span class="o">.</span><span class="n">marginal_price</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_H2</span> <span class="o">=</span> <span class="n">rho_H2</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">u_H2</span><span class="o">*</span><span class="n">e_H2</span>
+<span class="n">capacity_H2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3190.9600056864097
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_H2</span><span class="o">/</span><span class="n">capacity</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">capacity_H2</span><span class="o">/</span><span class="n">capacity</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Bus</th>
-      <th>my bus</th>
-    </tr>
-    <tr>
-      <th>snapshot</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>now</th>
-      <td>60.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;capacity&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even the volumetric energy density for hydrogen is three times lower than that of methane, since the velocity in the pipelines is higher, the transport capacity for hydrogen is only reduced to 60% of that of methane.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">rho_H2</span><span class="o">*</span><span class="n">e_H2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30524271844660195
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 
@@ -954,20 +620,20 @@ Writing the solution to /tmp/linopy-solve-bofmdlqp.sol
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Problem05.02.html"
+       href="Problem06.01.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problem 5.2</p>
+        <p class="prev-next-title">Problem 6.1</p>
       </div>
     </a>
     <a class="right-next"
-       href="Problem05.04.html"
+       href="IEG_course_project.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem 5.4</p>
+        <p class="prev-next-title">Course project</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
