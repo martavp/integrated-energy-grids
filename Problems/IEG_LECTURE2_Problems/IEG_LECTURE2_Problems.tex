@@ -31,7 +31,7 @@ Given the following optimization problem,
 	\max_{x,y} \quad & 2x + 5y \\
 	\text{s.t.} \quad & -x + y \geq -3, \\
 	& 2x + y \leq 14, \\
-	& -\frac{1}{2}x + y \geq \frac{3}{2}, \\
+	& -\frac{1}{2}x + y \leq \frac{3}{2}, \\
 	& x \geq 1.
 \end{align*}
 
@@ -63,7 +63,7 @@ Given the following optimization problem,
 		\item[b)] Open \href{problem2b.csv}{\texttt{problem2b.csv}}, and use the values as inputs for capacity factors as well as demand in the dispatch problem. Solve the LP with linopy.
 		\item[c)] Open \href{problem2c.csv}{\texttt{problem2c.csv}}, and use the values as inputs for capacity factors as well as demand in the dispatch problem. Solve the LP with linopy.
 		\item[d)] Compare the share of renewable generation, the dual variables, and the objective from a)-c) [average, median, min, max] and interpret the differences. Compute the curtailment from renewables.
-		\item[e)] Plot the supply and demand curves for the different resources in c). Also consider \texttt{demand - renewable generation} (``net load''). Could transmission or storage be useful for this system? Why or why not?
+		\item[e)] Plot the supply and demand duration curves for the different resources in c). Also consider \texttt{demand - renewable generation} (``net load''). Could transmission or storage be useful for this system? Why or why not?
 	\end{itemize}
 
 \end{problem}
