@@ -491,13 +491,17 @@
 <section id="solve-a-basic-model">
 <h2>Solve a Basic Model<a class="headerlink" href="#solve-a-basic-model" title="Link to this heading">#</a></h2>
 <p>In this example, we explain the basic functions of the linopy <code class="docutils literal notranslate"><span class="pre">Model</span></code> class. First, we are setting up a very simple linear optimization model, given by</p>
-<p>Minimize:
-$<span class="math notranslate nohighlight">\(x + 2y\)</span><span class="math notranslate nohighlight">\(
-subject to:
-    \)</span><span class="math notranslate nohighlight">\( x \ge 0 \)</span><span class="math notranslate nohighlight">\(
-    \)</span><span class="math notranslate nohighlight">\(y \ge 0 \)</span><span class="math notranslate nohighlight">\(
-    \)</span><span class="math notranslate nohighlight">\(3x + 7y \ge 10 \)</span><span class="math notranslate nohighlight">\(
-    \)</span><span class="math notranslate nohighlight">\(5x + 2y \ge 3 \)</span>$</p>
+<p>Minimize:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x + 2y
+</pre></div>
+</div>
+<p>subject to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$x \ge 0$
+$y \ge 0$
+$3x + 7y \ge 10$
+$5x + 2y \ge 3$ 
+</pre></div>
+</div>
 <section id="initializing-a-model">
 <h3>Initializing a <code class="docutils literal notranslate"><span class="pre">Model</span></code><a class="headerlink" href="#initializing-a-model" title="Link to this heading">#</a></h3>
 <p>The Model class in Linopy is a fundamental part of the library. It serves as a container for all the relevant data associated with a linear optimization problem. This includes variables, constraints, and the objective function.</p>
