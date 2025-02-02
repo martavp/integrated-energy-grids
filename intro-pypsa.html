@@ -66,8 +66,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Problem 5.1" href="Problems/Problem05.01.html" />
-    <link rel="prev" title="Problem 4.4" href="Problems/Problem04.04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -118,6 +116,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -171,7 +171,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro-install.html">Python and Conda</a></li>
 
 
@@ -185,35 +185,6 @@
 <li class="toctree-l1"><a class="reference internal" href="intro-numpy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-pandas.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem01.01.html">Problem 1.1</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem01.03.html">Problem 1.3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem01.04.html">Problem 1.4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem01.05.html">Problem 1.5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro-linopy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">linopy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem02.01.html">Problem 2.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem02.02.html">Problem 2.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem02.03.html">Problem 2.3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem03.01.html">Problem 3.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem03.02.html">Problem 3.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem03.03.html">Problem 3.3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem03.04.html">Problem 3.4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem04.01.html">Problem 4.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem04.02.html">Problem 4.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem04.03.html">Problem 4.3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem04.04.html">Problem 4.4</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem05.01.html">Problem 5.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem05.02.html">Problem 5.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem05.03.html">Problem 5.3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem05.04.html">Problem 5.4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem06.01.html">Problem 6.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem06.02.html">Problem 6.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem07.01.html">Problem 7.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/Problem07.02.html">Problem 7.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Problems/IEG_course_project.html">Course project</a></li>
-
 </ul>
 
     </div>
@@ -580,13 +551,13 @@
 <h2>From structured data to optimisation<a class="headerlink" href="#from-structured-data-to-optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For an <em>hourly</em> electricity market simulation, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9d520e7-a67b-4fe9-9a3b-995ed91f88bb">
-<span class="eqno">(1)<a class="headerlink" href="#equation-d9d520e7-a67b-4fe9-9a3b-995ed91f88bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a5649566-7ffb-4993-a3e0-1667b41e2f94">
+<span class="eqno">()<a class="headerlink" href="#equation-a5649566-7ffb-4993-a3e0-1667b41e2f94" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{i,s,t}; f_{\ell,t}; g_{i,r,t,\text{charge}}; g_{i,r,t,\text{discharge}}; e_{i,r,t}} \sum_s o_{s} g_{i,s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c644865c-c7ea-4b56-9a60-b3f1b40b1bf8">
-<span class="eqno">(2)<a class="headerlink" href="#equation-c644865c-c7ea-4b56-9a60-b3f1b40b1bf8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ffed0a32-bbf2-44ec-a614-4b5d8af90394">
+<span class="eqno">()<a class="headerlink" href="#equation-ffed0a32-bbf2-44ec-a614-4b5d8af90394" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{i,s,t} \leq \hat{g}_{i,s,t} G_{i,s}  &amp; \text{generation limits : generator} \\
 -P_\ell &amp;\leq p_{\ell,t} \leq P_\ell &amp; \text{transmission limits : line}  \\
 d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{i,r,t,\text{charge}} - \sum_\ell K_{i\ell} p_{\ell,t} &amp; \text{KCL : bus} \\
@@ -623,13 +594,13 @@ d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{
 <section id="simple-electricity-market-economic-dispatch-example">
 <h2>Simple electricity market (economic dispatch) example<a class="headerlink" href="#simple-electricity-market-economic-dispatch-example" title="Link to this heading">#</a></h2>
 <p>Let’s assume we want to minimize the operational cost of an electricity system representing South Africa and Mozambique subject to generator limits and meeting the loads:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-770f785b-cace-44a6-bfed-6b532009cfc4">
-<span class="eqno">(3)<a class="headerlink" href="#equation-770f785b-cace-44a6-bfed-6b532009cfc4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2d19313d-ace7-4e41-9201-2eeaba97c8ef">
+<span class="eqno">()<a class="headerlink" href="#equation-2d19313d-ace7-4e41-9201-2eeaba97c8ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \min_{g_s} \sum_s o_s g_s
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-45a7d3b7-1515-4904-b29b-a3802634fb85">
-<span class="eqno">(4)<a class="headerlink" href="#equation-45a7d3b7-1515-4904-b29b-a3802634fb85" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7d3e6295-94f4-4f67-88ac-390aaf28cede">
+<span class="eqno">()<a class="headerlink" href="#equation-7d3e6295-94f4-4f67-88ac-390aaf28cede" title="Permalink to this equation">#</a></span>\[\begin{align}
   \sum_s g_s &amp;= d \\
   g_s &amp;\leq G_s \\
   g_s &amp;\geq 0 
@@ -1391,12 +1362,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-14); columns 0(-6); elements 0(-19) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-tgfvlj1l
+Model name          : linopy-problem-o_c7eaaz
 Model status        : Optimal
 Objective value     :  1.2600000000e+06
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-4t10fpbv.sol
+Writing the solution to /tmp/linopy-solve-fj93sbpv.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1668,8 +1639,8 @@ Writing the solution to /tmp/linopy-solve-4t10fpbv.sol
   warnings.warn(&#39;facecolor will have no effect as it has been &#39;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;matplotlib.collections.PatchCollection at 0x7fe924b87950&gt;,
- &lt;matplotlib.collections.LineCollection at 0x7fe924cf9710&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;matplotlib.collections.PatchCollection at 0x7f80579835d0&gt;,
+ &lt;matplotlib.collections.LineCollection at 0x7f80555d8a50&gt;)
 </pre></div>
 </div>
 <img alt="_images/2a517d6e46f715545369837defac8948732fab551bf90da89faf11f211fcf24b.png" src="_images/2a517d6e46f715545369837defac8948732fab551bf90da89faf11f211fcf24b.png" />
@@ -1984,12 +1955,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-14); columns 0(-6); elements 0(-19) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-g3icpa9e
+Model name          : linopy-problem-vdh2tif8
 Model status        : Optimal
 Objective value     :  1.2660000000e+06
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-yioj0owy.sol
+Writing the solution to /tmp/linopy-solve-b_3drtyh.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -2075,7 +2046,7 @@ Writing the solution to /tmp/linopy-solve-yioj0owy.sol
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.io:Directory tmp does not exist, creating it
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Exported network &#39;tmp&#39; contains: loads, buses, carriers, generators, lines
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Exported network &#39;tmp&#39; contains: buses, generators, lines, carriers, loads
 </pre></div>
 </div>
 </div>
@@ -2099,7 +2070,7 @@ Writing the solution to /tmp/linopy-solve-yioj0owy.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Exported network &#39;tmp.nc&#39; contains: loads, buses, carriers, generators, lines
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Exported network &#39;tmp.nc&#39; contains: buses, generators, lines, carriers, loads
 </pre></div>
 </div>
 </div>
@@ -2447,7 +2418,7 @@ Writing the solution to /tmp/linopy-solve-yioj0owy.sol
   warnings.warn(&#39;facecolor will have no effect as it has been &#39;
 </pre></div>
 </div>
-<img alt="_images/312bbd056815fa2fe479a49a9219a1ca52ef6a959c29d5bb2f48f2d802ad032c.png" src="_images/312bbd056815fa2fe479a49a9219a1ca52ef6a959c29d5bb2f48f2d802ad032c.png" />
+<img alt="_images/ffeec557d7de0134706c6ecbe7982f52b9b9748c4c9953f164534fa59583efa5.png" src="_images/ffeec557d7de0134706c6ecbe7982f52b9b9748c4c9953f164534fa59583efa5.png" />
 </div>
 </div>
 <p>This dataset also includes a few hydro storage units:</p>
@@ -2651,16 +2622,16 @@ Index([&#39;2&#39;, &#39;5&#39;, &#39;10&#39;, &#39;12&#39;, &#39;13&#39;, &#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/15 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  13%|█▎        | 2/15 [00:00&lt;00:01, 12.25it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  13%|█▎        | 2/15 [00:00&lt;00:01, 12.08it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  27%|██▋       | 4/15 [00:00&lt;00:00, 15.42it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  27%|██▋       | 4/15 [00:00&lt;00:00, 15.10it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  87%|████████▋ | 13/15 [00:00&lt;00:00, 33.21it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  87%|████████▋ | 13/15 [00:00&lt;00:00, 32.41it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 26.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 25.67it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -2669,10 +2640,10 @@ Index([&#39;2&#39;, &#39;5&#39;, &#39;10&#39;, &#39;12&#39;, &#39;13&#39;, &#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/6 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 63.47it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 62.95it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.69s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.7s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
@@ -2698,10 +2669,12 @@ Using EKK dual simplex solver - serial
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      17377     9.1992880405e+06 Pr: 0(0); Du: 0(1.63425e-13) 5s
       17377     9.1992880405e+06 Pr: 0(0); Du: 0(1.63425e-13) 5s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-8mkfxvb0
+Model name          : linopy-problem-4oono1uf
 Model status        : Optimal
 Simplex   iterations: 17377
 Objective value     :  9.1992880405e+06
+Relative P-D gap    :  6.0743129502e-16
+HiGHS run time      :          5.26
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -2716,9 +2689,7 @@ Solver message: optimal
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Line-fix-s-lower, Line-fix-s-upper, Transformer-fix-s-lower, Transformer-fix-s-upper, StorageUnit-fix-p_dispatch-lower, StorageUnit-fix-p_dispatch-upper, StorageUnit-fix-p_store-lower, StorageUnit-fix-p_store-upper, StorageUnit-fix-state_of_charge-lower, StorageUnit-fix-state_of_charge-upper, Kirchhoff-Voltage-Law, StorageUnit-energy_balance were not assigned to the network.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Relative P-D gap    :  6.0743129502e-16
-HiGHS run time      :          5.22
-Writing the solution to /tmp/linopy-solve-358fnkb5.sol
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-livdjt4g.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -2770,7 +2741,7 @@ Writing the solution to /tmp/linopy-solve-358fnkb5.sol
   warnings.warn(&#39;facecolor will have no effect as it has been &#39;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe91c187e50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f804ffb1750&gt;
 </pre></div>
 </div>
 <img alt="_images/7f5f12623e4b83b0e72174b8c3be4eb90675f89f55e1731ff62e6f59ca537d50.png" src="_images/7f5f12623e4b83b0e72174b8c3be4eb90675f89f55e1731ff62e6f59ca537d50.png" />
@@ -2861,7 +2832,7 @@ Writing the solution to /tmp/linopy-solve-358fnkb5.sol
   warnings.warn(&#39;facecolor will have no effect as it has been &#39;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe91cb016d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f804d738f10&gt;
 </pre></div>
 </div>
 <img alt="_images/b31156e5d67159bf244938f4ca4995de5cf680de6b45570b20677f79214c30a7.png" src="_images/b31156e5d67159bf244938f4ca4995de5cf680de6b45570b20677f79214c30a7.png" />
@@ -2900,24 +2871,6 @@ Writing the solution to /tmp/linopy-solve-358fnkb5.sol
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Problems/Problem04.04.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problem 4.4</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Problems/Problem05.01.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem 5.1</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
