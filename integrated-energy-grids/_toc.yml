@@ -10,33 +10,6 @@ chapters:
 - file: intro-numpy
 - file: intro-matplotlib
 - file: intro-pandas
-- file: Problems/Problem01.01
-- file: Problems/Problem01.03
-- file: Problems/Problem01.04
-- file: Problems/Problem01.05
-- file: intro-linopy
-- file: Problems/Problem02.01
-- file: Problems/Problem02.02
-- file: Problems/Problem02.03
-- file: Problems/Problem03.01
-- file: Problems/Problem03.02
-- file: intro-networkx
-- file: Problems/Problem03.03
-- file: Problems/Problem03.04
-- file: Problems/Problem04.01
-- file: Problems/Problem04.02
-- file: Problems/Problem04.03
-- file: Problems/Problem04.04
-- file: intro-pypsa
-- file: Problems/Problem05.01
-- file: Problems/Problem05.02
-- file: Problems/Problem05.03
-- file: Problems/Problem05.04
-- file: Problems/Problem06.01
-- file: Problems/Problem06.02
-- file: Problems/Problem07.01
-- file: Problems/Problem07.02
-- file: Problems/IEG_course_project
 
 
 
