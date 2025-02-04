@@ -849,7 +849,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2050/3780475453.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1986/3780475453.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -895,7 +895,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2050/2483825668.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1986/2483825668.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -1004,11 +1004,11 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <p>The duration curves for solar and wind are fundamentally different. Solar PV includes more than 4000 hours of zero capacity factors (the nights!) and the maximum capacity factor is 0.7 (It is very difficult for the entire Denmark to have a clear sky simultaneously). Wind duration curve includes a very low number of hours with zero capacity factor and a maximum of 0.9</p>
-<p><strong>5) Calculate the ramps for every technology for every hour of the year. We define ramp as the difference between the capacity factor in an hour and the capacity factor in the previous hour. Plot the distribution of ramps for wind and solar. Which technology shows the highest values?</strong></p>
+<p><strong>5) Calculate the ramps for every technology for every hour of the year. We define ramp as the difference between the capacity factor in an hour and the capacity factor in the previous hour. Plot the distribution of ramps for wind and solar. Which technology has the higher variation?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ramps_pv</span> <span class="o">=</span> <span class="n">data_pv</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2017-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2017-12-31&#39;</span><span class="p">][</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="n">duration_pv</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;ramps solar PV&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ramps_pv</span> <span class="o">=</span> <span class="n">data_pv</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2017-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2017-12-31&#39;</span><span class="p">][</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">ramps_pv</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;ramps solar PV&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1016,21 +1016,21 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;ramps solar PV&#39;, ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/0ad6970947a1bad04e6ea7f2ae4f2d3b0b6d7484a3be02a9a49099b94fe44535.png" src="../_images/0ad6970947a1bad04e6ea7f2ae4f2d3b0b6d7484a3be02a9a49099b94fe44535.png" />
+<img alt="../_images/0af7c75d3ad258fa48790df8692d81d4baec767713f6e774d31fbc49f0a4a299.png" src="../_images/0af7c75d3ad258fa48790df8692d81d4baec767713f6e774d31fbc49f0a4a299.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ramps_wind</span> <span class="o">=</span> <span class="n">data_wind</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2017-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2017-12-31&#39;</span><span class="p">][</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="n">duration_wind</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;ramps onshore wind&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ramps_wind</span> <span class="o">=</span> <span class="n">data_wind</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2017-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2017-12-31&#39;</span><span class="p">][</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">ramps_wind</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;ramps wind&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;ramps onshore wind&#39;, ylabel=&#39;Frequency&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;ramps wind&#39;, ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/e3360eaaef7edf210b2c96fb754a2fc6d267be9dddbca51626000bb131db9fca.png" src="../_images/e3360eaaef7edf210b2c96fb754a2fc6d267be9dddbca51626000bb131db9fca.png" />
+<img alt="../_images/67ff81bb0472d0ef9b70269e53d386704dee46fd7ab0385aafa52393515e4d72.png" src="../_images/67ff81bb0472d0ef9b70269e53d386704dee46fd7ab0385aafa52393515e4d72.png" />
 </div>
 </div>
 <p><strong>Let’s look now at the interannual variability. For every technology, calculate the annual average capacity factor for the most recent year for which you have data. Then, calculate the annual capacity factor for every year for which you have data. Estimate the average value for all the years and the year-to-year variance.</strong></p>
@@ -1232,7 +1232,7 @@ Normalized Standar deviation 0.07 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2050/1496012896.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1986/1496012896.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -1270,7 +1270,7 @@ Normalized Standar deviation 0.07 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2050/3748597511.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1986/3748597511.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -1299,29 +1299,6 @@ Normalized Standar deviation 0.07 %
 <img alt="../_images/fe5dc13de650b4e5ff1a16b10debc93f8368db05122c90cdb2e7675afcaf1fcd.png" src="../_images/fe5dc13de650b4e5ff1a16b10debc93f8368db05122c90cdb2e7675afcaf1fcd.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">duration_heat</span> <span class="o">=</span> <span class="n">data_heat</span><span class="p">[</span><span class="s1">&#39;2015&#39;</span><span class="p">:</span><span class="s1">&#39;2016&#39;</span><span class="p">][</span><span class="s1">&#39;DNK&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">duration_heat</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">duration_heat</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-        <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="s1">&#39;Hours in year&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="s1">&#39;Demand [MW]&#39;</span><span class="p">},</span>
-        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Heating demand duration curve&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">duration_heat</span> <span class="o">=</span> <span class="n">data_heat</span><span class="p">[</span><span class="s1">&#39;2015&#39;</span><span class="p">:</span><span class="s1">&#39;2016&#39;</span><span class="p">][</span><span class="s1">&#39;DNK&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">duration_heat</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">duration_heat</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="s1">&#39;Hours in year&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="s1">&#39;Demand [MW]&#39;</span><span class="p">},</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Heating demand duration curve&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;px&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="ramps">
 <h2>Ramps<a class="headerlink" href="#ramps" title="Link to this heading">#</a></h2>
@@ -1336,7 +1313,7 @@ Normalized Standar deviation 0.07 %
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;electricity demand ramps (MWh)&#39;, ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/6ce7c832128415829ef077743eab85ccc8bfb2360b9fbe5fc2385848e2b805a6.png" src="../_images/6ce7c832128415829ef077743eab85ccc8bfb2360b9fbe5fc2385848e2b805a6.png" />
+<img alt="../_images/a5e718d41764eac5015185e57f3d55faa69d08f95a60638b82318c818ea44e42.png" src="../_images/a5e718d41764eac5015185e57f3d55faa69d08f95a60638b82318c818ea44e42.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1350,7 +1327,7 @@ Normalized Standar deviation 0.07 %
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;heating demand ramps (MWh)&#39;, ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/7b936aea658714e273542e44e85c5ccc82b3a644c1095a4fa067ace386eb6374.png" src="../_images/7b936aea658714e273542e44e85c5ccc82b3a644c1095a4fa067ace386eb6374.png" />
+<img alt="../_images/fcdffe2bf28452304831a48168a6b72ce7d82c7476c9775c4b9696f5bcb857ae.png" src="../_images/fcdffe2bf28452304831a48168a6b72ce7d82c7476c9775c4b9696f5bcb857ae.png" />
 </div>
 </div>
 </section>
