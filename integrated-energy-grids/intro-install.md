@@ -143,11 +143,11 @@ There is a download button at the top-right corner.
 After navigating to the folder where the `environment.yaml` file is stored,
 you can create this environment using `conda` or `mamba`
 
-    conda env create -f environment.yml
+    conda env create -f environment.yaml
 
 or
 
-    mamba create -f environment.yml
+    mamba create -f environment.yaml
 
 Activate this environment
 
