@@ -427,7 +427,7 @@ the load, that is,</strong>
 <span class="math notranslate nohighlight">\(\Delta_t = g^W_t + g^S_t - d_t\)</span></p>
 <p><strong>a) Assume that the installed capacities for solar PV and wind power are those required to produce, on average, 50% of the annual electricity demand with every technology (i.e., the capacities are 0.5 times the values calculated in sections (a) and (b) in Problem 1.2). Calculate total backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span>, and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span>.</strong></p>
 <p>The mismatch is defined as the difference between the renewable generation and electricity load.</p>
-<p><span class="math notranslate nohighlight">\(\Delta_t = g^W_t + g^S_t - d_t = C_S · CF_S (1+sin (\frac{2\pi}{24}t)) + C_W · CF_W (1+sin (\frac{2\pi}{168}t))-d_t\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Delta_t = g^W_t + g^S_t - d_t = C_S · CF_S (1+sin (\frac{2\pi}{24}t)) + C_W · CF_W (1+0.9sin (\frac{2\pi}{168}t))-d_t\)</span></p>
 <p>The capacity factors for solar and wind are <span class="math notranslate nohighlight">\(CF_S\)</span>=0.15 and <span class="math notranslate nohighlight">\(CF_W\)</span>=0.25. The installed capacities for solar and wind are <span class="math notranslate nohighlight">\(C_S\)</span>=3.33 GW and <span class="math notranslate nohighlight">\(C_W\)</span>=2GW</p>
 <p>We will use the packages <a class="reference external" href="https://numpy.org/">numpy</a> to operate with arrays and <a class="reference external" href="https://matplotlib.org/stable/index.html">matplotlib.pyplot</a> to plot the results</p>
 <div class="admonition note">
@@ -448,7 +448,7 @@ the load, that is,</strong>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.33</span><span class="o">*</span><span class="mf">0.15</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">24</span><span class="p">))</span><span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mf">0.25</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mf">168.4423</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8759</span><span class="p">)])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.33</span><span class="o">*</span><span class="mf">0.15</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">24</span><span class="p">))</span><span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mf">0.25</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.9</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">168</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8759</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>
@@ -466,7 +466,7 @@ the load, that is,</strong>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Hours&#39;)
 </pre></div>
 </div>
-<img alt="../_images/01dce01d638caaa17d7fe2f2a17be87354330bafb7ac34d828175948b1d08c85.png" src="../_images/01dce01d638caaa17d7fe2f2a17be87354330bafb7ac34d828175948b1d08c85.png" />
+<img alt="../_images/775f94117c17a5ba19ea93fbd57761bf138aca7b14006710486b6f76f3779364.png" src="../_images/775f94117c17a5ba19ea93fbd57761bf138aca7b14006710486b6f76f3779364.png" />
 </div>
 </div>
 <p>The average mismatch throughout the year is zero, i.e., on average renewable generation equals demand.</p>
@@ -477,7 +477,7 @@ the load, that is,</strong>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.0005147592629695097
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.7118826369914663e-05
 </pre></div>
 </div>
 </div>
@@ -490,12 +490,12 @@ the load, that is,</strong>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1776.4192547803914
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1693.0434313753733
 </pre></div>
 </div>
 </div>
 </div>
-<p>The system will require 1,776 GWh of backup energy.</p>
+<p>The system will require 1,693 GWh of backup energy.</p>
 <p>The capacity for backup generation can be calculated as the maximum of the negative mismatch values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -504,12 +504,12 @@ the load, that is,</strong>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.999999034824324
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9054359905560991
 </pre></div>
 </div>
 </div>
 </div>
-<p>The system will require 0.99 GW of backup capacity, i.e., the required capacity is equal to the demand because there would be situations in which the renewable contribution will be zero.</p>
+<p>The system will require 0.905 GW of backup capacity, i.e., the required capacity is equal to the demand because there would be situations in which the renewable contribution will be zero.</p>
 <p>The curtailed energy can be calculated as the sum of the positive mismatch.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -518,12 +518,12 @@ the load, that is,</strong>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1771.9104783960415
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1692.8058975751992
 </pre></div>
 </div>
 </div>
 </div>
-<p>The curtailed energy will be 1,776 GWh. Required backup energy and curtailed energy are equal in this system since, on average, renewable generation is equal to  demand.</p>
+<p>The curtailed energy will be 1,693 GWh. Required backup energy and curtailed energy are equal in this system since, on average, renewable generation is equal to  demand.</p>
 <p><strong>(b) Assuming <span class="math notranslate nohighlight">\(\gamma\)</span> = 1, calculate and plot the total backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span> and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span> for <span class="math notranslate nohighlight">\(\alpha\)</span> values ranging from 0 to 1. Which combination of solar and wind generation (i.e., which <span class="math notranslate nohighlight">\(\alpha\)</span> value) minimizes the required backup energy? Which combination of solar and wind generation minimizes the required backup capacity?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,7 +537,7 @@ the load, that is,</strong>
 <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alphas</span><span class="p">:</span>
     <span class="n">C_W</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">CF_W</span>
     <span class="n">C_S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">CF_S</span>
-    <span class="n">Delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">C_S</span><span class="o">*</span><span class="n">CF_S</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">24</span><span class="p">))</span><span class="o">+</span> <span class="n">C_W</span><span class="o">*</span><span class="n">CF_W</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mf">168.4423</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8759</span><span class="p">)])</span>
+    <span class="n">Delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">C_S</span><span class="o">*</span><span class="n">CF_S</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">24</span><span class="p">))</span><span class="o">+</span> <span class="n">C_W</span><span class="o">*</span><span class="n">CF_W</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.9</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">168</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8759</span><span class="p">)])</span>
     <span class="n">E_B</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Delta</span><span class="p">[</span><span class="n">Delta</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">C_B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Delta</span><span class="p">[</span><span class="n">Delta</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]))</span>
     <span class="n">E_C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Delta</span><span class="p">[</span><span class="n">Delta</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">])</span>
@@ -561,7 +561,7 @@ the load, that is,</strong>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Backup Energy, $E_B$ (GWh)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/97347b456f33ce81570adc130ea46c38c0f65c8629bd7fd071251d965b91f57b.png" src="../_images/97347b456f33ce81570adc130ea46c38c0f65c8629bd7fd071251d965b91f57b.png" />
+<img alt="../_images/e704718b866a958e84daf8dd23e0715acd7151cad6b54431e4c82ba124345758.png" src="../_images/e704718b866a958e84daf8dd23e0715acd7151cad6b54431e4c82ba124345758.png" />
 </div>
 </div>
 <p>The backup capacity is minimized when <span class="math notranslate nohighlight">\(\alpha\)</span>=0.9</p>
@@ -577,7 +577,7 @@ the load, that is,</strong>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Backup Capacity, $C_B$ (GW)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/45e8da85a0875d65d684af1fab0ab196167b6a4ecda1295bd16bea400f7a066c.png" src="../_images/45e8da85a0875d65d684af1fab0ab196167b6a4ecda1295bd16bea400f7a066c.png" />
+<img alt="../_images/406b3039ea5dfcb693778ff226c360ba65fca217dc72b2e8f6a8e7dffe492aa2.png" src="../_images/406b3039ea5dfcb693778ff226c360ba65fca217dc72b2e8f6a8e7dffe492aa2.png" />
 </div>
 </div>
 <p>The curtailed energy is minimized when <span class="math notranslate nohighlight">\(\alpha\)</span>=0.5</p>
@@ -593,7 +593,7 @@ the load, that is,</strong>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Curtailed Energy, $E_C$ (GWh)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/5449cc766621e3fb183fa8863cfa6e57b353b45ee062eaccac89434f8bba5e51.png" src="../_images/5449cc766621e3fb183fa8863cfa6e57b353b45ee062eaccac89434f8bba5e51.png" />
+<img alt="../_images/53edfec128baf984e91435c27a6e982d6e341b1b9d70c6c3fc809c1e64848209.png" src="../_images/53edfec128baf984e91435c27a6e982d6e341b1b9d70c6c3fc809c1e64848209.png" />
 </div>
 </div>
 <p><strong>(c) Calculate and plot the backup energy <span class="math notranslate nohighlight">\(E_B\)</span>, backup capacity <span class="math notranslate nohighlight">\(C_B\)</span>, and curtailed energy <span class="math notranslate nohighlight">\(E_C\)</span> for <span class="math notranslate nohighlight">\(\alpha\)</span> values ranging from 0 to 1 and <span class="math notranslate nohighlight">\(\gamma\)</span> values ranging from 0 to 1 and discuss the results.</strong></p>
@@ -612,7 +612,7 @@ the load, that is,</strong>
     <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alphas</span><span class="p">:</span>
         <span class="n">C_W</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">CF_W</span>
         <span class="n">C_S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">CF_S</span>
-        <span class="n">Delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">C_S</span><span class="o">*</span><span class="n">CF_S</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">24</span><span class="p">))</span><span class="o">+</span> <span class="n">C_W</span><span class="o">*</span><span class="n">CF_W</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mf">168.4423</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8759</span><span class="p">)])</span>
+        <span class="n">Delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">C_S</span><span class="o">*</span><span class="n">CF_S</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">24</span><span class="p">))</span><span class="o">+</span> <span class="n">C_W</span><span class="o">*</span><span class="n">CF_W</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.9</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">168</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8759</span><span class="p">)])</span>
         <span class="n">E_B</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Delta</span><span class="p">[</span><span class="n">Delta</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">C_B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Delta</span><span class="p">[</span><span class="n">Delta</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]))</span>
         <span class="n">E_C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Delta</span><span class="p">[</span><span class="n">Delta</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">])</span>
@@ -639,7 +639,7 @@ the load, that is,</strong>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bd4b9392891e63d97da24abdccc2e4e93d779d9bbe2a0117bc73e5e53189eb02.png" src="../_images/bd4b9392891e63d97da24abdccc2e4e93d779d9bbe2a0117bc73e5e53189eb02.png" />
+<img alt="../_images/e73830fd80c435a223abecf42b1a2c622ef510463890034492ce874f364fe7a7.png" src="../_images/e73830fd80c435a223abecf42b1a2c622ef510463890034492ce874f364fe7a7.png" />
 </div>
 </div>
 <p>The required backup capacity is minimized for <span class="math notranslate nohighlight">\(\gamma\)</span>=1 and <span class="math notranslate nohighlight">\(\alpha\)</span>=0.9. For <span class="math notranslate nohighlight">\(\gamma\)</span>=0 (no renewable generation), the required backup capacity is 1. For <span class="math notranslate nohighlight">\(\gamma\)</span>=1 (renewable generation covering, on average, demand), the required backup capacity is still 0.825 GW.</p>
@@ -654,7 +654,7 @@ the load, that is,</strong>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/301fe15c5d5b1b69b094d569e965279d5ea3bb4bca0e034fd59b77111298a73b.png" src="../_images/301fe15c5d5b1b69b094d569e965279d5ea3bb4bca0e034fd59b77111298a73b.png" />
+<img alt="../_images/4e769560b3e254ff20f80b5842f159d5380845522a598a00d0474727b23920a6.png" src="../_images/4e769560b3e254ff20f80b5842f159d5380845522a598a00d0474727b23920a6.png" />
 </div>
 </div>
 <p>The curtailed energy is minimized for <span class="math notranslate nohighlight">\(\gamma\)</span>=0 since the renewable energy is not enough to cover the demand. For <span class="math notranslate nohighlight">\(\gamma\)</span>=1, the curtailed energy is minimized for <span class="math notranslate nohighlight">\(\alpha\)</span>=0.5.</p>
@@ -669,7 +669,7 @@ the load, that is,</strong>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/de009dac4f79d3a39f2b598ef4097eaf2ac395cac7144bdae612c004459c3787.png" src="../_images/de009dac4f79d3a39f2b598ef4097eaf2ac395cac7144bdae612c004459c3787.png" />
+<img alt="../_images/805fb02657524906154487395fe646e34690f63a2609a385e5f0d6d9d86574c3.png" src="../_images/805fb02657524906154487395fe646e34690f63a2609a385e5f0d6d9d86574c3.png" />
 </div>
 </div>
 </section>
