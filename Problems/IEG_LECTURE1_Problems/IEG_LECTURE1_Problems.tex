@@ -54,7 +54,9 @@ You can get access to wind generation time series through the web renewables.nin
 
 \
 
-Electricity and heating demand time series are available at \url{https://github.com/martavp/integrated-energy-grids/tree/main/data}
+Electricity and heating demand time series are available at
+
+\url{https://github.com/martavp/integrated-energy-grids/tree/main/integrated-energy-grids/data}
 
 \
 
@@ -70,7 +72,7 @@ Electricity and heating demand time series are available at \url{https://github.
 
 \item Plot the duration curve (sorted capacity factors values) for every technology. What percentage of the potential wind and solar energy will be lost if the potential generation is curtailed for the 10 hours with the highest capacity factors? What about if curtailment affects the 100 hours with the highest capacity factors?
 
-\item Calculate the ramps for every technology for every hour of the year. We define ramp as the difference between the capacity factor in an hour and the capacity factor in the previous hour. Plot the distribution of ramps for wind and solar. Which technology shows the highest values?
+\item Calculate the ramps for every technology for every hour of the year. We define ramp as the difference between the capacity factor in an hour and the capacity factor in the previous hour. Plot the distribution of ramps for wind and solar. Which technology has the higher variation?
 
 \item Let’s look now at the interannual variability. For every technology, calculate the annual average capacity factor for the most recent year for which you have data. Then, calculate the annual capacity factor for every year for which you have data. Estimate the average value for all the years and the year-to-year variance.
 
@@ -82,16 +84,16 @@ Electricity and heating demand time series are available at \url{https://github.
 
 \
 
-\begin{problem}{1.2.}
+\begin{problem}{1.2}
 The solar and wind generation in a country can be represented, respectively, by the sinusoidal waves $g_S(t)$ and $g_W(t)$. 
 
 \
 
-$g_S(t)=C_S \dot CF_S (1+\sin{\frac{2\pi}{24} t})$  GW
+$g_S(t)=C_S  CF_S (1+\sin{\frac{2\pi}{24} t})$  GW
 
 \
 
-$g_W (t)=C_W \dot CF_W (1+0.9·\sin{\frac{2\pi}{168} t})$  GW
+$g_W (t)=C_W  CF_W (1+0.9\sin{\frac{2\pi}{168} t})$  GW
 
 \
 
@@ -154,7 +156,7 @@ This problem is based on the paper by \textit{Heide et al., Seasonal optimal mix
 
 \
 
-\begin{problem}{1.4 (Optional)}
+\begin{problem}{1.4}
 Select one country and one city within the country. Plot the duration curve of capacity factor time series for solar PV and wind power in both cases and discuss the results. You can download solar PV and wind time series from \url{https://model.energy/}
 \end{problem}
 
