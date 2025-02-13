@@ -855,7 +855,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1982/3780475453.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1996/3780475453.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -901,7 +901,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1982/2483825668.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1996/2483825668.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -1238,7 +1238,7 @@ Normalized Standar deviation 0.07 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1982/1496012896.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1996/1496012896.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -1276,7 +1276,7 @@ Normalized Standar deviation 0.07 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1982/3748597511.py:7: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1996/3748597511.py:7: RuntimeWarning: divide by zero encountered in scalar divide
   period = np.array([1/f for f in frq])
 </pre></div>
 </div>
@@ -1310,8 +1310,8 @@ Normalized Standar deviation 0.07 %
 <h2>Ramps<a class="headerlink" href="#ramps" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ramps_el</span> <span class="o">=</span> <span class="n">data_el</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2015-12-31&#39;</span><span class="p">][</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="n">duration_wind</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;electricity demand ramps (MWh)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ramps_el</span> <span class="o">=</span> <span class="n">data_el</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2015-12-31&#39;</span><span class="p">][</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">ramps_el</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;electricity demand ramps (MWh)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1319,13 +1319,13 @@ Normalized Standar deviation 0.07 %
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;electricity demand ramps (MWh)&#39;, ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/a5e718d41764eac5015185e57f3d55faa69d08f95a60638b82318c818ea44e42.png" src="../_images/a5e718d41764eac5015185e57f3d55faa69d08f95a60638b82318c818ea44e42.png" />
+<img alt="../_images/f1d6d2db747376c53d54278e8209d33f973de5c7ff5e6cdac181e37caca426c9.png" src="../_images/f1d6d2db747376c53d54278e8209d33f973de5c7ff5e6cdac181e37caca426c9.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ramps_heat</span> <span class="o">=</span> <span class="n">data_heat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2015-12-31&#39;</span><span class="p">][</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="n">duration_heat</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;heating demand ramps (MWh)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ramps_heat</span> <span class="o">=</span> <span class="n">data_heat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2015-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2015-12-31&#39;</span><span class="p">][</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">ramps_heat</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;heating demand ramps (MWh)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1333,7 +1333,7 @@ Normalized Standar deviation 0.07 %
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;heating demand ramps (MWh)&#39;, ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/fcdffe2bf28452304831a48168a6b72ce7d82c7476c9775c4b9696f5bcb857ae.png" src="../_images/fcdffe2bf28452304831a48168a6b72ce7d82c7476c9775c4b9696f5bcb857ae.png" />
+<img alt="../_images/ebee578e77bbc35d56f1981e2a7946c201e629f0b039685222e8a5d902a2edc1.png" src="../_images/ebee578e77bbc35d56f1981e2a7946c201e629f0b039685222e8a5d902a2edc1.png" />
 </div>
 </div>
 </section>
