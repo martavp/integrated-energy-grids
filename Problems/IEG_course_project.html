@@ -64,6 +64,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Introduction to networkx" href="../intro-networkx.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -114,8 +115,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -169,7 +168,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-install.html">Python and Conda</a></li>
 
 
@@ -190,6 +189,9 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem01.05.html">Problem 1.5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro-linopy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">linopy</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Course project</a></li>
+
+
 </ul>
 
     </div>
@@ -413,10 +415,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Course project</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-instructions">PROJECT INSTRUCTIONS</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Course project</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#project-instructions">PROJECT INSTRUCTIONS</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a></li>
 </ul>
 
@@ -432,7 +432,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="course-project">
 <h1>Course project<a class="headerlink" href="#course-project" title="Link to this heading">#</a></h1>
-<p>This notebook includes the steps to optimize the capacity and dispatch of generators in a stylized energy system. It has been prepared to serve as a tutorial for a simple PyPSA model representing the energy system in one country.</p>
+<p>This notebook includes the steps to optimize the capacity and dispatch of generators in a stylized energy system. It has been prepared to serve as a tutorial for a simple PyPSA model representing the energy system in one country, city or region.</p>
 <p>For the (optional) project of the course <a class="reference external" href="https://kurser.dtu.dk/course/2024-2025/46770?menulanguage=en">Integrated Energy Grids</a> you need to deliver a report including the sections described at the end of this notebook.</p>
 <p>Please, review the <a class="reference external" href="https://martavp.github.io/integrated-energy-grids/intro-pypsa.html">PyPSA tutorial</a> before starting this project.</p>
 <div class="admonition note">
@@ -445,62 +445,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pypsa
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pypsa</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pypsa in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (0.33.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.26.4)
-Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.15.2)
-Requirement already satisfied: pandas&gt;=0.24 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2.2.3)
-Requirement already satisfied: xarray in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2025.1.2)
-Requirement already satisfied: netcdf4 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.7.2)
-Requirement already satisfied: linopy&gt;=0.4 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (0.5.0)
-Requirement already satisfied: matplotlib in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (3.10.0)
-Requirement already satisfied: geopandas&gt;=0.9 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.0.1)
-Requirement already satisfied: networkx&gt;=2 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (3.4.2)
-Requirement already satisfied: deprecation in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2.1.0)
-Requirement already satisfied: validators in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (0.34.0)
-Requirement already satisfied: highspy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.9.0)
-Requirement already satisfied: pyogrio&gt;=0.7.2 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from geopandas&gt;=0.9-&gt;pypsa) (0.10.0)
-Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from geopandas&gt;=0.9-&gt;pypsa) (24.2)
-Requirement already satisfied: pyproj&gt;=3.3.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from geopandas&gt;=0.9-&gt;pypsa) (3.7.1)
-Requirement already satisfied: shapely&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from geopandas&gt;=0.9-&gt;pypsa) (2.0.7)
-Requirement already satisfied: bottleneck in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.4.2)
-Requirement already satisfied: toolz in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.0.0)
-Requirement already satisfied: numexpr in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (2.10.2)
-Requirement already satisfied: dask&gt;=0.18.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (2025.2.0)
-Requirement already satisfied: polars in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.22.0)
-Requirement already satisfied: tqdm in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (4.67.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2025.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2025.1)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (1.3.1)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (4.56.0)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (1.4.8)
-Requirement already satisfied: pillow&gt;=8 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (11.1.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (3.2.1)
-Requirement already satisfied: cftime in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from netcdf4-&gt;pypsa) (1.6.4.post1)
-Requirement already satisfied: certifi in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from netcdf4-&gt;pypsa) (2025.1.31)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: click&gt;=8.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.1.8)
-Requirement already satisfied: cloudpickle&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (3.1.1)
-Requirement already satisfied: fsspec&gt;=2021.09.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (2025.2.0)
-Requirement already satisfied: partd&gt;=1.4.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.4.2)
-Requirement already satisfied: pyyaml&gt;=5.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (6.0.2)
-Requirement already satisfied: importlib_metadata&gt;=4.13.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.6.1)
-Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=0.24-&gt;pypsa) (1.17.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.20 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from importlib_metadata&gt;=4.13.0-&gt;dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (3.21.0)
-Requirement already satisfied: locket in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from partd&gt;=1.4.0-&gt;dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.0.0)
 </pre></div>
 </div>
 </div>
@@ -949,7 +895,7 @@ We import the matplotlib package which is very useful to plot results.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x22306532fc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x279e62ca1e0&gt;
 </pre></div>
 </div>
 <img alt="../_images/e0b571de61e09239adf53c0361df6d1324ff2bbc8a027e8fc70f4f49f5f55fd3.png" src="../_images/e0b571de61e09239adf53c0361df6d1324ff2bbc8a027e8fc70f4f49f5f55fd3.png" />
@@ -1004,9 +950,9 @@ WARNING:pypsa.consistency:The following buses have carriers which are not define
 Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 INFO:linopy.model: Solve problem using Gurobi solver
 INFO:linopy.io:Writing objective.
-Writing constraints.: 100%|██████████| 6/6 [00:00&lt;00:00, 15.87it/s]
-Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 28.01it/s]
-INFO:linopy.io: Writing time: 0.49s
+Writing constraints.: 100%|██████████| 6/6 [00:00&lt;00:00, 13.44it/s]
+Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 17.86it/s]
+INFO:linopy.io: Writing time: 0.59s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set parameter Username
@@ -1027,16 +973,16 @@ INFO:linopy.io: Writing time: 0.49s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Academic license - for non-commercial use only - expires 2025-12-30
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file C:\Users\34620\AppData\Local\Temp\linopy-problem-sxx7u7tj.lp
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file C:\Users\34620\AppData\Local\Temp\linopy-problem-s0u80xfl.lp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file C:\Users\34620\AppData\Local\Temp\linopy-problem-sxx7u7tj.lp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file C:\Users\34620\AppData\Local\Temp\linopy-problem-s0u80xfl.lp
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.11 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.15 seconds
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Reading time = 0.11 seconds
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Reading time = 0.15 seconds
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 61324 rows, 26283 columns, 109510 nonzeros
@@ -1045,10 +991,10 @@ INFO:linopy.io: Writing time: 0.49s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:obj: 61324 rows, 26283 columns, 109510 nonzeros
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 11.0 (22631.2))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 11.0 (26100.2))
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 11.0 (22631.2))
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 11.0 (26100.2))
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1123,10 +1069,10 @@ INFO:linopy.io: Writing time: 0.49s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Presolve removed 35029 rows and 8746 columns
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.07s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.15s
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Presolve time: 0.07s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Presolve time: 0.15s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolved: 26295 rows, 17537 columns, 65735 nonzeros
@@ -1297,16 +1243,16 @@ INFO:linopy.io: Writing time: 0.49s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  11   4.50201254e+09 -1.30587343e+09  3.32e+02 3.07e-10  1.02e+05     0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  12   3.95933836e+09 -7.66635420e+08  2.58e+02 3.15e-10  8.32e+04     0s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  12   3.95933836e+09 -7.66635420e+08  2.58e+02 3.15e-10  8.32e+04     1s
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  12   3.95933836e+09 -7.66635420e+08  2.58e+02 3.15e-10  8.32e+04     0s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  12   3.95933836e+09 -7.66635420e+08  2.58e+02 3.15e-10  8.32e+04     1s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  13   3.61608472e+09  3.47505627e+08  2.03e+02 6.75e-14  5.76e+04     0s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  13   3.61608472e+09  3.47505627e+08  2.03e+02 6.75e-14  5.76e+04     1s
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  13   3.61608472e+09  3.47505627e+08  2.03e+02 6.75e-14  5.76e+04     0s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:  13   3.61608472e+09  3.47505627e+08  2.03e+02 6.75e-14  5.76e+04     1s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  14   3.39761330e+09  5.37286458e+08  1.72e+02 2.95e-10  5.04e+04     1s
@@ -1513,10 +1459,10 @@ INFO:linopy.io: Writing time: 0.49s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Barrier solved model in 46 iterations and 1.34 seconds (0.45 work units)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Barrier solved model in 46 iterations and 1.31 seconds (0.45 work units)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Barrier solved model in 46 iterations and 1.34 seconds (0.45 work units)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Barrier solved model in 46 iterations and 1.31 seconds (0.45 work units)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective 2.36712251e+09
@@ -1627,10 +1573,10 @@ INFO:linopy.io: Writing time: 0.49s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 3218 iterations and 1.61 seconds (0.84 work units)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 3218 iterations and 1.57 seconds (0.84 work units)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Solved in 3218 iterations and 1.61 seconds (0.84 work units)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Solved in 3218 iterations and 1.57 seconds (0.84 work units)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective  2.367122510e+09
@@ -1671,9 +1617,7 @@ Name: p_nom_opt, dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;load&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;demand&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">loads_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;load&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;demand&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;onshorewind&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;onshore wind&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;solar&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;solar&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;OCGT&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">96</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gas (OCGT)&#39;</span><span class="p">)</span>
@@ -1682,7 +1626,7 @@ Name: p_nom_opt, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2230842ae70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x279f23cb860&gt;
 </pre></div>
 </div>
 <img alt="../_images/f2d5c2256747db935ef96ad6768a6073f7053f9994aafb7f6b383cd752a0a5ef.png" src="../_images/f2d5c2256747db935ef96ad6768a6073f7053f9994aafb7f6b383cd752a0a5ef.png" />
@@ -1714,24 +1658,26 @@ Name: p_nom_opt, dtype: float64
 <img alt="../_images/ab59f3c1320a2932acb93e034a9f7da8d48dcd93d76c3328e89c279789a766be.png" src="../_images/ab59f3c1320a2932acb93e034a9f7da8d48dcd93d76c3328e89c279789a766be.png" />
 </div>
 </div>
-<section id="project-instructions">
-<h2>PROJECT INSTRUCTIONS<a class="headerlink" href="#project-instructions" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="project-instructions">
+<h1>PROJECT INSTRUCTIONS<a class="headerlink" href="#project-instructions" title="Link to this heading">#</a></h1>
 <p>Based on the previous example, you are asked to carry out the following tasks:</p>
-<p>A. Choose a different country/region and calculate the optimal capacities for renewable and non-renewable generators. You can add as many technologies as you want. Remember to provide a reference for the cost assumptions. Plot the dispatch time series for a week in summer and winter. Plot the annual electricity mix. Use the duration curves or the capacity factor to investigate the contribution of different technologies.</p>
+<p>A. Choose a different country/region/city/system and calculate the optimal capacities for renewable and non-renewable generators. You can add as many technologies as you want. Remember to provide a reference for the cost assumptions. Plot the dispatch time series for a week in summer and winter. Plot the annual electricity mix. Use the duration curves or the capacity factor to investigate the contribution of different technologies.</p>
 <p>B. Investigate how sensitive the optimum capacity mix is to the global CO2 constraint. E.g., plot the generation mix as a function of the CO2 constraint that you impose. Search for the CO2 emissions in your country (today or in 1990) and refer to the emissions allowance to that historical data.</p>
 <p>C. Investigate how sensitive your results are to the interannual variability of solar and wind generation. Plot the average capacity and variability obtained for every generator using different weather years.</p>
 <p>D. Add some storage technology/ies and investigate how they behave and what their impact is on the optimal system configuration. Discuss what strategies is your system using to balance the renewable generation at different time scales (intraday, seasonal, etc.)</p>
 <p>E. Select one target for decarbonization (i.e., one CO2 allowance limit). What is the CO2 price required to achieve that decarbonization level? Search for information on the existing CO2 tax in your country (if any) and discuss your results.</p>
-<p>F. Connect your country with, at least, two neighbouring countries. You can connect them using HVACl ines, HVDC links or gas pipelines. Use a linear representation of power flow or gas flow.
+<p>F. Connect your country with, at least, two neighbouring countries. You can connect them using HVAC lines, HVDC links or gas pipelines. Use a linear representation of power flow or gas flow.
 You can assume that the generation capacities in the neighbouring countries are fixed or optimize the whole system. You can also include fixed interconnection capacities or optimize them with the generators’ capacities. Discuss your results.</p>
 <p>G. Connect the electricity sector with, at least, another sector( e.g. heating or transport), and co-optimize all the sectors. Discuss your results.</p>
 <p>H. Finally, select one topic that is under discussion in your region. Design and implement some experiment to obtain relevant information regarding that topic. E.g.</p>
-<p>[-] What are the consequences if Denmark decides not to install more onshore wind?</p>
-<p>[-] Would it be more expensive if France decides to close its nuclear power plants?</p>
-<p>[-] What will be the main impacts of the Viking link?</p>
-<p>[-] How does gas scarcity impact the optimal system configuration?</p>
+<ul class="simple">
+<li><p>What are the consequences if Denmark decides not to install more onshore wind?</p></li>
+<li><p>Would it be more expensive if France decides to close its nuclear power plants?</p></li>
+<li><p>What will be the main impacts of the Viking link?</p></li>
+<li><p>How does gas scarcity impact the optimal system configuration?</p></li>
+</ul>
 <p><strong>Write a short report (maximum length 10 pages) in groups of 4 students including your main findings.</strong></p>
-</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="hints">
 <h1>Hints<a class="headerlink" href="#hints" title="Link to this heading">#</a></h1>
@@ -1859,6 +1805,15 @@ Name: mu, dtype: float64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro-networkx.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -1876,10 +1831,8 @@ Name: mu, dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Course project</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-instructions">PROJECT INSTRUCTIONS</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Course project</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#project-instructions">PROJECT INSTRUCTIONS</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a></li>
 </ul>
 
