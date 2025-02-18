@@ -66,6 +66,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Introduction to linopy" href="intro-linopy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -116,8 +117,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -171,7 +170,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro-install.html">Python and Conda</a></li>
 
 
@@ -191,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Problems/Problem01.04.html">Problem 1.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problems/Problem01.05.html">Problem 1.5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-linopy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">linopy</span></code></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
 </ul>
 
     </div>
@@ -778,7 +778,7 @@ to node 2, not vice versa).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fde37fdb0af898c5104aff7f8c13c2a73fe0745c7f150309d09bc61fc2512fcf.png" src="_images/fde37fdb0af898c5104aff7f8c13c2a73fe0745c7f150309d09bc61fc2512fcf.png" />
+<img alt="_images/cc57f921d7ff9370d2665ade14c5e4444aef9456e9e06e17e64683eadc72a0ef.png" src="_images/cc57f921d7ff9370d2665ade14c5e4444aef9456e9e06e17e64683eadc72a0ef.png" />
 </div>
 </div>
 <p>with options for labeling graph elements</p>
@@ -789,7 +789,7 @@ to node 2, not vice versa).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e77992be6acc19ee0fbf191a8bf3d82e92a45c4fcb1488c8ed3ed85fe1f3ccb9.png" src="_images/e77992be6acc19ee0fbf191a8bf3d82e92a45c4fcb1488c8ed3ed85fe1f3ccb9.png" />
+<img alt="_images/1858502319eef2c7a50bd82496e6da449ff5dd68dc30bd29d53ca3444c539c48.png" src="_images/1858502319eef2c7a50bd82496e6da449ff5dd68dc30bd29d53ca3444c539c48.png" />
 </div>
 </div>
 <p>and integration to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
@@ -804,7 +804,7 @@ to node 2, not vice versa).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/20be2798c64100815353546cc7faa24e812b464f13c0106f250855a8f5c595a6.png" src="_images/20be2798c64100815353546cc7faa24e812b464f13c0106f250855a8f5c595a6.png" />
+<img alt="_images/55891933d4241ee422e52baed94c8fe4a5968116cefaa3a76a27966d9211848f.png" src="_images/55891933d4241ee422e52baed94c8fe4a5968116cefaa3a76a27966d9211848f.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -837,7 +837,7 @@ to node 2, not vice versa).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{1, 2, 3, 4}, {6}, {5}]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{1, 2, 3, 4}, {6}]
 </pre></div>
 </div>
 </div>
@@ -863,7 +863,7 @@ to node 2, not vice versa).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 2, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 2, 1]
 </pre></div>
 </div>
 </div>
@@ -877,7 +877,7 @@ to node 2, not vice versa).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
 1    1
 2    2
 3    1
@@ -895,12 +895,11 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 1, 0, 0, 0],
-       [1, 0, 1, 0, 0, 0],
-       [1, 1, 0, 1, 0, 0],
-       [0, 0, 1, 0, 0, 0],
-       [0, 0, 0, 0, 0, 0],
-       [0, 0, 0, 0, 0, 0]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 1, 0, 0],
+       [1, 0, 1, 0, 0],
+       [1, 1, 0, 1, 0],
+       [0, 0, 1, 0, 0],
+       [0, 0, 0, 0, 0]])
 </pre></div>
 </div>
 </div>
@@ -917,7 +916,6 @@ dtype: int64
        [ 1.,  0., -1.,  0.],
        [ 0.,  1.,  1., -1.],
        [ 0.,  0.,  0.,  1.],
-       [ 0.,  0.,  0.,  0.],
        [ 0.,  0.,  0.,  0.]])
 </pre></div>
 </div>
@@ -932,12 +930,11 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2, -1, -1,  0,  0,  0],
-       [-1,  2, -1,  0,  0,  0],
-       [-1, -1,  3, -1,  0,  0],
-       [ 0,  0, -1,  1,  0,  0],
-       [ 0,  0,  0,  0,  0,  0],
-       [ 0,  0,  0,  0,  0,  0]], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2, -1, -1,  0,  0],
+       [-1,  2, -1,  0,  0],
+       [-1, -1,  3, -1,  0],
+       [ 0,  0, -1,  1,  0],
+       [ 0,  0,  0,  0,  0]], dtype=int32)
 </pre></div>
 </div>
 </div>
@@ -990,6 +987,15 @@ dtype: int64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro-linopy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to <code class="docutils literal notranslate"><span class="pre">linopy</span></code></p>
+      </div>
+    </a>
 </div>
                 </footer>
               
