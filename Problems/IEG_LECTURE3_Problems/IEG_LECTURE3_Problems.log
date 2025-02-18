@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.5.6)  6 JAN 2025 10:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.5.6)  18 FEB 2025 11:27
 entering extended mode
 **./IEG_LECTURE3_Problems.tex
 (IEG_LECTURE3_Problems.tex
@@ -419,11 +419,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: Reference `fig_network' on page 1 undefined on input line 40.
 
-<figures/nodes.jpg, id=3, 103.88812pt x 170.6375pt>
+<figures/nodes.jpg, id=3, 400.49625pt x 508.39937pt>
 File: figures/nodes.jpg Graphic file (type jpg)
 <use figures/nodes.jpg>
 Package pdftex.def Info: figures/nodes.jpg  used on input line 43.
-(pdftex.def)             Requested size: 93.94957pt x 154.31958pt.
+(pdftex.def)             Requested size: 93.94957pt x 119.25665pt.
 
 ! Package inputenc Error: Unicode character 〈 (U+2329)
 (inputenc)                not set up for use with LaTeX.
@@ -479,18 +479,18 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
  6924 strings out of 492482
- 99775 string characters out of 3131026
- 196307 words of memory out of 3000000
+ 99907 string characters out of 3131026
+ 197306 words of memory out of 3000000
  11141 multiletter control sequences out of 15000+200000
  11412 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,6n,34p,345b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,6n,34p,345b,430s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on IEG_LECTURE3_Problems.pdf (2 pages, 123665 bytes).
+Output written on IEG_LECTURE3_Problems.pdf (2 pages, 187185 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  4 named destinations out of 1000 (max. 500000)
