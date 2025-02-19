@@ -14,7 +14,10 @@ chapters:
 - file: Problems/Problem01.03
 - file: Problems/Problem01.04
 - file: Problems/Problem01.05
+- file: Problems/Problem02.01
 - file: intro-linopy
+- file: Problems/Problem02.02
+- file: Problems/Problem02.03
 - file: intro-networkx
 - file: Problems/IEG_course_project
 
