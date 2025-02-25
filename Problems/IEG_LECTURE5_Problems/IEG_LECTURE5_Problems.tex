@@ -1,0 +1,98 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{hyperref}
+\title{IEG_Problems_Lecture1}
+\author{martavictoriaperez }
+\date{December 2024}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{\textbf{Lecture 5: AC Optimal Power Flow}}
+\author{
+%Your name\\
+DTU Course 46770: Integrated Energy Grids }
+\maketitle
+\begin{problem}{5.1}
+Assume we have three buses (Denmark, Netherlands and Germany) with nominal voltage $V_{nom}$= 2000 V connected by three transmission lines. In the Denmark bus, there is a wind generator that is producing 100 MW and in the Germany bus, there is a load that is consuming 100 MW of active power and 100 Mvar of reactive power. The transmission lines DK-NL and NL-GE have a unitary resistance $r$=0.01 and reactance $x$=0.1. The transmission lines DK-GE has a unitary resistance $r$=0.02 and reactance $x$=0.1. Using Python for Power System Analysis (PyPSA):
+
+\begin{itemize}
+\item[a)] Calculate the power flows along the transmission lines using AC power flow representation.
+
+\item[b)]  Calculate the power flows along the transmission lines using a linearized approximation (DC optimal power flow).
+\end{itemize}
+
+\end{problem}
+
+\
+
+\begin{problem}{5.2}
+
+Assume we have one bus (Denmark) in which there is a gas power generator whose variable cost is 50 EUR/MWh and installed capacity is 50 MW, and a wind generator whose variable cost is zero and whose installed capacity is 30 MW. Using Python for Power System Analysis (PyPSA):
+
+\begin{itemize}
+\item[a)] Calculate the optimal dispatch that minimizes the total system cost, the energy produced by each generator, and the electricity price assuming that power demand is 80 MW
+
+\item[b)]  Calculate the optimal dispatch that minimizes the total system cost, the energy produced by each generator, and the electricity price assuming that power demand is 20 MW
+\end{itemize}
+
+\textit{Note: This is a straightforward problem, whose objective is to showcase how to solve economic dispatch problems in PyPSA.}
+
+\end{problem}
+
+\
+
+\begin{problem}{5.3}
+
+\textit{Note: This is equivalent to Problem 2.2 which we solved using linopy, but here we will use PyPSA.}
+
+Consider the following economic dispatch problem:
+
+\begin{itemize}
+\item[-] we have three generators: solar, wind and gas
+
+\item[-] solar and wind have no marginal costs, and gas has fuel costs of 60 EUR/MWh.
+
+\item[-] we need to cover a electricity demand of 13.2 MWh
+
+\item[-] the installed capacities are 15 MW, 20 MW and 20 MW for wind, solar, and gas, respectively
+
+\item[-] assume the capacity factor for solar is 0.17 and for wind 0.33.
+\end{itemize}
+
+Use pypsa to find the optimal solution as well and obtain the electricity price (Lagrange multiplier for the energy balance constraint).
+\end{problem}
+
+\
+
+\begin{problem}{5.4}
+Assume we have three buses (Denmark, Sweden, and Norway) with nominal voltage $V_{nom}$= 2000 V connected by three transmission lines. In each of the buses, there is a gas power generator whose variable cost is 50 EUR/MWh and installed capacity is 50 MW. In the Denmark bus, there is a wind generator whose variable cost is zero and whose installed capacity is 200 MW. The transmission lines have a unitary resistance $r$=0.01 and reactance $x$=0.1, and nominal capacity $S_{nom}=100$ VA. The demand is 50 MW for Denmark and Sweden and 30 MW for Norway. Using Python for Power System Analysis (PyPSA):
+
+\begin{itemize}
+\item[a)] Calculate the optimal dispatch that minimizes the total system cost, the energy produced by each generator, and the power flows along the transmission lines using AC power flow representation.
+
+\item[b)] Calculate the optimal dispatch that minimizes the total system cost,  the energy produced by each generator, and the power flows along the transmission lines using a linearized approximation (DC optimal power flow).
+
+\item[c)] Calculate the optimal dispatch that minimizes the total system cost,  the energy produced by each generator, and the power flows along the transmission lines using the Net Transfer Capacity (NTC) approach for the transmission lines.
+\end{itemize}
+
+\end{problem}
+
+%\begin{proof}[Solution]
+%Write a solution here
+%\end{proof}
+
+\end{document}
+
+
+ 
+
