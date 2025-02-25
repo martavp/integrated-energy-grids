@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -68,7 +65,6 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/DTUlogo.jpg" class="logo__image only-light" alt="integrated-energy-grids - Home"/>
-    <img src="../_static/DTUlogo.jpg" class="logo__image only-dark pst-js-only" alt="integrated-energy-grids - Home"/>
+    <script>document.write(`<img src="../_static/DTUlogo.jpg" class="logo__image only-dark" alt="integrated-energy-grids - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -206,14 +217,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -388,16 +394,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -428,8 +442,8 @@
 <p><strong>Integrated Energy Grids</strong></p>
 <p><strong>Problem 4.1</strong></p>
 <p><strong>This is a continuation of Problem 3.2 from Lecture 3:
-Let us assume now that we are in an hour with an excess of wind generation in Denmark and a deficit in other countries so that the power injection <span class="math notranslate nohighlight">\(P_i\)</span> of the different countries is as follows: Germany= - 200 MW, DK1=500 MW, DK2=600 MW, Norway = - 800 MW, Sweden = -100 MW.</strong></p>
-<p><strong>Determine the voltage angles <span class="math notranslate nohighlight">\(\theta_i\)</span>  and the flows <span class="math notranslate nohighlight">\(P_l\)</span> in the lines of the network. Assume that <span class="math notranslate nohighlight">\(\theta_0\)</span>=0; i.e. the reference bus is at node 0 (Germany); and the reactance in all links are <span class="math notranslate nohighlight">\(x_l\)</span>=1.</strong></p>
+Let us assume now that we are in an hour with an excess of wind generation in Denmark and a deficit in other countries so that the power injection <span class="math notranslate nohighlight">\(p_i\)</span> of the different countries is as follows: Germany= - 2 MW, DK1=5 MW, DK2=6 MW, Norway = - 8 MW, Sweden = -1 MW.</strong></p>
+<p><strong>Determine the voltage angles <span class="math notranslate nohighlight">\(\theta_i\)</span>  and the flows <span class="math notranslate nohighlight">\(p_l\)</span> in the lines of the network. Assume that <span class="math notranslate nohighlight">\(\theta_0\)</span>=0; i.e. the reference bus is at node 0 (Germany); and the reactance in all links are <span class="math notranslate nohighlight">\(x_l\)</span>=1.</strong></p>
 <p>We will use the package <a class="reference external" href="https://numpy.org/">numpy</a> to operate with matrices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,13 +523,13 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 </div>
 </div>
 <p><strong>Power flow analysis</strong></p>
-<p>We know the power injection pattern for the nodes <span class="math notranslate nohighlight">\(P_i\)</span> and we want to determine the power flows <span class="math notranslate nohighlight">\(P_l\)</span> in the lines of the network</p>
+<p>We know the power injection pattern for the nodes <span class="math notranslate nohighlight">\(p_i\)</span> and we want to determine the power flows <span class="math notranslate nohighlight">\(p_l\)</span> in the lines of the network</p>
 <p>The reactance in every link is <span class="math notranslate nohighlight">\(x_l\)</span>=1 so <span class="math notranslate nohighlight">\(L_{ij}=\sum_{l} K_{il} \frac{1}{x_l}K_{lj}=\sum_{l} K_{il} K_{lj}\)</span> or  <span class="math notranslate nohighlight">\(L_{ij}=D_{ij}-A_{i,j}\)</span></p>
 <p>First, we calculate the voltage angles, by solving the set of linear equations.
-<span class="math notranslate nohighlight">\(P_i=\sum L_{i,j} \theta_j\)</span></p>
+<span class="math notranslate nohighlight">\(p_i=\sum L_{i,j} \theta_j\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_i</span> <span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">-</span><span class="mi">800</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_i</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -523,36 +537,34 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 <p>The node 0 (Germany) is the slack bus, so <span class="math notranslate nohighlight">\(\theta_0\)</span>=0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="mi">1</span><span class="p">:],</span> <span class="n">P_i</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="mi">1</span><span class="p">:],</span> <span class="n">p_i</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span>
 <span class="n">theta</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   0.        ,  200.        ,  566.66666667, -600.        ,
-        333.33333333])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  2.        ,  5.66666667, -6.        ,  3.33333333])
 </pre></div>
 </div>
 </div>
 </div>
 <p>Second, we use the voltage angles to compute the flows.</p>
-<p><span class="math notranslate nohighlight">\(P_l=\frac{1}{x_l}\sum_{j}K_{lj}\theta_j\)</span></p>
+<p><span class="math notranslate nohighlight">\(p_l=\frac{1}{x_l}\sum_{j}K_{lj}\theta_j\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_l</span><span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="n">P_l</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_l</span><span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">p_l</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-200.        , -366.66666667,  800.        , -133.33333333,
-        233.33333333])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-2.        , -3.66666667,  8.        , -1.33333333,  2.33333333])
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>Additional discussion on the inversion of the Laplacian matrix</strong></p>
-<p>The Laplacian matrix is not invertible because it has one zero eigenvalue with eigenvector (1,1,1,1,1).</p>
+<p>The Laplacian matrix is not invertible.</p>
 <p>We can only invert a matrix if it is non-singular, i.e., the determinant should not be zero.</p>
 <p>You can also check that the rank of the matrix is 4 but the matrix has 5 columns, so the determinant is zero and we can not find the inverse</p>
 <div class="cell docutils container">
@@ -571,14 +583,13 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 <p>In this case, we don’t get bus zero as slack and the theta values in the solution are shifted with respect to the previous solution, but we get the same results for the power flows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">P_i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">p_i</span><span class="p">)</span>
 <span class="n">theta_</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-100.        ,  100.        ,  466.66666667, -700.        ,
-        233.33333333])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.        ,  1.        ,  4.66666667, -7.        ,  2.33333333])
 </pre></div>
 </div>
 </div>
@@ -591,14 +602,11 @@ Let us assume now that we are in an hour with an excess of wind generation in De
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-200.        , -366.66666667,  800.        , -133.33333333,
-        233.33333333])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-2.        , -3.66666667,  8.        , -1.33333333,  2.33333333])
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Additional discussion on the magnitude of theta</strong></p>
-<p>For the sake of simplicity, in this problem, we are indicating the power injection in MW (instead of in per unit) which causes <span class="math notranslate nohighlight">\(\theta\)</span> not to be expressed in radians.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -681,8 +689,8 @@ By Marta Victoria, Aleksander Grochowicz
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
