@@ -4,7 +4,7 @@
 \usepackage{hyperref}
 \title{IEG_Problems_Lecture1}
 \author{martavictoriaperez }
-\date{December 2024}
+\date{February 2025}
 
 \usepackage[margin=1in]{geometry} 
 \usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
@@ -17,7 +17,7 @@
 
 \begin{document}
  
-\title{\textbf{Lecture 4: AC Power Networks}}
+\title{\textbf{Lecture 4: DC Optimal Power Flow}}
 \author{
 %Your name\\
 DTU Course 46770: Integrated Energy Grids }
@@ -26,25 +26,25 @@ DTU Course 46770: Integrated Energy Grids }
 
 This is a continuation of Problem 3.2 from Lecture 3.
 
-Let us assume now that we are in an hour with an excess of wind generation in Denmark and a deficit in other countries so that the power injection $P_i$ of the different countries is as follows:
+Let us assume now that we are in an hour with an excess of wind generation in Denmark and a deficit in other countries so that the power injection $p_i$ of the different countries is as follows:
 
 \
 
-Germany= - 200 MW, DK1=500 MW, DK2=600 MW, Norway = - 800 MW, Sweden = -100 MW, 
+Germany= - 2 MW, DK1=5 MW, DK2=6 MW, Norway = - 8 MW, Sweden = -1 MW, 
 
 \
 
-Determine the voltage angles $\theta_i$  and the flows $P_l$ in the lines of the network. Assume that $\theta_0$=0; i.e. the reference bus is at node 0 (Germany); and the reactance in all links is $x_l$=1.
+Determine the voltage angles $\theta_i$  and the flows $p_l$ in the lines of the network. Assume that $\theta_0$=0; i.e. the reference bus is at node 0 (Germany); and the reactance in all links is $x_l$=1.
 
 \
 
-\textit{Hint 1: Remember the relations between power injection $P_i$ in every node and power flows $P_l$ presented in Lecture 4.}
+\textit{Hint 1: Remember the relations between power injection $p_i$ in every node and power flows $p_l$ presented in Lecture 4.}
 
-$P_i=\sum_j {L_{ij} \theta_j } $
+$p_i=\sum_j {L_{ij} \theta_j } $
 
 \
 
-$P_l=\frac{1}{x_l}  \sum_j{K_{lj} \theta_j}$       
+$p_l=\frac{1}{x_l}  \sum_j{K_{lj} \theta_j}$       
 
 \
 
@@ -86,7 +86,7 @@ Using the Python package \href{https://networkx.org/}{networkX}.
 
 \item[b)] Assuming the power injection pattern described in Problem 4.1 determine the power flows in the lines of the network and plot them.
 
-\item[c)] Assume now that the links unitary susceptance is $x_{l}$=[1, 0.5, 0.5, 0.5, 1], calculate the weighted Laplacian (or susceptance matrix,  the PTDF matrix, the power flows and plot them. 
+\item[c)] Assume now that the links unitary susceptance is $x_{l}$=[1, 0.5, 0.5, 0.5, 1], calculate the weighted Laplacian (or susceptance matrix),  the PTDF matrix, the power flows and plot them. 
 
 \end{itemize}
 
@@ -95,10 +95,10 @@ Using the Python package \href{https://networkx.org/}{networkX}.
 \
 
 \begin{problem}{4.4}
-This is a continuation of Problem 3.4 from Lecture 3. For the synchronous zone corresponding to Scandinavia.
+This is a continuation of Problem 3.4 from Lecture 3. For the synchronous zone corresponding to Scandinavia:
 
 \begin{itemize}
-\item[a)] Add to the network object the information on the links susceptance, calculate the weighted Laplacian (or susceptance matrix, and the Power Transfer Distribution Factor (PTDF) matrix.
+\item[a)] Add to the network object the information on the links susceptance, calculate the weighted Laplacian (or susceptance matrix), and the Power Transfer Distribution Factor (PTDF) matrix.
 
 \item[b)] Assuming that power injection in the nodes increases linearly from -1 in the first node to +1 in the last node, calculate and plot the power flows in the network.
 
