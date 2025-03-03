@@ -23,6 +23,7 @@ chapters:
 - file: intro-networkx
 - file: Problems/Problem03.03
 - file: Problems/Problem03.04
+- file: intro-pypsa
 - file: Problems/IEG_course_project
 
 
