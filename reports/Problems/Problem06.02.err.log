@@ -22,10 +22,10 @@ capacity_H2/capacity
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[8], line 1[0m
-[0;32m----> 1[0m capacity_H2[38;5;241m/[39m[43mcapacity[49m
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m capacity_H2/[43mcapacity[49m
 
-[0;31mNameError[0m: name 'capacity' is not defined
+[31mNameError[39m: name 'capacity' is not defined
 

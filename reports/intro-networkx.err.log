@@ -22,26 +22,26 @@ G.remove_edge(2, 5)
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mKeyError[0m                                  Traceback (most recent call last)
-File [0;32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/networkx/classes/graph.py:1134[0m, in [0;36mGraph.remove_edge[0;34m(self, u, v)[0m
-[1;32m   1133[0m [38;5;28;01mtry[39;00m:
-[0;32m-> 1134[0m     [38;5;28;01mdel[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_adj[49m[43m[[49m[43mu[49m[43m][49m[43m[[49m[43mv[49m[43m][49m
-[1;32m   1135[0m     [38;5;28;01mif[39;00m u [38;5;241m!=[39m v:  [38;5;66;03m# self-loop needs only one entry removed[39;00m
+[31m---------------------------------------------------------------------------[39m
+[31mKeyError[39m                                  Traceback (most recent call last)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/networkx/classes/graph.py:1134[39m, in [36mGraph.remove_edge[39m[34m(self, u, v)[39m
+[32m   1133[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1134[39m     [38;5;28;01mdel[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_adj[49m[43m[[49m[43mu[49m[43m][49m[43m[[49m[43mv[49m[43m][49m
+[32m   1135[39m     [38;5;28;01mif[39;00m u != v:  [38;5;66;03m# self-loop needs only one entry removed[39;00m
 
-[0;31mKeyError[0m: 5
+[31mKeyError[39m: 5
 
 The above exception was the direct cause of the following exception:
 
-[0;31mNetworkXError[0m                             Traceback (most recent call last)
-Cell [0;32mIn[23], line 1[0m
-[0;32m----> 1[0m [43mG[49m[38;5;241;43m.[39;49m[43mremove_edge[49m[43m([49m[38;5;241;43m2[39;49m[43m,[49m[43m [49m[38;5;241;43m5[39;49m[43m)[49m
+[31mNetworkXError[39m                             Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[23][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mG[49m[43m.[49m[43mremove_edge[49m[43m([49m[32;43m2[39;49m[43m,[49m[43m [49m[32;43m5[39;49m[43m)[49m
 
-File [0;32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/networkx/classes/graph.py:1138[0m, in [0;36mGraph.remove_edge[0;34m(self, u, v)[0m
-[1;32m   1136[0m         [38;5;28;01mdel[39;00m [38;5;28mself[39m[38;5;241m.[39m_adj[v][u]
-[1;32m   1137[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
-[0;32m-> 1138[0m     [38;5;28;01mraise[39;00m NetworkXError([38;5;124mf[39m[38;5;124m"[39m[38;5;124mThe edge [39m[38;5;132;01m{[39;00mu[38;5;132;01m}[39;00m[38;5;124m-[39m[38;5;132;01m{[39;00mv[38;5;132;01m}[39;00m[38;5;124m is not in the graph[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01merr[39;00m
-[1;32m   1139[0m nx[38;5;241m.[39m_clear_cache([38;5;28mself[39m)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/networkx/classes/graph.py:1138[39m, in [36mGraph.remove_edge[39m[34m(self, u, v)[39m
+[32m   1136[39m         [38;5;28;01mdel[39;00m [38;5;28mself[39m._adj[v][u]
+[32m   1137[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[32m-> [39m[32m1138[39m     [38;5;28;01mraise[39;00m NetworkXError([33mf[39m[33m"[39m[33mThe edge [39m[38;5;132;01m{[39;00mu[38;5;132;01m}[39;00m[33m-[39m[38;5;132;01m{[39;00mv[38;5;132;01m}[39;00m[33m is not in the graph[39m[33m"[39m) [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01merr[39;00m
+[32m   1139[39m nx._clear_cache([38;5;28mself[39m)
 
-[0;31mNetworkXError[0m: The edge 2-5 is not in the graph
+[31mNetworkXError[39m: The edge 2-5 is not in the graph
 

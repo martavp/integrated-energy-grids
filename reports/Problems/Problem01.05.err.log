@@ -22,14 +22,14 @@ nc = Dataset('Data/europe-2013-era5.nc')
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[2], line 1[0m
-[0;32m----> 1[0m nc [38;5;241m=[39m [43mDataset[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mData/europe-2013-era5.nc[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[31m---------------------------------------------------------------------------[39m
+[31mFileNotFoundError[39m                         Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m nc = [43mDataset[49m[43m([49m[33;43m'[39;49m[33;43mData/europe-2013-era5.nc[39;49m[33;43m'[39;49m[43m)[49m
 
-File [0;32msrc/netCDF4/_netCDF4.pyx:2521[0m, in [0;36mnetCDF4._netCDF4.Dataset.__init__[0;34m()[0m
+[36mFile [39m[32msrc/netCDF4/_netCDF4.pyx:2521[39m, in [36mnetCDF4._netCDF4.Dataset.__init__[39m[34m()[39m
 
-File [0;32msrc/netCDF4/_netCDF4.pyx:2158[0m, in [0;36mnetCDF4._netCDF4._ensure_nc_success[0;34m()[0m
+[36mFile [39m[32msrc/netCDF4/_netCDF4.pyx:2158[39m, in [36mnetCDF4._netCDF4._ensure_nc_success[39m[34m()[39m
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'Data/europe-2013-era5.nc'
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'Data/europe-2013-era5.nc'
 

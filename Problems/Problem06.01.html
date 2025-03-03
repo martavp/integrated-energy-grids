@@ -210,6 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro-networkx.html">Introduction to <code class="docutils literal notranslate"><span class="pre">networkx</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem03.03.html">Problem 3.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem03.04.html">Problem 3.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-pypsa.html">Introduction to <code class="docutils literal notranslate"><span class="pre">pypsa</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 
@@ -1135,12 +1136,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-17); columns 0(-6); elements 0(-23) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-l2v968es
+Model name          : linopy-problem-hmgq27ji
 Model status        : Optimal
 Objective value     :  1.0000000000e+05
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-2bqklj9h.sol
+Writing the solution to /tmp/linopy-solve-atd7ih8h.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1241,7 +1242,7 @@ Name: now, dtype: float64
   warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
 </pre></div>
 </div>
-<img alt="../_images/ab3c88f83466d9360d9177b6d11c36209c094e9760463416d73e42f0fa4a1347.png" src="../_images/ab3c88f83466d9360d9177b6d11c36209c094e9760463416d73e42f0fa4a1347.png" />
+<img alt="../_images/134f9aab94f5bafae22a581b42991c64c58d9902417e015f64c099c04002b0ae.png" src="../_images/134f9aab94f5bafae22a581b42991c64c58d9902417e015f64c099c04002b0ae.png" />
 </div>
 </div>
 <p><strong>(c) Assume the following lengths for the links: DK1-DK2=200 km, DK1-DE=600 km, DK1-NO= 500 km, DK1-SE=600 km, DK2-SE=100 km. If we consider that the losses due to energy consumption to maintain the pressure can be estimated at 2% of the energy flow per 1000 km. Adapt the link elements in PyPSA to include an efficiency that takes compression energy demand into account, and calculate the optimal gas flows through the network and plot them.</strong></p>
@@ -1636,13 +1637,13 @@ Using EKK dual simplex solver - serial
           0     5.0487388926e-04 Pr: 4(5012.15) 0s
           6     1.0125636230e+05 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-rf3hnmfv
+Model name          : linopy-problem-u9dv1wjz
 Model status        : Optimal
 Simplex   iterations: 6
 Objective value     :  1.0125636230e+05
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-foan941i.sol
+Writing the solution to /tmp/linopy-solve-a0sjgnbs.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1734,7 +1735,7 @@ Name: now, dtype: float64
   warnings.warn(&#39;facecolor will have no effect as it has been &#39;
 </pre></div>
 </div>
-<img alt="../_images/ac25bc5e36020900b08b12dcee963f141c0ad24209f022c245227926c9bed736.png" src="../_images/ac25bc5e36020900b08b12dcee963f141c0ad24209f022c245227926c9bed736.png" />
+<img alt="../_images/59fe97b5c890db80a9f350a51654152480719a9cfcc6ad4f298f91abffe49a6e.png" src="../_images/59fe97b5c890db80a9f350a51654152480719a9cfcc6ad4f298f91abffe49a6e.png" />
 </div>
 </div>
 <p><strong>(d) Assuming the following demands in GWh for three consecutive time steps DK1=[1,2,1], DK2=[1,1,1], DE=[1,2,3], NO=[1,1,1], SE=[0,1,0]. Calculate the optimal flows in every time step and the total system costs.</strong></p>
@@ -1941,13 +1942,13 @@ Using EKK dual simplex solver - serial
           0     1.5433270599e-03 Pr: 10(16048.6) 0s
          16     3.2413518056e+05 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-rg7vakeb
+Model name          : linopy-problem-xrai_cyt
 Model status        : Optimal
 Simplex   iterations: 16
 Objective value     :  3.2413518056e+05
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-a9_3tmlz.sol
+Writing the solution to /tmp/linopy-solve-omb5419p.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -2312,7 +2313,7 @@ Index([&#39;bus DE&#39;, &#39;bus DK1&#39;, &#39;bus DK2&#39;, &#39;bus NO&#39;,
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.04s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.03s
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -2344,13 +2345,13 @@ Using EKK dual simplex solver - serial
           0     0.0000000000e+00 Pr: 13(16000) 0s
          21     3.2413518056e+05 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-weij600b
+Model name          : linopy-problem-5_cqdirs
 Model status        : Optimal
 Simplex   iterations: 21
 Objective value     :  3.2413518056e+05
 Relative P-D gap    :  1.7957835004e-16
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-urezo6dj.sol
+Writing the solution to /tmp/linopy-solve-mkh4wm0s.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
