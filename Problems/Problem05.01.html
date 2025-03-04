@@ -446,9 +446,10 @@ document.write(`
 <h1>Problem 5.1<a class="headerlink" href="#problem-5-1" title="Link to this heading">#</a></h1>
 <p><strong>Integrated Energy Grids</strong></p>
 <p><strong>Problem 5.1</strong></p>
-<p><strong>Assume we have three buses (Denmark, Netherlands and Germany) with nominal voltage <span class="math notranslate nohighlight">\(V_{nom}\)</span>= 2000 V connected by three transmission lines. In the Denmark bus, there is a wind generator that is producing 100 MW and in the Germany bus, there is a load that is consuming 100 MW of active power and 100 Mvar of reactive power. The transmission lines DK-NL and NL-GE have a unitary resistance <span class="math notranslate nohighlight">\(r\)</span>=0.01 and reactance <span class="math notranslate nohighlight">\(x\)</span>=0.1. The transmission lines DK-GE has a unitary resistance <span class="math notranslate nohighlight">\(r\)</span>=0.02 and reactance <span class="math notranslate nohighlight">\(x\)</span>=0.1. Using Python for Power System Analysis (PyPSA):</strong></p>
+<p><strong>Assume we have three buses (Denmark, Netherlands and Germany) with nominal voltage <span class="math notranslate nohighlight">\(V_{nom}\)</span>= 2000 V connected by three transmission lines. In the  bus, Denmark there is a wind generator that is producing 100 MW. In the bus Germany, there is a load that is consuming 100 MW of active power and 100 MVAR of reactive power. The transmission lines DK-NL and NL-GE have a unitary resistance <span class="math notranslate nohighlight">\(r\)</span>=0.01 and reactance <span class="math notranslate nohighlight">\(x\)</span>=0.1. The transmission lines DK-GE has a unitary resistance <span class="math notranslate nohighlight">\(r\)</span>=0.02 and reactance <span class="math notranslate nohighlight">\(x\)</span>=0.1. Using Python for Power System Analysis (PyPSA):</strong></p>
 <p><strong>a) Calculate the power flows along the transmission lines using AC power flow representation.</strong></p>
-<p><strong>b) Calculate the power flows along the transmission lines using a linearized approximation (DC optimal power flow).</strong></p>
+<p><strong>b) Calculate the power flows along the transmission lines using a linearized approximation (also known as DC optimal power flow) and discuss the results.</strong></p>
+<p><em>Hint: It is recommended to follow the <a class="reference external" href="https://martavp.github.io/integrated-energy-grids/intro-pypsa.html#">PyPSA tutorial</a> before trying this problem.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
@@ -465,7 +466,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We start by creating the network object and adding the three buses corresponding to Denmark, Netherlands and Germany.</p>
+<p>We start by creating the network object and adding the three buses corresponding to Denmark, Netherlands and Germany.
+The added buses can be printed using network.buses</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">pypsa</span><span class="o">.</span><span class="n">Network</span><span class="p">()</span>
@@ -739,7 +741,10 @@ document.write(`
 <p>Add a generator at the Denmark bus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> <span class="s2">&quot;generator Denmark&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> <span class="n">p_set</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;generator Denmark&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span>
+            <span class="n">p_set</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">network</span><span class="o">.</span><span class="n">generators</span>
 </pre></div>
 </div>
@@ -857,7 +862,11 @@ Name: p_set, dtype: float64
 <p>Add a load at the Germany bus</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> <span class="s2">&quot;load Germany&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Germany&quot;</span><span class="p">,</span> <span class="n">p_set</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;load Germany&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Germany&quot;</span><span class="p">,</span> 
+            <span class="n">p_set</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+            <span class="n">q_set</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">network</span><span class="o">.</span><span class="n">loads</span>
 </pre></div>
 </div>
@@ -907,7 +916,7 @@ Name: p_set, dtype: float64
       <td></td>
       <td></td>
       <td>100.0</td>
-      <td>0.0</td>
+      <td>100.0</td>
       <td>-1.0</td>
       <td>True</td>
     </tr>
@@ -915,29 +924,7 @@ Name: p_set, dtype: float64
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">loads</span><span class="o">.</span><span class="n">p_set</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Load
-load Germany    100.0
-Name: p_set, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<p>We fix the reactive power of the load</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">loads</span><span class="o">.</span><span class="n">q_set</span> <span class="o">=</span> <span class="mf">100.0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We then solve the non-linear power flow using a Newton-Raphson method.</p>
+<p>We can now solve the non-linear power flow using a Newton-Raphson method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">pf</span><span class="p">()</span>
@@ -945,7 +932,7 @@ Name: p_set, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing non-linear load-flow on AC sub-network &lt;pypsa.networks.SubNetwork object at 0x7f5b24469ad0&gt; for snapshots Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing non-linear load-flow on AC sub-network &lt;pypsa.networks.SubNetwork object at 0x7f35115a18d0&gt; for snapshots Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n_iter&#39;: SubNetwork  0
@@ -1009,7 +996,7 @@ Name: p_set, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>We can also check the voltage angles on the buses</p>
+<p>We can also check the voltage angles on the buses. We need to apply a conversion factor if we want to show them in degrees.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">buses_t</span><span class="o">.</span><span class="n">v_ang</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
@@ -1057,7 +1044,7 @@ Name: p_set, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>and their mangitudes</p>
+<p>and their per-unit magnitudes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">buses_t</span><span class="o">.</span><span class="n">v_mag_pu</span>
@@ -1105,6 +1092,7 @@ Name: p_set, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p><strong>b) Calculate the power flows along the transmission lines using a linearized approximation (DC optimal power flow).</strong></p>
 <p>We can use linear power flows and get a similar solution</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1113,7 +1101,7 @@ Name: p_set, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing linear load-flow on AC sub-network &lt;pypsa.networks.SubNetwork object at 0x7f5b24469ad0&gt; for snapshot(s) Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.pf:Performing linear load-flow on AC sub-network &lt;pypsa.networks.SubNetwork object at 0x7f3511993610&gt; for snapshot(s) Index([&#39;now&#39;], dtype=&#39;object&#39;, name=&#39;snapshot&#39;)
 </pre></div>
 </div>
 </div>
@@ -1165,6 +1153,7 @@ Name: p_set, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>In this simple case, the solution that we obtain are very similar.</p>
 </section>
 
     <script type="text/x-thebe-config">

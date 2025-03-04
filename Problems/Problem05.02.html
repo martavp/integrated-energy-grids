@@ -447,7 +447,7 @@ document.write(`
 <p><strong>Assume we have one bus (Denmark) in which there is a gas power generator whose variable cost is 50 EUR/MWh and installed capacity is 50 MW, and a wind generator whose variable cost is zero and whose installed capacity is 30 MW. Using Python for Power System Analysis (PyPSA):</strong></p>
 <p><strong>a) Calculate the optimal dispatch that minimizes the total system cost, the energy produced by each generator, and the electricity price assuming that power demand is 80 MW</strong></p>
 <p><strong>b) Calculate the optimal dispatch that minimizes the total system cost, the energy produced by each generator, and the electricity price assuming that power demand is 20 MW</strong></p>
-<p><em>Note: This is a straightforward problem, whose objective is to show case how to solve economic dispatch problems in PyPSA.</em></p>
+<p><em>Note: This is a straightforward problem, whose objective is to showcase how to solve one-node economic dispatch problems in PyPSA. It is recommended to follow the <a class="reference external" href="https://martavp.github.io/integrated-energy-grids/intro-pypsa.html#">PyPSA tutorial</a> before trying this problem.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
@@ -474,7 +474,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> <span class="s2">&quot;bus Denmark&quot;</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;bus Denmark&quot;</span><span class="p">)</span> 
 <span class="n">network</span><span class="o">.</span><span class="n">buses</span>
 </pre></div>
 </div>
@@ -688,7 +689,10 @@ document.write(`
 <p>We add the load</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> <span class="s2">&quot;load Demmark&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> <span class="n">p_set</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;load Demmark&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> 
+            <span class="n">p_set</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
 <span class="n">network</span><span class="o">.</span><span class="n">loads</span>
 </pre></div>
 </div>
@@ -787,12 +791,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-5); columns 0(-2); elements 0(-6) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-j6poim28
+Model name          : linopy-problem-cp7l4h2_
 Model status        : Optimal
 Objective value     :  2.5000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-zgwfl7xa.sol
+Writing the solution to /tmp/linopy-solve-mrng_evw.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -889,7 +893,11 @@ Writing the solution to /tmp/linopy-solve-zgwfl7xa.sol
 <p>We update the load and calculate the economic dispatch again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> <span class="s2">&quot;load Demmark&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> <span class="n">p_set</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;load Demmark&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;bus Denmark&quot;</span><span class="p">,</span> 
+            <span class="n">p_set</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
+            <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -928,12 +936,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-5); columns 0(-2); elements 0(-6) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-e2616c3n
+Model name          : linopy-problem-fwmvo8pc
 Model status        : Optimal
 Objective value     :  0.0000000000e+00
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-xweqspmn.sol
+Writing the solution to /tmp/linopy-solve-ynmpam72.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)

@@ -451,7 +451,7 @@ document.write(`
 <p><strong>• we need to cover a electricity demand of 13.2 MWh</strong></p>
 <p><strong>• the installed capacities are 15 MW, 20 MW and 20 MW for wind, solar, and gas, respectively</strong></p>
 <p><strong>• assume the capacity factor for solar is 0.17 and for wind 0.33.</strong></p>
-<p><strong>a) Use pypsa to find the optimal solution as well and obtain the electricity price (Lagrange multiplier for the energy balance constraint)</strong></p>
+<p><strong>Use PYPSA to find the optimal solution as well and obtain the electricity price (Lagrange multiplier for the energy balance constraint)</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
@@ -558,14 +558,14 @@ document.write(`
             <span class="s2">&quot;solar&quot;</span><span class="p">,</span> 
             <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;my bus&quot;</span><span class="p">,</span> 
             <span class="n">p_nom</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> 
-            <span class="n">p_max_pu</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span>
+            <span class="n">p_max_pu</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="c1">#capacity factor</span>
             <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
     
 <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
             <span class="s2">&quot;wind&quot;</span><span class="p">,</span> 
             <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;my bus&quot;</span><span class="p">,</span> 
             <span class="n">p_nom</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
-            <span class="n">p_max_pu</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span>
+            <span class="n">p_max_pu</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="c1">#capacity factor</span>
             <span class="n">marginal_cost</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
 
 <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Generator&quot;</span><span class="p">,</span> 
@@ -724,7 +724,10 @@ document.write(`
 <p>We add the load</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> <span class="s2">&quot;electricity demand&quot;</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;my bus&quot;</span><span class="p">,</span> <span class="n">p_set</span><span class="o">=</span><span class="mf">13.2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;electricity demand&quot;</span><span class="p">,</span> 
+            <span class="n">bus</span><span class="o">=</span><span class="s2">&quot;my bus&quot;</span><span class="p">,</span> 
+            <span class="n">p_set</span><span class="o">=</span><span class="mf">13.2</span><span class="p">)</span>
 <span class="n">network</span><span class="o">.</span><span class="n">loads</span>
 </pre></div>
 </div>
@@ -823,12 +826,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-7); columns 0(-3); elements 0(-9) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-hvx7feiz
+Model name          : linopy-problem-mdq_led4
 Model status        : Optimal
 Objective value     :  2.4300000000e+02
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-ux7_okce.sol
+Writing the solution to /tmp/linopy-solve-87n_n3ol.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
