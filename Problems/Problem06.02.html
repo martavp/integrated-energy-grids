@@ -451,7 +451,7 @@ document.write(`
 <p><strong>Integrated Energy Grids</strong></p>
 <p><strong>Problem 6.2</strong></p>
 <p><strong>Let us assume that the countries in Problem 6.1 are considering repurposing their methane gas network into a hydrogen network. In order to run the existing pipelines with hydrogen, the pressure needs to be reduced to <span class="math notranslate nohighlight">\(P\)</span>=40 bar, and the average flow velocity can be increased to <span class="math notranslate nohighlight">\(u\)</span> = 30 m/s. Calculate the capacity of every pipeline (in MW), and relative to their initial design when they transported methane gas.</strong></p>
-<p><strong>The energy content of <span class="math notranslate nohighlight">\(H_2\)</span> is 120 GJ/tonne. To calculate the speed of sound in hydrogen <span class="math notranslate nohighlight">\(c\)</span>, assume the universal gas constant <span class="math notranslate nohighlight">\(R\)</span>=8.314 J/mol, the molar mass of hydrogen <span class="math notranslate nohighlight">\(M\)</span>=2 g/mol, compression factor <span class="math notranslate nohighlight">\(Z\)</span>=1.03, and 25<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
+<p><strong>The energy content of <span class="math notranslate nohighlight">\(H_2\)</span> is 120 GJ/tonne. To calculate the speed of sound in hydrogen <span class="math notranslate nohighlight">\(c\)</span>, assume the universal gas constant <span class="math notranslate nohighlight">\(R\)</span>=8.314 J/molK, the molar mass of hydrogen <span class="math notranslate nohighlight">\(M\)</span>=2 g/mol, compression factor <span class="math notranslate nohighlight">\(Z\)</span>=1.03, and temperature T=25<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
@@ -470,15 +470,16 @@ document.write(`
 <p>For methane, the cross-sectional area <span class="math notranslate nohighlight">\(A\)</span> and the speed of sound in gas <span class="math notranslate nohighlight">\(c\)</span> can be calculated as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
 <span class="n">u</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># m/s</span>
 <span class="n">P</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="mi">100000</span> <span class="c1">#Pa</span>
 <span class="n">Z</span> <span class="o">=</span> <span class="mf">1.31</span>
-<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/mol</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/molK</span>
 <span class="n">M</span> <span class="o">=</span> <span class="mf">0.016</span> <span class="c1"># Kg/mol</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mi">273</span><span class="o">+</span><span class="mi">25</span> <span class="c1"># K</span>
 <span class="n">e</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># GJ/t or MJ/kg</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Z</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
 <span class="n">c</span>
 </pre></div>
@@ -522,16 +523,17 @@ document.write(`
 <p>For hydrogen, the speed of sound in gas <span class="math notranslate nohighlight">\(c\)</span> can be calculated as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># m</span>
 <span class="n">u_H2</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># m/s</span>
 <span class="n">P_H2</span> <span class="o">=</span> <span class="mi">40</span><span class="o">*</span><span class="mi">100000</span> <span class="c1">#Pa</span>
 <span class="n">Z</span> <span class="o">=</span> <span class="mf">1.03</span>
-<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/mol</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># J/molK</span>
 <span class="n">M</span> <span class="o">=</span> <span class="mf">0.002</span> <span class="c1"># Kg/mol</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mi">273</span><span class="o">+</span><span class="mi">25</span> <span class="c1"># K</span>
 <span class="n">e_H2</span> <span class="o">=</span> <span class="mi">120</span> <span class="c1"># GJ/t or MJ/kg</span>
-<span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Z</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
-<span class="n">c</span>
+
+<span class="n">c_H2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Z</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
+<span class="n">c_H2</span>
 </pre></div>
 </div>
 </div>
@@ -544,7 +546,7 @@ document.write(`
 <p>The density can be calculated as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_H2</span> <span class="o">=</span> <span class="n">P_H2</span> <span class="o">/</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_H2</span> <span class="o">=</span> <span class="n">P_H2</span> <span class="o">/</span> <span class="n">c_H2</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">rho_H2</span>
 </pre></div>
 </div>
@@ -571,22 +573,17 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_H2</span><span class="o">/</span><span class="n">capacity</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_H2</span><span class="o">/</span><span class="n">capacity_CH4</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">capacity_H2</span><span class="o">/</span><span class="n">capacity</span>
-
-<span class="ne">NameError</span>: name &#39;capacity&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.610485436893204
 </pre></div>
 </div>
 </div>
 </div>
-<p>Even the volumetric energy density for hydrogen is three times lower than that of methane, since the velocity in the pipelines is higher, the transport capacity for hydrogen is only reduced to 60% of that of methane.</p>
+<p>Even though the volumetric energy density for hydrogen is three times lower than that of methane, since the velocity in the pipelines is higher, the transport capacity for hydrogen is only reduced to 60% of that of methane.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">rho_H2</span><span class="o">*</span><span class="n">e_H2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">e</span><span class="p">)</span>
