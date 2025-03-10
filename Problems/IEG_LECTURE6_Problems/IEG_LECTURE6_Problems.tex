@@ -68,7 +68,7 @@ The energy content of $H_2$ is 120 GJ/tonne. To calculate the speed of sound in 
 
 \begin{problem}{6.3}
 
-Assume the gas transport system that is shown in Figure 2. Gas can be injected in Node 1 at a marginal price of 50 EUR/MWh or at Node 5 at 60 EUR/MWh. There is a demand of 200 MWh in Node 3. Finally, Node 2-3 represents a pumping station where gas pressure can be increased by $k_{23}$=1.2 at a cost that is proportional to the mass flow $m_{23}$.
+Assume the gas transport system that is shown in Figure 2. Gas can be injected in Node 1 at a marginal price of 10 EUR/kg or at Node 5 at 15 EUR/kg. There is a demand of 2$\cdot 10^8$ kg/s in Node 3. Finally, Node 2-3 represents a pumping station where gas pressure can be increased by $k_{23}$=1.2 at a cost that is proportional to the mass flow $m_{23}$  by a constant $o_{23}$ =5 EUR/kg.
 
 \
 
@@ -81,7 +81,7 @@ To calculate the speed of sound in gas $c$, assume the universal gas constant $R
 
 \item[b)] Use gurobipy to formulate and solve the problem
 
-\item[C)] Linearized the Weymouth equations that represent pressure drop in the pipelines as a function of the mass flow. Solve the problem again and estimate the error that we make when using the linearized equations
+
 \end{itemize}
 
 \begin{figure}
@@ -91,7 +91,7 @@ To calculate the speed of sound in gas $c$, assume the universal gas constant $R
     \label{fig_network}
 \end{figure}
 
-
+\textit{Hint: It is recommended to follow the} \href{https://martavp.github.io/integrated-energy-grids/intro-gurobipy.html#}{Gurobipy tutorial} \textit{before trying this problem.}
 \end{problem}
 
 %\begin{proof}[Solution]
