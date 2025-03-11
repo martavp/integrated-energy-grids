@@ -520,11 +520,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set parameter Username
+Set parameter LicenseID to value 2604332
+Academic license - for non-commercial use only - expires 2025-12-30
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>Now, we can add variables to the model with the method <code class="docutils literal notranslate"><span class="pre">model.addVar(lb=0.0,</span> <span class="pre">ub=float('inf'),</span> <span class="pre">vtype=GRB.CONTINUOUS,</span> <span class="pre">name=&quot;&quot;)</span></code>.</p></li>
 <li><p>We can specify lower and upper bounds as well as domain using the arguments <code class="docutils literal notranslate"><span class="pre">lb</span></code>, <code class="docutils literal notranslate"><span class="pre">ub</span></code>, and <code class="docutils literal notranslate"><span class="pre">vtype</span></code>, respectively.</p></li>
-<li><p><b>Note that the default lower bound is 0!<b></p></li>
+<li><p>Note that the default lower bound is 0!</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -551,7 +558,7 @@ document.write(`
 </div>
 <ul class="simple">
 <li><p>We define the objective function with the method <code class="docutils literal notranslate"><span class="pre">model.setObjective(expr,</span> <span class="pre">sense=None)</span></code>.</p></li>
-<li><p><b>Remember to set the <code class="docutils literal notranslate"><span class="pre">sense</span></code> argument!<b></p></li>
+<li><p>Remember to set the <code class="docutils literal notranslate"><span class="pre">sense</span></code> argument!</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -582,14 +589,14 @@ Coefficient statistics:
   Objective range  [2e+01, 3e+01]
   Bounds range     [0e+00, 0e+00]
   RHS range        [6e+01, 1e+02]
-Presolve time: 0.03s
+Presolve time: 0.04s
 Presolved: 2 rows, 2 columns, 4 nonzeros
 
 Iteration    Objective       Primal Inf.    Dual Inf.      Time
        0    0.0000000e+00   1.600000e+02   0.000000e+00      0s
        2    3.9000000e+03   0.000000e+00   0.000000e+00      0s
 
-Solved in 2 iterations and 0.05 seconds (0.00 work units)
+Solved in 2 iterations and 0.08 seconds (0.00 work units)
 Optimal objective  3.900000000e+03
 </pre></div>
 </div>
@@ -631,7 +638,8 @@ optimal value of dual for constraint_2: 15.0
 </section>
 <section id="example-adding-quadratic-constraints-and-absolute-values-for-variables">
 <h2>Example: Adding quadratic constraints and absolute values for variables<a class="headerlink" href="#example-adding-quadratic-constraints-and-absolute-values-for-variables" title="Link to this heading">#</a></h2>
-<p>If we want to add quadratic constraints, we should use the <code class="docutils literal notranslate"><span class="pre">model.addQConstr(constr,</span> <span class="pre">name=&quot;&quot;)</span></code> method</p>
+<p>If we want to add quadratic constraints, we should use the <code class="docutils literal notranslate"><span class="pre">model.addQConstr(constr,</span> <span class="pre">name=&quot;&quot;)</span></code> method.
+You can also check this <a class="reference external" href="https://www.youtube.com/watch?v=v7Ze2CoaixA">short video on setting quadratically constrained problems in gurobipy</a></p>
 <p>If we want to use the absolute value of a variable we can define it as follows</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
