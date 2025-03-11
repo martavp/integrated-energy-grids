@@ -43,9 +43,9 @@ Consider the simplified network plotted in Fig. \ref{fig_network}, which represe
 
 \item[d)] Assuming the following demands in GWh for three consecutive time steps DE=[0,0,3], DK1=[1,2,1], DK2=[1,1,1], NO=[1,1,1], SE=[0,1,0]. Calculate the optimal flows in every time step and the total system costs. 
 
-\item[e)] Modify the demand for the German node to be DE=[0,0,3] GWh and keep the other node as in the previous section. Calculate the optimal flows in every time step and the total system costs.
+\item[e)] Modify the demand for the German node to be DE=[0,0,6] GWh and keep the other node as in the previous section. Calculate the optimal flows in every time step and the total system costs.
 
-\item[f)] Assume that the pipeline pressure can be increased to 25 bar, and calculate the linepack, i.e., the energy that can be stored in every pipeline by increasing the pressure. Represent this in your PyPSA model by adding a store with that capacity at the beginning of every line, calculate the optimal gas flows in every time step and the total system costs.
+\item[f)] Assume that the pipeline pressure can be increased from 50 to 55 bar, calculate the linepack, i.e., the energy that can be stored in every pipeline by increasing the pressure. Represent this in your PyPSA model by adding a store with that capacity at the beginning of every line, calculate the optimal gas flows in every time step and the total system costs.
 
 \end{itemize}
 
@@ -68,7 +68,7 @@ The energy content of $H_2$ is 120 GJ/tonne. To calculate the speed of sound in 
 
 \begin{problem}{6.3}
 
-Assume the gas transport system that is shown in Figure 2. Gas can be injected in Node 1 at a marginal price of 10 EUR/kg or at Node 5 at 15 EUR/kg. There is a demand of 2$\cdot 10^8$ kg/s in Node 3. Finally, Node 2-3 represents a pumping station where gas pressure can be increased by $k_{23}$=1.2 at a cost that is proportional to the mass flow $m_{23}$  by a constant $o_{23}$ =5 EUR/kg.
+Assume the gas transport system that is shown in Figure \ref{fig_gas_network}. Gas can be injected in Node 1 at a marginal price of 10 EUR/kg or at Node 5 at 15 EUR/kg. There is a demand of 2$\cdot 10^8$ kg/s in Node 3. Finally, Node 2-3 represents a pumping station where gas pressure can be increased by $k_{23}$=1.2 at a cost that is proportional to the mass flow $m_{23}$  by a constant $o_{23}$ =5 EUR/kg.
 
 \
 
@@ -84,11 +84,11 @@ To calculate the speed of sound in gas $c$, assume the universal gas constant $R
 
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{figures/gas_network.jpg}
     \caption{Gas network.}
-    \label{fig_network}
+    \label{fig_gas_network}
 \end{figure}
 
 \textit{Hint: It is recommended to follow the} \href{https://martavp.github.io/integrated-energy-grids/intro-gurobipy.html#}{Gurobipy tutorial} \textit{before trying this problem.}
