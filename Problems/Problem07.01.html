@@ -455,11 +455,15 @@ document.write(`
 <h1>Problem 7.1<a class="headerlink" href="#problem-7-1" title="Link to this heading">#</a></h1>
 <p><strong>Integrated Energy Grids</strong></p>
 <p><strong>Problem 7.1</strong></p>
-<p><strong>A district heating system is used to transport heat generated using a heat pump to two distant buildings. The pipeline diameter is 0.5 m, the water velocity is 2 m/s, the supply temperature <span class="math notranslate nohighlight">\(T^S\)</span> is variable through the network and the return temperature is <span class="math notranslate nohighlight">\(T^R\)</span>=40<span class="math notranslate nohighlight">\(^{\circ}\)</span>C. Assume the mass flow to be constant (steady-state conditions) and that the heat losses through dissipation in the pipes can be neglected.</strong></p>
-<p><strong>The thermal conductance of building A is <span class="math notranslate nohighlight">\(U_A\)</span> = 2 MW/k, the thermal conductance of building B is <span class="math notranslate nohighlight">\(U_B\)</span> = 3 MW/k, the ambient temperature is 5<span class="math notranslate nohighlight">\(^{\circ}\)</span>C and the interior comfort temperature of the buildings must be 20<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
+<p><strong>A district heating system is used to transport heat generated using a heat pump to two distant buildings. The pipeline diameter is 0.5 m, the water velocity is 2 m/s, the supply temperature <span class="math notranslate nohighlight">\(T^S\)</span> is variable through the network and the return temperature is <span class="math notranslate nohighlight">\(T^R\)</span>=40<span class="math notranslate nohighlight">\(^{\circ}\)</span>C. Assume the mass flow to be constant and that the heat losses in the pipelines due to dissipation to the ambient can be neglected.</strong></p>
+<p><strong>The heat transfer coefficient of building A is <span class="math notranslate nohighlight">\(U_A\)</span> = 2 MW/k, the heat transfer coefficient of building B is <span class="math notranslate nohighlight">\(U_B\)</span> = 3 MW/k, the ambient temperature is 5<span class="math notranslate nohighlight">\(^{\circ}\)</span>C and the interior comfort temperature of the buildings must be 20<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
 <p><strong>a) Calculate the rate of heat extracted in every building.</strong></p>
-<p><strong>b) Calculate the input and output temperature at the Heat Exchanger that serves every building.</strong></p>
+<p><strong>b) Calculate the input and output temperature at the heat xxchanger that serves every building.</strong></p>
 <p><strong>c) Calculate the supply temperature required for the water flow supplied by the heat pump.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -536,6 +540,23 @@ Building A: input temperature: 85.6C, output temperature : 67.4C
 </div>
 <p><strong>c) Calculate the supply temperature required for the water flow supplied by the heat pump.</strong></p>
 <p>Assuming that the heat losses through dissipation in the pipes can be neglected, the heatpump must supply the mass flow at the input temperature of building A.</p>
+<p><strong>d) Assuming that the electricity demand required for pumping the water is proportional to the cubic mass flow with a proportionality constant of 0.066, calculate its relative size compared to the thermal power supplied by the district heating system</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mf">0.006</span> <span class="c1">#MW/(kg/s)</span>
+<span class="n">electricity_demand</span> <span class="o">=</span> <span class="n">c</span><span class="o">*</span><span class="n">m</span> <span class="o">**</span><span class="mi">3</span>
+<span class="n">relative</span><span class="o">=</span><span class="n">electricity_demand</span><span class="o">/</span><span class="p">(</span><span class="mi">1000000</span><span class="o">*</span><span class="p">(</span><span class="n">q_A</span><span class="o">+</span><span class="n">q_B</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Electricity demand represents : &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">relative</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="si">% o</span><span class="s2">f thermal energy supply.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Electricity demand represents : 0.5 % of thermal energy supply.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

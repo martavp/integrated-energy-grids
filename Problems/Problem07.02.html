@@ -456,9 +456,13 @@ document.write(`
 <p><strong>Integrated Energy Grids</strong></p>
 <p><strong>Problem 7.2</strong></p>
 <p><em>Note: This problem is similar to 7.1 but now it assumes that the mass flow in the district heating network is variable.</em></p>
-<p><strong>A district heating system is used to transport heat generated using a heat pump to two distant buildings. The pipeline diameter is 0.5 m, the supply temperature is <span class="math notranslate nohighlight">\(T^S\)</span>=90<span class="math notranslate nohighlight">\(^{\circ}\)</span>C and the return temperature is <span class="math notranslate nohighlight">\(T^R\)</span>=40<span class="math notranslate nohighlight">\(^{\circ}\)</span>C. Assume that the heat losses through dissipation in the pipes can be neglected.</strong></p>
-<p><strong>The thermal conductance of building A is <span class="math notranslate nohighlight">\(U_A\)</span> = 2 MW/k, the thermal conductance of building B is <span class="math notranslate nohighlight">\(U_B\)</span> = 3 MW/k, the ambient temperature is 5<span class="math notranslate nohighlight">\(^{\circ}\)</span>C and the interior comfort temperature of the buildings must be 20<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
-<p><strong>Calculate the mass flow needed at the Heat Exchanger that serves every building, assuming that the input and output temperature corresponds to <span class="math notranslate nohighlight">\(T^S\)</span> and <span class="math notranslate nohighlight">\(T^R\)</span></strong>.</p>
+<p><strong>A district heating system is used to transport heat generated using a heat pump to two distant buildings. The pipeline diameter is 0.5 m, the supply temperature is <span class="math notranslate nohighlight">\(T^S\)</span>=80<span class="math notranslate nohighlight">\(^{\circ}\)</span>C and the return temperature is <span class="math notranslate nohighlight">\(T^R\)</span>=40<span class="math notranslate nohighlight">\(^{\circ}\)</span>C. Assume the mass flow to be constant and that the heat losses in the pipelines due to dissipation to the ambient can be neglected.</strong></p>
+<p><strong>The heat transfer coefficient of building A is <span class="math notranslate nohighlight">\(U_A\)</span> = 2 MW/k, the heat transfer coefficient of building B is <span class="math notranslate nohighlight">\(U_B\)</span> = 3 MW/k, the ambient temperature is 5<span class="math notranslate nohighlight">\(^{\circ}\)</span>C and the interior comfort temperature of the buildings must be 20<span class="math notranslate nohighlight">\(^{\circ}\)</span>C.</strong></p>
+<p><strong>Calculate the mass flow needed at the heat exchanger that serves every building, assuming that the input and output temperature correspond to <span class="math notranslate nohighlight">\(T^S\)</span> and <span class="math notranslate nohighlight">\(T^R\)</span></strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have not yet set up Python on your computer, you can execute this tutorial in your browser via <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Click on the rocket in the top right corner and launch “Colab”. If that doesn’t work download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and import it in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -489,7 +493,6 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>b) Calculate the input and output temperature at the Heat Exchanger that serves every building.</strong></p>
 <p>If we apply the energy nodal balance to the two buildings</p>
 <p><span class="math notranslate nohighlight">\(q_{buildingA}=c_pm_A(T^S-T^R)\)</span></p>
 <p><span class="math notranslate nohighlight">\(q_{buildingB}=c_pm_B(T^S-T^R)\)</span></p>
@@ -497,20 +500,20 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_p</span> <span class="o">=</span> <span class="mi">4186</span> <span class="c1">#J/kgK</span>
-<span class="n">T_S</span> <span class="o">=</span> <span class="mi">90</span> <span class="c1">#C</span>
+<span class="n">T_S</span> <span class="o">=</span> <span class="mi">80</span> <span class="c1">#C</span>
 <span class="n">T_R</span> <span class="o">=</span> <span class="mi">40</span> <span class="c1">#C</span>
 
 <span class="n">m_A</span><span class="o">=</span><span class="n">q_A</span><span class="o">*</span><span class="mi">1000000</span><span class="o">/</span><span class="p">(</span><span class="n">c_p</span><span class="o">*</span><span class="p">(</span><span class="n">T_S</span><span class="o">-</span><span class="n">T_R</span><span class="p">))</span>  <span class="c1"># MW -&gt; W</span>
 <span class="n">m_B</span><span class="o">=</span><span class="n">q_B</span><span class="o">*</span><span class="mi">1000000</span><span class="o">/</span><span class="p">(</span><span class="n">c_p</span><span class="o">*</span><span class="p">(</span><span class="n">T_S</span><span class="o">-</span><span class="n">T_R</span><span class="p">))</span>  <span class="c1"># MW -&gt; W</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Required mass flow in heat exchanger in building A:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">m_A</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;kg/s&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Required mass flow in heat exchanger in building B:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">m_B</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;kg/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Required mass flow in heat exchanger in building A: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">m_A</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;kg/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Required mass flow in heat exchanger in building B: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">m_B</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;kg/s&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Required mass flow in heat exchanger in building A:143.3kg/s
-Required mass flow in heat exchanger in building B:215.0kg/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Required mass flow in heat exchanger in building A: 179.2kg/s
+Required mass flow in heat exchanger in building B: 268.8kg/s
 </pre></div>
 </div>
 </div>
