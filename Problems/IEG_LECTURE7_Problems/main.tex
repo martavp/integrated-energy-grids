@@ -1,0 +1,101 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{hyperref}
+\title{IEG_Problems_Lecture1}
+\author{martavictoriaperez }
+\date{March 2025}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{\textbf{Lecture 7: Heat networks}}
+\author{
+%Your name\\
+DTU Course 46770: Integrated Energy Grids }
+\maketitle
+
+\begin{problem}{7.1}
+
+A district heating system is used to transport heat generated using a heat pump to two distant buildings. The pipeline diameter is 0.5 m, the water velocity is 2 m/s, the supply temperature $T^S$ is variable through the network and the return temperature is $T^R$=40$^{\circ}$C. Assume the mass flow to be constant and that the heat losses in the pipelines due to dissipation to the ambient can be neglected.
+
+\
+
+The heat transfer coefficient of building A is $U_A$ = 2 MW/k, the heat transfer coefficient of building B is $U_B$ = 3 MW/k, the ambient temperature is 5$^{\circ}$C and the interior comfort temperature of the buildings must be 20$^{\circ}$C.
+\begin{itemize}
+
+\item[a)] Calculate the rate of heat extracted in every building.
+
+\item[b)]  Calculate the input and output temperatures at the heat exchanger that serves every building.
+
+\item[c)]  Calculate the supply temperature required for the water flow supplied by the heat pump.
+
+\item[d)]  Assuming that the electricity demand required for pumping the water is proportional to the cubic mass flow with a proportionality constant of 0.06 Ws$^3$ kg$^{-3}$, calculate its relative size compared to the thermal power supplied by the district heating system.
+
+\end{itemize}
+
+
+\end{problem}
+
+\
+
+\begin{problem}{7.2}
+
+A district heating system is used to transport heat generated using a heat pump to two distant buildings. The pipeline diameter is 0.5 m, the supply temperature is $T^S$=80$^{\circ}$C and the return temperature is $T^R$=40$^{\circ}$C. Assume the mass flow to be constant and that the heat losses in the pipelines due to dissipation to the ambient can be neglected.
+
+\
+
+The heat transfer coefficient of building A is $U_A$ = 2 MW/k, the heat transfer coefficient of building B is $U_B$ = 3 MW/k, the ambient temperature is 5$^{\circ}$C and the interior comfort temperature of the buildings must be 20$^{\circ}$C.
+
+\
+
+Calculate the mass flow needed at the heat exchanger that serves every building, assuming that the input and output temperature correspond to $T^S$ and $T^R$.
+
+
+\end{problem}
+
+\
+
+\begin{problem}{7.3}
+
+Assume that we have three locations (1,2,3) with an electric bus and a heating bus. The electricity loads are [0, 10, 20] MWh and the heating loads are [30, 20, 10] MWh. The electric buses are connected with transmission lines in a ring and there is a gas power generator at node 1 with an efficiency of 0.3 and a marginal cost of 50 EUR/MWh. At each location the electric and heating buses are connected using heat pumps with a coefficient of performance (COP) of 3; heat can also be supplied to every heat bus with a gas boiler with an efficiency of 0.9 and a marginal cost of 20 EUR/MWh.
+
+
+\begin{itemize}
+\item[a)] Calculate the optimal heat generation by every component and the optical power flowing through the lines.
+
+\item[b)] Repeat (a) assuming that the marginal cost of heat pumps is 10 EUR/MWh
+
+\end{itemize}
+
+\end{problem}
+
+\
+
+\begin{problem}{7.4}
+In this problem, we will model a node that contains an electricity, a gas and a heat bus. There is a demand of 50 MWh of electricity and 40 MWh of heat. Electricity can be produced using an Open Cycle Gas Turbine (OCGT) with an efficiency of 0.35 or using a Combined Heat and Power (CHP) unit. Heat can be produced with the CHP unit or with a gas boiler. The OCGT, gas boiler and CHP unit have a marginal cost due to the fuel cost of 20 EUR/MWh$_{th}$.
+
+\begin{itemize}
+\item[a)] In this section, we assume that the CHP has a fixed efficiency of 0.3 when producing electricity and 0.3 when producing heat. Model the OCGT and gas boiler, using a link and the CHP unit using and multilink element in PyPSA. Add a gas store to the gas bus that represents an unlimited supply of gas. Optimize the system and calculate which technologies are supplying the electricity and heat demand.
+
+\item[b)]  In this section, we assume that the CHP unit can be operated either in condensing mode or in back-pressure mode. In practice, this means the feasible space for operating the CHP unit is determined by the iso-fuel lines (with constant $c_v$=0.15) and the back-pressure line (with constant $c_m$=0.75). Optimize the system and calculate which technologies are supplying the electricity and heat demand.
+\end{itemize}
+
+\end{problem}
+%\begin{proof}[Solution]
+%Write a solution here
+%\end{proof}
+
+\end{document}
+
+
+ 
+
