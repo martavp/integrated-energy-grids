@@ -219,7 +219,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem05.02.html">Problem 5.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.03.html">Problem 5.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.04.html">Problem 5.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.01.html">Problem 6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.02.html">Problem 6.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro-gurobipy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">gurobipy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.03.html">Problem 6.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 
@@ -808,15 +811,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index([&#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;OCGT&#39;, &#39;gas boiler&#39;, &#39;CHP&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:Encountered nan&#39;s in static data for columns [&#39;efficiency2&#39;] of component &#39;Link&#39;.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
-Index([&#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
@@ -852,12 +855,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-12); columns 0(-5); elements 0(-18) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-9wrr7be6
+Model name          : linopy-problem-lmy99anu
 Model status        : Optimal
 Objective value     :  3.2380952381e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-y8064n4g.sol
+Writing the solution to /tmp/linopy-solve-sfx9f8sh.sol
 </pre></div>
 </div>
 </div>
@@ -1262,12 +1265,12 @@ Writing the solution to /tmp/linopy-solve-y8064n4g.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
-Index([&#39;OCGT&#39;, &#39;CHP generator&#39;, &#39;CHP boiler&#39;, &#39;gas boiler&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index([&#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;OCGT&#39;, &#39;CHP generator&#39;, &#39;CHP boiler&#39;, &#39;gas boiler&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
@@ -1303,12 +1306,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-16); columns 0(-6); elements 0(-25) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-xq2svbla
+Model name          : linopy-problem-yc_4nfh8
 Model status        : Optimal
 Objective value     :  2.2222222222e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-3_57lz8v.sol
+Writing the solution to /tmp/linopy-solve-5aza5d9v.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)

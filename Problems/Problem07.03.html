@@ -217,7 +217,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem05.02.html">Problem 5.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.03.html">Problem 5.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem05.04.html">Problem 5.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.01.html">Problem 6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.02.html">Problem 6.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro-gurobipy.html">Introduction to <code class="docutils literal notranslate"><span class="pre">gurobipy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem06.03.html">Problem 6.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 
@@ -1284,10 +1287,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
-       &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
-      dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
@@ -1302,8 +1303,10 @@ Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&
 Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
-Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
+       &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1338,12 +1341,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-27); columns 0(-10); elements 0(-39) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-u8ht_egt
+Model name          : linopy-problem-vu2k972i
 Model status        : Optimal
 Objective value     :  2.5000000000e+03
 Relative P-D gap    :  1.8189894035e-16
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-26gruidj.sol
+Writing the solution to /tmp/linopy-solve-72m5ttkb.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1422,10 +1425,8 @@ Writing the solution to /tmp/linopy-solve-26gruidj.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
-       &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
-      dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
@@ -1444,8 +1445,10 @@ Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&
 Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
-Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
+       &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1480,12 +1483,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-27); columns 0(-10); elements 0(-39) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-4qj3srah
+Model name          : linopy-problem-el67u87_
 Model status        : Optimal
 Objective value     :  2.7000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-177ge84r.sol
+Writing the solution to /tmp/linopy-solve-0bijvtfv.sol
 </pre></div>
 </div>
 </div>
