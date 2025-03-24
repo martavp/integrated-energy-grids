@@ -811,15 +811,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;OCGT&#39;, &#39;gas boiler&#39;, &#39;CHP&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:Encountered nan&#39;s in static data for columns [&#39;efficiency2&#39;] of component &#39;Link&#39;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
@@ -844,7 +844,8 @@ Solver message: optimal
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Link-fix-p-lower, Link-fix-p-upper, Store-fix-e-lower, Store-fix-e-upper, Store-energy_balance were not assigned to the network.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
+LP   linopy-problem-y9w_9cbr has 12 rows; 5 cols; 18 nonzeros
 Coefficient ranges:
   Matrix [3e-01, 1e+00]
   Cost   [2e+01, 2e+01]
@@ -855,12 +856,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-12); columns 0(-5); elements 0(-18) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-a75t_vv0
+Model name          : linopy-problem-y9w_9cbr
 Model status        : Optimal
 Objective value     :  3.2380952381e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-g35q9m94.sol
+Writing the solution to /tmp/linopy-solve-yafy1y6r.sol
 </pre></div>
 </div>
 </div>
@@ -1265,56 +1266,90 @@ Writing the solution to /tmp/linopy-solve-g35q9m94.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;OCGT&#39;, &#39;CHP generator&#39;, &#39;CHP boiler&#39;, &#39;gas boiler&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index([&#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.03s
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
-Status: ok
-Termination condition: optimal
-Solution: 6 primals, 16 duals
-Objective: 2.22e+03
-Solver model: available
-Solver message: optimal
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Link-fix-p-lower, Link-fix-p-upper, Store-fix-e-lower, Store-fix-e-upper, Store-energy_balance, backpressure, top_iso_fuel_line were not assigned to the network.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.9.0 (git hash: fa40bdf): Copyright (c) 2024 HiGHS under MIT licence terms
-Coefficient ranges:
-  Matrix [3e-01, 3e+00]
-  Cost   [2e+01, 2e+01]
-  Bound  [0e+00, 0e+00]
-  RHS    [4e+01, 1e+06]
-Presolving model
-1 rows, 2 cols, 2 nonzeros  0s
-0 rows, 0 cols, 0 nonzeros  0s
-Presolve : Reductions: rows 0(-16); columns 0(-6); elements 0(-25) - Reduced to empty
-Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-yuzu3xgw
-Model status        : Optimal
-Objective value     :  2.2222222222e+03
-Relative P-D gap    :  0.0000000000e+00
-HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-9tbc3ldn.sol
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">link_p</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;Link-p&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Guarantees back-pressure line</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">model</span><span class="o">.</span><span class="n">add_constraints</span><span class="p">(</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="n">c_m</span> <span class="o">*</span> <span class="n">network</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s2">&quot;CHP boiler&quot;</span><span class="p">,</span> <span class="s2">&quot;efficiency&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">link_p</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Link</span><span class="o">=</span><span class="s2">&quot;CHP boiler&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="o">-</span> <span class="n">network</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s2">&quot;CHP generator&quot;</span><span class="p">,</span> <span class="s2">&quot;efficiency&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">link_p</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Link</span><span class="o">=</span><span class="s2">&quot;CHP generator&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;backpressure&quot;</span><span class="p">,)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Guarantees top iso fuel line</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">model</span><span class="o">.</span><span class="n">add_constraints</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">link_p</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Link</span><span class="o">=</span><span class="s2">&quot;CHP boiler&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="o">+</span> <span class="n">link_p</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Link</span><span class="o">=</span><span class="s2">&quot;CHP generator&quot;</span><span class="p">)</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">22</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;top_iso_fuel_line&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/variables.py:415,</span> in <span class="ni">Variable.__rmul__</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span><span class="sd"> Right-multiply variables with a coefficient.</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">415</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_linexpr</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span>     <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/variables.py:317,</span> in <span class="ni">Variable.to_linexpr</span><span class="nt">(self, coefficient)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span> <span class="k">def</span><span class="w"> </span><span class="nf">to_linexpr</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="n">coefficient</span><span class="p">:</span> <span class="nb">int</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">301</span>     <span class="o">|</span> <span class="n">DataArray</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">expressions</span><span class="o">.</span><span class="n">LinearExpression</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span><span class="sd">     Create a linear expression from the variables.</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span><span class="sd"> </span>
+<span class="sd">   (...)    315         Linear expression with the variables and coefficients.</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">317</span>     <span class="n">coefficient</span> <span class="o">=</span> <span class="n">as_dataarray</span><span class="p">(</span><span class="n">coefficient</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">({</span><span class="s2">&quot;coeffs&quot;</span><span class="p">:</span> <span class="n">coefficient</span><span class="p">,</span> <span class="s2">&quot;vars&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">})</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="n">TERM_DIM</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="k">return</span> <span class="n">expressions</span><span class="o">.</span><span class="n">LinearExpression</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/common.py:258,</span> in <span class="ni">as_dataarray</span><span class="nt">(arr, coords, dims, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>     <span class="n">arr</span> <span class="o">=</span> <span class="n">numpy_to_dataarray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+<span class="ne">--&gt; </span><span class="mi">258</span>     <span class="n">arr</span> <span class="o">=</span> <span class="n">DataArray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">DataArray</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="n">supported_types</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span>         <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span>         <span class="nb">str</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">269</span>         <span class="n">DataArray</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/xarray/core/dataarray.py:487,</span> in <span class="ni">DataArray.__init__</span><span class="nt">(self, data, coords, dims, name, attrs, indexes, fastpath)</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="n">data</span> <span class="o">=</span> <span class="n">_check_data_shape</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="n">data</span> <span class="o">=</span> <span class="n">as_compatible_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">487</span> <span class="n">coords</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="n">_infer_coords_and_dims</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">dims</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">fastpath</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">Coordinates</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/xarray/core/dataarray.py:192,</span> in <span class="ni">_infer_coords_and_dims</span><span class="nt">(shape, coords, dims)</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span> <span class="n">dims_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dims_tuple</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">192</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span>         <span class="s2">&quot;different number of dimensions on data &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span>         <span class="sa">f</span><span class="s2">&quot;and dims: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dims_tuple</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dims_tuple</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">hashable</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+
+<span class="ne">ValueError</span>: different number of dimensions on data and dims: 0 vs 1
 </pre></div>
 </div>
 </div>

@@ -1,0 +1,131 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Guarantees isofuel lines, i.e. increase in heat generation is proportional to decrease in electricity generation
+network.links.at["CHP boiler", "efficiency"] = (network.links.at["CHP generator", "efficiency"] / c_v)
+
+model = network.optimize.create_model()
+
+link_p = model.variables["Link-p"]
+
+# Guarantees back-pressure line
+model.add_constraints(
+    c_m * network.links.at["CHP boiler", "efficiency"] * link_p.sel(Link="CHP boiler")
+    - network.links.at["CHP generator", "efficiency"] * link_p.sel(Link="CHP generator")
+    <= 0,
+    name="backpressure",)
+
+
+# Guarantees top iso fuel line
+model.add_constraints(
+    link_p.sel(Link="CHP boiler")
+    + link_p.sel(Link="CHP generator")
+    - network.links.at["CHP generator", "p_nom"]
+    <= 0,
+    name="top_iso_fuel_line",
+)
+
+network.optimize.solve_model()
+------------------
+
+----- stderr -----
+WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index(['OCGT', 'CHP generator', 'CHP boiler', 'gas boiler'], dtype='object', name='Link')
+----- stderr -----
+WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index(['electricity', 'heat', 'gas'], dtype='object', name='Bus')
+----- stderr -----
+WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index(['gas'], dtype='object', name='Store')
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[14][39m[32m, line 10[39m
+[32m      6[39m link_p = model.variables[[33m"[39m[33mLink-p[39m[33m"[39m]
+[32m      8[39m [38;5;66;03m# Guarantees back-pressure line[39;00m
+[32m      9[39m model.add_constraints(
+[32m---> [39m[32m10[39m     [43mc_m[49m[43m [49m[43m*[49m[43m [49m[43mnetwork[49m[43m.[49m[43mlinks[49m[43m.[49m[43mat[49m[43m[[49m[33;43m"[39;49m[33;43mCHP boiler[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[33;43m"[39;49m[33;43mefficiency[39;49m[33;43m"[39;49m[43m][49m[43m [49m[43m*[49m[43m [49m[43mlink_p[49m[43m.[49m[43msel[49m[43m([49m[43mLink[49m[43m=[49m[33;43m"[39;49m[33;43mCHP boiler[39;49m[33;43m"[39;49m[43m)[49m
+[32m     11[39m     - network.links.at[[33m"[39m[33mCHP generator[39m[33m"[39m, [33m"[39m[33mefficiency[39m[33m"[39m] * link_p.sel(Link=[33m"[39m[33mCHP generator[39m[33m"[39m)
+[32m     12[39m     <= [32m0[39m,
+[32m     13[39m     name=[33m"[39m[33mbackpressure[39m[33m"[39m,)
+[32m     16[39m [38;5;66;03m# Guarantees top iso fuel line[39;00m
+[32m     17[39m model.add_constraints(
+[32m     18[39m     link_p.sel(Link=[33m"[39m[33mCHP boiler[39m[33m"[39m)
+[32m     19[39m     + link_p.sel(Link=[33m"[39m[33mCHP generator[39m[33m"[39m)
+[32m   (...)[39m[32m     22[39m     name=[33m"[39m[33mtop_iso_fuel_line[39m[33m"[39m,
+[32m     23[39m )
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/variables.py:415[39m, in [36mVariable.__rmul__[39m[34m(self, other)[39m
+[32m    411[39m [38;5;250m[39m[33;03m"""[39;00m
+[32m    412[39m [33;03mRight-multiply variables with a coefficient.[39;00m
+[32m    413[39m [33;03m"""[39;00m
+[32m    414[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m415[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mto_linexpr[49m[43m([49m[43mother[49m[43m)[49m
+[32m    416[39m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[32m    417[39m     [38;5;28;01mreturn[39;00m [38;5;28mNotImplemented[39m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/variables.py:317[39m, in [36mVariable.to_linexpr[39m[34m(self, coefficient)[39m
+[32m    294[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mto_linexpr[39m(
+[32m    295[39m     [38;5;28mself[39m,
+[32m    296[39m     coefficient: [38;5;28mint[39m
+[32m   (...)[39m[32m    301[39m     | DataArray = [32m1[39m,
+[32m    302[39m ) -> expressions.LinearExpression:
+[32m    303[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m    304[39m [33;03m    Create a linear expression from the variables.[39;00m
+[32m    305[39m 
+[32m   (...)[39m[32m    315[39m [33;03m        Linear expression with the variables and coefficients.[39;00m
+[32m    316[39m [33;03m    """[39;00m
+[32m--> [39m[32m317[39m     coefficient = [43mas_dataarray[49m[43m([49m[43mcoefficient[49m[43m,[49m[43m [49m[43mcoords[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mcoords[49m[43m,[49m[43m [49m[43mdims[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mdims[49m[43m)[49m
+[32m    318[39m     ds = Dataset({[33m"[39m[33mcoeffs[39m[33m"[39m: coefficient, [33m"[39m[33mvars[39m[33m"[39m: [38;5;28mself[39m.labels}).expand_dims(
+[32m    319[39m         TERM_DIM, -[32m1[39m
+[32m    320[39m     )
+[32m    321[39m     [38;5;28;01mreturn[39;00m expressions.LinearExpression(ds, [38;5;28mself[39m.model)
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/common.py:258[39m, in [36mas_dataarray[39m[34m(arr, coords, dims, **kwargs)[39m
+[32m    256[39m     arr = numpy_to_dataarray(arr, coords=coords, dims=dims, **kwargs)
+[32m    257[39m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(arr, (np.number, [38;5;28mint[39m, [38;5;28mfloat[39m, [38;5;28mstr[39m, [38;5;28mbool[39m, [38;5;28mlist[39m)):
+[32m--> [39m[32m258[39m     arr = [43mDataArray[49m[43m([49m[43marr[49m[43m,[49m[43m [49m[43mcoords[49m[43m=[49m[43mcoords[49m[43m,[49m[43m [49m[43mdims[49m[43m=[49m[43mdims[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    260[39m [38;5;28;01melif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(arr, DataArray):
+[32m    261[39m     supported_types = [
+[32m    262[39m         np.number,
+[32m    263[39m         [38;5;28mstr[39m,
+[32m   (...)[39m[32m    269[39m         DataArray,
+[32m    270[39m     ]
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/xarray/core/dataarray.py:487[39m, in [36mDataArray.__init__[39m[34m(self, data, coords, dims, name, attrs, indexes, fastpath)[39m
+[32m    485[39m data = _check_data_shape(data, coords, dims)
+[32m    486[39m data = as_compatible_data(data)
+[32m--> [39m[32m487[39m coords, dims = [43m_infer_coords_and_dims[49m[43m([49m[43mdata[49m[43m.[49m[43mshape[49m[43m,[49m[43m [49m[43mcoords[49m[43m,[49m[43m [49m[43mdims[49m[43m)[49m
+[32m    488[39m variable = Variable(dims, data, attrs, fastpath=[38;5;28;01mTrue[39;00m)
+[32m    490[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(coords, Coordinates):
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/xarray/core/dataarray.py:192[39m, in [36m_infer_coords_and_dims[39m[34m(shape, coords, dims)[39m
+[32m    190[39m dims_tuple = [38;5;28mtuple[39m(dims)
+[32m    191[39m [38;5;28;01mif[39;00m [38;5;28mlen[39m(dims_tuple) != [38;5;28mlen[39m(shape):
+[32m--> [39m[32m192[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[32m    193[39m         [33m"[39m[33mdifferent number of dimensions on data [39m[33m"[39m
+[32m    194[39m         [33mf[39m[33m"[39m[33mand dims: [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(shape)[38;5;132;01m}[39;00m[33m vs [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(dims_tuple)[38;5;132;01m}[39;00m[33m"[39m
+[32m    195[39m     )
+[32m    196[39m [38;5;28;01mfor[39;00m d [38;5;129;01min[39;00m dims_tuple:
+[32m    197[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m hashable(d):
+
+[31mValueError[39m: different number of dimensions on data and dims: 0 vs 1
+

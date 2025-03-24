@@ -726,19 +726,82 @@ initialized
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s1">&#39;gurobi&#39;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1143,</span> in <span class="ni">Model.solve</span><span class="nt">(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1140</span>     <span class="n">solver_name</span> <span class="o">=</span> <span class="n">available_solvers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1142</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Solve problem using </span><span class="si">{</span><span class="n">solver_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> solver&quot;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1143</span> <span class="k">assert</span> <span class="n">solver_name</span> <span class="ow">in</span> <span class="n">available_solvers</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Solver </span><span class="si">{</span><span class="n">solver_name</span><span class="si">}</span><span class="s2"> not installed&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1145</span> <span class="c1"># reset result</span>
-<span class="g g-Whitespace">   </span><span class="mi">1146</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_solution</span><span class="p">()</span>
-
-<span class="ne">AssertionError</span>: Solver gurobi not installed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-iiqbea6r.lp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.00 seconds
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 2 rows, 2 columns, 4 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - &quot;Ubuntu 24.04.2 LTS&quot;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimize a model with 2 rows, 2 columns and 4 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model fingerprint: 0x4c5ee539
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient statistics:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Matrix range     [2e+00, 7e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Objective range  [1e+00, 2e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Bounds range     [0e+00, 0e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  RHS range        [3e+00, 1e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.00s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolved: 2 rows, 2 columns, 4 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration    Objective       Primal Inf.    Dual Inf.      Time
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       0    0.0000000e+00   1.625000e+00   0.000000e+00      0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       2    2.8620690e+00   0.000000e+00   0.000000e+00      0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 2 iterations and 0.01 seconds (0.00 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective  2.862068966e+00
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
 </pre></div>
 </div>
 </div>
@@ -1132,7 +1195,7 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;solution&#x27; ()&gt; Size: 8B
-array(0.03448276)</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'solution'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-d91e8a74-10a7-4315-a118-a582030512f3' class='xr-array-in' type='checkbox' checked><label for='section-d91e8a74-10a7-4315-a118-a582030512f3' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.03448</span></div><div class='xr-array-data'><pre>array(0.03448276)</pre></div></div></li><li class='xr-section-item'><input id='section-4744c04b-f676-4b4a-ace2-7392143c5776' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4744c04b-f676-4b4a-ace2-7392143c5776' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-f356a44c-190f-43f1-952a-907224345710' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f356a44c-190f-43f1-952a-907224345710' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-3d5e3d0c-0c8c-4c93-aed1-29507d0696e0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-3d5e3d0c-0c8c-4c93-aed1-29507d0696e0' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+array(0.03448276)</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'solution'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-4a3af07c-fd8a-49db-9797-508aa1fcfd71' class='xr-array-in' type='checkbox' checked><label for='section-4a3af07c-fd8a-49db-9797-508aa1fcfd71' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.03448</span></div><div class='xr-array-data'><pre>array(0.03448276)</pre></div></div></li><li class='xr-section-item'><input id='section-a48f20e8-6bdc-44e5-a16d-d9fe9ac7f227' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-a48f20e8-6bdc-44e5-a16d-d9fe9ac7f227' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-cb0a5404-b1ef-40a2-bd1c-77fd85adf08c' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-cb0a5404-b1ef-40a2-bd1c-77fd85adf08c' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-5565d6a4-e7cc-44b0-8a33-9bc7e24d130a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-5565d6a4-e7cc-44b0-8a33-9bc7e24d130a' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1512,7 +1575,7 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;solution&#x27; ()&gt; Size: 8B
-array(1.4137931)</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'solution'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-2df04255-d40f-48eb-b61c-119f82362db2' class='xr-array-in' type='checkbox' checked><label for='section-2df04255-d40f-48eb-b61c-119f82362db2' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>1.414</span></div><div class='xr-array-data'><pre>array(1.4137931)</pre></div></div></li><li class='xr-section-item'><input id='section-1dba63e5-ef0d-4806-83ea-15a93e8f6587' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-1dba63e5-ef0d-4806-83ea-15a93e8f6587' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-870be051-780e-4e69-a9c1-b6ee36b05a55' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-870be051-780e-4e69-a9c1-b6ee36b05a55' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-d082812a-35e6-4ef6-b8f5-54ea697c03d2' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d082812a-35e6-4ef6-b8f5-54ea697c03d2' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+array(1.4137931)</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'solution'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-fec8f836-c068-4b9f-9c86-d4bf7e9283d5' class='xr-array-in' type='checkbox' checked><label for='section-fec8f836-c068-4b9f-9c86-d4bf7e9283d5' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>1.414</span></div><div class='xr-array-data'><pre>array(1.4137931)</pre></div></div></li><li class='xr-section-item'><input id='section-ece4e684-ffaa-4030-a1f7-909f3e94b944' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-ece4e684-ffaa-4030-a1f7-909f3e94b944' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-cd292aa4-8ed2-47f4-840a-3e9422ee8f80' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-cd292aa4-8ed2-47f4-840a-3e9422ee8f80' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-7ee13cfd-a71f-4664-8eb8-412177b31e22' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-7ee13cfd-a71f-4664-8eb8-412177b31e22' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>We can also read out the objective value:</p>
 <div class="cell docutils container">
@@ -1906,7 +1969,7 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;con0&#x27; ()&gt; Size: 8B
-array(0.27586207)</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'con0'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-d990d70b-01f6-4723-a9de-d7a94cb2474f' class='xr-array-in' type='checkbox' checked><label for='section-d990d70b-01f6-4723-a9de-d7a94cb2474f' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.2759</span></div><div class='xr-array-data'><pre>array(0.27586207)</pre></div></div></li><li class='xr-section-item'><input id='section-6bf4458d-daec-4021-9d3f-b9cd760e0c99' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6bf4458d-daec-4021-9d3f-b9cd760e0c99' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-6ca6b2c6-80bf-4ae8-b30d-96526a148027' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6ca6b2c6-80bf-4ae8-b30d-96526a148027' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-757b4429-9be9-4773-ac02-8d4738eb07ac' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-757b4429-9be9-4773-ac02-8d4738eb07ac' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+array(0.27586207)</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'con0'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-9faea71a-c68d-4bdd-b7fc-102e680925e6' class='xr-array-in' type='checkbox' checked><label for='section-9faea71a-c68d-4bdd-b7fc-102e680925e6' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.2759</span></div><div class='xr-array-data'><pre>array(0.27586207)</pre></div></div></li><li class='xr-section-item'><input id='section-3f32f857-f062-446e-9ce4-59a02c6f13d2' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-3f32f857-f062-446e-9ce4-59a02c6f13d2' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-a297e399-e617-468b-bab9-991175929aff' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-a297e399-e617-468b-bab9-991175929aff' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-84f690c0-ee2a-4e11-b7e4-bdd9b7832ac9' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-84f690c0-ee2a-4e11-b7e4-bdd9b7832ac9' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2286,7 +2349,7 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;con1&#x27; ()&gt; Size: 8B
-array(0.03448276)</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'con1'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-7781112a-5a6e-49bd-b15b-7d9c1b69e048' class='xr-array-in' type='checkbox' checked><label for='section-7781112a-5a6e-49bd-b15b-7d9c1b69e048' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.03448</span></div><div class='xr-array-data'><pre>array(0.03448276)</pre></div></div></li><li class='xr-section-item'><input id='section-278db2b9-b057-49aa-9a4c-dc8653b6ef3f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-278db2b9-b057-49aa-9a4c-dc8653b6ef3f' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-6cf8aeaf-40dc-4f58-a9ba-85638135c126' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6cf8aeaf-40dc-4f58-a9ba-85638135c126' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-775814d5-cb73-4f0b-9382-43c42886402f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-775814d5-cb73-4f0b-9382-43c42886402f' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+array(0.03448276)</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'con1'</div></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-903b40bb-7c44-48bf-b800-cc12f15f689c' class='xr-array-in' type='checkbox' checked><label for='section-903b40bb-7c44-48bf-b800-cc12f15f689c' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.03448</span></div><div class='xr-array-data'><pre>array(0.03448276)</pre></div></div></li><li class='xr-section-item'><input id='section-89eb2911-cd0a-4372-8293-fbdda0612c17' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-89eb2911-cd0a-4372-8293-fbdda0612c17' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-0fad1203-5779-4af5-8805-bc79471b9481' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0fad1203-5779-4af5-8805-bc79471b9481' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-85c36586-ba3b-482d-9846-a028118b757f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-85c36586-ba3b-482d-9846-a028118b757f' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2456,34 +2519,82 @@ initialized
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set parameter Username
-Set parameter LicenseID to value 2604332
-Academic license - for non-commercial use only - expires 2025-12-30
-Read LP format model from file C:\Users\34620\AppData\Local\Temp\linopy-problem-989qt21e.lp
-Reading time = 0.01 seconds
-obj: 20 rows, 20 columns, 40 nonzeros
-Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 11.0 (26100.2))
-
-CPU model: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, instruction set [SSE2|AVX|AVX2]
-Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-
-Optimize a model with 20 rows, 20 columns and 40 nonzeros
-Model fingerprint: 0x3434cd3b
-Coefficient statistics:
-  Matrix range     [2e+00, 7e+00]
-  Objective range  [1e+00, 2e+00]
-  Bounds range     [0e+00, 0e+00]
-  RHS range        [3e+00, 9e+01]
-Presolve removed 2 rows and 2 columns
-Presolve time: 0.03s
-Presolved: 18 rows, 18 columns, 36 nonzeros
-
-Iteration    Objective       Primal Inf.    Dual Inf.      Time
-       0    0.0000000e+00   7.312500e+01   0.000000e+00      0s
-      18    1.2879310e+02   0.000000e+00   0.000000e+00      0s
-
-Solved in 18 iterations and 0.06 seconds (0.00 work units)
-Optimal objective  1.287931034e+02
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-ype8k01t.lp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.00 seconds
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 20 rows, 20 columns, 40 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - &quot;Ubuntu 24.04.2 LTS&quot;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimize a model with 20 rows, 20 columns and 40 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model fingerprint: 0x3434cd3b
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient statistics:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Matrix range     [2e+00, 7e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Objective range  [1e+00, 2e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Bounds range     [0e+00, 0e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  RHS range        [3e+00, 9e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve removed 2 rows and 2 columns
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.00s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolved: 18 rows, 18 columns, 36 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration    Objective       Primal Inf.    Dual Inf.      Time
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       0    0.0000000e+00   7.312500e+01   0.000000e+00      0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      18    1.2879310e+02   0.000000e+00   0.000000e+00      0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 18 iterations and 0.01 seconds (0.00 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective  1.287931034e+02
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -2589,7 +2700,7 @@ Optimal objective  1.287931034e+02
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4705aa0e373fb61c8fc23812ccc1c4ff8cb0a5476485ad2cb365457d41e7a0b5.png" src="_images/4705aa0e373fb61c8fc23812ccc1c4ff8cb0a5476485ad2cb365457d41e7a0b5.png" />
+<img alt="_images/70be8ae9af9309d117371f5b49359c496c5163cc17d4f483c1fadd8afaaa4f9d.png" src="_images/70be8ae9af9309d117371f5b49359c496c5163cc17d4f483c1fadd8afaaa4f9d.png" />
 </div>
 </div>
 <p>Alright! Now you learned how to set up linopy variables and expressions with coordinates. For more advanced <code class="docutils literal notranslate"><span class="pre">linopy</span></code> operations you can check out the <a class="reference external" href="https://linopy.readthedocs.io/en/latest/user-guide.html">User Guide</a>.</p>

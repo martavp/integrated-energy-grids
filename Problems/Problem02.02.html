@@ -547,25 +547,454 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">24</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">m22</span><span class="o">.</span><span class="n">add_objective</span><span class="p">(</span><span class="n">cost_gas</span><span class="o">*</span><span class="n">x_g</span><span class="p">,</span> <span class="n">sense</span> <span class="o">=</span> <span class="s2">&quot;min&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="c1"># Solve</span>
-<span class="ne">---&gt; </span><span class="mi">24</span> <span class="n">m22</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;gurobi&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m22</span><span class="o">.</span><span class="n">solution</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1143,</span> in <span class="ni">Model.solve</span><span class="nt">(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1140</span>     <span class="n">solver_name</span> <span class="o">=</span> <span class="n">available_solvers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1142</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Solve problem using </span><span class="si">{</span><span class="n">solver_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> solver&quot;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1143</span> <span class="k">assert</span> <span class="n">solver_name</span> <span class="ow">in</span> <span class="n">available_solvers</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Solver </span><span class="si">{</span><span class="n">solver_name</span><span class="si">}</span><span class="s2"> not installed&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1145</span> <span class="c1"># reset result</span>
-<span class="g g-Whitespace">   </span><span class="mi">1146</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_solution</span><span class="p">()</span>
-
-<span class="ne">AssertionError</span>: Solver gurobi not installed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-xpud13gn.lp
+</pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.00 seconds
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 6 rows, 3 columns, 8 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - &quot;Ubuntu 24.04.2 LTS&quot;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimize a model with 6 rows, 3 columns and 8 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model fingerprint: 0x81cdebb7
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient statistics:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Matrix range     [1e+00, 1e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Objective range  [6e+01, 6e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Bounds range     [0e+00, 0e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  RHS range        [3e+00, 2e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve removed 6 rows and 3 columns
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.00s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve: All rows and columns removed
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration    Objective       Primal Inf.    Dual Inf.      Time
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       0    2.9100000e+02   0.000000e+00   0.000000e+00      0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 0 iterations and 0.01 seconds (0.00 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective  2.910000000e+02
+</pre></div>
+</div>
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1f1f1f;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: inline-block;
+  opacity: 0;
+  height: 0;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: "►";
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: "▼";
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: "(";
+}
+
+.xr-dim-list:after {
+  content: ")";
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 24B
+Dimensions:  ()
+Data variables:
+    wind     float64 8B 4.95
+    solar    float64 8B 3.4
+    gas      float64 8B 4.85</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-73a2f0b0-e3e5-416d-8437-8dd6008fff61' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-73a2f0b0-e3e5-416d-8437-8dd6008fff61' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-0e428ed8-26fc-4c21-a22a-dc0ffc5bfbc0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0e428ed8-26fc-4c21-a22a-dc0ffc5bfbc0' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-fccd227b-1756-4d3e-b120-cfbe3fb5517d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fccd227b-1756-4d3e-b120-cfbe3fb5517d' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>wind</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.95</div><input id='attrs-fdf56dd6-2fcd-4bb4-a3c4-3a7d211a3138' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-fdf56dd6-2fcd-4bb4-a3c4-3a7d211a3138' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ab26cd69-1f82-42e8-a4ce-836cc7e5d722' class='xr-var-data-in' type='checkbox'><label for='data-ab26cd69-1f82-42e8-a4ce-836cc7e5d722' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(4.95)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>3.4</div><input id='attrs-612bff0b-c042-4586-bd4a-27d05071d030' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-612bff0b-c042-4586-bd4a-27d05071d030' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b4ed7f9c-a287-4ade-9632-e30bf24fae2e' class='xr-var-data-in' type='checkbox'><label for='data-b4ed7f9c-a287-4ade-9632-e30bf24fae2e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(3.4)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.85</div><input id='attrs-18cfe485-eb97-47c7-aabe-ce3146aceb67' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-18cfe485-eb97-47c7-aabe-ce3146aceb67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f9e547bb-cdd5-4b54-a093-7f7645b07e70' class='xr-var-data-in' type='checkbox'><label for='data-f9e547bb-cdd5-4b54-a093-7f7645b07e70' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(4.85)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-4d71fc4f-456f-4cc5-aaf2-5a90f9f379ba' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4d71fc4f-456f-4cc5-aaf2-5a90f9f379ba' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-4c7aefc8-858d-4ff0-838e-541ca062c49a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4c7aefc8-858d-4ff0-838e-541ca062c49a' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Print the duals</p>
 <div class="cell docutils container">
@@ -953,7 +1382,7 @@ Data variables:
     wind_cf         float64 8B -60.0
     solar_cf        float64 8B -60.0
     wind_cap        float64 8B 0.0
-    solar_cap       float64 8B 0.0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-eabda64e-d949-45d1-8c1e-20ae50152cac' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-eabda64e-d949-45d1-8c1e-20ae50152cac' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-fd7177ba-cccf-4bcd-88f7-9797d1407293' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-fd7177ba-cccf-4bcd-88f7-9797d1407293' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-51ab208d-65d7-4b75-946b-e6be8718077a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-51ab208d-65d7-4b75-946b-e6be8718077a' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>energy_balance</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>60.0</div><input id='attrs-a59d4f83-c608-4a73-8580-c51f823a76e7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a59d4f83-c608-4a73-8580-c51f823a76e7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5d00ff8c-d114-4998-8795-c3815038f504' class='xr-var-data-in' type='checkbox'><label for='data-5d00ff8c-d114-4998-8795-c3815038f504' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(60.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas_cap</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0</div><input id='attrs-b6ca8e3d-087d-473c-9845-3d872a1936be' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b6ca8e3d-087d-473c-9845-3d872a1936be' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4239fc4e-9435-44ac-b08c-93bba7416de0' class='xr-var-data-in' type='checkbox'><label for='data-4239fc4e-9435-44ac-b08c-93bba7416de0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cf</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0</div><input id='attrs-ed275709-2abe-4e90-a431-6912b3be17c8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ed275709-2abe-4e90-a431-6912b3be17c8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c8e2c303-a9e1-40fa-b7af-4936a0b1b74c' class='xr-var-data-in' type='checkbox'><label for='data-c8e2c303-a9e1-40fa-b7af-4936a0b1b74c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(-60.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cf</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0</div><input id='attrs-cc07eed4-e805-4259-9c5b-ef9f68b02cdb' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cc07eed4-e805-4259-9c5b-ef9f68b02cdb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1e771304-b689-43a7-abca-2371d9893f58' class='xr-var-data-in' type='checkbox'><label for='data-1e771304-b689-43a7-abca-2371d9893f58' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(-60.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cap</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0</div><input id='attrs-cc81ac6f-fad8-4e8b-be14-64e9c93dc249' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cc81ac6f-fad8-4e8b-be14-64e9c93dc249' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0f77e011-f534-4000-b32b-18c8281de53a' class='xr-var-data-in' type='checkbox'><label for='data-0f77e011-f534-4000-b32b-18c8281de53a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cap</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0</div><input id='attrs-2a3f7869-6495-4ab5-8437-a20936279745' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-2a3f7869-6495-4ab5-8437-a20936279745' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9bec973e-beb9-43d5-ad17-d240aa6930a2' class='xr-var-data-in' type='checkbox'><label for='data-9bec973e-beb9-43d5-ad17-d240aa6930a2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d455a56f-d67f-427e-b2ff-933e84898561' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d455a56f-d67f-427e-b2ff-933e84898561' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-05f9bc0b-5e8f-4e73-b67c-2ffdc3e12379' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-05f9bc0b-5e8f-4e73-b67c-2ffdc3e12379' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+    solar_cap       float64 8B 0.0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-4f78d9e6-9bff-44e5-b713-825e5b70a852' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4f78d9e6-9bff-44e5-b713-825e5b70a852' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-06d8520f-145d-4889-82cd-d6eb45bc3400' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-06d8520f-145d-4889-82cd-d6eb45bc3400' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-bc56622c-8da1-4462-8219-99197a389308' class='xr-section-summary-in' type='checkbox'  checked><label for='section-bc56622c-8da1-4462-8219-99197a389308' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>energy_balance</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>60.0</div><input id='attrs-a49d1dad-97c9-4cc0-be11-f638542c509d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a49d1dad-97c9-4cc0-be11-f638542c509d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cdb3d0d3-7dea-469f-a3e2-3dd7daed504f' class='xr-var-data-in' type='checkbox'><label for='data-cdb3d0d3-7dea-469f-a3e2-3dd7daed504f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(60.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas_cap</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0</div><input id='attrs-c65bf040-98c0-404d-90c0-0d746ca3de84' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c65bf040-98c0-404d-90c0-0d746ca3de84' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-77b2292c-d8f8-4189-b39e-21f6626a7912' class='xr-var-data-in' type='checkbox'><label for='data-77b2292c-d8f8-4189-b39e-21f6626a7912' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cf</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0</div><input id='attrs-c790abba-d1a9-481e-acba-3657fce60f25' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c790abba-d1a9-481e-acba-3657fce60f25' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-873bda09-ff26-45db-81c8-df2327b0f51e' class='xr-var-data-in' type='checkbox'><label for='data-873bda09-ff26-45db-81c8-df2327b0f51e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(-60.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cf</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0</div><input id='attrs-77e908b1-5f90-4fe3-a343-7bb8825c6d29' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-77e908b1-5f90-4fe3-a343-7bb8825c6d29' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0c109770-0dcb-4bfb-a0fe-c0324c25b4d7' class='xr-var-data-in' type='checkbox'><label for='data-0c109770-0dcb-4bfb-a0fe-c0324c25b4d7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(-60.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cap</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0</div><input id='attrs-d4c667c1-ff3f-46e5-a7de-a9619b3a506d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d4c667c1-ff3f-46e5-a7de-a9619b3a506d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-43e5f045-6ae3-4992-b3a2-512dea65442e' class='xr-var-data-in' type='checkbox'><label for='data-43e5f045-6ae3-4992-b3a2-512dea65442e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cap</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0</div><input id='attrs-d5b81d4a-f775-4493-93c6-6de725f27fe3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d5b81d4a-f775-4493-93c6-6de725f27fe3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6e36b5ef-223c-442a-8643-3daa676b4a59' class='xr-var-data-in' type='checkbox'><label for='data-6e36b5ef-223c-442a-8643-3daa676b4a59' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(0.)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-47ddcf05-0b18-40b0-b130-3ecc620529f8' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-47ddcf05-0b18-40b0-b130-3ecc620529f8' class='xr-section-summary'  title='Expand/collapse section'>Indexes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-c051a556-2a65-4707-baf9-72271f0e9743' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-c051a556-2a65-4707-baf9-72271f0e9743' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>b)</p>
 <p>Read the data for problem 2b.</p>
@@ -998,32 +1427,76 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set parameter Username
-Set parameter LicenseID to value 2609678
-Academic license - for non-commercial use only - expires 2026-01-14
-Read LP format model from file /private/var/folders/zg/by4_k0616s98pw41wld9475c0000gp/T/linopy-problem-livtkatt.lp
-Reading time = 0.01 seconds
-obj: 24 rows, 12 columns, 32 nonzeros
-Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (mac64[arm] - Darwin 24.2.0 24C101)
-
-CPU model: Apple M3
-Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
-
-Optimize a model with 24 rows, 12 columns and 32 nonzeros
-Model fingerprint: 0xf7153d36
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [6e+01, 6e+01]
-  Bounds range     [0e+00, 0e+00]
-  RHS range        [6e-01, 2e+01]
-Presolve removed 24 rows and 12 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-Iteration    Objective       Primal Inf.    Dual Inf.      Time
-       0    1.2204000e+03   0.000000e+00   0.000000e+00      0s
-
-Solved in 0 iterations and 0.00 seconds (0.00 work units)
-Optimal objective  1.220400000e+03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-4yf1hs9e.lp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.00 seconds
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 24 rows, 12 columns, 32 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - &quot;Ubuntu 24.04.2 LTS&quot;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimize a model with 24 rows, 12 columns and 32 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model fingerprint: 0xf7153d36
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient statistics:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Matrix range     [1e+00, 1e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Objective range  [6e+01, 6e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Bounds range     [0e+00, 0e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  RHS range        [6e-01, 2e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve removed 24 rows and 12 columns
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.00s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve: All rows and columns removed
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration    Objective       Primal Inf.    Dual Inf.      Time
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       0    1.2204000e+03   0.000000e+00   0.000000e+00      0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 0 iterations and 0.01 seconds (0.00 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective  1.220400000e+03
 </pre></div>
 </div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
@@ -1403,11 +1876,11 @@ Coordinates:
 Data variables:
     wind     (dim_0) float64 32B 5.7 4.05 4.05 5.85
     solar    (dim_0) float64 32B 0.0 3.0 9.6 0.6
-    gas      (dim_0) float64 32B 4.83 6.88 1.68 6.95</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-edde8f49-cecc-46c0-9b29-a7f1864e8a02' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-edde8f49-cecc-46c0-9b29-a7f1864e8a02' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>dim_0</span>: 4</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-0656f620-b75a-4b36-ad0a-1bee91885fd1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0656f620-b75a-4b36-ad0a-1bee91885fd1' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>dim_0</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-07-01T06:00:00 ... 2020-07-02</div><input id='attrs-ee08bc93-a49b-4e99-a0ab-5d7c1716a90c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ee08bc93-a49b-4e99-a0ab-5d7c1716a90c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-248b4dbe-8c26-4de4-89e1-d4ed93ad9497' class='xr-var-data-in' type='checkbox'><label for='data-248b4dbe-8c26-4de4-89e1-d4ed93ad9497' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-07-01T06:00:00.000000000&#x27;, &#x27;2020-07-01T12:00:00.000000000&#x27;,
+    gas      (dim_0) float64 32B 4.83 6.88 1.68 6.95</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-4f8b5aee-5424-454e-8029-50a4518cb173' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4f8b5aee-5424-454e-8029-50a4518cb173' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>dim_0</span>: 4</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-c5d2451c-4417-48aa-9b19-24b9f57edaee' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c5d2451c-4417-48aa-9b19-24b9f57edaee' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>dim_0</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-07-01T06:00:00 ... 2020-07-02</div><input id='attrs-084c35e2-22dd-4d07-9abb-f9a82ee31280' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-084c35e2-22dd-4d07-9abb-f9a82ee31280' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0c640919-6caf-428d-90e9-75b1b56c8ef3' class='xr-var-data-in' type='checkbox'><label for='data-0c640919-6caf-428d-90e9-75b1b56c8ef3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-07-01T06:00:00.000000000&#x27;, &#x27;2020-07-01T12:00:00.000000000&#x27;,
        &#x27;2020-07-01T18:00:00.000000000&#x27;, &#x27;2020-07-02T00:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ccc30c05-242a-4db7-aa93-a9f4dc67b8e5' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ccc30c05-242a-4db7-aa93-a9f4dc67b8e5' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>wind</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.7 4.05 4.05 5.85</div><input id='attrs-0b45cb37-f426-4f5e-9243-ded531659569' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0b45cb37-f426-4f5e-9243-ded531659569' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e52f3195-a95b-4767-add0-ff45f28f2765' class='xr-var-data-in' type='checkbox'><label for='data-e52f3195-a95b-4767-add0-ff45f28f2765' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([5.7 , 4.05, 4.05, 5.85])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 3.0 9.6 0.6</div><input id='attrs-aea99d18-15a6-40be-9710-e8347b1be049' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-aea99d18-15a6-40be-9710-e8347b1be049' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ad27bd2d-0e3c-4804-8e81-3fdf7284bd9b' class='xr-var-data-in' type='checkbox'><label for='data-ad27bd2d-0e3c-4804-8e81-3fdf7284bd9b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0. , 3. , 9.6, 0.6])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.83 6.88 1.68 6.95</div><input id='attrs-b0fded30-8398-4e08-ac16-3be5e831ea9e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b0fded30-8398-4e08-ac16-3be5e831ea9e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9980cee0-18be-4289-81c6-4bd967e0a37b' class='xr-var-data-in' type='checkbox'><label for='data-9980cee0-18be-4289-81c6-4bd967e0a37b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4.83, 6.88, 1.68, 6.95])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d8383ecd-0ba6-458e-878b-97d04fba493c' class='xr-section-summary-in' type='checkbox'  ><label for='section-d8383ecd-0ba6-458e-878b-97d04fba493c' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>dim_0</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-b200214d-2d71-4c99-9ad5-fb5fa7b56a30' class='xr-index-data-in' type='checkbox'/><label for='index-b200214d-2d71-4c99-9ad5-fb5fa7b56a30' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-07-01 06:00:00&#x27;, &#x27;2020-07-01 12:00:00&#x27;,
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2f506662-6be2-4649-b3a7-88f64f483e2d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2f506662-6be2-4649-b3a7-88f64f483e2d' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>wind</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.7 4.05 4.05 5.85</div><input id='attrs-2ec54104-9757-44c2-b5fb-018acab76d67' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-2ec54104-9757-44c2-b5fb-018acab76d67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9ee9c356-23db-4615-a185-3a3767a63fd6' class='xr-var-data-in' type='checkbox'><label for='data-9ee9c356-23db-4615-a185-3a3767a63fd6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([5.7 , 4.05, 4.05, 5.85])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 3.0 9.6 0.6</div><input id='attrs-8295534e-b413-4f69-a760-95e732d33878' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8295534e-b413-4f69-a760-95e732d33878' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1830aa30-5a06-4930-bd92-e2c9f4c6452d' class='xr-var-data-in' type='checkbox'><label for='data-1830aa30-5a06-4930-bd92-e2c9f4c6452d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0. , 3. , 9.6, 0.6])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.83 6.88 1.68 6.95</div><input id='attrs-38789c58-80e9-40f8-a065-98aba58bfa5c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-38789c58-80e9-40f8-a065-98aba58bfa5c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b271ec16-46da-4889-b624-401d4fd61efc' class='xr-var-data-in' type='checkbox'><label for='data-b271ec16-46da-4889-b624-401d4fd61efc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4.83, 6.88, 1.68, 6.95])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-1d562e8f-3113-4c84-8d03-42c40317d071' class='xr-section-summary-in' type='checkbox'  ><label for='section-1d562e8f-3113-4c84-8d03-42c40317d071' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>dim_0</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-cd0520cd-e692-45ae-8ac6-6a7b63d01bb8' class='xr-index-data-in' type='checkbox'/><label for='index-cd0520cd-e692-45ae-8ac6-6a7b63d01bb8' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-07-01 06:00:00&#x27;, &#x27;2020-07-01 12:00:00&#x27;,
                &#x27;2020-07-01 18:00:00&#x27;, &#x27;2020-07-02 00:00:00&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;dim_0&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d2d02f7a-4b3f-431e-8f7a-8123d2bf3b71' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d2d02f7a-4b3f-431e-8f7a-8123d2bf3b71' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;dim_0&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a7bbe3fa-9c52-41e2-9f50-8b1b499a89c5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-a7bbe3fa-9c52-41e2-9f50-8b1b499a89c5' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Compute the duals</p>
 <div class="cell docutils container">
@@ -1797,11 +2270,11 @@ Data variables:
     wind_cf         (dim_0) float64 32B -60.0 -60.0 -60.0 -60.0
     solar_cf        (dim_0) float64 32B -60.0 -60.0 -60.0 -60.0
     wind_cap        (dim_0) float64 32B 0.0 0.0 0.0 0.0
-    solar_cap       (dim_0) float64 32B 0.0 0.0 0.0 0.0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-9b86c4c8-b289-4297-8f37-e1629dd85700' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-9b86c4c8-b289-4297-8f37-e1629dd85700' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>dim_0</span>: 4</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-2193f566-5435-4022-8cb3-4f4470e9ef9b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2193f566-5435-4022-8cb3-4f4470e9ef9b' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>dim_0</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-07-01T06:00:00 ... 2020-07-02</div><input id='attrs-bb811a81-9d65-42a1-952b-d707c7aff213' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-bb811a81-9d65-42a1-952b-d707c7aff213' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f409b05b-1752-486b-82d9-c2990f576b68' class='xr-var-data-in' type='checkbox'><label for='data-f409b05b-1752-486b-82d9-c2990f576b68' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-07-01T06:00:00.000000000&#x27;, &#x27;2020-07-01T12:00:00.000000000&#x27;,
+    solar_cap       (dim_0) float64 32B 0.0 0.0 0.0 0.0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-145689fc-11ed-45ba-9435-7a4342e57640' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-145689fc-11ed-45ba-9435-7a4342e57640' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>dim_0</span>: 4</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-d3e0d946-423d-44bb-8129-483aea6aa0b1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d3e0d946-423d-44bb-8129-483aea6aa0b1' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>dim_0</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-07-01T06:00:00 ... 2020-07-02</div><input id='attrs-0f2b25fc-e9b1-49f5-98a6-a90d7278cbca' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0f2b25fc-e9b1-49f5-98a6-a90d7278cbca' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-87a975dd-ae2e-4039-8d78-52e055583604' class='xr-var-data-in' type='checkbox'><label for='data-87a975dd-ae2e-4039-8d78-52e055583604' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-07-01T06:00:00.000000000&#x27;, &#x27;2020-07-01T12:00:00.000000000&#x27;,
        &#x27;2020-07-01T18:00:00.000000000&#x27;, &#x27;2020-07-02T00:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-cae65d3e-ed22-45ff-8342-06207fd4efba' class='xr-section-summary-in' type='checkbox'  checked><label for='section-cae65d3e-ed22-45ff-8342-06207fd4efba' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>energy_balance</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>60.0 60.0 60.0 60.0</div><input id='attrs-cd715bdf-8463-46e6-b2aa-8670d6a216f7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cd715bdf-8463-46e6-b2aa-8670d6a216f7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4cd66be0-1522-4200-92d4-8a697cee7afb' class='xr-var-data-in' type='checkbox'><label for='data-4cd66be0-1522-4200-92d4-8a697cee7afb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([60., 60., 60., 60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0</div><input id='attrs-4e34f150-aa70-4037-a28f-77ac3763a8b2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4e34f150-aa70-4037-a28f-77ac3763a8b2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5c7f6bd9-7ab9-4e6c-94a0-d6edf2ff3c10' class='xr-var-data-in' type='checkbox'><label for='data-5c7f6bd9-7ab9-4e6c-94a0-d6edf2ff3c10' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cf</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0 -60.0 -60.0 -60.0</div><input id='attrs-0775b35b-89e3-4113-a027-3c515cb2f07c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0775b35b-89e3-4113-a027-3c515cb2f07c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-af77f1a8-5d37-4e11-9009-eb642162fbc4' class='xr-var-data-in' type='checkbox'><label for='data-af77f1a8-5d37-4e11-9009-eb642162fbc4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60., -60., -60., -60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cf</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0 -60.0 -60.0 -60.0</div><input id='attrs-b99b97b4-429a-4603-bd93-55dec954bcc8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b99b97b4-429a-4603-bd93-55dec954bcc8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-74578412-e49b-49f0-8e60-d67260251bd7' class='xr-var-data-in' type='checkbox'><label for='data-74578412-e49b-49f0-8e60-d67260251bd7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60., -60., -60., -60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0</div><input id='attrs-e06316c8-a90f-4ee9-9e0b-e44eeaa8ac55' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e06316c8-a90f-4ee9-9e0b-e44eeaa8ac55' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0dc7132c-64b5-43ae-8494-8b39e346ef31' class='xr-var-data-in' type='checkbox'><label for='data-0dc7132c-64b5-43ae-8494-8b39e346ef31' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0</div><input id='attrs-eff9686a-678b-4458-b3a5-a57d56e430cd' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-eff9686a-678b-4458-b3a5-a57d56e430cd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-56420f36-f0d5-4e60-a069-623bd27cefc5' class='xr-var-data-in' type='checkbox'><label for='data-56420f36-f0d5-4e60-a069-623bd27cefc5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7ec3d1e7-7bc0-47e0-91d7-d7b6794e0e5b' class='xr-section-summary-in' type='checkbox'  ><label for='section-7ec3d1e7-7bc0-47e0-91d7-d7b6794e0e5b' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>dim_0</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-303eaa52-d533-427d-b63f-e4c265345006' class='xr-index-data-in' type='checkbox'/><label for='index-303eaa52-d533-427d-b63f-e4c265345006' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-07-01 06:00:00&#x27;, &#x27;2020-07-01 12:00:00&#x27;,
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-0e8bef59-7932-41f5-a21a-051d3c7e680c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0e8bef59-7932-41f5-a21a-051d3c7e680c' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>energy_balance</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>60.0 60.0 60.0 60.0</div><input id='attrs-126f7289-a688-4975-b99b-c2fb909d2ed6' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-126f7289-a688-4975-b99b-c2fb909d2ed6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6934facb-e1d6-4d7f-959a-ca54cf15884c' class='xr-var-data-in' type='checkbox'><label for='data-6934facb-e1d6-4d7f-959a-ca54cf15884c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([60., 60., 60., 60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0</div><input id='attrs-2719d0ec-077d-4a18-9dd7-a4b9866f395e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-2719d0ec-077d-4a18-9dd7-a4b9866f395e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-05960921-f26b-4286-b520-9ed0004598d3' class='xr-var-data-in' type='checkbox'><label for='data-05960921-f26b-4286-b520-9ed0004598d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cf</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0 -60.0 -60.0 -60.0</div><input id='attrs-492f79e9-383e-4e41-8e13-1f7001628e19' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-492f79e9-383e-4e41-8e13-1f7001628e19' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0a8b201a-68ca-4e4d-8d8b-1b36ab76f1a8' class='xr-var-data-in' type='checkbox'><label for='data-0a8b201a-68ca-4e4d-8d8b-1b36ab76f1a8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60., -60., -60., -60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cf</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0 -60.0 -60.0 -60.0</div><input id='attrs-46c043c9-8c58-48ac-976e-6c1a53a99ecc' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-46c043c9-8c58-48ac-976e-6c1a53a99ecc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9c28e0ce-096d-402e-b220-ed9853061314' class='xr-var-data-in' type='checkbox'><label for='data-9c28e0ce-096d-402e-b220-ed9853061314' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60., -60., -60., -60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0</div><input id='attrs-1a173688-b242-4741-bb56-24b0999b05cd' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1a173688-b242-4741-bb56-24b0999b05cd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4583f23b-b0d5-4e52-96ca-1eaa95bde3f3' class='xr-var-data-in' type='checkbox'><label for='data-4583f23b-b0d5-4e52-96ca-1eaa95bde3f3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0</div><input id='attrs-78666c30-efc0-4e88-b67f-962cd89f43e2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-78666c30-efc0-4e88-b67f-962cd89f43e2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4cc51bfe-8857-41a9-803a-1527a8931eaa' class='xr-var-data-in' type='checkbox'><label for='data-4cc51bfe-8857-41a9-803a-1527a8931eaa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2aa5444c-3cc5-4045-b52a-53bcbf53de01' class='xr-section-summary-in' type='checkbox'  ><label for='section-2aa5444c-3cc5-4045-b52a-53bcbf53de01' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>dim_0</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-40406002-4e35-4722-be39-cb9368809e16' class='xr-index-data-in' type='checkbox'/><label for='index-40406002-4e35-4722-be39-cb9368809e16' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-07-01 06:00:00&#x27;, &#x27;2020-07-01 12:00:00&#x27;,
                &#x27;2020-07-01 18:00:00&#x27;, &#x27;2020-07-02 00:00:00&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;dim_0&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-77d9e050-186b-4a27-9891-e328d40253cb' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-77d9e050-186b-4a27-9891-e328d40253cb' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;dim_0&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-0fe6eba1-8c14-4445-beb1-ed166c23e5c5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0fe6eba1-8c14-4445-beb1-ed166c23e5c5' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>c)</p>
 <p>Load the data for problem 2c.</p>
@@ -1846,32 +2319,76 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set parameter Username
-Set parameter LicenseID to value 2609678
-Academic license - for non-commercial use only - expires 2026-01-14
-Read LP format model from file /private/var/folders/zg/by4_k0616s98pw41wld9475c0000gp/T/linopy-problem-w2ldlt72.lp
-Reading time = 0.01 seconds
-obj: 144 rows, 72 columns, 192 nonzeros
-Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (mac64[arm] - Darwin 24.2.0 24C101)
-
-CPU model: Apple M3
-Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
-
-Optimize a model with 144 rows, 72 columns and 192 nonzeros
-Model fingerprint: 0x753455ff
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [6e+01, 6e+01]
-  Bounds range     [0e+00, 0e+00]
-  RHS range        [6e-01, 2e+01]
-Presolve removed 144 rows and 72 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-Iteration    Objective       Primal Inf.    Dual Inf.      Time
-       0    7.6950000e+03   0.000000e+00   0.000000e+00      0s
-
-Solved in 0 iterations and 0.00 seconds (0.00 work units)
-Optimal objective  7.695000000e+03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-tco8z_1a.lp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.00 seconds
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 144 rows, 72 columns, 192 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - &quot;Ubuntu 24.04.2 LTS&quot;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimize a model with 144 rows, 72 columns and 192 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model fingerprint: 0x753455ff
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient statistics:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Matrix range     [1e+00, 1e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Objective range  [6e+01, 6e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Bounds range     [0e+00, 0e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  RHS range        [6e-01, 2e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve removed 144 rows and 72 columns
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.01s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve: All rows and columns removed
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration    Objective       Primal Inf.    Dual Inf.      Time
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       0    7.6950000e+03   0.000000e+00   0.000000e+00      0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 0 iterations and 0.01 seconds (0.00 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal objective  7.695000000e+03
 </pre></div>
 </div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
@@ -2251,7 +2768,7 @@ Coordinates:
 Data variables:
     wind     (dim_0) float64 192B 5.85 6.45 6.15 5.85 5.4 ... 5.7 6.15 6.3 6.9
     solar    (dim_0) float64 192B 0.0 0.0 0.0 0.0 0.0 ... 0.6 0.0 0.0 0.0 0.0
-    gas      (dim_0) float64 192B 4.95 3.95 4.25 4.35 4.6 ... 7.9 6.45 5.5 4.5</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-242b3e62-f7ac-4af7-9c6e-a31873b06571' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-242b3e62-f7ac-4af7-9c6e-a31873b06571' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>dim_0</span>: 24</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-a99379a6-7362-41a5-a331-178696dbb189' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a99379a6-7362-41a5-a331-178696dbb189' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>dim_0</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-07-01 ... 2020-07-01T23:00:00</div><input id='attrs-cbb87886-5de3-488f-bad0-37cf95699e88' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cbb87886-5de3-488f-bad0-37cf95699e88' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7ef48be3-adc9-44e7-bf2d-4eb39d3efe6a' class='xr-var-data-in' type='checkbox'><label for='data-7ef48be3-adc9-44e7-bf2d-4eb39d3efe6a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-07-01T00:00:00.000000000&#x27;, &#x27;2020-07-01T01:00:00.000000000&#x27;,
+    gas      (dim_0) float64 192B 4.95 3.95 4.25 4.35 4.6 ... 7.9 6.45 5.5 4.5</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-01f79a8a-fb7d-4953-a914-f2390545915f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-01f79a8a-fb7d-4953-a914-f2390545915f' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>dim_0</span>: 24</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-0303d9be-e70e-480b-b004-f63ea8396524' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0303d9be-e70e-480b-b004-f63ea8396524' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>dim_0</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-07-01 ... 2020-07-01T23:00:00</div><input id='attrs-f26621c1-8f4f-4f35-8b59-0361a88710f0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f26621c1-8f4f-4f35-8b59-0361a88710f0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a752a679-a5d8-4083-935e-691b65256da2' class='xr-var-data-in' type='checkbox'><label for='data-a752a679-a5d8-4083-935e-691b65256da2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-07-01T00:00:00.000000000&#x27;, &#x27;2020-07-01T01:00:00.000000000&#x27;,
        &#x27;2020-07-01T02:00:00.000000000&#x27;, &#x27;2020-07-01T03:00:00.000000000&#x27;,
        &#x27;2020-07-01T04:00:00.000000000&#x27;, &#x27;2020-07-01T05:00:00.000000000&#x27;,
        &#x27;2020-07-01T06:00:00.000000000&#x27;, &#x27;2020-07-01T07:00:00.000000000&#x27;,
@@ -2263,13 +2780,13 @@ Data variables:
        &#x27;2020-07-01T18:00:00.000000000&#x27;, &#x27;2020-07-01T19:00:00.000000000&#x27;,
        &#x27;2020-07-01T20:00:00.000000000&#x27;, &#x27;2020-07-01T21:00:00.000000000&#x27;,
        &#x27;2020-07-01T22:00:00.000000000&#x27;, &#x27;2020-07-01T23:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6e01e15e-bd09-4ef1-bfef-4ee97a4e70ad' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6e01e15e-bd09-4ef1-bfef-4ee97a4e70ad' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>wind</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.85 6.45 6.15 ... 6.15 6.3 6.9</div><input id='attrs-3e9b2a19-c4bf-427e-afcc-2979a87681d5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3e9b2a19-c4bf-427e-afcc-2979a87681d5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7a458e28-fc60-4bd5-b3a1-d01142d3f66e' class='xr-var-data-in' type='checkbox'><label for='data-7a458e28-fc60-4bd5-b3a1-d01142d3f66e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([5.85, 6.45, 6.15, 5.85, 5.4 , 4.95, 4.35, 3.45, 3.75, 2.7 , 4.8 ,
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-65aebff9-a9fb-491b-aa58-f84bb5239f90' class='xr-section-summary-in' type='checkbox'  checked><label for='section-65aebff9-a9fb-491b-aa58-f84bb5239f90' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>wind</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.85 6.45 6.15 ... 6.15 6.3 6.9</div><input id='attrs-4422733e-1d8a-4d3e-8255-1c57ba3cff16' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4422733e-1d8a-4d3e-8255-1c57ba3cff16' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8cc7ece3-250b-448e-a9e2-ae804c15bd3d' class='xr-var-data-in' type='checkbox'><label for='data-8cc7ece3-250b-448e-a9e2-ae804c15bd3d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([5.85, 6.45, 6.15, 5.85, 5.4 , 4.95, 4.35, 3.45, 3.75, 2.7 , 4.8 ,
        5.1 , 2.2 , 1.  , 5.1 , 3.9 , 4.35, 4.65, 5.25, 4.95, 5.7 , 6.15,
-       6.3 , 6.9 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-4bdd9cae-7756-4917-9446-d563e5a18a67' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4bdd9cae-7756-4917-9446-d563e5a18a67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a1713d24-c87e-4523-a297-636a43a563e7' class='xr-var-data-in' type='checkbox'><label for='data-a1713d24-c87e-4523-a297-636a43a563e7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 0. ,  0. ,  0. ,  0. ,  0. ,  0. ,  0.6,  1.4,  2.4,  3.8,  2.6,
+       6.3 , 6.9 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-f59d980b-7f3a-4dc9-8fc0-2561ba93c83c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f59d980b-7f3a-4dc9-8fc0-2561ba93c83c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-13458c05-e1a3-44dc-a722-b00eedaf83d8' class='xr-var-data-in' type='checkbox'><label for='data-13458c05-e1a3-44dc-a722-b00eedaf83d8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 0. ,  0. ,  0. ,  0. ,  0. ,  0. ,  0.6,  1.4,  2.4,  3.8,  2.6,
         7. , 10.8, 12.2,  9.1,  9.4,  7. ,  5.8,  3. ,  0.6,  0. ,  0. ,
-        0. ,  0. ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.95 3.95 4.25 ... 6.45 5.5 4.5</div><input id='attrs-bbb74638-0f54-49da-97c6-a9d182571ff7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-bbb74638-0f54-49da-97c6-a9d182571ff7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-978cbfb6-b41b-4ac5-820e-74fa4c44f900' class='xr-var-data-in' type='checkbox'><label for='data-978cbfb6-b41b-4ac5-820e-74fa4c44f900' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4.95, 3.95, 4.25, 4.35, 4.6 , 6.45, 7.05, 9.15, 9.45, 7.9 , 6.6 ,
+        0. ,  0. ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.95 3.95 4.25 ... 6.45 5.5 4.5</div><input id='attrs-edeae7d8-5d4f-4992-b6d2-cd037c98fd5f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-edeae7d8-5d4f-4992-b6d2-cd037c98fd5f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-50d578ae-3eb8-43a0-af7f-bc17710467e6' class='xr-var-data-in' type='checkbox'><label for='data-50d578ae-3eb8-43a0-af7f-bc17710467e6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4.95, 3.95, 4.25, 4.35, 4.6 , 6.45, 7.05, 9.15, 9.45, 7.9 , 6.6 ,
        1.5 , 0.  , 0.  , 0.  , 2.7 , 6.05, 7.75, 8.15, 9.05, 7.9 , 6.45,
-       5.5 , 4.5 ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e2705868-2af1-4c41-837e-996e0cf551c3' class='xr-section-summary-in' type='checkbox'  ><label for='section-e2705868-2af1-4c41-837e-996e0cf551c3' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>dim_0</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-43e249c1-930b-49cf-bcb1-1573dad3f620' class='xr-index-data-in' type='checkbox'/><label for='index-43e249c1-930b-49cf-bcb1-1573dad3f620' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-07-01 00:00:00&#x27;, &#x27;2020-07-01 01:00:00&#x27;,
+       5.5 , 4.5 ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e07bff8c-45ce-4c6a-9c67-3fd859a7d824' class='xr-section-summary-in' type='checkbox'  ><label for='section-e07bff8c-45ce-4c6a-9c67-3fd859a7d824' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>dim_0</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-bdc77816-0f87-4436-9734-8260853282af' class='xr-index-data-in' type='checkbox'/><label for='index-bdc77816-0f87-4436-9734-8260853282af' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-07-01 00:00:00&#x27;, &#x27;2020-07-01 01:00:00&#x27;,
                &#x27;2020-07-01 02:00:00&#x27;, &#x27;2020-07-01 03:00:00&#x27;,
                &#x27;2020-07-01 04:00:00&#x27;, &#x27;2020-07-01 05:00:00&#x27;,
                &#x27;2020-07-01 06:00:00&#x27;, &#x27;2020-07-01 07:00:00&#x27;,
@@ -2281,7 +2798,7 @@ Data variables:
                &#x27;2020-07-01 18:00:00&#x27;, &#x27;2020-07-01 19:00:00&#x27;,
                &#x27;2020-07-01 20:00:00&#x27;, &#x27;2020-07-01 21:00:00&#x27;,
                &#x27;2020-07-01 22:00:00&#x27;, &#x27;2020-07-01 23:00:00&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;dim_0&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-28498959-d21a-4c52-bfdb-85e485606ca4' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-28498959-d21a-4c52-bfdb-85e485606ca4' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;dim_0&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f897c69c-7afe-40d3-9a1a-29d0d52961d6' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f897c69c-7afe-40d3-9a1a-29d0d52961d6' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Compute the duals</p>
 <div class="cell docutils container">
@@ -2671,7 +3188,7 @@ Data variables:
     wind_cf         (dim_0) float64 192B -60.0 -60.0 -60.0 ... -60.0 -60.0 -60.0
     solar_cf        (dim_0) float64 192B -60.0 -60.0 -60.0 ... -60.0 -60.0 -60.0
     wind_cap        (dim_0) float64 192B 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0
-    solar_cap       (dim_0) float64 192B 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-9825c781-319c-42a8-ba3a-9e50f3caaaa3' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-9825c781-319c-42a8-ba3a-9e50f3caaaa3' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>dim_0</span>: 24</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-d7f78384-dbaa-47a8-b5b0-ebe25cdf7f8a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d7f78384-dbaa-47a8-b5b0-ebe25cdf7f8a' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>dim_0</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-07-01 ... 2020-07-01T23:00:00</div><input id='attrs-d826393f-2415-4d8f-bcdd-63c2c3fa5799' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d826393f-2415-4d8f-bcdd-63c2c3fa5799' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3119ef86-55ca-4ae4-b774-a0d7d86955e8' class='xr-var-data-in' type='checkbox'><label for='data-3119ef86-55ca-4ae4-b774-a0d7d86955e8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-07-01T00:00:00.000000000&#x27;, &#x27;2020-07-01T01:00:00.000000000&#x27;,
+    solar_cap       (dim_0) float64 192B 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-10dcb4ea-48f6-4358-980f-0171d1ee7931' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-10dcb4ea-48f6-4358-980f-0171d1ee7931' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>dim_0</span>: 24</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-aeaf1824-0b1d-4db2-be0d-88be0c864ea3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-aeaf1824-0b1d-4db2-be0d-88be0c864ea3' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>dim_0</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-07-01 ... 2020-07-01T23:00:00</div><input id='attrs-0a221b31-8989-4194-a832-8d4fe888f2c8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0a221b31-8989-4194-a832-8d4fe888f2c8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b833235e-6824-468e-92c8-34e45afc728e' class='xr-var-data-in' type='checkbox'><label for='data-b833235e-6824-468e-92c8-34e45afc728e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-07-01T00:00:00.000000000&#x27;, &#x27;2020-07-01T01:00:00.000000000&#x27;,
        &#x27;2020-07-01T02:00:00.000000000&#x27;, &#x27;2020-07-01T03:00:00.000000000&#x27;,
        &#x27;2020-07-01T04:00:00.000000000&#x27;, &#x27;2020-07-01T05:00:00.000000000&#x27;,
        &#x27;2020-07-01T06:00:00.000000000&#x27;, &#x27;2020-07-01T07:00:00.000000000&#x27;,
@@ -2683,15 +3200,15 @@ Data variables:
        &#x27;2020-07-01T18:00:00.000000000&#x27;, &#x27;2020-07-01T19:00:00.000000000&#x27;,
        &#x27;2020-07-01T20:00:00.000000000&#x27;, &#x27;2020-07-01T21:00:00.000000000&#x27;,
        &#x27;2020-07-01T22:00:00.000000000&#x27;, &#x27;2020-07-01T23:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-545e91c7-4d92-4cea-af0e-5dad2a1a055c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-545e91c7-4d92-4cea-af0e-5dad2a1a055c' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>energy_balance</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>60.0 60.0 60.0 ... 60.0 60.0 60.0</div><input id='attrs-65b083d6-4db3-45ed-9b46-896e2544f44a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-65b083d6-4db3-45ed-9b46-896e2544f44a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-df3b80c8-4bd6-401c-9001-0d6d9f7a09f2' class='xr-var-data-in' type='checkbox'><label for='data-df3b80c8-4bd6-401c-9001-0d6d9f7a09f2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([60., 60., 60., 60., 60., 60., 60., 60., 60., 60., 60., 60.,  0.,
-        0.,  0., 60., 60., 60., 60., 60., 60., 60., 60., 60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-f76bd100-e764-4e7f-b4b1-6b189dcc8a0e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f76bd100-e764-4e7f-b4b1-6b189dcc8a0e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3a961259-32a4-4e8f-938d-c1926954eeaf' class='xr-var-data-in' type='checkbox'><label for='data-3a961259-32a4-4e8f-938d-c1926954eeaf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-       0., 0., 0., 0., 0., 0., 0.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cf</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0 -60.0 -60.0 ... -60.0 -60.0</div><input id='attrs-d0853521-6632-4593-9fea-36a33812661a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d0853521-6632-4593-9fea-36a33812661a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ff450374-9af8-4692-bb38-8bf015b2a792' class='xr-var-data-in' type='checkbox'><label for='data-ff450374-9af8-4692-bb38-8bf015b2a792' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60., -60., -60., -60., -60., -60., -60., -60., -60., -60., -60.,
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8ba7253f-3d99-4585-8f93-0e0456d7d128' class='xr-section-summary-in' type='checkbox'  checked><label for='section-8ba7253f-3d99-4585-8f93-0e0456d7d128' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>energy_balance</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>60.0 60.0 60.0 ... 60.0 60.0 60.0</div><input id='attrs-0d27b065-2128-4462-ba1c-edac5e51ec82' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0d27b065-2128-4462-ba1c-edac5e51ec82' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9988ab59-8553-4f2b-893f-ad97d44e2c10' class='xr-var-data-in' type='checkbox'><label for='data-9988ab59-8553-4f2b-893f-ad97d44e2c10' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([60., 60., 60., 60., 60., 60., 60., 60., 60., 60., 60., 60.,  0.,
+        0.,  0., 60., 60., 60., 60., 60., 60., 60., 60., 60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gas_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-563ab5f3-b578-4385-b9f9-dec409918bdb' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-563ab5f3-b578-4385-b9f9-dec409918bdb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e2698b3d-1228-44b6-886e-0acf186654e5' class='xr-var-data-in' type='checkbox'><label for='data-e2698b3d-1228-44b6-886e-0acf186654e5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cf</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0 -60.0 -60.0 ... -60.0 -60.0</div><input id='attrs-ed719129-e866-40ec-a9fe-0b48c1ee6aeb' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ed719129-e866-40ec-a9fe-0b48c1ee6aeb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-61fc07fc-d908-4288-abd3-3b292529bbbe' class='xr-var-data-in' type='checkbox'><label for='data-61fc07fc-d908-4288-abd3-3b292529bbbe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60., -60., -60., -60., -60., -60., -60., -60., -60., -60., -60.,
        -60.,   0.,   0.,   0., -60., -60., -60., -60., -60., -60., -60.,
-       -60., -60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cf</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0 -60.0 -60.0 ... -60.0 -60.0</div><input id='attrs-262ba943-9110-465c-beff-29ba9d390f58' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-262ba943-9110-465c-beff-29ba9d390f58' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4cf5f40a-460d-4db2-91ec-49bb7695dd95' class='xr-var-data-in' type='checkbox'><label for='data-4cf5f40a-460d-4db2-91ec-49bb7695dd95' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60., -60., -60., -60., -60., -60., -60., -60., -60., -60., -60.,
+       -60., -60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cf</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.0 -60.0 -60.0 ... -60.0 -60.0</div><input id='attrs-488caef8-ab98-41aa-baf0-78ea5ebb3727' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-488caef8-ab98-41aa-baf0-78ea5ebb3727' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-188ab718-06fd-466a-a900-afa2c6fc605d' class='xr-var-data-in' type='checkbox'><label for='data-188ab718-06fd-466a-a900-afa2c6fc605d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60., -60., -60., -60., -60., -60., -60., -60., -60., -60., -60.,
        -60.,   0.,   0.,   0., -60., -60., -60., -60., -60., -60., -60.,
-       -60., -60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-48b01fb6-f533-4716-b07d-45bd292e1a2e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-48b01fb6-f533-4716-b07d-45bd292e1a2e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d3035737-acbf-4c73-9614-65a2c6dd0620' class='xr-var-data-in' type='checkbox'><label for='data-d3035737-acbf-4c73-9614-65a2c6dd0620' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-       0., 0., 0., 0., 0., 0., 0.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-a680e090-f9e5-4ec2-9a0e-7635604105fd' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a680e090-f9e5-4ec2-9a0e-7635604105fd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6612662a-cec1-4d42-8cd4-264c738b73f2' class='xr-var-data-in' type='checkbox'><label for='data-6612662a-cec1-4d42-8cd4-264c738b73f2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-       0., 0., 0., 0., 0., 0., 0.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-455f3e06-08a8-425a-8c98-47d4142378ae' class='xr-section-summary-in' type='checkbox'  ><label for='section-455f3e06-08a8-425a-8c98-47d4142378ae' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>dim_0</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-f232b2db-5866-49a8-b3f9-a7ea37996544' class='xr-index-data-in' type='checkbox'/><label for='index-f232b2db-5866-49a8-b3f9-a7ea37996544' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-07-01 00:00:00&#x27;, &#x27;2020-07-01 01:00:00&#x27;,
+       -60., -60.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wind_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-8aff05ed-4d25-4c9e-8990-f07bb74fc130' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8aff05ed-4d25-4c9e-8990-f07bb74fc130' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-995c3776-b0ed-4c03-b6d8-0b802f3c95da' class='xr-var-data-in' type='checkbox'><label for='data-995c3776-b0ed-4c03-b6d8-0b802f3c95da' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_cap</span></div><div class='xr-var-dims'>(dim_0)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0</div><input id='attrs-29d8f147-e2c3-42f6-b1f7-0223bc93a58d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-29d8f147-e2c3-42f6-b1f7-0223bc93a58d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-78b648e4-3c16-4d4e-8006-283dc0e2c0a5' class='xr-var-data-in' type='checkbox'><label for='data-78b648e4-3c16-4d4e-8006-283dc0e2c0a5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-5d52ec38-01f5-44b5-b0aa-c866aca7b4dc' class='xr-section-summary-in' type='checkbox'  ><label for='section-5d52ec38-01f5-44b5-b0aa-c866aca7b4dc' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>dim_0</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-8111f51c-4ede-4f92-a8e1-f71fcba60b63' class='xr-index-data-in' type='checkbox'/><label for='index-8111f51c-4ede-4f92-a8e1-f71fcba60b63' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-07-01 00:00:00&#x27;, &#x27;2020-07-01 01:00:00&#x27;,
                &#x27;2020-07-01 02:00:00&#x27;, &#x27;2020-07-01 03:00:00&#x27;,
                &#x27;2020-07-01 04:00:00&#x27;, &#x27;2020-07-01 05:00:00&#x27;,
                &#x27;2020-07-01 06:00:00&#x27;, &#x27;2020-07-01 07:00:00&#x27;,
@@ -2703,7 +3220,7 @@ Data variables:
                &#x27;2020-07-01 18:00:00&#x27;, &#x27;2020-07-01 19:00:00&#x27;,
                &#x27;2020-07-01 20:00:00&#x27;, &#x27;2020-07-01 21:00:00&#x27;,
                &#x27;2020-07-01 22:00:00&#x27;, &#x27;2020-07-01 23:00:00&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;dim_0&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-cd7ca348-6b46-43b2-bad6-280cf6a93181' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-cd7ca348-6b46-43b2-bad6-280cf6a93181' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;dim_0&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8c2be376-4830-4ae3-a229-70b93b99d789' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8c2be376-4830-4ae3-a229-70b93b99d789' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>d)</p>
 <p>Compute the renewable share in the production as the wind and solar generation in each hour divided by the demand. Plot the time series from 2c in matplotlib.pyplot.</p>
@@ -2725,11 +3242,11 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zg/by4_k0616s98pw41wld9475c0000gp/T/ipykernel_92465/135273699.py:11: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2147/135273699.py:11: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
   ax.set_xticklabels(ax.get_xticklabels(), rotation=90);
 </pre></div>
 </div>
-<img alt="../_images/8f0bb5a543b9e8ebe2373fb23eadc00125b4a5dc92adf1c3633ed1249a94676f.png" src="../_images/8f0bb5a543b9e8ebe2373fb23eadc00125b4a5dc92adf1c3633ed1249a94676f.png" />
+<img alt="../_images/ae6e4a468116a2d72c9c3b745238033b3ec8de72bb7e7d5362be19ad5607ca05.png" src="../_images/ae6e4a468116a2d72c9c3b745238033b3ec8de72bb7e7d5362be19ad5607ca05.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2785,7 +3302,7 @@ max      60.000000
 Name: energy_balance, dtype: float64
 </pre></div>
 </div>
-<img alt="../_images/d196bb8d16cd45a6735af16eec1bbf8f1e0532cc44d8271ec1c0b7653ae64cac.png" src="../_images/d196bb8d16cd45a6735af16eec1bbf8f1e0532cc44d8271ec1c0b7653ae64cac.png" />
+<img alt="../_images/7cb97b715f65831ab991c994bda9d6a52f3d0df52f93bfdb4a593ea9b5884bc5.png" src="../_images/7cb97b715f65831ab991c994bda9d6a52f3d0df52f93bfdb4a593ea9b5884bc5.png" />
 </div>
 </div>
 <p>Compare the objective from a to c as well as the average cost per hour. Note that with higher detail and higher spatial resolution of the renewables the costs increase on average (even more so for the objective which has more time steps). This is because fluctuations in generations are less smoothed.</p>
@@ -2825,7 +3342,7 @@ Objective 2c:  7695.0  and average cost per hour:  320.625
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/277d17d9962906b380b065d5a83dc9ed8c355676f1b5bfebb9fae95426232735.png" src="../_images/277d17d9962906b380b065d5a83dc9ed8c355676f1b5bfebb9fae95426232735.png" />
+<img alt="../_images/17056bbf675390c323f8311a95adb11d67088da08ec50079e377f575d12bdddd.png" src="../_images/17056bbf675390c323f8311a95adb11d67088da08ec50079e377f575d12bdddd.png" />
 </div>
 </div>
 <p>e)</p>
@@ -2857,10 +3374,10 @@ Objective 2c:  7695.0  and average cost per hour:  320.625
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x171778170&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7eff22dc83d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/cf4f1ffcc3620d21ff15a728c70531482606c001c6f88279accf575ceeeaaf6f.png" src="../_images/cf4f1ffcc3620d21ff15a728c70531482606c001c6f88279accf575ceeeaaf6f.png" />
+<img alt="../_images/79b8aec21e51de72abcf493e916e801d3868e90833768c1bf2da59852e55fe2d.png" src="../_images/79b8aec21e51de72abcf493e916e801d3868e90833768c1bf2da59852e55fe2d.png" />
 </div>
 </div>
 <p>We have some curtailment as seen in d), so for the few hours of surplus it would be useful to smooth production in one way or another, either through transmission, or storage, or demand response.</p>

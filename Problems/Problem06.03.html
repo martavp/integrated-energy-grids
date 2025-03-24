@@ -505,7 +505,7 @@ We have 9 variables (<span class="math notranslate nohighlight">\(m_{12}\)</span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>450.3900615022494
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(450.3900615022494)
 </pre></div>
 </div>
 </div>
@@ -521,7 +521,7 @@ We have 9 variables (<span class="math notranslate nohighlight">\(m_{12}\)</span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0196354659355267
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0196354659355267)
 </pre></div>
 </div>
 </div>
@@ -539,7 +539,7 @@ We have 9 variables (<span class="math notranslate nohighlight">\(m_{12}\)</span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>645712279.9219108
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(645712279.9219108)
 </pre></div>
 </div>
 </div>
@@ -549,17 +549,6 @@ We have 9 variables (<span class="math notranslate nohighlight">\(m_{12}\)</span
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gurobipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gp</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">gurobipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">GRB</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">gurobipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gp</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">gurobipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">GRB</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;gurobipy&#39;
 </pre></div>
 </div>
 </div>
@@ -614,62 +603,160 @@ We have 9 variables (<span class="math notranslate nohighlight">\(m_{12}\)</span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Set parameter Username
-Set parameter LicenseID to value 2604332
-Academic license - for non-commercial use only - expires 2025-12-30
-Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 11.0 (26100.2))
-
-CPU model: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, instruction set [SSE2|AVX|AVX2]
-Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
-
-Optimize a model with 6 rows, 14 columns and 12 nonzeros
-Model fingerprint: 0x2eae29bb
-Model has 3 quadratic constraints
-Model has 3 simple general constraints
-  3 ABS
-Variable types: 14 continuous, 0 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  QMatrix range    [1e+00, 6e+08]
-  Objective range  [5e+00, 2e+01]
-  Bounds range     [2e+08, 2e+08]
-  RHS range        [2e+08, 2e+08]
-Warning: Quadratic constraints contain large coefficients
-         Consider reformulating model or setting NumericFocus parameter
-         to avoid numerical issues.
-Presolve removed 5 rows and 8 columns
-Presolve time: 0.05s
-Presolved: 22 rows, 13 columns, 41 nonzeros
-Presolved model has 6 bilinear constraint(s)
-Warning: Model contains variables with very large bounds participating
-         in product terms.
-         Presolve was not able to compute smaller bounds for these variables.
-         Consider bounding these variables or reformulating the model.
-
-
-Solving non-convex MIQCP
-
-Variable types: 13 continuous, 0 integer (0 binary)
-
-Root relaxation: objective 3.000000e+09, 1 iterations, 0.01 seconds (0.00 work units)
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-     0     0 3.0000e+09    0    1          - 3.0000e+09      -     -    0s
-     0     0 3.0000e+09    0    1          - 3.0000e+09      -     -    0s
-     0     2 3.0000e+09    0    1          - 3.0000e+09      -     -    0s
- 226599  5403 3.0000e+09  433    2          - 3.0000e+09      -   0.3    5s
- 497882  5766 infeasible  293               - 3.0000e+09      -   0.4   10s
-H598724   378                    3.000000e+09 3.0000e+09  0.00%   0.4   11s
-
-Explored 601882 nodes (215779 simplex iterations) in 11.72 seconds (0.69 work units)
-Thread count was 8 (of 8 available processors)
-
-Solution count 1: 3e+09 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.000000000000e+09, best bound 3.000000000000e+09, gap 0.0000%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - &quot;Ubuntu 24.04.2 LTS&quot;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimize a model with 6 rows, 14 columns and 12 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model fingerprint: 0x2eae29bb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model has 3 quadratic constraints
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model has 3 simple general constraints
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3 ABS
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable types: 14 continuous, 0 integer (0 binary)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient statistics:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Matrix range     [1e+00, 1e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  QMatrix range    [1e+00, 6e+08]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Objective range  [5e+00, 2e+01]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Bounds range     [2e+08, 2e+08]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  RHS range        [2e+08, 2e+08]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: Quadratic constraints contain large coefficients
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Consider reformulating model or setting NumericFocus parameter
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         to avoid numerical issues.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve removed 5 rows and 8 columns
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolve time: 0.00s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolved: 22 rows, 13 columns, 41 nonzeros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presolved model has 6 bilinear constraint(s)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: Model contains variables with very large bounds participating
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         in product terms.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Presolve was not able to compute smaller bounds for these variables.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Consider bounding these variables or reformulating the model.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solving non-convex MIQCP
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable types: 13 continuous, 0 integer (0 binary)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Root relaxation: objective 3.000000e+09, 1 iterations, 0.00 seconds (0.00 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Nodes    |    Current Node    |     Objective Bounds      |     Work
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     0     0 3.0000e+09    0    1          - 3.0000e+09      -     -    0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     0     0 3.0000e+09    0    1          - 3.0000e+09      -     -    0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     0     2 3.0000e+09    0    1          - 3.0000e+09      -     -    0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H374589   202                    3.000000e+09 3.0000e+09  0.00%   0.3    4s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Explored 375636 nodes (128925 simplex iterations) in 4.74 seconds (0.86 work units)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread count was 4 (of 4 available processors)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solution count 1: 3e+09 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal solution found (tolerance 1.00e-04)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best objective 3.000000000000e+09, best bound 3.000000000000e+09, gap 0.0000%
 </pre></div>
 </div>
 </div>
@@ -694,17 +781,17 @@ Best objective 3.000000000000e+09, best bound 3.000000000000e+09, gap 0.0000%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g_1 0.0023753316709413195
-g_5 199999999.99762452
-m_12 0.0023753316709413195
-m_23 0.0023753316709413195
-m_34 0.0023753316709413195
-m_45 -199999999.99762452
-p_1 79 Pa
-p_2 50 Pa
-p_3 60 Pa
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g_1 0.0021958809035774597
+g_5 199999999.99780396
+m_12 0.0021958809035774597
+m_23 0.0021958809035774597
+m_34 0.0021958809035774597
+m_45 -199999999.99780396
+p_1 73 Pa
+p_2 46 Pa
+p_3 56 Pa
 p_4 0 Pa
-p_5 5082173865214 Pa
+p_5 5082173865218 Pa
 </pre></div>
 </div>
 </div>

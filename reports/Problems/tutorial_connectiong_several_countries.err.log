@@ -26,10 +26,63 @@ WARNING:pypsa.consistency:The following buses have carriers which are not define
 Index(['electricity bus'], dtype='object', name='Bus')
 ----- stderr -----
 INFO:linopy.model: Solve problem using Gurobi solver
+----- stderr -----
+INFO:linopy.io:Writing objective.
+----- stderr -----
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/5 [00:00<?, ?it/s]
+----- stderr -----
+Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 21.76it/s]
+----- stderr -----
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 21.07it/s]
+----- stderr -----
+
+----- stderr -----
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/2 [00:00<?, ?it/s]
+----- stderr -----
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 46.78it/s]
+----- stderr -----
+
+INFO:linopy.io: Writing time: 0.3s
+----- stdout -----
+Restricted license - for non-production use only - expires 2026-11-23
+----- stderr -----
+INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
+----- stdout -----
+Read LP format model from file /tmp/linopy-problem-f8lmansa.lp
+----- stderr -----
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-f8lmansa.lp
+----- stdout -----
+Reading time = 0.06 seconds
+----- stderr -----
+INFO:gurobipy:Reading time = 0.06 seconds
+----- stdout -----
+obj: 61323 rows, 26283 columns, 100750 nonzeros
+----- stderr -----
+INFO:gurobipy:obj: 61323 rows, 26283 columns, 100750 nonzeros
+----- stdout -----
+Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - "Ubuntu 24.04.2 LTS")
+----- stderr -----
+INFO:gurobipy:Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - "Ubuntu 24.04.2 LTS")
+----- stdout -----
+
+----- stderr -----
+INFO:gurobipy:
+----- stdout -----
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+----- stderr -----
+INFO:gurobipy:CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+----- stdout -----
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+----- stderr -----
+INFO:gurobipy:Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+----- stdout -----
+
+----- stderr -----
+INFO:gurobipy:
 ------------------
 
 [31m---------------------------------------------------------------------------[39m
-[31mAssertionError[39m                            Traceback (most recent call last)
+[31mGurobiError[39m                               Traceback (most recent call last)
 [36mCell[39m[36m [39m[32mIn[9][39m[32m, line 1[39m
 [32m----> [39m[32m1[39m [43mnetwork[49m[43m.[49m[43moptimize[49m[43m([49m[43msolver_name[49m[43m=[49m[33;43m'[39;49m[33;43mgurobi[39;49m[33;43m'[39;49m[43m)[49m
 
@@ -45,12 +98,45 @@ INFO:linopy.model: Solve problem using Gurobi solver
 [32m    608[39m [38;5;28;01mif[39;00m status == [33m"[39m[33mok[39m[33m"[39m:
 [32m    609[39m     assign_solution(n)
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1143[39m, in [36mModel.solve[39m[34m(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)[39m
-[32m   1140[39m     solver_name = available_solvers[[32m0[39m]
-[32m   1142[39m logger.info([33mf[39m[33m"[39m[33m Solve problem using [39m[38;5;132;01m{[39;00msolver_name.title()[38;5;132;01m}[39;00m[33m solver[39m[33m"[39m)
-[32m-> [39m[32m1143[39m [38;5;28;01massert[39;00m solver_name [38;5;129;01min[39;00m available_solvers, [33mf[39m[33m"[39m[33mSolver [39m[38;5;132;01m{[39;00msolver_name[38;5;132;01m}[39;00m[33m not installed[39m[33m"[39m
-[32m   1145[39m [38;5;66;03m# reset result[39;00m
-[32m   1146[39m [38;5;28mself[39m.reset_solution()
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1203[39m, in [36mModel.solve[39m[34m(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)[39m
+[32m   1195[39m             explicit_coordinate_names = [38;5;28;01mFalse[39;00m
+[32m   1196[39m         problem_fn = [38;5;28mself[39m.to_file(
+[32m   1197[39m             to_path(problem_fn),
+[32m   1198[39m             io_api=io_api,
+[32m   (...)[39m[32m   1201[39m             progress=progress,
+[32m   1202[39m         )
+[32m-> [39m[32m1203[39m         result = [43msolver[49m[43m.[49m[43msolve_problem_from_file[49m[43m([49m
+[32m   1204[39m [43m            [49m[43mproblem_fn[49m[43m=[49m[43mto_path[49m[43m([49m[43mproblem_fn[49m[43m)[49m[43m,[49m
+[32m   1205[39m [43m            [49m[43msolution_fn[49m[43m=[49m[43mto_path[49m[43m([49m[43msolution_fn[49m[43m)[49m[43m,[49m
+[32m   1206[39m [43m            [49m[43mlog_fn[49m[43m=[49m[43mto_path[49m[43m([49m[43mlog_fn[49m[43m)[49m[43m,[49m
+[32m   1207[39m [43m            [49m[43mwarmstart_fn[49m[43m=[49m[43mto_path[49m[43m([49m[43mwarmstart_fn[49m[43m)[49m[43m,[49m
+[32m   1208[39m [43m            [49m[43mbasis_fn[49m[43m=[49m[43mto_path[49m[43m([49m[43mbasis_fn[49m[43m)[49m[43m,[49m
+[32m   1209[39m [43m            [49m[43menv[49m[43m=[49m[43menv[49m[43m,[49m
+[32m   1210[39m [43m        [49m[43m)[49m
+[32m   1212[39m [38;5;28;01mfinally[39;00m:
+[32m   1213[39m     [38;5;28;01mfor[39;00m fn [38;5;129;01min[39;00m (problem_fn, solution_fn):
 
-[31mAssertionError[39m: Solver gurobi not installed
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/solvers.py:994[39m, in [36mGurobi.solve_problem_from_file[39m[34m(self, problem_fn, solution_fn, log_fn, warmstart_fn, basis_fn, env)[39m
+[32m    990[39m     env_ = env
+[32m    992[39m m = gurobipy.read(problem_fn_, env=env_)
+[32m--> [39m[32m994[39m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_solve[49m[43m([49m
+[32m    995[39m [43m    [49m[43mm[49m[43m,[49m
+[32m    996[39m [43m    [49m[43msolution_fn[49m[43m=[49m[43msolution_fn[49m[43m,[49m
+[32m    997[39m [43m    [49m[43mlog_fn[49m[43m=[49m[43mlog_fn[49m[43m,[49m
+[32m    998[39m [43m    [49m[43mwarmstart_fn[49m[43m=[49m[43mwarmstart_fn[49m[43m,[49m
+[32m    999[39m [43m    [49m[43mbasis_fn[49m[43m=[49m[43mbasis_fn[49m[43m,[49m
+[32m   1000[39m [43m    [49m[43mio_api[49m[43m=[49m[43mio_api[49m[43m,[49m
+[32m   1001[39m [43m    [49m[43msense[49m[43m=[49m[43msense[49m[43m,[49m
+[32m   1002[39m [43m[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/solvers.py:1068[39m, in [36mGurobi._solve[39m[34m(self, m, solution_fn, log_fn, warmstart_fn, basis_fn, io_api, sense)[39m
+[32m   1066[39m [38;5;28;01mif[39;00m warmstart_fn [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m   1067[39m     m.read(path_to_string(warmstart_fn))
+[32m-> [39m[32m1068[39m [43mm[49m[43m.[49m[43moptimize[49m[43m([49m[43m)[49m
+[32m   1070[39m [38;5;28;01mif[39;00m basis_fn [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m   1071[39m     [38;5;28;01mtry[39;00m:
+
+[36mFile [39m[32msrc/gurobipy/_model.pyx:903[39m, in [36mgurobipy._model.Model.optimize[39m[34m()[39m
+
+[31mGurobiError[39m: Model too large for size-limited license; visit https://gurobi.com/unrestricted for more information
 
