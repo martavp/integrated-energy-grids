@@ -12,3 +12,4 @@ networkx
 geopy
 cartopy
 highspy>=1.5.3
+gurobipy

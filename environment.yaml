@@ -16,6 +16,7 @@ dependencies:
 - geopy
 - cartopy
 - highspy>=1.5.3
+- gurobipy
 
   # interactive python
 - ipython
