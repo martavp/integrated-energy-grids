@@ -1,0 +1,84 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{hyperref}
+\title{IEG_Problems_Lecture8}
+\author{martavictoriaperez }
+\date{March 2025}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{\textbf{Lecture 8: Join capacity and dispatch optimization}}
+\author{
+%Your name\\
+DTU Course 46770: Integrated Energy Grids }
+\maketitle
+
+\begin{problem}{8.1}
+
+Optimize the capacity and dispatch of solar PV, onshore wind, and Open Cycle Gas Turbine (OCGT) generators to supply the inelastic electricity demand throughout one year. 
+To do this, take the time series for the wind and solar capacity factors for Portugal in 2015 obtained from \url{https://zenodo.org/record/3253876#.XSiVOEdS8l0}
+and \url{https://zenodo.org/record/2613651#.X0kbhDVS-uV} (select the file ‘pvoptimal.csv’) and the electricity demand from \url{https://github.com/martavp/integrated-energy-grids/tree/main/integrated-energy-grids/Problems/data}.
+
+\
+
+Consider the annualized capital costs and marginal generation costs for the different technologies in the following table.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc}
+    \hline
+        Technology & Annualized capital costs (EUR/MW/a) & Marginal generation costs (EUR/MWh) \\
+    \hline
+    Onshower Wind &  101,644 & 0 \\
+         Solar PV &  51,346 & 0 \\
+         OCGT & 47,718 &  64.7  \\
+    \hline
+    \end{tabular}
+    \caption{Costs assumptions.}
+    \label{tab:my_label}
+\end{table}
+\begin{itemize}
+\item[a)] Calculate the total system cost, the optimal installed capacities, the annual generation per technology, and plot the hourly generation and demand during January.
+\item[b)] Calculate the revenues collected by every technology throughout the year and show that their sum is equal to their costs. 
+\end{itemize}
+
+\end{problem}
+
+\
+
+\begin{problem}{8.2}
+Use the model described in Problem 8.1 and add the possibility of installing battery storage. The annualized capital cost of the battery comprises  12,894 EUR/MWh/a for the energy capacity and 24,678 EUR/MW/a for the inverter. The inverter efficiency is 0.96 and the battery is assumed to have a fixed energy-to-power ratio of 2 hours. Assume also an existing Combined Cycled Gas Turbine (CCGT) unit with an electricity generation capacity of 6 GW. The annualized capital cost and marginal generation costs for the CCGT are respectively 104,788 EUR/MW/a and 46.8 EUR/MWh.
+
+\begin{itemize}
+\item[a)] Calculate the total system cost, the optimal installed capacities, the annual generation per technology, and plot the hourly generation and demand during January.
+
+\item[b)] How does the CCGT power plant recover its cost?
+
+\item[c)] How does the battery recover its cost?
+
+\end{itemize}
+
+\end{problem}
+
+
+
+%\begin{proof}[Solution]
+%Write a solution here
+%\end{proof}
+
+\end{document}
+
+
+ 
+
