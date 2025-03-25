@@ -595,13 +595,13 @@ document.write(`
 <h2>From structured data to optimisation<a class="headerlink" href="#from-structured-data-to-optimisation" title="Link to this heading">#</a></h2>
 <p>The design principle of PyPSA is that basically each component is associated with a set of variables and constraints that will be added to the optimisation model based on the input data stored for the components.</p>
 <p>For an <em>hourly</em> electricity market simulation, PyPSA will solve an optimisation problem that looks like this</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3b39262-1b42-4bab-a8c0-1b36b754d101">
-<span class="eqno">(1)<a class="headerlink" href="#equation-c3b39262-1b42-4bab-a8c0-1b36b754d101" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ffbcd38e-8852-467c-953e-d6ef03f9baf5">
+<span class="eqno">(1)<a class="headerlink" href="#equation-ffbcd38e-8852-467c-953e-d6ef03f9baf5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \min_{g_{i,s,t}; f_{\ell,t}; g_{i,r,t,\text{charge}}; g_{i,r,t,\text{discharge}}; e_{i,r,t}} \sum_s o_{s} g_{i,s,t}
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1ee2119-f6de-44b1-828f-111e3926b59f">
-<span class="eqno">(2)<a class="headerlink" href="#equation-d1ee2119-f6de-44b1-828f-111e3926b59f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d78fdda2-aa98-49a5-b1da-f4809caaf037">
+<span class="eqno">(2)<a class="headerlink" href="#equation-d78fdda2-aa98-49a5-b1da-f4809caaf037" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp; \leq g_{i,s,t} \leq \hat{g}_{i,s,t} G_{i,s}  &amp; \text{generation limits : generator} \\
 -P_\ell &amp;\leq p_{\ell,t} \leq P_\ell &amp; \text{transmission limits : line}  \\
 d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{i,r,t,\text{charge}} - \sum_\ell K_{i\ell} p_{\ell,t} &amp; \text{KCL : bus} \\
@@ -638,13 +638,13 @@ d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{
 <section id="simple-electricity-market-economic-dispatch-example">
 <h2>Simple electricity market (economic dispatch) example<a class="headerlink" href="#simple-electricity-market-economic-dispatch-example" title="Link to this heading">#</a></h2>
 <p>Let’s assume we want to minimize the operational cost of an electricity system representing South Africa and Mozambique subject to generator limits and meeting the loads:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-db71e814-4030-4c7e-8cfb-d58a128fcaab">
-<span class="eqno">(3)<a class="headerlink" href="#equation-db71e814-4030-4c7e-8cfb-d58a128fcaab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-959ae352-9ba5-4583-8956-c8f624dc6b28">
+<span class="eqno">(3)<a class="headerlink" href="#equation-959ae352-9ba5-4583-8956-c8f624dc6b28" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \min_{g_s} \sum_s o_s g_s
 \end{equation}\]</div>
 <p>such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc391ede-cdaf-4f30-8db2-9e8c343b0eee">
-<span class="eqno">(4)<a class="headerlink" href="#equation-bc391ede-cdaf-4f30-8db2-9e8c343b0eee" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6e6a3ad5-3593-4b96-a527-e8418a0086cd">
+<span class="eqno">(4)<a class="headerlink" href="#equation-6e6a3ad5-3593-4b96-a527-e8418a0086cd" title="Permalink to this equation">#</a></span>\[\begin{align}
   \sum_s g_s &amp;= d \\
   g_s &amp;\leq G_s \\
   g_s &amp;\geq 0 
@@ -762,6 +762,7 @@ d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{
       <th>y</th>
       <th>carrier</th>
       <th>unit</th>
+      <th>location</th>
       <th>v_mag_pu_set</th>
       <th>v_mag_pu_min</th>
       <th>v_mag_pu_max</th>
@@ -771,6 +772,7 @@ d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{
     </tr>
     <tr>
       <th>Bus</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -794,6 +796,7 @@ d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{
       <td>-30.5</td>
       <td>AC</td>
       <td></td>
+      <td></td>
       <td>1.0</td>
       <td>0.0</td>
       <td>inf</td>
@@ -808,6 +811,7 @@ d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{
       <td>35.5</td>
       <td>-18.5</td>
       <td>AC</td>
+      <td></td>
       <td></td>
       <td>1.0</td>
       <td>0.0</td>
@@ -1315,11 +1319,11 @@ d_{i,t} &amp;= \sum_s g_{i,s,t} + \sum_r g_{i,r,t,\text{discharge}} - \sum_r g_{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/1178087577.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(bus_sizes=1, margin=1);
 </pre></div>
 </div>
-<img alt="_images/5a9be5f8deddf54d54a511c9c14038d3648bd21f333410e47a2d1708e65a221f.png" src="_images/5a9be5f8deddf54d54a511c9c14038d3648bd21f333410e47a2d1708e65a221f.png" />
+<img alt="_images/4db9df2b64a264a28d1cb8c6a0d5fe26d50d1701b7a839bcda7371c6a1cccd36.png" src="_images/4db9df2b64a264a28d1cb8c6a0d5fe26d50d1701b7a839bcda7371c6a1cccd36.png" />
 </div>
 </div>
 </section>
@@ -1358,7 +1362,7 @@ Solver message: optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-qsnlp77r has 14 rows; 6 cols; 19 nonzeros
+LP   linopy-problem-bxixe2hb has 14 rows; 6 cols; 19 nonzeros
 Coefficient ranges:
   Matrix [1e+00, 1e+00]
   Cost   [3e+01, 8e+01]
@@ -1369,12 +1373,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-14); columns 0(-6); elements 0(-19) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-qsnlp77r
+Model name          : linopy-problem-bxixe2hb
 Model status        : Optimal
 Objective value     :  1.2600000000e+06
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-w265i4i5.sol
+Writing the solution to /tmp/linopy-solve-_hvwnins.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1642,15 +1646,16 @@ Writing the solution to /tmp/linopy-solve-w265i4i5.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/3944843150.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(margin=1, bus_sizes=2)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;matplotlib.collections.PatchCollection at 0x7fbfb6671ed0&gt;,
- &lt;matplotlib.collections.LineCollection at 0x7fbfb6dc0dd0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f53f17eca50&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f53f16be210&gt;},
+ &#39;flows&#39;: {}}
 </pre></div>
 </div>
-<img alt="_images/79323fdd65b20021e88d1564792c02a850dfa25c791720ad3cfdae090439315c.png" src="_images/79323fdd65b20021e88d1564792c02a850dfa25c791720ad3cfdae090439315c.png" />
+<img alt="_images/e52a4ca61f52f75882af2f6349d00442e30862290e887185e6e9f23ea052ee05.png" src="_images/e52a4ca61f52f75882af2f6349d00442e30862290e887185e6e9f23ea052ee05.png" />
 </div>
 </div>
 <p>Since we have provided <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinates for our buses, <code class="docutils literal notranslate"><span class="pre">n.plot()</span></code> will try to plot the network on a map by default. Of course, there’s an option to deactivate this behaviour:</p>
@@ -1661,6 +1666,10 @@ Writing the solution to /tmp/linopy-solve-w265i4i5.sol
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/3440870247.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(geomap=False);
+</pre></div>
+</div>
 <img alt="_images/b9df6463fe941a7f4501a27a496e70ff7aa5a7ccba9d7ca1087e42e28e8c1a25.png" src="_images/b9df6463fe941a7f4501a27a496e70ff7aa5a7ccba9d7ca1087e42e28e8c1a25.png" />
 </div>
 </div>
@@ -1681,11 +1690,13 @@ Writing the solution to /tmp/linopy-solve-w265i4i5.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/2934224532.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(
+/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/plot/accessor.py:34: DeprecationWarning: `color_geomap` is deprecated as an argument to `plot`; use `geomap_colors` instead.
+  return plot(self.n, *args, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/9e1fb766de262164b008b8a24937ad6527f38dcb4708510b67ca3461bc918d3c.png" src="_images/9e1fb766de262164b008b8a24937ad6527f38dcb4708510b67ca3461bc918d3c.png" />
+<img alt="_images/086195298b3aa115d20082c2550207c31508f317681d9745ebd6126e5bd3e6af.png" src="_images/086195298b3aa115d20082c2550207c31508f317681d9745ebd6126e5bd3e6af.png" />
 </div>
 </div>
 <p>Just like with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> we can also control the projection of the network plot:</p>
@@ -1699,8 +1710,8 @@ Writing the solution to /tmp/linopy-solve-w265i4i5.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/2231053626.py:4: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(ax=ax, margin=1, bus_sizes=2);
 </pre></div>
 </div>
 <img alt="_images/bc5292fdea8efa0b7dfe66bb53ec7853ae00115c6f27b5bc366022a36946a5a1.png" src="_images/bc5292fdea8efa0b7dfe66bb53ec7853ae00115c6f27b5bc366022a36946a5a1.png" />
@@ -1737,11 +1748,11 @@ Name: p_set, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/2183332981.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(margin=1, bus_sizes=s);
 </pre></div>
 </div>
-<img alt="_images/eb588b5bb3300031da8b1a3405c0e5c69f7af3b2dd5d89fd6618d75c9a437209.png" src="_images/eb588b5bb3300031da8b1a3405c0e5c69f7af3b2dd5d89fd6618d75c9a437209.png" />
+<img alt="_images/6611b197f9959d92b39852c9780c53498d59351fe233fccf6d31e2a7d061119e.png" src="_images/6611b197f9959d92b39852c9780c53498d59351fe233fccf6d31e2a7d061119e.png" />
 </div>
 </div>
 <p>The important point here is, that <code class="docutils literal notranslate"><span class="pre">s</span></code> needs to have entries for all buses, i.e. its index needs to match <code class="docutils literal notranslate"><span class="pre">n.buses.index</span></code>.</p>
@@ -1800,11 +1811,11 @@ Name: now, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/4251932974.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(margin=1, bus_sizes=s / 3000);
 </pre></div>
 </div>
-<img alt="_images/12d31b9ae194a0f730b0c236daafd914c71d9c55ae2b4bf8369bcc15056b3eb1.png" src="_images/12d31b9ae194a0f730b0c236daafd914c71d9c55ae2b4bf8369bcc15056b3eb1.png" />
+<img alt="_images/d488e9b3d0ac6757c49c6472e1227fdf77bd9a25ac084bd4cae94c8aae888073.png" src="_images/d488e9b3d0ac6757c49c6472e1227fdf77bd9a25ac084bd4cae94c8aae888073.png" />
 </div>
 </div>
 <p><strong>How does this magic work?</strong> The plotting function will look up the colors specified in <code class="docutils literal notranslate"><span class="pre">n.carriers</span></code> for each carrier and match it with the second index-level of <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
@@ -1952,7 +1963,7 @@ Solver message: optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-dncznuuq has 14 rows; 6 cols; 19 nonzeros
+LP   linopy-problem-6p9uyn_n has 14 rows; 6 cols; 19 nonzeros
 Coefficient ranges:
   Matrix [1e+00, 1e+00]
   Cost   [3e+01, 8e+01]
@@ -1963,12 +1974,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-14); columns 0(-6); elements 0(-19) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-dncznuuq
+Model name          : linopy-problem-6p9uyn_n
 Model status        : Optimal
 Objective value     :  1.2660000000e+06
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-qrx14pa9.sol
+Writing the solution to /tmp/linopy-solve-wocllbp5.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -2054,7 +2065,7 @@ Writing the solution to /tmp/linopy-solve-qrx14pa9.sol
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.io:Directory tmp does not exist, creating it
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Exported network &#39;tmp&#39; contains: carriers, generators, loads, lines, buses
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Exported network &#39;tmp&#39; contains: loads, carriers, buses, lines, generators
 </pre></div>
 </div>
 </div>
@@ -2078,7 +2089,7 @@ Writing the solution to /tmp/linopy-solve-qrx14pa9.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Exported network &#39;tmp.nc&#39; contains: carriers, generators, loads, lines, buses
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Exported network &#39;tmp.nc&#39; contains: loads, carriers, buses, lines, generators
 </pre></div>
 </div>
 </div>
@@ -2110,7 +2121,7 @@ Writing the solution to /tmp/linopy-solve-qrx14pa9.sol
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.examples:Retrieving network data from https://github.com/PyPSA/PyPSA/raw/master/examples/scigrid-de/scigrid-with-load-gen-trafos.nc
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.io:Importing network from PyPSA version v0.17.1 while current version is v0.33.2. Read the release notes at https://pypsa.readthedocs.io/en/latest/release_notes.html to prepare your network for import.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.io:Importing network from PyPSA version v0.17.1 while current version is v0.34.0. Read the release notes at https://pypsa.readthedocs.io/en/latest/release_notes.html to prepare your network for import.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.io:Imported network scigrid-de.nc has buses, generators, lines, loads, storage_units, transformers
@@ -2367,11 +2378,11 @@ Writing the solution to /tmp/linopy-solve-qrx14pa9.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/850113240.py:4: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(
 </pre></div>
 </div>
-<img alt="_images/d24ff63d53383205244bdfdafa369486fec03378425712106f0d5bd65cef9c27.png" src="_images/d24ff63d53383205244bdfdafa369486fec03378425712106f0d5bd65cef9c27.png" />
+<img alt="_images/37f33484a9609d53517252ee6c3757a0dfc53be62c3d4301079bec35734c7ed9.png" src="_images/37f33484a9609d53517252ee6c3757a0dfc53be62c3d4301079bec35734c7ed9.png" />
 </div>
 </div>
 <p>… and power plant capacities:</p>
@@ -2422,11 +2433,18 @@ Writing the solution to /tmp/linopy-solve-qrx14pa9.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/2579183995.py:6: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(
 </pre></div>
 </div>
-<img alt="_images/ab89403255d8e5b9a4f6228881e3d745af6a3310e4c25c4a2d385603ffd64457.png" src="_images/ab89403255d8e5b9a4f6228881e3d745af6a3310e4c25c4a2d385603ffd64457.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/2579183995.py:11: DeprecationWarning: The namespace `pypsa.plot.add_legend_patches` is deprecated and will be removed in a future version. Please use the new namespace `pypsa.plot.maps.add_legend_patches` instead.
+  add_legend_patches(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f53f0271210&gt;
+</pre></div>
+</div>
+<img alt="_images/4712ac1cd24f7393163a84c489565211ebe7d723d0351287e9d1aca46d8cfa78.png" src="_images/4712ac1cd24f7393163a84c489565211ebe7d723d0351287e9d1aca46d8cfa78.png" />
 </div>
 </div>
 <p>This dataset also includes a few hydro storage units:</p>
@@ -2616,16 +2634,16 @@ Index([&#39;2&#39;, &#39;5&#39;, &#39;10&#39;, &#39;12&#39;, &#39;13&#39;, &#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/15 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  13%|█▎        | 2/15 [00:00&lt;00:01, 10.82it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  13%|█▎        | 2/15 [00:00&lt;00:01, 10.93it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  27%|██▋       | 4/15 [00:00&lt;00:00, 13.66it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  27%|██▋       | 4/15 [00:00&lt;00:00, 13.70it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  87%|████████▋ | 13/15 [00:00&lt;00:00, 30.09it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  87%|████████▋ | 13/15 [00:00&lt;00:00, 29.55it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 23.68it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 15/15 [00:00&lt;00:00, 23.48it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -2634,48 +2652,48 @@ Index([&#39;2&#39;, &#39;5&#39;, &#39;10&#39;, &#39;12&#39;, &#39;13&#39;, &#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/6 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 59.06it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 59.34it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 58.64it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 58.86it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.76s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.77s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-7iu479ow has 142968 rows; 59640 cols; 263626 nonzeros
+LP   linopy-problem-a5ped4_y has 142968 rows; 59640 cols; 261298 nonzeros
 Coefficient ranges:
   Matrix [1e-02, 2e+02]
   Cost   [3e+00, 1e+02]
   Bound  [0e+00, 0e+00]
   RHS    [2e-11, 6e+03]
 Presolving model
-18737 rows, 44750 cols, 115742 nonzeros  0s
-13267 rows, 39086 cols, 107545 nonzeros  0s
+18737 rows, 44750 cols, 113266 nonzeros  0s
+13257 rows, 39076 cols, 104659 nonzeros  0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12704 rows, 31693 cols, 99607 nonzeros  0s
-Dependent equations search running on 12696 equations with time limit of 1000.00s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12728 rows, 31717 cols, 97247 nonzeros  0s
+Dependent equations search running on 12699 equations with time limit of 1000.00s
 Dependent equations search removed 0 rows and 0 nonzeros in 0.00s (limit = 1000.00s)
-12696 rows, 31672 cols, 99594 nonzeros  0s
-Presolve : Reductions: rows 12696(-130272); columns 31672(-27968); elements 99594(-164032)
+12699 rows, 31675 cols, 97166 nonzeros  0s
+Presolve : Reductions: rows 12699(-130269); columns 31675(-27965); elements 97166(-164132)
 Solving the presolved LP
 Using EKK dual simplex solver - serial
   Iteration        Objective     Infeasibilities num(sum)
           0     0.0000000000e+00 Ph1: 0(0) 0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      17298     9.1992880405e+06 Pr: 0(0); Du: 0(3.12741e-12) 5s
-      17298     9.1992880405e+06 Pr: 0(0); Du: 0(3.12741e-12) 5s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      17232     9.1992880405e+06 Pr: 0(0); Du: 0(4.3884e-12) 5s
+      17232     9.1992880405e+06 Pr: 0(0); Du: 0(4.3884e-12) 5s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-7iu479ow
+Model name          : linopy-problem-a5ped4_y
 Model status        : Optimal
-Simplex   iterations: 17298
+Simplex   iterations: 17232
 Objective value     :  9.1992880405e+06
-Relative P-D gap    :  5.4668816551e-15
-HiGHS run time      :          4.81
-Writing the solution to /tmp/linopy-solve-tzg_xu63.sol
+Relative P-D gap    :  9.7189007203e-15
+HiGHS run time      :          5.17
+Writing the solution to /tmp/linopy-solve-04mwwfcb.sol
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -2735,14 +2753,16 @@ Solver message: optimal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/3588249280.py:4: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(
+/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/plot/accessor.py:34: DeprecationWarning: `line_norm` is deprecated as an argument to `plot`; use `line_cmap_norm` instead.
+  return plot(self.n, *args, **kwargs)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fbfb67e7850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f53ebc07750&gt;
 </pre></div>
 </div>
-<img alt="_images/17f49d7e820136feb6cf79e6f9c0c7f696838796a2153d415bcc4e7f1edb5689.png" src="_images/17f49d7e820136feb6cf79e6f9c0c7f696838796a2153d415bcc4e7f1edb5689.png" />
+<img alt="_images/f0517e4317a3ab41ec5b148cb7ac0a54b6e1278b0d760b66f827745ca589ad3c.png" src="_images/f0517e4317a3ab41ec5b148cb7ac0a54b6e1278b0d760b66f827745ca589ad3c.png" />
 </div>
 </div>
 <p>Or plot the hourly dispatch grouped by carrier:</p>
@@ -2773,7 +2793,7 @@ Solver message: optimal
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cba8ab1168157007121b992522ab3e3750a4d2c2b91a7df4a7789bb9dc943a51.png" src="_images/cba8ab1168157007121b992522ab3e3750a4d2c2b91a7df4a7789bb9dc943a51.png" />
+<img alt="_images/63856607730d07a457bb4b1750a59bf257a78ccb09db8424e181690e973fe001.png" src="_images/63856607730d07a457bb4b1750a59bf257a78ccb09db8424e181690e973fe001.png" />
 </div>
 </div>
 <p>Or plot the aggregate dispatch of the pumped hydro storage units and the state of charge throughout the day:</p>
@@ -2797,7 +2817,7 @@ Solver message: optimal
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;MWh or MW&#39;)
 </pre></div>
 </div>
-<img alt="_images/4e81c1ce57e48705b1a26fa3bfe845b6d151cc259d929feaec33f551b1f1b61a.png" src="_images/4e81c1ce57e48705b1a26fa3bfe845b6d151cc259d929feaec33f551b1f1b61a.png" />
+<img alt="_images/6f2bcc2f40e10f2e7c81fc0def8f7f694fe973f314cf907d08ce4eeda2040b14.png" src="_images/6f2bcc2f40e10f2e7c81fc0def8f7f694fe973f314cf907d08ce4eeda2040b14.png" />
 </div>
 </div>
 <p>Or plot the locational marginal prices (LMPs):</p>
@@ -2826,14 +2846,16 @@ Solver message: optimal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/cartopy/mpl/feature_artist.py:144: UserWarning: facecolor will have no effect as it has been defined as &quot;never&quot;.
-  warnings.warn(&#39;facecolor will have no effect as it has been &#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3051/2809555626.py:6: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+  n.plot(
+/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/plot/accessor.py:34: DeprecationWarning: `bus_norm` is deprecated as an argument to `plot`; use `bus_cmap_norm` instead.
+  return plot(self.n, *args, **kwargs)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fbfb1d21790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f53f02e2c10&gt;
 </pre></div>
 </div>
-<img alt="_images/377e6462687d19d0d4ee2f0e310a9b3ad8337e42349dd2f1438be28f85fa68a0.png" src="_images/377e6462687d19d0d4ee2f0e310a9b3ad8337e42349dd2f1438be28f85fa68a0.png" />
+<img alt="_images/65510028f4da5cad6ef972bf46a9d68a60ef515d05d302bc49cbbc71d2af1bd0.png" src="_images/65510028f4da5cad6ef972bf46a9d68a60ef515d05d302bc49cbbc71d2af1bd0.png" />
 </div>
 </div>
 </section>

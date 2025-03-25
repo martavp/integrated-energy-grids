@@ -488,7 +488,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pypsa in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (0.33.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pypsa in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (0.34.0)
 Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2.2.4)
 Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.15.2)
 Requirement already satisfied: pandas&gt;=0.24 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2.2.3)
@@ -496,6 +496,7 @@ Requirement already satisfied: xarray in /opt/hostedtoolcache/Python/3.11.11/x64
 Requirement already satisfied: netcdf4 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.7.2)
 Requirement already satisfied: linopy&gt;=0.4 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (0.5.2)
 Requirement already satisfied: matplotlib in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (3.10.1)
+Requirement already satisfied: seaborn in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (0.13.2)
 Requirement already satisfied: geopandas&gt;=0.9 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (1.0.1)
 Requirement already satisfied: networkx&gt;=2 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (3.4.2)
 Requirement already satisfied: deprecation in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pypsa) (2.1.0)
@@ -514,25 +515,25 @@ Requirement already satisfied: tqdm in /opt/hostedtoolcache/Python/3.11.11/x64/l
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2025.1)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2025.2)
 Requirement already satisfied: tzdata&gt;=2022.7 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from pandas&gt;=0.24-&gt;pypsa) (2025.2)
 Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (1.3.1)
 Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (0.12.1)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (4.56.0)
 Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (1.4.8)
 Requirement already satisfied: pillow&gt;=8 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (11.1.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (3.2.2)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from matplotlib-&gt;pypsa) (3.2.3)
 Requirement already satisfied: cftime in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from netcdf4-&gt;pypsa) (1.6.4.post1)
 Requirement already satisfied: certifi in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from netcdf4-&gt;pypsa) (2025.1.31)
 Requirement already satisfied: click&gt;=8.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.1.8)
 Requirement already satisfied: cloudpickle&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (3.1.1)
 Requirement already satisfied: fsspec&gt;=2021.09.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (2025.3.0)
-Requirement already satisfied: partd&gt;=1.4.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.4.2)
-Requirement already satisfied: pyyaml&gt;=5.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (6.0.2)
-Requirement already satisfied: importlib_metadata&gt;=4.13.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.6.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=0.24-&gt;pypsa) (1.17.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: partd&gt;=1.4.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.4.2)
+Requirement already satisfied: pyyaml&gt;=5.3.1 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (6.0.2)
+Requirement already satisfied: importlib_metadata&gt;=4.13.0 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.6.1)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=0.24-&gt;pypsa) (1.17.0)
 Requirement already satisfied: zipp&gt;=3.20 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from importlib_metadata&gt;=4.13.0-&gt;dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (3.21.0)
 Requirement already satisfied: locket in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (from partd&gt;=1.4.0-&gt;dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.0.0)
 </pre></div>
@@ -898,10 +899,10 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/5 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 21.76it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 21.90it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 21.07it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 21.10it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -910,7 +911,7 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/2 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 46.78it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 46.02it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.3s
@@ -922,10 +923,10 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-f8lmansa.lp
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-hqee9fpc.lp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-f8lmansa.lp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-hqee9fpc.lp
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.06 seconds
@@ -975,17 +976,17 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s1">&#39;gurobi&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:634,</span> in <span class="ni">OptimizationAccessor.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">632</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">optimize</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">634</span>     <span class="k">return</span> <span class="n">optimize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:633,</span> in <span class="ni">OptimizationAccessor.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">optimize</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">633</span>     <span class="k">return</span> <span class="n">optimize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:606,</span> in <span class="ni">optimize</span><span class="nt">(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="k">if</span> <span class="n">extra_functionality</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">605</span>     <span class="n">extra_functionality</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sns</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">606</span> <span class="n">status</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="n">solver_name</span><span class="p">,</span> <span class="o">**</span><span class="n">solver_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span> <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;ok&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">609</span>     <span class="n">assign_solution</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:605,</span> in <span class="ni">optimize</span><span class="nt">(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span> <span class="k">if</span> <span class="n">extra_functionality</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span>     <span class="n">extra_functionality</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sns</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">status</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="n">solver_name</span><span class="p">,</span> <span class="o">**</span><span class="n">solver_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;ok&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="n">assign_solution</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1203,</span> in <span class="ni">Model.solve</span><span class="nt">(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1195</span>             <span class="n">explicit_coordinate_names</span> <span class="o">=</span> <span class="kc">False</span>

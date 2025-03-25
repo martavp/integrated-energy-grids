@@ -844,10 +844,10 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/5 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 22.01it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 19.41it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 21.26it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 19.20it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -856,10 +856,10 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/2 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 46.52it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 45.71it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.3s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.33s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
@@ -868,10 +868,10 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-0ly8wblp.lp
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-90awb009.lp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-0ly8wblp.lp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-90awb009.lp
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.06 seconds
@@ -921,17 +921,17 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">network</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s1">&#39;gurobi&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:634,</span> in <span class="ni">OptimizationAccessor.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">632</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">optimize</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">634</span>     <span class="k">return</span> <span class="n">optimize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:633,</span> in <span class="ni">OptimizationAccessor.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">optimize</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">633</span>     <span class="k">return</span> <span class="n">optimize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:606,</span> in <span class="ni">optimize</span><span class="nt">(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="k">if</span> <span class="n">extra_functionality</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">605</span>     <span class="n">extra_functionality</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sns</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">606</span> <span class="n">status</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="n">solver_name</span><span class="p">,</span> <span class="o">**</span><span class="n">solver_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span> <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;ok&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">609</span>     <span class="n">assign_solution</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:605,</span> in <span class="ni">optimize</span><span class="nt">(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span> <span class="k">if</span> <span class="n">extra_functionality</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span>     <span class="n">extra_functionality</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sns</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">status</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="n">solver_name</span><span class="p">,</span> <span class="o">**</span><span class="n">solver_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;ok&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="n">assign_solution</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1203,</span> in <span class="ni">Model.solve</span><span class="nt">(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1195</span>             <span class="n">explicit_coordinate_names</span> <span class="o">=</span> <span class="kc">False</span>

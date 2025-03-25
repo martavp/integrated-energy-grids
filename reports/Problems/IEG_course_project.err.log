@@ -31,26 +31,26 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/5 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 22.01it/s]
+Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 19.41it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 21.26it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 19.20it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/2 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 46.52it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 45.71it/s]
 ----- stderr -----
 
-INFO:linopy.io: Writing time: 0.3s
+INFO:linopy.io: Writing time: 0.33s
 ----- stdout -----
 Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-0ly8wblp.lp
+Read LP format model from file /tmp/linopy-problem-90awb009.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-0ly8wblp.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-90awb009.lp
 ----- stdout -----
 Reading time = 0.06 seconds
 ----- stderr -----
@@ -86,17 +86,17 @@ INFO:gurobipy:
 [36mCell[39m[36m [39m[32mIn[9][39m[32m, line 1[39m
 [32m----> [39m[32m1[39m [43mnetwork[49m[43m.[49m[43moptimize[49m[43m([49m[43msolver_name[49m[43m=[49m[33;43m'[39;49m[33;43mgurobi[39;49m[33;43m'[39;49m[43m)[49m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:634[39m, in [36mOptimizationAccessor.__call__[39m[34m(self, *args, **kwargs)[39m
-[32m    632[39m [38;5;129m@wraps[39m(optimize)
-[32m    633[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__call__[39m([38;5;28mself[39m, *args: Any, **kwargs: Any) -> Any:
-[32m--> [39m[32m634[39m     [38;5;28;01mreturn[39;00m [43moptimize[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mn[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:633[39m, in [36mOptimizationAccessor.__call__[39m[34m(self, *args, **kwargs)[39m
+[32m    631[39m [38;5;129m@wraps[39m(optimize)
+[32m    632[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__call__[39m([38;5;28mself[39m, *args: Any, **kwargs: Any) -> Any:
+[32m--> [39m[32m633[39m     [38;5;28;01mreturn[39;00m [43moptimize[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mn[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:606[39m, in [36moptimize[39m[34m(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)[39m
-[32m    604[39m [38;5;28;01mif[39;00m extra_functionality:
-[32m    605[39m     extra_functionality(n, sns)
-[32m--> [39m[32m606[39m status, condition = [43mm[49m[43m.[49m[43msolve[49m[43m([49m[43msolver_name[49m[43m=[49m[43msolver_name[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43msolver_options[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
-[32m    608[39m [38;5;28;01mif[39;00m status == [33m"[39m[33mok[39m[33m"[39m:
-[32m    609[39m     assign_solution(n)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:605[39m, in [36moptimize[39m[34m(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)[39m
+[32m    603[39m [38;5;28;01mif[39;00m extra_functionality:
+[32m    604[39m     extra_functionality(n, sns)
+[32m--> [39m[32m605[39m status, condition = [43mm[49m[43m.[49m[43msolve[49m[43m([49m[43msolver_name[49m[43m=[49m[43msolver_name[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43msolver_options[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    607[39m [38;5;28;01mif[39;00m status == [33m"[39m[33mok[39m[33m"[39m:
+[32m    608[39m     assign_solution(n)
 
 [36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1203[39m, in [36mModel.solve[39m[34m(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)[39m
 [32m   1195[39m             explicit_coordinate_names = [38;5;28;01mFalse[39;00m

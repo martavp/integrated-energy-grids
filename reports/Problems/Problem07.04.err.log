@@ -35,8 +35,7 @@ model.add_constraints(
 
 # Guarantees top iso fuel line
 model.add_constraints(
-    link_p.sel(Link="CHP boiler")
-    + link_p.sel(Link="CHP generator")
+    link_p.sel(Link="CHP boiler") + link_p.sel(Link="CHP generator")
     - network.links.at["CHP generator", "p_nom"]
     <= 0,
     name="top_iso_fuel_line",
@@ -46,14 +45,14 @@ network.optimize.solve_model()
 ------------------
 
 ----- stderr -----
+WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index(['gas'], dtype='object', name='Store')
+----- stderr -----
 WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index(['OCGT', 'CHP generator', 'CHP boiler', 'gas boiler'], dtype='object', name='Link')
 ----- stderr -----
 WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index(['electricity', 'heat', 'gas'], dtype='object', name='Bus')
------ stderr -----
-WARNING:pypsa.consistency:The following stores have carriers which are not defined:
-Index(['gas'], dtype='object', name='Store')
 ------------------
 
 [31m---------------------------------------------------------------------------[39m
@@ -68,10 +67,11 @@ Index(['gas'], dtype='object', name='Store')
 [32m     13[39m     name=[33m"[39m[33mbackpressure[39m[33m"[39m,)
 [32m     16[39m [38;5;66;03m# Guarantees top iso fuel line[39;00m
 [32m     17[39m model.add_constraints(
-[32m     18[39m     link_p.sel(Link=[33m"[39m[33mCHP boiler[39m[33m"[39m)
-[32m     19[39m     + link_p.sel(Link=[33m"[39m[33mCHP generator[39m[33m"[39m)
-[32m   (...)[39m[32m     22[39m     name=[33m"[39m[33mtop_iso_fuel_line[39m[33m"[39m,
-[32m     23[39m )
+[32m     18[39m     link_p.sel(Link=[33m"[39m[33mCHP boiler[39m[33m"[39m) + link_p.sel(Link=[33m"[39m[33mCHP generator[39m[33m"[39m)
+[32m     19[39m     - network.links.at[[33m"[39m[33mCHP generator[39m[33m"[39m, [33m"[39m[33mp_nom[39m[33m"[39m]
+[32m     20[39m     <= [32m0[39m,
+[32m     21[39m     name=[33m"[39m[33mtop_iso_fuel_line[39m[33m"[39m,
+[32m     22[39m )
 
 [36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/variables.py:415[39m, in [36mVariable.__rmul__[39m[34m(self, other)[39m
 [32m    411[39m [38;5;250m[39m[33;03m"""[39;00m
