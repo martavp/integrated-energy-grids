@@ -4,7 +4,7 @@
 \usepackage{hyperref}
 \title{IEG_Problems_Lecture8}
 \author{martavictoriaperez }
-\date{March 2025}
+\date{April 2025}
 
 \usepackage[margin=1in]{geometry} 
 \usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
@@ -17,20 +17,41 @@
 
 \begin{document}
  
-\title{\textbf{Lecture 9: Limiting CO2 emissions}}
+\title{\textbf{Lecture 9: Limiting CO$_2$ emissions}}
 \author{
 %Your name\\
 DTU Course 46770: Integrated Energy Grids }
 \maketitle
 
 \begin{problem}{9.1}
-Use the model described in Problem 8.2 and assume that methane gas emits 0.198 tCO2 per MWh of thermal energy contained in the gas. 
+Producing electricity in coal and gas power plants entails the efficiency, CO$_2$ emissions and fuel cost shown in Table \ref{Tab_coal_gas}. What is the cheapest option to produce electricity? Which CO$_2$ tax would be necessary to alter the merit order of the two technologies and incentivise lower CO$_2$ emissions per MWh of produced electricity?
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        & Coal Power plant	&Combined Cycle Gas Turbine (CCGT) \\ \hline
+Fuel cost (USD/MWh thermal energy)	& 6.2	& 20.1 \\
+Efficiency of power plant &	0.33	& 0.59  \\
+(MWh electricity / MWh thermal energy) &	& \\
+Emissions (tCO2/MWh thermal energy)	& 0.336	& 0.198 \\
+\hline
+    \end{tabular}
+    \caption{Electricity production in coal and gas power plantns.}
+    \label{Tab_coal_gas}
+\end{table}
+\end{problem}
+
+\
+
+\begin{problem}{9.2}
+Use the model built in PyPSA described in Problem 8.2 and assume that methane gas emits 0.198 tCO2 per MWh of thermal energy contained in the gas. 
 
 Consider the annualized capital costs and marginal generation costs for the different technologies in the following table.
 
 \begin{table}[h]
     \centering
-    \begin{tabular}{ccc}
+    \begin{tabular}{|c|c|c|}
     \hline
         Technology & Annualized capital costs (EUR/MW/a) & Marginal generation costs (EUR/MWh) \\
     \hline
@@ -46,18 +67,28 @@ Consider the annualized capital costs and marginal generation costs for the diff
     \label{tab:my_label}
 \end{table}
 
-
-Limit the maximum CO2 emissions to 5 MtCO2/year. 
+Limit the maximum CO$_2$ emissions to 5 MtCO2/year. 
 
 \begin{itemize}
 \item[a)] Calculate the optimal installed capacities and plot the hourly generation and demand during January.
-\item[b)] What is the CO2 tax required to attain such CO2 emissions limit?
-%\item[c)] Calculate the revenues collected by the OCGT plant throughout the year and show that their sum is equal to its costs.
-%\item[d)] Repeat the previous sections assuming now a zero-emission constraint.
+\item[b)] What is the CO$_2$ tax required to meet this CO$_2$ emission limit?
+
 \end{itemize}
 
 \end{problem}
 
+\
+
+\begin{problem}{9.3}
+
+For the model built in PyPSA described in Problem 9.2
+
+\begin{itemize}
+\item[a)] Calculate the revenues collected by the OCGT plant throughout the year and show that their sum is equal to its costs.
+\item[b)] Solve the problem for different CO$_2$ values ranging from 5 MtCO2/year to zero. Plot the total system cost and the required CO$_2$ prices as a function of the emissions allowance.
+\end{itemize}
+
+\end{problem}
 
 %\begin{proof}[Solution]
 %Write a solution here
