@@ -1,0 +1,114 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{hyperref}
+\title{IEG_Problems_Lecture_10}
+\author{Aleksander Grochowic}
+\date{March 2025}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{\textbf{Lecture 10: Capacity and dispatch optimisation in a network}}
+\author{
+%Your name\\
+DTU Course 46770: Integrated Energy Grids }
+\maketitle
+
+\begin{problem}{10.1}
+We build on the models described in Problem sets 8 and 9:
+
+Optimize the capacity and dispatch of solar PV, onshore wind, and Open Cycle Gas Turbine (OCGT) generators to supply the inelastic electricity demand throughout one year. 
+To do this, take the time series for the wind and solar capacity factors for Portugal and Denmark in 2015 obtained from \url{https://zenodo.org/record/3253876#.XSiVOEdS8l0}
+and \url{https://zenodo.org/record/2613651#.X0kbhDVS-uV} (select the file ‘pvoptimal.csv’) and the electricity demand from \url{https://github.com/martavp/integrated-energy-grids/tree/main/integrated-energy-grids/Problems/data}.
+
+\
+
+Consider the annualized capital costs and marginal generation costs for the different technologies in the following table. The efficiency for the OCGT plant is 0.41.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cccc}
+		\hline
+		Technology & Capital costs (EUR/MW/a) & Marginal costs (EUR/MWh) & $CO_2$ emissions (t$CO_2$/MWh_{th}) \\
+		\hline
+		Onshore Wind &  101,644 & 0 & 0 \\
+		Solar PV &  51,346 & 0 & 0 \\
+		OCGT & 47,718 &  64.7 & 0.198  \\
+		\hline
+	\end{tabular}
+	\caption{Costs assumptions.}
+	\label{tab:my_label}
+\end{table}
+
+
+Now, however, we add Denmark as a second node and we connect Portugal and Denmark with an overhead HVAC line. Assume that the annualised capital cost of it is 42 EUR/MWkm/a and that the distance is 2477 km.
+
+For the subproblems, calculate the following:
+\begin{itemize}
+	\item total system costs (in bn EUR)
+	\item average electricity price (in EUR/MWh) and number/share of hours with zero prices.
+	\item congestion rent 
+	\item utilisation of transmission lines (in \% of capacity)
+	\item total generation per technology (in TWh)
+	\item total $CO_2$ emissions (in Mt$CO_2$)
+\end{itemize}
+
+\begin{itemize}
+	\item[a)] Set up a network with two nodes and connect them with an overhead AC line; keep the capacity at 0 GW and assume it cannot be extended.
+	\item[b)] Now assume the AC line connecting Portugal and Denmark has a capacity of 1 GW.
+	\item[c)] Now assume the AC line connecting Portugal and Denmark has a capacity of 10 GW.
+	\item[d)] Optimise the AC line capacity endogenously (assume its current capacity is 0 GW). Are the costs recovered by the congestion rent?
+\end{itemize}
+
+
+\end{problem}
+
+\
+
+\begin{problem}{10.2}
+We build on Problem 10.1d), i.e. we optimise the capacity of the transmission line between Denmark and Portugal endogenously (starting at 0 GW). For (a)-(c) calculate the following:
+\begin{itemize}
+	\item total system costs (in bn EUR)
+	\item average electricity price (in EUR/MWh) and number/share of hours with zero prices.
+	\item congestion rent 
+	\item utilisation of transmission lines (in \% of capacity)
+	\item total generation per technology (in TWh)
+	\item $CO_2$ price (EUR/t$CO_2$)
+\end{itemize}
+
+
+
+
+\begin{itemize}
+	\item[a)] Set up a network as in 10.1d) and add a CO2 constraint of 2.5 MtCO2/year.
+	\item[b)] The load distribution between Denmark and Portugal is approximately 1:1.5. Assume that both countries have national targets of 1 MtCO2/year and 1.5 MtCO2/year.
+	\item[c)] Assume the CO2 limits from b), but that the transmission capacities is limited to 1 GW (still endougenously optimised).
+	\item[d)] Change the global CO2 limit to 0.25, 0.5, 1, 1.5, 2 MtCO2/year, and plot the total system costs against the CO2 limit.
+	
+\end{itemize}
+
+\end{problem}
+
+\
+
+
+
+
+%\begin{proof}[Solution]
+%Write a solution here
+%\end{proof}
+
+\end{document}
+
+
+ 
+
