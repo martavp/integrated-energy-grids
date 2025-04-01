@@ -18,47 +18,55 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-network.optimize(solver_name='gurobi')
+n.optimize(solver_name="gurobi")
 ------------------
 
 ----- stderr -----
+WARNING:pypsa.consistency:The following lines have carriers which are not defined:
+Index(['PRT-DNK'], dtype='object', name='Line')
+----- stderr -----
+WARNING:pypsa.consistency:The following loads have carriers which are not defined:
+Index(['PRT load', 'DNK load'], dtype='object', name='Load')
+----- stderr -----
 WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index(['electricity bus'], dtype='object', name='Bus')
+Index(['PRT', 'DNK'], dtype='object', name='Bus')
 ----- stderr -----
 INFO:linopy.model: Solve problem using Gurobi solver
 ----- stderr -----
 INFO:linopy.io:Writing objective.
 ----- stderr -----
-Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/5 [00:00<?, ?it/s]
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/7 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 21.84it/s]
+Writing constraints.:  43%|[38;2;128;191;255m████▎     [0m| 3/7 [00:00<00:00, 20.81it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 21.13it/s]
+Writing constraints.:  86%|[38;2;128;191;255m████████▌ [0m| 6/7 [00:00<00:00, 14.04it/s]
 ----- stderr -----
-
------ stderr -----
-Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/2 [00:00<?, ?it/s]
------ stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 46.64it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 7/7 [00:00<00:00, 12.99it/s]
 ----- stderr -----
 
-INFO:linopy.io: Writing time: 0.3s
+----- stderr -----
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/3 [00:00<?, ?it/s]
+----- stderr -----
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 30.28it/s]
+----- stderr -----
+
+INFO:linopy.io: Writing time: 0.72s
 ----- stdout -----
 Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-kfpt_xtg.lp
+Read LP format model from file /tmp/linopy-problem-nxn2adjt.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-kfpt_xtg.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-nxn2adjt.lp
 ----- stdout -----
-Reading time = 0.06 seconds
+Reading time = 0.16 seconds
 ----- stderr -----
-INFO:gurobipy:Reading time = 0.06 seconds
+INFO:gurobipy:Reading time = 0.16 seconds
 ----- stdout -----
-obj: 61323 rows, 26283 columns, 100750 nonzeros
+obj: 140166 rows, 61326 columns, 236551 nonzeros
 ----- stderr -----
-INFO:gurobipy:obj: 61323 rows, 26283 columns, 100750 nonzeros
+INFO:gurobipy:obj: 140166 rows, 61326 columns, 236551 nonzeros
 ----- stdout -----
 Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - "Ubuntu 24.04.2 LTS")
 ----- stderr -----
@@ -83,8 +91,8 @@ INFO:gurobipy:
 
 [31m---------------------------------------------------------------------------[39m
 [31mGurobiError[39m                               Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[9][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [43mnetwork[49m[43m.[49m[43moptimize[49m[43m([49m[43msolver_name[49m[43m=[49m[33;43m'[39;49m[33;43mgurobi[39;49m[33;43m'[39;49m[43m)[49m
+[36mCell[39m[36m [39m[32mIn[22][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mn[49m[43m.[49m[43moptimize[49m[43m([49m[43msolver_name[49m[43m=[49m[33;43m"[39;49m[33;43mgurobi[39;49m[33;43m"[39;49m[43m)[49m
 
 [36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:633[39m, in [36mOptimizationAccessor.__call__[39m[34m(self, *args, **kwargs)[39m
 [32m    631[39m [38;5;129m@wraps[39m(optimize)
