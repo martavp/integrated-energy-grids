@@ -63,6 +63,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Problem 8.2" href="Problem08.02.html" />
+    <link rel="prev" title="Problem 7.4" href="Problem07.04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -182,7 +182,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-install.html">Python and Conda</a></li>
 
 
@@ -227,6 +227,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem07.02.html">Problem 7.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem07.03.html">Problem 7.3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem07.04.html">Problem 7.4</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 8.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem08.02.html">Problem 8.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 
@@ -1044,10 +1046,10 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/5 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 22.11it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 21.91it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 21.35it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 21.06it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1056,14 +1058,14 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/2 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 46.47it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 45.57it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.32s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.33s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-wbz5lfvd has 61323 rows; 26283 cols; 100761 nonzeros
+LP   linopy-problem-v5jmj_gf has 61323 rows; 26283 cols; 100761 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 1e+00]
   Cost   [1e-02, 1e+05]
@@ -1092,13 +1094,13 @@ Solver message: optimal
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      16794     3.1120276519e+09 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-wbz5lfvd
+Model name          : linopy-problem-v5jmj_gf
 Model status        : Optimal
 Simplex   iterations: 16794
 Objective value     :  3.1120276519e+09
 Relative P-D gap    :  3.6773747142e-15
-HiGHS run time      :          0.47
-Writing the solution to /tmp/linopy-solve-clq8b0zq.sol
+HiGHS run time      :          0.48
+Writing the solution to /tmp/linopy-solve-a1p2h_t0.sol
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper were not assigned to the network.
@@ -1252,6 +1254,24 @@ dtype: float64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Problem07.04.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem 7.4</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Problem08.02.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem 8.2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
