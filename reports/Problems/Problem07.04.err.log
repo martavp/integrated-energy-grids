@@ -48,11 +48,11 @@ network.optimize.solve_model()
 WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index(['gas'], dtype='object', name='Store')
 ----- stderr -----
-WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index(['electricity', 'heat', 'gas'], dtype='object', name='Bus')
------ stderr -----
 WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index(['OCGT', 'CHP generator', 'CHP boiler', 'gas boiler'], dtype='object', name='Link')
+----- stderr -----
+WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index(['electricity', 'heat', 'gas'], dtype='object', name='Bus')
 ------------------
 
 [31m---------------------------------------------------------------------------[39m
