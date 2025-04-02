@@ -50,9 +50,9 @@ Consider the annualized capital costs and marginal generation costs for the diff
 \end{table}
 
 
-Now, however, we add Denmark as a second node and we connect Portugal and Denmark with an overhead HVAC line. Assume that the annualised capital cost of it is 42 EUR/MWkm/a and that the distance is 2477 km.
+Now, however, we add Denmark as a second node and we connect Portugal and Denmark with an overhead HVAC line. Assume that the annualised capital cost of it is 42 EUR/MWkm/a and that the distance is 2477 km. Set up a network with two nodes and connect them with an overhead AC line.
 
-For the subproblems, calculate the following:
+For (a)-(d), calculate the following:
 \begin{itemize}
 	\item total system costs (in bn EUR)
 	\item average electricity price (in EUR/MWh) and number/share of hours with zero prices.
@@ -63,7 +63,7 @@ For the subproblems, calculate the following:
 \end{itemize}
 
 \begin{itemize}
-	\item[a)] Set up a network with two nodes and connect them with an overhead AC line; keep the capacity at 0 GW and assume it cannot be extended.
+	\item[a)] Solve the network in PyPSA while keeping the capacity at 0 GW and assuming it cannot be extended.
 	\item[b)] Now assume the AC line connecting Portugal and Denmark has a capacity of 1 GW.
 	\item[c)] Now assume the AC line connecting Portugal and Denmark has a capacity of 10 GW.
 	\item[d)] Optimise the AC line capacity endogenously (assume its current capacity is 0 GW). Are the costs recovered by the congestion rent?
@@ -90,11 +90,19 @@ We build on Problem 10.1d), i.e. we optimise the capacity of the transmission li
 
 \begin{itemize}
 	\item[a)] Set up a network as in 10.1d) and add a CO2 constraint of 2.5 MtCO2/year.
-	\item[b)] The load distribution between Denmark and Portugal is approximately 1:1.5. Assume that both countries have national targets of 1 MtCO2/year and 1.5 MtCO2/year.
+	\item[b)] The load distribution between Denmark and Portugal is approximately 1:1.5. Impose national targets  Assume that both countries have national targets of 1 MtCO2/year and 1.5 MtCO2/year, respectively.
 	\item[c)] Assume the CO2 limits from b), but that the transmission capacities is limited to 1 GW (still endougenously optimised).
 	\item[d)] Change the global CO2 limit to 0.25, 0.5, 1, 1.5, 2 MtCO2/year, and plot the total system costs against the CO2 limit.
 	
 \end{itemize}
+
+\textbf{Hint}: \\
+In order to add national targets for carbon emissions, you need to manually add a constraint and modify the model formulation. 
+
+For this, you first need to access the underlying model in linopy with \texttt{n.optimize.create\_model()}. 
+Then you add the constraint with \texttt{n.model.add\_constraint(lhs, "<=", rhs, name)}. One way to achieve this is to access the aggregated operational variables for the generators (solar, wind, OCGT) with \texttt{gen\_var = n.model.variables["Generator-p"].sum("snapshot")}. Then you multiply this with the corresponding $CO_2$ emission factor for each generator, and group the corresponding constraints as follows: \texttt{lhs = (gen\_var * co2\_emission\_factors).groupby(n.generators.bus.to\_xarray()).sum()}. In order to now optimise the modified model you need to run \texttt{n.optimize.solve\_model()}. You can access the dual variables at the end with \texttt{n.model.dual()}.
+
+
 
 \end{problem}
 
