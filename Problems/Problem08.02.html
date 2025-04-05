@@ -1155,13 +1155,13 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/16 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  44%|████▍     | 7/16 [00:00&lt;00:00, 53.48it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  44%|████▍     | 7/16 [00:00&lt;00:00, 52.89it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  81%|████████▏ | 13/16 [00:00&lt;00:00, 31.06it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  81%|████████▏ | 13/16 [00:00&lt;00:00, 31.02it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 16/16 [00:00&lt;00:00, 27.22it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 16/16 [00:00&lt;00:00, 27.11it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1170,17 +1170,17 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/6 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 58.34it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 58.62it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 57.96it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 58.23it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.75s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-dmz6dulx has 140164 rows; 61324 cols; 258442 nonzeros
+LP   linopy-problem-4x9tbtfv has 140164 rows; 61324 cols; 258442 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 2e+00]
   Cost   [1e-02, 1e+05]
@@ -1200,19 +1200,19 @@ Using EKK dual simplex solver - serial
           0     0.0000000000e+00 Pr: 8760(1.56078e+09) 0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      52207     2.1874602810e+09 Pr: 3808(3.10737e+08); Du: 0(1.46533e-08) 5s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      51439     2.1773928904e+09 Pr: 2695(7.63741e+08); Du: 0(1.46533e-08) 5s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      63123     2.2611491252e+09 Pr: 0(0); Du: 0(3.23205e-12) 7s
       63123     2.2611491252e+09 Pr: 0(0); Du: 0(3.23205e-12) 7s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-dmz6dulx
+Model name          : linopy-problem-4x9tbtfv
 Model status        : Optimal
 Simplex   iterations: 63123
 Objective value     :  2.2611491252e+09
 Relative P-D gap    :  1.0544133354e-15
-HiGHS run time      :          7.08
-Writing the solution to /tmp/linopy-solve-sj54c79n.sol
+HiGHS run time      :          7.11
+Writing the solution to /tmp/linopy-solve-x_cicooh.sol
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -1403,35 +1403,6 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>StorageUnit
 battery storage    18.457919
 Name: p_nom_opt, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can calculate the total emissions from the unconstrained model by adding the dispatch of every technology and its emissions</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">emissions</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">n</span><span class="o">.</span><span class="n">generators_t</span><span class="o">.</span><span class="n">p</span>
-    <span class="o">/</span> <span class="n">n</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">efficiency</span>
-    <span class="o">*</span> <span class="n">n</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">carrier</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">carriers</span><span class="o">.</span><span class="n">co2_emissions</span><span class="p">)</span>
-<span class="p">)</span>  <span class="c1"># t/h</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">emissions</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="mf">1e6</span><span class="p">)</span>  <span class="c1"># tCO2 -&gt; MtCO2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generator
-OCGT       0.345087
-onwind     0.000000
-solar      0.000000
-CCGT      11.580037
-dtype: float64
 </pre></div>
 </div>
 </div>
