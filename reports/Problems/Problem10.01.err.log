@@ -25,11 +25,11 @@ n.optimize(solver_name="gurobi")
 WARNING:pypsa.consistency:The following loads have carriers which are not defined:
 Index(['PRT load', 'DNK load'], dtype='object', name='Load')
 ----- stderr -----
-WARNING:pypsa.consistency:The following lines have carriers which are not defined:
-Index(['PRT-DNK'], dtype='object', name='Line')
------ stderr -----
 WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index(['PRT', 'DNK'], dtype='object', name='Bus')
+----- stderr -----
+WARNING:pypsa.consistency:The following lines have carriers which are not defined:
+Index(['PRT-DNK'], dtype='object', name='Line')
 ----- stderr -----
 INFO:linopy.model: Solve problem using Gurobi solver
 ----- stderr -----
@@ -37,28 +37,28 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/7 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  43%|[38;2;128;191;255m████▎     [0m| 3/7 [00:00<00:00, 21.21it/s]
+Writing constraints.:  43%|[38;2;128;191;255m████▎     [0m| 3/7 [00:00<00:00, 21.01it/s]
 ----- stderr -----
-Writing constraints.:  86%|[38;2;128;191;255m████████▌ [0m| 6/7 [00:00<00:00, 14.24it/s]
+Writing constraints.:  86%|[38;2;128;191;255m████████▌ [0m| 6/7 [00:00<00:00, 14.12it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 7/7 [00:00<00:00, 13.13it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 7/7 [00:00<00:00, 13.03it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/3 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 30.08it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 30.05it/s]
 ----- stderr -----
 
-INFO:linopy.io: Writing time: 0.71s
+INFO:linopy.io: Writing time: 0.72s
 ----- stdout -----
 Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-cu22o9pt.lp
+Read LP format model from file /tmp/linopy-problem-_4a_9ld9.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-cu22o9pt.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-_4a_9ld9.lp
 ----- stdout -----
 Reading time = 0.16 seconds
 ----- stderr -----
