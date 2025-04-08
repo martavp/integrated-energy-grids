@@ -887,7 +887,6 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
     <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span>
           <span class="n">country</span><span class="p">,</span>
-          <span class="n">v_nom</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
           <span class="n">y</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
           <span class="n">x</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
           <span class="n">carrier</span><span class="o">=</span><span class="s2">&quot;AC&quot;</span>
@@ -907,14 +906,14 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <span class="n">n</span><span class="o">.</span><span class="n">madd</span><span class="p">(</span>
     <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span>
     <span class="n">carriers</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="s2">&quot;indianred&quot;</span><span class="p">,],</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="s2">&quot;indianred&quot;</span><span class="p">],</span>
     <span class="n">co2_emissions</span><span class="o">=</span><span class="p">[</span><span class="n">costs</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;CO2 intensity&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">carriers</span><span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2868/68125439.py:7: DeprecatedWarning: madd is deprecated as of 0.31 and will be removed in 1.0. Use `n.add` as a drop-in replacement instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2905/3103334985.py:7: DeprecatedWarning: madd is deprecated as of 0.31 and will be removed in 1.0. Use `n.add` as a drop-in replacement instead.
   n.madd(
 </pre></div>
 </div>
@@ -1005,12 +1004,12 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2868/2753408878.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2905/2753408878.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
   n.plot(bus_sizes=1, margin=1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7fd3480bc8d0&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7fd349cea750&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f1294be2750&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f1294bfacd0&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1028,12 +1027,12 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 Index([&#39;PRT load&#39;, &#39;DNK load&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
-Index([&#39;PRT-DNK&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
+Index([&#39;PRT-DNK&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Gurobi solver
@@ -1045,13 +1044,13 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  43%|████▎     | 3/7 [00:00&lt;00:00, 21.00it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  43%|████▎     | 3/7 [00:00&lt;00:00, 20.40it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  86%|████████▌ | 6/7 [00:00&lt;00:00, 14.16it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  86%|████████▌ | 6/7 [00:00&lt;00:00, 13.76it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 7/7 [00:00&lt;00:00, 13.08it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 7/7 [00:00&lt;00:00, 12.76it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1060,10 +1059,10 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/3 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 3/3 [00:00&lt;00:00, 30.08it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 3/3 [00:00&lt;00:00, 30.04it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.71s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.73s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
@@ -1072,16 +1071,16 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-z77g10yu.lp
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-9y6m3ng9.lp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-z77g10yu.lp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-9y6m3ng9.lp
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.16 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.17 seconds
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Reading time = 0.16 seconds
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Reading time = 0.17 seconds
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 140166 rows, 61326 columns, 236551 nonzeros
@@ -1339,7 +1338,6 @@ Name: efficiency, dtype: float64
 <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
     <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span>
           <span class="n">country</span><span class="p">,</span>
-          <span class="n">v_nom</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
           <span class="n">y</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
           <span class="n">x</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
           <span class="n">carrier</span><span class="o">=</span><span class="s2">&quot;AC&quot;</span>
@@ -1349,13 +1347,12 @@ Name: efficiency, dtype: float64
     <span class="s2">&quot;onwind&quot;</span><span class="p">,</span>
     <span class="s2">&quot;solar&quot;</span><span class="p">,</span>
     <span class="s2">&quot;OCGT&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;battery storage&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="n">n</span><span class="o">.</span><span class="n">madd</span><span class="p">(</span>
     <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span>
     <span class="n">carriers</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="s2">&quot;indianred&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="s2">&quot;indianred&quot;</span><span class="p">],</span>
     <span class="n">co2_emissions</span><span class="o">=</span><span class="p">[</span><span class="n">costs</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;CO2 intensity&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">carriers</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="c1"># add load to the bus</span>
@@ -2321,7 +2318,6 @@ dtype: float64
 <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
     <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span>
           <span class="n">country</span><span class="p">,</span>
-          <span class="n">v_nom</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
           <span class="n">y</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
           <span class="n">x</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
           <span class="n">carrier</span><span class="o">=</span><span class="s2">&quot;AC&quot;</span>
@@ -2331,13 +2327,12 @@ dtype: float64
     <span class="s2">&quot;onwind&quot;</span><span class="p">,</span>
     <span class="s2">&quot;solar&quot;</span><span class="p">,</span>
     <span class="s2">&quot;OCGT&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;battery storage&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="n">n</span><span class="o">.</span><span class="n">madd</span><span class="p">(</span>
     <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span>
     <span class="n">carriers</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="s2">&quot;indianred&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="s2">&quot;indianred&quot;</span><span class="p">],</span>
     <span class="n">co2_emissions</span><span class="o">=</span><span class="p">[</span><span class="n">costs</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;CO2 intensity&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">carriers</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="c1"># add load to the bus</span>
@@ -3295,7 +3290,6 @@ dtype: float64
 <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
     <span class="n">n</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span>
           <span class="n">country</span><span class="p">,</span>
-          <span class="n">v_nom</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
           <span class="n">y</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
           <span class="n">x</span> <span class="o">=</span> <span class="n">coordinates</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
           <span class="n">carrier</span><span class="o">=</span><span class="s2">&quot;AC&quot;</span>
@@ -3305,13 +3299,12 @@ dtype: float64
     <span class="s2">&quot;onwind&quot;</span><span class="p">,</span>
     <span class="s2">&quot;solar&quot;</span><span class="p">,</span>
     <span class="s2">&quot;OCGT&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;battery storage&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="n">n</span><span class="o">.</span><span class="n">madd</span><span class="p">(</span>
     <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span>
     <span class="n">carriers</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="s2">&quot;indianred&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="s2">&quot;indianred&quot;</span><span class="p">],</span>
     <span class="n">co2_emissions</span><span class="o">=</span><span class="p">[</span><span class="n">costs</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;CO2 intensity&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">carriers</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="c1"># add load to the bus</span>
