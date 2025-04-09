@@ -229,6 +229,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem07.04.html">Problem 7.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem08.01.html">Problem 8.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem08.02.html">Problem 8.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem09.02.html">Problem 9.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 
@@ -913,7 +914,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/3103334985.py:7: DeprecatedWarning: madd is deprecated as of 0.31 and will be removed in 1.0. Use `n.add` as a drop-in replacement instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2861/3103334985.py:7: DeprecatedWarning: madd is deprecated as of 0.31 and will be removed in 1.0. Use `n.add` as a drop-in replacement instead.
   n.madd(
 </pre></div>
 </div>
@@ -1004,12 +1005,12 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/2753408878.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2861/2753408878.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
   n.plot(bus_sizes=1, margin=1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f1aec34ed10&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f1ae73fc110&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f0ae3aa1a50&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f0ae3aa2c50&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1023,12 +1024,12 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
-Index([&#39;PRT load&#39;, &#39;DNK load&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
 Index([&#39;PRT-DNK&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
+Index([&#39;PRT load&#39;, &#39;DNK load&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
@@ -1044,13 +1045,13 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  43%|████▎     | 3/7 [00:00&lt;00:00, 20.63it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  43%|████▎     | 3/7 [00:00&lt;00:00, 20.52it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  86%|████████▌ | 6/7 [00:00&lt;00:00, 13.87it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  86%|████████▌ | 6/7 [00:00&lt;00:00, 13.98it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 7/7 [00:00&lt;00:00, 12.84it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 7/7 [00:00&lt;00:00, 12.90it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1059,13 +1060,10 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/3 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 3/3 [00:00&lt;00:00, 29.64it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 3/3 [00:00&lt;00:00, 29.98it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 3/3 [00:00&lt;00:00, 29.39it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.73s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.72s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
@@ -1074,10 +1072,10 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-s9ym3qvh.lp
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-wqqj32k9.lp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-s9ym3qvh.lp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-wqqj32k9.lp
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.16 seconds
