@@ -31,15 +31,15 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/5 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 21.97it/s]
+Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 21.70it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 21.21it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 20.99it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/2 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 45.11it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 46.47it/s]
 ----- stderr -----
 
 INFO:linopy.io: Writing time: 0.3s
@@ -48,13 +48,13 @@ Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-4t0oba74.lp
+Read LP format model from file /tmp/linopy-problem-uob_w91m.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-4t0oba74.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-uob_w91m.lp
 ----- stdout -----
-Reading time = 0.07 seconds
+Reading time = 0.06 seconds
 ----- stderr -----
-INFO:gurobipy:Reading time = 0.07 seconds
+INFO:gurobipy:Reading time = 0.06 seconds
 ----- stdout -----
 obj: 61323 rows, 26283 columns, 100750 nonzeros
 ----- stderr -----
