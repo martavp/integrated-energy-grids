@@ -1,0 +1,124 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{url}
+\usepackage{hyperref}
+\title{IEG_Problems_Lecture8}
+\author{martavictoriaperez }
+\date{April 2025}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{\textbf{Lecture 11: Multi-carrier energy systems I: heating and land transport}}
+\author{DTU Course 46770: Integrated Energy Grids }
+\maketitle
+
+\begin{problem}{11.1}
+
+This is an extension of Problem 8.1 from Lecture 8 in which only the electricity sector was included.
+
+\
+
+Optimize the capacity and dispatch of solar PV, onshore wind, battery, and heat pumps to supply the inelastic electricity and heating demand throughout one year. Assume that a Combined Heat and Power (CHP) unit with capacity of 1GW exist in the system. To do this, take the time series for the wind and solar capacity factors for Portugal in 2015 obtained from \url{https://zenodo.org/record/3253876#.XSiVOEdS8l0}
+and \url{https://zenodo.org/record/2613651#.X0kbhDVS-uV} (select the file ‘pvoptimal.csv’) and the electricity demand from \url{https://github.com/martavp/integrated-energy-grids/tree/main/integrated-energy-grids/Problems/data}.
+
+\
+
+To estimate the hourly heating demand, consider the population-weighted temperature time series in \url{https://github.com/martavp/integrated-energy-grids/tree/main/integrated-energy-grids/Problems/data}. Assume an annual heating demand for space heating and hot water of of 11,500 GWh/a and 8760 GWh/a respectively and a threshold temperature $T_{th}$=17$^{\circ}$C.
+
+\
+
+Consider the annualized capital costs and marginal generation costs for the different technologies in the following table. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc}
+    \hline
+        Technology & Annualized capital costs (EUR/MW/a) & Marginal generation costs (EUR/MWh) \\
+    \hline
+    Onshower Wind &  101,644 & 0 \\
+         Solar PV &  51,346 & 0 \\
+         Heat pump & 79,870 &  0  \\
+    \hline
+    \end{tabular}
+    \caption{Costs assumptions.}
+    \label{tab:my_label}
+\end{table}
+
+The annualized capital cost of the battery comprises  12,894 EUR/MWh/a for the energy capacity and 24,678 EUR/MW/a for the inverter. The inverter efficiency is 0.96 and the battery is assumed to have a fixed energy-to-power ratio of 2 hours. The Coefficient of Performance (COP) of heat pumps can be estimated as $COP (\Delta T) = 6.81 - 0.121 \Delta T + 0.00063 \Delta T^2$ where  $\Delta T = T_{sink} - T_{source}$ and $T_{sink}$=55 $^{\circ}$C. The  CHP unit can be modelled usig a multilink and assuming an efficiency of 0.4 when producing electricity and 0.4 when producing heat, assuming a marginal cost of 80 EUR/MWh and adding a gas store to the gas bus that represents an unlimited supply of gas.
+
+\
+
+Calculate the total system cost, the optimal installed capacities, the annual generation per technology, and plot the hourly generation and demand of electricity and heat during January.
+
+\
+
+
+\end{problem}
+
+\
+
+\begin{problem}{11.2}
+
+Create a model in PyPSA and optimize the capacity and dispatch of solar PV, onshore wind and battery storage to supply the inelastic electricity demand throughout the year, including demand assuming full electrification of land transport.  To do this, take the time series for the wind and solar capacity factors for Portugal in 2015 obtained from \url{https://zenodo.org/record/3253876#.XSiVOEdS8l0}
+and \url{https://zenodo.org/record/2613651#.X0kbhDVS-uV} (select the file ‘pvoptimal.csv’) and the electricity demand from \url{https://github.com/martavp/integrated-energy-grids/tree/main/integrated-energy-grids/Problems/data}.
+
+Consider the annualized capital costs and marginal generation costs for the different technologies in the following table. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc}
+    \hline
+        Technology & Annualized capital costs (EUR/MW/a) & Marginal generation costs (EUR/MWh) \\
+    \hline
+    Onshower Wind &  101,644 & 0 \\
+         Solar PV &  51,346 & 0 \\
+         Heat pump & 79,870 &  0  \\
+    \hline
+    \end{tabular}
+    \caption{Costs assumptions.}
+    \label{tab:my_label}
+\end{table}
+
+The annualized capital cost of the battery comprises  12,894 EUR/MWh/a for the energy capacity and 24,678 EUR/MW/a for the inverter. The inverter efficiency is 0.96 and the battery is assumed to have a fixed energy-to-power ratio of 6 hours.
+
+\
+
+ Assume that the 5.6 million cars currently existing in Portugal are replaced by electric vehicles (EVs), with an average EV battery capacity of 50 kWh and a charging capacity of 11 kV.  The time series for EV electricity demand can be found in \url{https://github.com/martavp/integrated-energy-grids/tree/main/integrated-energy-grids/Problems/data}.
+
+ 
+
+\begin{itemize}
+\item[a)] If EV batteries are assumed to be charged right after the cars are used, calculate the required capacity and generation mix for the optimal system. Plot the energy generation and demand throughout July 1st. The EVs can only be charged when they are parked, and this can be represented by the availability profile provided in \url{https://github.com/martavp/integrated-energy-grids/tree/main/integrated-energy-grids/Problems/data}.
+
+\item[b)] Assume that the EV batteries can be charge when it is optimal for the system (smart-charging). How do the required capacities change relative to section (a)? Plot the energy generation and demand throughout July 1st. 
+
+
+\item[c)] Assume that the EV batteries can also discharge into the grid. How do the required capacities change relative to section (a)? Plot the energy generation and demand throughout July 1st. 
+
+\end{itemize}
+
+
+\
+
+\end{problem}
+
+
+
+%\begin{proof}[Solution]
+%Write a solution here
+%\end{proof}
+
+\end{document}
+
+
+ 
+
