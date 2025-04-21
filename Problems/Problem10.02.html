@@ -912,7 +912,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2907/68125439.py:7: DeprecatedWarning: madd is deprecated as of 0.31 and will be removed in 1.0. Use `n.add` as a drop-in replacement instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3092/68125439.py:7: DeprecatedWarning: madd is deprecated as of 0.31 and will be removed in 1.0. Use `n.add` as a drop-in replacement instead.
   n.madd(
 </pre></div>
 </div>
@@ -1022,12 +1022,12 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2907/2753408878.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3092/2753408878.py:1: DeprecatedWarning: plot is deprecated. Use `n.plot.map()` as a drop-in replacement instead.
   n.plot(bus_sizes=1, margin=1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f593f3d6790&gt;},
- &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f594c09fd90&gt;},
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nodes&#39;: {&#39;Bus&#39;: &lt;matplotlib.collections.PatchCollection at 0x7f66229c0bd0&gt;},
+ &#39;branches&#39;: {&#39;Line&#39;: &lt;matplotlib.collections.LineCollection at 0x7f661ee98d50&gt;},
  &#39;flows&#39;: {}}
 </pre></div>
 </div>
@@ -1041,12 +1041,12 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
-Index([&#39;PRT load&#39;, &#39;DNK load&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
 Index([&#39;PRT-DNK&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following loads have carriers which are not defined:
+Index([&#39;PRT load&#39;, &#39;DNK load&#39;], dtype=&#39;object&#39;, name=&#39;Load&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
@@ -1062,13 +1062,13 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/10 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  50%|█████     | 5/10 [00:00&lt;00:00, 33.56it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  50%|█████     | 5/10 [00:00&lt;00:00, 34.76it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  90%|█████████ | 9/10 [00:00&lt;00:00, 14.36it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  90%|█████████ | 9/10 [00:00&lt;00:00, 14.80it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 10/10 [00:00&lt;00:00, 16.68it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 10/10 [00:00&lt;00:00, 17.16it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1077,10 +1077,13 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/4 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 4/4 [00:00&lt;00:00, 40.56it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 4/4 [00:00&lt;00:00, 39.74it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.78s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 4/4 [00:00&lt;00:00, 39.40it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.76s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Restricted license - for non-production use only - expires 2026-11-23
@@ -1089,16 +1092,16 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-0vhd4xj4.lp
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-jd6djq49.lp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-0vhd4xj4.lp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-jd6djq49.lp
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.18 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.17 seconds
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Reading time = 0.18 seconds
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Reading time = 0.17 seconds
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obj: 140168 rows, 61327 columns, 271592 nonzeros
@@ -1142,19 +1145,19 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">n</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;gurobi&quot;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:633,</span> in <span class="ni">OptimizationAccessor.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:633,</span> in <span class="ni">OptimizationAccessor.__call__</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">optimize</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">632</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">633</span>     <span class="k">return</span> <span class="n">optimize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:605,</span> in <span class="ni">optimize</span><span class="nt">(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:605,</span> in <span class="ni">optimize</span><span class="nt">(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">603</span> <span class="k">if</span> <span class="n">extra_functionality</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">604</span>     <span class="n">extra_functionality</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">sns</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">status</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="n">solver_name</span><span class="p">,</span> <span class="o">**</span><span class="n">solver_options</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;ok&quot;</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="n">assign_solution</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1203,</span> in <span class="ni">Model.solve</span><span class="nt">(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/model.py:1203,</span> in <span class="ni">Model.solve</span><span class="nt">(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1195</span>             <span class="n">explicit_coordinate_names</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="g g-Whitespace">   </span><span class="mi">1196</span>         <span class="n">problem_fn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">1197</span>             <span class="n">to_path</span><span class="p">(</span><span class="n">problem_fn</span><span class="p">),</span>
@@ -1172,25 +1175,25 @@ Index([&#39;PRT&#39;, &#39;DNK&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;
 <span class="g g-Whitespace">   </span><span class="mi">1212</span> <span class="k">finally</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1213</span>     <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="p">(</span><span class="n">problem_fn</span><span class="p">,</span> <span class="n">solution_fn</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/solvers.py:994,</span> in <span class="ni">Gurobi.solve_problem_from_file</span><span class="nt">(self, problem_fn, solution_fn, log_fn, warmstart_fn, basis_fn, env)</span>
-<span class="g g-Whitespace">    </span><span class="mi">990</span>     <span class="n">env_</span> <span class="o">=</span> <span class="n">env</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span> <span class="n">m</span> <span class="o">=</span> <span class="n">gurobipy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">problem_fn_</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env_</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">994</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solve</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">995</span>     <span class="n">m</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">996</span>     <span class="n">solution_fn</span><span class="o">=</span><span class="n">solution_fn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">997</span>     <span class="n">log_fn</span><span class="o">=</span><span class="n">log_fn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">998</span>     <span class="n">warmstart_fn</span><span class="o">=</span><span class="n">warmstart_fn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span>     <span class="n">basis_fn</span><span class="o">=</span><span class="n">basis_fn</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1000</span>     <span class="n">io_api</span><span class="o">=</span><span class="n">io_api</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>     <span class="n">sense</span><span class="o">=</span><span class="n">sense</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span> <span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/solvers.py:1023,</span> in <span class="ni">Gurobi.solve_problem_from_file</span><span class="nt">(self, problem_fn, solution_fn, log_fn, warmstart_fn, basis_fn, env)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1019</span>     <span class="n">env_</span> <span class="o">=</span> <span class="n">env</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span> <span class="n">m</span> <span class="o">=</span> <span class="n">gurobipy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">problem_fn_</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env_</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1023</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solve</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>     <span class="n">m</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1025</span>     <span class="n">solution_fn</span><span class="o">=</span><span class="n">solution_fn</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1026</span>     <span class="n">log_fn</span><span class="o">=</span><span class="n">log_fn</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1027</span>     <span class="n">warmstart_fn</span><span class="o">=</span><span class="n">warmstart_fn</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1028</span>     <span class="n">basis_fn</span><span class="o">=</span><span class="n">basis_fn</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1029</span>     <span class="n">io_api</span><span class="o">=</span><span class="n">io_api</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1030</span>     <span class="n">sense</span><span class="o">=</span><span class="n">sense</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1031</span> <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/solvers.py:1068,</span> in <span class="ni">Gurobi._solve</span><span class="nt">(self, m, solution_fn, log_fn, warmstart_fn, basis_fn, io_api, sense)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1066</span> <span class="k">if</span> <span class="n">warmstart_fn</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1067</span>     <span class="n">m</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path_to_string</span><span class="p">(</span><span class="n">warmstart_fn</span><span class="p">))</span>
-<span class="ne">-&gt; </span><span class="mi">1068</span> <span class="n">m</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span> <span class="k">if</span> <span class="n">basis_fn</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1071</span>     <span class="k">try</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/solvers.py:1097,</span> in <span class="ni">Gurobi._solve</span><span class="nt">(self, m, solution_fn, log_fn, warmstart_fn, basis_fn, io_api, sense)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1095</span> <span class="k">if</span> <span class="n">warmstart_fn</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1096</span>     <span class="n">m</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path_to_string</span><span class="p">(</span><span class="n">warmstart_fn</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1097</span> <span class="n">m</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span> <span class="k">if</span> <span class="n">basis_fn</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="k">try</span><span class="p">:</span>
 
 <span class="nn">File src/gurobipy/_model.pyx:903,</span> in <span class="ni">gurobipy._model.Model.optimize</span><span class="nt">()</span>
 

@@ -1,20 +1,20 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -31,15 +31,15 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/5 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 22.00it/s]
+Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 22.22it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 21.27it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 21.43it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/2 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 46.68it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 45.18it/s]
 ----- stderr -----
 
 INFO:linopy.io: Writing time: 0.3s
@@ -48,9 +48,9 @@ Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-wb5gh14l.lp
+Read LP format model from file /tmp/linopy-problem-uk2hciw1.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-wb5gh14l.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-uk2hciw1.lp
 ----- stdout -----
 Reading time = 0.06 seconds
 ----- stderr -----
@@ -86,19 +86,19 @@ INFO:gurobipy:
 [36mCell[39m[36m [39m[32mIn[9][39m[32m, line 1[39m
 [32m----> [39m[32m1[39m [43mnetwork[49m[43m.[49m[43moptimize[49m[43m([49m[43msolver_name[49m[43m=[49m[33;43m'[39;49m[33;43mgurobi[39;49m[33;43m'[39;49m[43m)[49m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:633[39m, in [36mOptimizationAccessor.__call__[39m[34m(self, *args, **kwargs)[39m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:633[39m, in [36mOptimizationAccessor.__call__[39m[34m(self, *args, **kwargs)[39m
 [32m    631[39m [38;5;129m@wraps[39m(optimize)
 [32m    632[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__call__[39m([38;5;28mself[39m, *args: Any, **kwargs: Any) -> Any:
 [32m--> [39m[32m633[39m     [38;5;28;01mreturn[39;00m [43moptimize[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mn[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:605[39m, in [36moptimize[39m[34m(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)[39m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/pypsa/optimization/optimize.py:605[39m, in [36moptimize[39m[34m(n, snapshots, multi_investment_periods, transmission_losses, linearized_unit_commitment, model_kwargs, extra_functionality, assign_all_duals, solver_name, solver_options, compute_infeasibilities, **kwargs)[39m
 [32m    603[39m [38;5;28;01mif[39;00m extra_functionality:
 [32m    604[39m     extra_functionality(n, sns)
 [32m--> [39m[32m605[39m status, condition = [43mm[49m[43m.[49m[43msolve[49m[43m([49m[43msolver_name[49m[43m=[49m[43msolver_name[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43msolver_options[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
 [32m    607[39m [38;5;28;01mif[39;00m status == [33m"[39m[33mok[39m[33m"[39m:
 [32m    608[39m     assign_solution(n)
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/model.py:1203[39m, in [36mModel.solve[39m[34m(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)[39m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/model.py:1203[39m, in [36mModel.solve[39m[34m(self, solver_name, io_api, explicit_coordinate_names, problem_fn, solution_fn, log_fn, basis_fn, warmstart_fn, keep_files, env, sanitize_zeros, sanitize_infinities, slice_size, remote, progress, **solver_options)[39m
 [32m   1195[39m             explicit_coordinate_names = [38;5;28;01mFalse[39;00m
 [32m   1196[39m         problem_fn = [38;5;28mself[39m.to_file(
 [32m   1197[39m             to_path(problem_fn),
@@ -116,25 +116,25 @@ INFO:gurobipy:
 [32m   1212[39m [38;5;28;01mfinally[39;00m:
 [32m   1213[39m     [38;5;28;01mfor[39;00m fn [38;5;129;01min[39;00m (problem_fn, solution_fn):
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/solvers.py:994[39m, in [36mGurobi.solve_problem_from_file[39m[34m(self, problem_fn, solution_fn, log_fn, warmstart_fn, basis_fn, env)[39m
-[32m    990[39m     env_ = env
-[32m    992[39m m = gurobipy.read(problem_fn_, env=env_)
-[32m--> [39m[32m994[39m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_solve[49m[43m([49m
-[32m    995[39m [43m    [49m[43mm[49m[43m,[49m
-[32m    996[39m [43m    [49m[43msolution_fn[49m[43m=[49m[43msolution_fn[49m[43m,[49m
-[32m    997[39m [43m    [49m[43mlog_fn[49m[43m=[49m[43mlog_fn[49m[43m,[49m
-[32m    998[39m [43m    [49m[43mwarmstart_fn[49m[43m=[49m[43mwarmstart_fn[49m[43m,[49m
-[32m    999[39m [43m    [49m[43mbasis_fn[49m[43m=[49m[43mbasis_fn[49m[43m,[49m
-[32m   1000[39m [43m    [49m[43mio_api[49m[43m=[49m[43mio_api[49m[43m,[49m
-[32m   1001[39m [43m    [49m[43msense[49m[43m=[49m[43msense[49m[43m,[49m
-[32m   1002[39m [43m[49m[43m)[49m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/solvers.py:1023[39m, in [36mGurobi.solve_problem_from_file[39m[34m(self, problem_fn, solution_fn, log_fn, warmstart_fn, basis_fn, env)[39m
+[32m   1019[39m     env_ = env
+[32m   1021[39m m = gurobipy.read(problem_fn_, env=env_)
+[32m-> [39m[32m1023[39m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_solve[49m[43m([49m
+[32m   1024[39m [43m    [49m[43mm[49m[43m,[49m
+[32m   1025[39m [43m    [49m[43msolution_fn[49m[43m=[49m[43msolution_fn[49m[43m,[49m
+[32m   1026[39m [43m    [49m[43mlog_fn[49m[43m=[49m[43mlog_fn[49m[43m,[49m
+[32m   1027[39m [43m    [49m[43mwarmstart_fn[49m[43m=[49m[43mwarmstart_fn[49m[43m,[49m
+[32m   1028[39m [43m    [49m[43mbasis_fn[49m[43m=[49m[43mbasis_fn[49m[43m,[49m
+[32m   1029[39m [43m    [49m[43mio_api[49m[43m=[49m[43mio_api[49m[43m,[49m
+[32m   1030[39m [43m    [49m[43msense[49m[43m=[49m[43msense[49m[43m,[49m
+[32m   1031[39m [43m[49m[43m)[49m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/linopy/solvers.py:1068[39m, in [36mGurobi._solve[39m[34m(self, m, solution_fn, log_fn, warmstart_fn, basis_fn, io_api, sense)[39m
-[32m   1066[39m [38;5;28;01mif[39;00m warmstart_fn [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
-[32m   1067[39m     m.read(path_to_string(warmstart_fn))
-[32m-> [39m[32m1068[39m [43mm[49m[43m.[49m[43moptimize[49m[43m([49m[43m)[49m
-[32m   1070[39m [38;5;28;01mif[39;00m basis_fn [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
-[32m   1071[39m     [38;5;28;01mtry[39;00m:
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/solvers.py:1097[39m, in [36mGurobi._solve[39m[34m(self, m, solution_fn, log_fn, warmstart_fn, basis_fn, io_api, sense)[39m
+[32m   1095[39m [38;5;28;01mif[39;00m warmstart_fn [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m   1096[39m     m.read(path_to_string(warmstart_fn))
+[32m-> [39m[32m1097[39m [43mm[49m[43m.[49m[43moptimize[49m[43m([49m[43m)[49m
+[32m   1099[39m [38;5;28;01mif[39;00m basis_fn [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m   1100[39m     [38;5;28;01mtry[39;00m:
 
 [36mFile [39m[32msrc/gurobipy/_model.pyx:903[39m, in [36mgurobipy._model.Model.optimize[39m[34m()[39m
 
