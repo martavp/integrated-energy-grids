@@ -37,32 +37,36 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/7 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  43%|[38;2;128;191;255m████▎     [0m| 3/7 [00:00<00:00, 21.53it/s]
+Writing constraints.:  43%|[38;2;128;191;255m████▎     [0m| 3/7 [00:00<00:00, 12.70it/s]
 ----- stderr -----
-Writing constraints.:  86%|[38;2;128;191;255m████████▌ [0m| 6/7 [00:00<00:00, 14.34it/s]
+Writing constraints.:  71%|[38;2;128;191;255m███████▏  [0m| 5/7 [00:00<00:00, 10.27it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 7/7 [00:00<00:00, 13.30it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 7/7 [00:00<00:00, 11.18it/s]
+----- stderr -----
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 7/7 [00:00<00:00, 11.17it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/3 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 29.97it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 29.92it/s]
+----- stderr -----
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 29.62it/s]
 ----- stderr -----
 
-INFO:linopy.io: Writing time: 0.71s
+INFO:linopy.io: Writing time: 0.81s
 ----- stdout -----
 Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-oh0row6g.lp
+Read LP format model from file /tmp/linopy-problem-b7853dqe.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-oh0row6g.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-b7853dqe.lp
 ----- stdout -----
-Reading time = 0.17 seconds
+Reading time = 0.16 seconds
 ----- stderr -----
-INFO:gurobipy:Reading time = 0.17 seconds
+INFO:gurobipy:Reading time = 0.16 seconds
 ----- stdout -----
 obj: 140166 rows, 61326 columns, 236551 nonzeros
 ----- stderr -----
