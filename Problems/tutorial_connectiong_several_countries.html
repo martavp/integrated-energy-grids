@@ -229,6 +229,16 @@
 <li class="toctree-l1"><a class="reference internal" href="Problem08.02.html">Problem 8.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem09.02.html">Problem 9.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem09.03.html">Problem 9.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem10.01.html">Problem 10.1</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Problem10.02.html">Problem 10.2</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 
@@ -517,7 +527,7 @@ Requirement already satisfied: pyproj&gt;=3.3.0 in /opt/hostedtoolcache/Python/3
 Requirement already satisfied: bottleneck in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.4.2)
 Requirement already satisfied: toolz in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.0.0)
 Requirement already satisfied: numexpr in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (2.10.2)
-Requirement already satisfied: dask&gt;=0.18.0 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (2025.3.0)
+Requirement already satisfied: dask&gt;=0.18.0 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (2025.4.0)
 Requirement already satisfied: polars in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (1.27.1)
 Requirement already satisfied: tqdm in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from linopy&gt;=0.4-&gt;pypsa) (4.67.1)
 </pre></div>
@@ -535,10 +545,10 @@ Requirement already satisfied: cftime in /opt/hostedtoolcache/Python/3.11.12/x64
 Requirement already satisfied: certifi in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from netcdf4-&gt;pypsa) (2025.1.31)
 Requirement already satisfied: click&gt;=8.1 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.1.8)
 Requirement already satisfied: cloudpickle&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (3.1.1)
-Requirement already satisfied: fsspec&gt;=2021.09.0 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (2025.3.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: partd&gt;=1.4.0 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.4.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: fsspec&gt;=2021.09.0 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (2025.3.2)
+Requirement already satisfied: partd&gt;=1.4.0 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (1.4.2)
 Requirement already satisfied: pyyaml&gt;=5.3.1 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (6.0.2)
 Requirement already satisfied: importlib_metadata&gt;=4.13.0 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from dask&gt;=0.18.0-&gt;linopy&gt;=0.4-&gt;pypsa) (8.6.1)
 Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=0.24-&gt;pypsa) (1.17.0)
@@ -907,10 +917,10 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/5 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 22.21it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 22.27it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 21.47it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 21.56it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -919,7 +929,7 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/2 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 44.48it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 45.85it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.3s
@@ -931,10 +941,10 @@ Index([&#39;electricity bus&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-nctqvpzh.lp
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Read LP format model from file /tmp/linopy-problem-fr6w43n5.lp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-nctqvpzh.lp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-fr6w43n5.lp
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading time = 0.06 seconds
