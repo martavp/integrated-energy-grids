@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.5.6)  25 FEB 2025 14:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.5.6)  24 APR 2025 07:10
 entering extended mode
 **./IEG_LECTURE4_Problems.tex
 (IEG_LECTURE4_Problems.tex
@@ -319,7 +319,7 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \backup@length=\skip53
 \ar@cellbox=\box56
 )
-(IEG_LECTURE4_Problems.aux)
+No file IEG_LECTURE4_Problems.aux.
 \openout1 = `IEG_LECTURE4_Problems.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -336,7 +336,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
- ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count123
 \scratchdimen=\dimen137
@@ -370,8 +370,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 18.
 LaTeX Info: Redefining \pageref on input line 18.
 LaTeX Info: Redefining \nameref on input line 18.
- (IEG_LECTURE4_Problems.out)
-(IEG_LECTURE4_Problems.out)
 \@outlinefile=\write3
 \openout3 = `IEG_LECTURE4_Problems.out'.
 
@@ -427,14 +425,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
  (IEG_LECTURE4_Problems.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
-Package rerunfilecheck Info: File `IEG_LECTURE4_Problems.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+Package rerunfilecheck Warning: File `IEG_LECTURE4_Problems.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `IEG_LECTURE4_Problems.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 113.
  ) 
 Here is how much of TeX's memory you used:
- 6915 strings out of 492482
- 99876 string characters out of 3131026
- 198410 words of memory out of 3000000
+ 6909 strings out of 492482
+ 99579 string characters out of 3131026
+ 198306 words of memory out of 3000000
  11131 multiletter control sequences out of 15000+200000
  11244 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -445,7 +450,7 @@ Here is how much of TeX's memory you used:
 Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on IEG_LECTURE4_Problems.pdf (2 pages, 118257 bytes).
+Output written on IEG_LECTURE4_Problems.pdf (2 pages, 118063 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  3 named destinations out of 1000 (max. 500000)
