@@ -37,30 +37,28 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/10 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  50%|[38;2;128;191;255m█████     [0m| 5/10 [00:00<00:00, 33.83it/s]
+Writing constraints.:  50%|[38;2;128;191;255m█████     [0m| 5/10 [00:00<00:00, 34.19it/s]
 ----- stderr -----
-Writing constraints.:  90%|[38;2;128;191;255m█████████ [0m| 9/10 [00:00<00:00, 14.44it/s]
+Writing constraints.:  90%|[38;2;128;191;255m█████████ [0m| 9/10 [00:00<00:00, 14.50it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 10/10 [00:00<00:00, 16.77it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 10/10 [00:00<00:00, 16.85it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/4 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 4/4 [00:00<00:00, 39.15it/s]
------ stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 4/4 [00:00<00:00, 38.84it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 4/4 [00:00<00:00, 39.98it/s]
 ----- stderr -----
 
-INFO:linopy.io: Writing time: 0.78s
+INFO:linopy.io: Writing time: 0.77s
 ----- stdout -----
 Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-ok1jjnh1.lp
+Read LP format model from file /tmp/linopy-problem-1i77msow.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-ok1jjnh1.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-1i77msow.lp
 ----- stdout -----
 Reading time = 0.17 seconds
 ----- stderr -----
