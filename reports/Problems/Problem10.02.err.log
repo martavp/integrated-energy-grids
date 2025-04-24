@@ -22,14 +22,14 @@ n.optimize(solver_name="gurobi")
 ------------------
 
 ----- stderr -----
-WARNING:pypsa.consistency:The following lines have carriers which are not defined:
-Index(['PRT-DNK'], dtype='object', name='Line')
+WARNING:pypsa.consistency:The following loads have carriers which are not defined:
+Index(['PRT load', 'DNK load'], dtype='object', name='Load')
 ----- stderr -----
 WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index(['PRT', 'DNK'], dtype='object', name='Bus')
 ----- stderr -----
-WARNING:pypsa.consistency:The following loads have carriers which are not defined:
-Index(['PRT load', 'DNK load'], dtype='object', name='Load')
+WARNING:pypsa.consistency:The following lines have carriers which are not defined:
+Index(['PRT-DNK'], dtype='object', name='Line')
 ----- stderr -----
 INFO:linopy.model: Solve problem using Gurobi solver
 ----- stderr -----
@@ -37,19 +37,19 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/10 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  50%|[38;2;128;191;255m█████     [0m| 5/10 [00:00<00:00, 33.88it/s]
+Writing constraints.:  50%|[38;2;128;191;255m█████     [0m| 5/10 [00:00<00:00, 33.83it/s]
 ----- stderr -----
-Writing constraints.:  90%|[38;2;128;191;255m█████████ [0m| 9/10 [00:00<00:00, 14.43it/s]
+Writing constraints.:  90%|[38;2;128;191;255m█████████ [0m| 9/10 [00:00<00:00, 14.44it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 10/10 [00:00<00:00, 16.75it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 10/10 [00:00<00:00, 16.77it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/4 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 4/4 [00:00<00:00, 39.99it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 4/4 [00:00<00:00, 39.15it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 4/4 [00:00<00:00, 39.69it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 4/4 [00:00<00:00, 38.84it/s]
 ----- stderr -----
 
 INFO:linopy.io: Writing time: 0.78s
@@ -58,9 +58,9 @@ Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-rh0kz2xa.lp
+Read LP format model from file /tmp/linopy-problem-ok1jjnh1.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-rh0kz2xa.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-ok1jjnh1.lp
 ----- stdout -----
 Reading time = 0.17 seconds
 ----- stderr -----
