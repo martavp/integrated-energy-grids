@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.5.6)  24 APR 2025 09:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.5.6)  29 APR 2025 20:59
 entering extended mode
 **./IEG_LECTURE12_Problems.tex
 (IEG_LECTURE12_Problems.tex
@@ -418,7 +418,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (31.60698pt too wide) in paragraph at lines 80--90
+Overfull \hbox (31.60698pt too wide) in paragraph at lines 80--91
  [][] 
  []
 
@@ -428,19 +428,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [1
 
 {C:/Users/34620/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 111.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
  [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 111.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
  (IEG_LECTURE12_Problems.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 111.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 111.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `IEG_LECTURE12_Problems.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 111.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  ) 
 Here is how much of TeX's memory you used:
  6920 strings out of 492482
- 99947 string characters out of 3131026
+ 99935 string characters out of 3131026
  199486 words of memory out of 3000000
  11134 multiletter control sequences out of 15000+200000
  11066 words of font info for 44 fonts, out of 3000000 for 9000
@@ -450,7 +450,7 @@ Here is how much of TeX's memory you used:
 /amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on IEG_LECTURE12_Problems.pdf (2 pages, 85885 bytes).
+Output written on IEG_LECTURE12_Problems.pdf (2 pages, 86005 bytes).
 PDF statistics:
  45 PDF objects out of 1000 (max. 8388607)
  5 named destinations out of 1000 (max. 500000)
