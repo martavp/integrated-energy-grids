@@ -110,22 +110,22 @@ Index(['gas'], dtype='object', name='Store')
 [32m   (...)[39m[32m    269[39m         DataArray,
 [32m    270[39m     ]
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/xarray/core/dataarray.py:487[39m, in [36mDataArray.__init__[39m[34m(self, data, coords, dims, name, attrs, indexes, fastpath)[39m
-[32m    485[39m data = _check_data_shape(data, coords, dims)
-[32m    486[39m data = as_compatible_data(data)
-[32m--> [39m[32m487[39m coords, dims = [43m_infer_coords_and_dims[49m[43m([49m[43mdata[49m[43m.[49m[43mshape[49m[43m,[49m[43m [49m[43mcoords[49m[43m,[49m[43m [49m[43mdims[49m[43m)[49m
-[32m    488[39m variable = Variable(dims, data, attrs, fastpath=[38;5;28;01mTrue[39;00m)
-[32m    490[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(coords, Coordinates):
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/xarray/core/dataarray.py:479[39m, in [36mDataArray.__init__[39m[34m(self, data, coords, dims, name, attrs, indexes, fastpath)[39m
+[32m    477[39m data = _check_data_shape(data, coords, dims)
+[32m    478[39m data = as_compatible_data(data)
+[32m--> [39m[32m479[39m coords, dims = [43m_infer_coords_and_dims[49m[43m([49m[43mdata[49m[43m.[49m[43mshape[49m[43m,[49m[43m [49m[43mcoords[49m[43m,[49m[43m [49m[43mdims[49m[43m)[49m
+[32m    480[39m variable = Variable(dims, data, attrs, fastpath=[38;5;28;01mTrue[39;00m)
+[32m    482[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(coords, Coordinates):
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/xarray/core/dataarray.py:192[39m, in [36m_infer_coords_and_dims[39m[34m(shape, coords, dims)[39m
-[32m    190[39m dims_tuple = [38;5;28mtuple[39m(dims)
-[32m    191[39m [38;5;28;01mif[39;00m [38;5;28mlen[39m(dims_tuple) != [38;5;28mlen[39m(shape):
-[32m--> [39m[32m192[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[32m    193[39m         [33m"[39m[33mdifferent number of dimensions on data [39m[33m"[39m
-[32m    194[39m         [33mf[39m[33m"[39m[33mand dims: [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(shape)[38;5;132;01m}[39;00m[33m vs [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(dims_tuple)[38;5;132;01m}[39;00m[33m"[39m
-[32m    195[39m     )
-[32m    196[39m [38;5;28;01mfor[39;00m d [38;5;129;01min[39;00m dims_tuple:
-[32m    197[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m hashable(d):
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/xarray/core/dataarray.py:184[39m, in [36m_infer_coords_and_dims[39m[34m(shape, coords, dims)[39m
+[32m    182[39m dims_tuple = [38;5;28mtuple[39m(dims)
+[32m    183[39m [38;5;28;01mif[39;00m [38;5;28mlen[39m(dims_tuple) != [38;5;28mlen[39m(shape):
+[32m--> [39m[32m184[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[32m    185[39m         [33m"[39m[33mdifferent number of dimensions on data [39m[33m"[39m
+[32m    186[39m         [33mf[39m[33m"[39m[33mand dims: [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(shape)[38;5;132;01m}[39;00m[33m vs [39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(dims_tuple)[38;5;132;01m}[39;00m[33m"[39m
+[32m    187[39m     )
+[32m    188[39m [38;5;28;01mfor[39;00m d [38;5;129;01min[39;00m dims_tuple:
+[32m    189[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m hashable(d):
 
 [31mValueError[39m: different number of dimensions on data and dims: 0 vs 1
 
