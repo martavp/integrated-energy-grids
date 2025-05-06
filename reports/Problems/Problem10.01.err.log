@@ -37,40 +37,42 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/7 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  43%|[38;2;128;191;255m████▎     [0m| 3/7 [00:00<00:00, 20.95it/s]
+Writing constraints.:  43%|[38;2;128;191;255m████▎     [0m| 3/7 [00:00<00:00, 20.55it/s]
 ----- stderr -----
-Writing constraints.:  86%|[38;2;128;191;255m████████▌ [0m| 6/7 [00:00<00:00, 13.97it/s]
+Writing constraints.:  86%|[38;2;128;191;255m████████▌ [0m| 6/7 [00:00<00:00, 13.90it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 7/7 [00:00<00:00, 12.98it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 7/7 [00:00<00:00, 12.87it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/3 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 30.12it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 29.31it/s]
+----- stderr -----
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 3/3 [00:00<00:00, 29.05it/s]
 ----- stderr -----
 
-INFO:linopy.io: Writing time: 0.72s
+INFO:linopy.io: Writing time: 0.73s
 ----- stdout -----
 Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-wsqd0qx5.lp
+Read LP format model from file /tmp/linopy-problem-si9yvch1.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-wsqd0qx5.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-si9yvch1.lp
 ----- stdout -----
-Reading time = 0.16 seconds
+Reading time = 0.17 seconds
 ----- stderr -----
-INFO:gurobipy:Reading time = 0.16 seconds
+INFO:gurobipy:Reading time = 0.17 seconds
 ----- stdout -----
 obj: 140166 rows, 61326 columns, 236551 nonzeros
 ----- stderr -----
 INFO:gurobipy:obj: 140166 rows, 61326 columns, 236551 nonzeros
 ----- stdout -----
-Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - "Ubuntu 24.04.2 LTS")
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (linux64 - "Ubuntu 24.04.2 LTS")
 ----- stderr -----
-INFO:gurobipy:Gurobi Optimizer version 12.0.1 build v12.0.1rc0 (linux64 - "Ubuntu 24.04.2 LTS")
+INFO:gurobipy:Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (linux64 - "Ubuntu 24.04.2 LTS")
 ----- stdout -----
 
 ----- stderr -----
