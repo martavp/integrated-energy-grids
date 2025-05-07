@@ -63,6 +63,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Course project" href="IEG_course_project.html" />
+    <link rel="prev" title="Problem 12.1" href="Problem12.01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -182,7 +182,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-install.html">Python and Conda</a></li>
 
 
@@ -243,6 +243,8 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Problem11.01.html">Problem 11.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Problem11.02.html">Problem 11.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem12.01.html">Problem 12.1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem 12.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 
@@ -998,15 +1000,15 @@ We add a “free” store in the hydrogen, methanol and CO2 buses.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
-Index([&#39;hydrogen store&#39;, &#39;methanol store&#39;, &#39;co2 store&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;electrolysis&#39;, &#39;methanolisation&#39;, &#39;DAC&#39;, &#39;heat pump&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:Encountered nan&#39;s in static data for columns [&#39;efficiency3&#39;, &#39;efficiency2&#39;] of component &#39;Link&#39;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:Encountered nan&#39;s in static data for columns [&#39;efficiency2&#39;, &#39;efficiency3&#39;] of component &#39;Link&#39;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index([&#39;hydrogen store&#39;, &#39;methanol store&#39;, &#39;co2 store&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
@@ -1022,10 +1024,10 @@ Index([&#39;electricity&#39;, &#39;hydrogen&#39;, &#39;methanol&#39;, &#39;heat&
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/14 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 52.67it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 51.16it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 15.72it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 15.51it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1034,17 +1036,17 @@ Index([&#39;electricity&#39;, &#39;hydrogen&#39;, &#39;methanol&#39;, &#39;heat&
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  86%|████████▌ | 6/7 [00:00&lt;00:00, 50.89it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  86%|████████▌ | 6/7 [00:00&lt;00:00, 49.32it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 43.31it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 42.21it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 1.07s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 1.09s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-4dut8v08 has 210248 rows; 96368 cols; 420488 nonzeros
+LP   linopy-problem-a4ava5nn has 210248 rows; 96368 cols; 420488 nonzeros
 Coefficient ranges:
   Matrix [3e-03, 3e+00]
   Cost   [2e-02, 2e+06]
@@ -1052,10 +1054,10 @@ Coefficient ranges:
   RHS    [2e+01, 2e+01]
 Presolving model
 96360 rows, 78845 cols, 254040 nonzeros  0s
-70080 rows, 52565 cols, 201480 nonzeros  0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dependent equations search running on 26280 equations with time limit of 1000.00s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70080 rows, 52565 cols, 201480 nonzeros  0s
+Dependent equations search running on 26280 equations with time limit of 1000.00s
 Dependent equations search removed 0 rows and 0 nonzeros in 0.00s (limit = 1000.00s)
 70080 rows, 52565 cols, 201480 nonzeros  0s
 Presolve : Reductions: rows 70080(-140168); columns 52565(-43803); elements 201480(-219008)
@@ -1068,13 +1070,13 @@ Using EKK dual simplex solver - serial
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      10819     7.5175689704e+02 Pr: 6704(1.42073e+08) 5s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      16582     1.7272295931e+03 Pr: 941(8.33002e+06) 10s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      16483     1.7108812498e+03 Pr: 1040(8.88774e+06) 10s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      18752     2.8286644312e+06 Pr: 21023(4.25349e+06) 15s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      18752     2.8286644312e+06 Pr: 21023(4.25349e+06) 16s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      20552     3.9874985059e+06 Pr: 13897(2.22418e+06) 20s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      20552     3.9874985059e+06 Pr: 13897(2.22418e+06) 21s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      23044     5.8079136200e+06 Pr: 19528(543575) 26s
@@ -1324,6 +1326,24 @@ Name: e_nom_opt, dtype: float64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Problem12.01.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem 12.1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="IEG_course_project.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Course project</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
