@@ -239,6 +239,8 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="Problem11.01.html">Problem 11.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Problem11.02.html">Problem 11.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IEG_course_project.html">Course project</a></li>
 
 
@@ -1313,6 +1315,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
+Index([&#39;boiler 0&#39;, &#39;boiler 1&#39;, &#39;boiler 2&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
        &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
@@ -1325,14 +1335,6 @@ Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have zero r, which could break the linear load flow:
 Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
-Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
-Index([&#39;boiler 0&#39;, &#39;boiler 1&#39;, &#39;boiler 2&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1354,7 +1356,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-_0onu9n1 has 27 rows; 10 cols; 39 nonzeros
+LP   linopy-problem-0lju8tez has 27 rows; 10 cols; 39 nonzeros
 Coefficient ranges:
   Matrix [1e+00, 2e+01]
   Cost   [2e+01, 5e+01]
@@ -1368,12 +1370,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-27); columns 0(-10); elements 0(-39) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-_0onu9n1
+Model name          : linopy-problem-0lju8tez
 Model status        : Optimal
 Objective value     :  2.5000000000e+03
 Relative P-D gap    :  1.8189894035e-16
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-n33cmgyu.sol
+Writing the solution to /tmp/linopy-solve-2z6ysmfo.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1452,10 +1454,22 @@ Writing the solution to /tmp/linopy-solve-n33cmgyu.sol
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
+Index([&#39;boiler 0&#39;, &#39;boiler 1&#39;, &#39;boiler 2&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
        &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
       dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following sub_networks have carriers which are not defined:
+Index([&#39;0&#39;], dtype=&#39;object&#39;, name=&#39;SubNetwork&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
@@ -1464,18 +1478,6 @@ Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have zero r, which could break the linear load flow:
 Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
-Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
-Index([&#39;boiler 0&#39;, &#39;boiler 1&#39;, &#39;boiler 2&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following sub_networks have carriers which are not defined:
-Index([&#39;0&#39;], dtype=&#39;object&#39;, name=&#39;SubNetwork&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1497,7 +1499,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-hez75520 has 27 rows; 10 cols; 39 nonzeros
+LP   linopy-problem-u890bvm3 has 27 rows; 10 cols; 39 nonzeros
 Coefficient ranges:
   Matrix [1e+00, 2e+01]
   Cost   [1e+01, 5e+01]
@@ -1511,12 +1513,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-27); columns 0(-10); elements 0(-39) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-hez75520
+Model name          : linopy-problem-u890bvm3
 Model status        : Optimal
 Objective value     :  2.7000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-j8griwrv.sol
+Writing the solution to /tmp/linopy-solve-_3tzshz2.sol
 </pre></div>
 </div>
 </div>
