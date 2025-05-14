@@ -1000,15 +1000,15 @@ We add a “free” store in the hydrogen, methanol and CO2 buses.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electricity&#39;, &#39;hydrogen&#39;, &#39;methanol&#39;, &#39;heat&#39;, &#39;co2&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;electrolysis&#39;, &#39;methanolisation&#39;, &#39;DAC&#39;, &#39;heat pump&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:Encountered nan&#39;s in static data for columns [&#39;efficiency3&#39;, &#39;efficiency2&#39;] of component &#39;Link&#39;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity&#39;, &#39;hydrogen&#39;, &#39;methanol&#39;, &#39;heat&#39;, &#39;co2&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
@@ -1024,10 +1024,10 @@ Index([&#39;hydrogen store&#39;, &#39;methanol store&#39;, &#39;co2 store&#39;],
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/14 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 52.98it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 52.28it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 15.80it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 15.65it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1036,17 +1036,17 @@ Index([&#39;hydrogen store&#39;, &#39;methanol store&#39;, &#39;co2 store&#39;],
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  86%|████████▌ | 6/7 [00:00&lt;00:00, 51.02it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  86%|████████▌ | 6/7 [00:00&lt;00:00, 50.77it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 43.54it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 43.26it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 1.07s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 1.08s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-6ah80rcf has 210248 rows; 96368 cols; 420488 nonzeros
+LP   linopy-problem-3mpyhswr has 210248 rows; 96368 cols; 420488 nonzeros
 Coefficient ranges:
   Matrix [3e-03, 3e+00]
   Cost   [2e-02, 2e+06]
@@ -1067,19 +1067,19 @@ Using EKK dual simplex solver - serial
           0     0.0000000000e+00 Pr: 8760(55684.9) 0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      10953     7.7530355998e+02 Pr: 6570(1.5233e+08) 5s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      10819     7.5175689704e+02 Pr: 6704(1.42073e+08) 5s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      16681     1.7430199631e+03 Pr: 842(7.82824e+06) 10s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      16582     1.7272295931e+03 Pr: 941(8.33002e+06) 10s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      18802     2.8516849085e+06 Pr: 20729(4.32786e+06) 15s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      18752     2.8286644312e+06 Pr: 21023(4.25349e+06) 15s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      20639     4.0680556911e+06 Pr: 13696(2.27465e+06) 21s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      20552     3.9874985059e+06 Pr: 13897(2.22418e+06) 20s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      23213     5.8420645527e+06 Pr: 19062(594313) 26s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      23044     5.8079136200e+06 Pr: 19528(543575) 26s
 </pre></div>
 </div>
 </div>
