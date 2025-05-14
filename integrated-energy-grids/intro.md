@@ -10,6 +10,8 @@ The topics covered in the problems include:
 - Optimization problems and interpretation of KKT/Lagrange multipliers
 - Optimal economic dispatch
 - Incidence matrix representing a network topology and susceptance matrix
-- Power flow and linearized power flow
+- Optimal power flow and linearized optimal power flow
+- Gas networks
+- Heat networks
 - Capacity and dispatch optimization in a single node and a network
 - Multi-carrier energy systems integration
