@@ -901,6 +901,10 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
+Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electricity&#39;, &#39;EV&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
@@ -913,10 +917,6 @@ Index([&#39;battery storage&#39;], dtype=&#39;object&#39;, name=&#39;StorageUnit
 Index([&#39;EV charger&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
-Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
 </pre></div>
 </div>
@@ -926,16 +926,16 @@ Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Gen
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/16 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  38%|███▊      | 6/16 [00:00&lt;00:00, 46.97it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  38%|███▊      | 6/16 [00:00&lt;00:00, 47.13it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  69%|██████▉   | 11/16 [00:00&lt;00:00, 40.65it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  69%|██████▉   | 11/16 [00:00&lt;00:00, 40.64it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 16/16 [00:00&lt;00:00, 26.81it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 16/16 [00:00&lt;00:00, 26.61it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 16/16 [00:00&lt;00:00, 29.98it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 16/16 [00:00&lt;00:00, 29.81it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -944,14 +944,14 @@ Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Gen
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 77.05it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 75.30it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.66s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-e74wgnxd has 131403 rows; 52563 cols; 232161 nonzeros
+LP   linopy-problem-pzex_viv has 131403 rows; 52563 cols; 232161 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 6e+00]
   Cost   [1e-02, 1e+05]
@@ -971,12 +971,13 @@ Using EKK dual simplex solver - serial
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      33164     8.0098604804e+09 Pr: 0(0); Du: 0(1.38778e-16) 2s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-e74wgnxd
+Model name          : linopy-problem-pzex_viv
 Model status        : Optimal
 Simplex   iterations: 33164
 Objective value     :  8.0098604804e+09
 Relative P-D gap    :  8.8106277989e-15
-HiGHS run time      :          1.65
+HiGHS run time      :          1.67
+Writing the solution to /tmp/linopy-solve-q359tiol.sol
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -989,9 +990,6 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper, Link-fix-p-lower, Link-fix-p-upper, StorageUnit-ext-p_dispatch-lower, StorageUnit-ext-p_dispatch-upper, StorageUnit-ext-p_store-lower, StorageUnit-ext-p_store-upper, StorageUnit-ext-state_of_charge-lower, StorageUnit-ext-state_of_charge-upper, StorageUnit-energy_balance were not assigned to the network.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-cb_e1z4l.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1172,6 +1170,14 @@ The energy capacity of that battery is based on the number of vehicles and the a
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
+Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index([&#39;EV battery&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electricity&#39;, &#39;EV&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
@@ -1184,14 +1190,6 @@ Index([&#39;battery storage&#39;], dtype=&#39;object&#39;, name=&#39;StorageUnit
 Index([&#39;EV charger&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
-Index([&#39;EV battery&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
-Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
 </pre></div>
 </div>
@@ -1201,16 +1199,16 @@ Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Gen
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/19 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  32%|███▏      | 6/19 [00:00&lt;00:00, 47.36it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  32%|███▏      | 6/19 [00:00&lt;00:00, 46.95it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  58%|█████▊    | 11/19 [00:00&lt;00:00, 43.27it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  58%|█████▊    | 11/19 [00:00&lt;00:00, 42.82it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  84%|████████▍ | 16/19 [00:00&lt;00:00, 36.58it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  84%|████████▍ | 16/19 [00:00&lt;00:00, 35.89it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 19/19 [00:00&lt;00:00, 29.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 19/19 [00:00&lt;00:00, 28.88it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1219,17 +1217,17 @@ Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Gen
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/9 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  89%|████████▉ | 8/9 [00:00&lt;00:00, 75.34it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  89%|████████▉ | 8/9 [00:00&lt;00:00, 74.44it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 9/9 [00:00&lt;00:00, 73.77it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 9/9 [00:00&lt;00:00, 72.79it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.8s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.81s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-gtztw51z has 157683 rows; 70083 cols; 284721 nonzeros
+LP   linopy-problem-18myw0hx has 157683 rows; 70083 cols; 284721 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 6e+00]
   Cost   [1e-02, 1e+05]
@@ -1252,12 +1250,12 @@ Using EKK dual simplex solver - serial
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      60678     6.5754013742e+09 Pr: 0(0); Du: 0(5.56466e-11) 4s
       60678     6.5754013742e+09 Pr: 0(0); Du: 0(5.56466e-11) 4s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-gtztw51z
+Model name          : linopy-problem-18myw0hx
 Model status        : Optimal
 Simplex   iterations: 60678
 Objective value     :  6.5754013742e+09
 Relative P-D gap    :  1.5954033653e-15
-HiGHS run time      :          3.73
+HiGHS run time      :          3.77
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -1272,7 +1270,7 @@ Solver message: Optimal
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper, Link-fix-p-lower, Link-fix-p-upper, Store-fix-e-lower, Store-fix-e-upper, StorageUnit-ext-p_dispatch-lower, StorageUnit-ext-p_dispatch-upper, StorageUnit-ext-p_store-lower, StorageUnit-ext-p_store-upper, StorageUnit-ext-state_of_charge-lower, StorageUnit-ext-state_of_charge-upper, StorageUnit-energy_balance, Store-energy_balance were not assigned to the network.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-7qzimpg6.sol
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-64c6m_zo.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1426,6 +1424,14 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
+Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index([&#39;EV battery&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electricity&#39;, &#39;EV&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
@@ -1438,14 +1444,6 @@ Index([&#39;battery storage&#39;], dtype=&#39;object&#39;, name=&#39;StorageUnit
 Index([&#39;EV charger&#39;, &#39;V2G&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
-Index([&#39;EV battery&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
-Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
 </pre></div>
 </div>
@@ -1455,19 +1453,19 @@ Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Gen
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/19 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  32%|███▏      | 6/19 [00:00&lt;00:00, 47.31it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  32%|███▏      | 6/19 [00:00&lt;00:00, 47.10it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  58%|█████▊    | 11/19 [00:00&lt;00:00, 35.79it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  58%|█████▊    | 11/19 [00:00&lt;00:00, 35.42it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  79%|███████▉  | 15/19 [00:00&lt;00:00, 34.17it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  79%|███████▉  | 15/19 [00:00&lt;00:00, 33.61it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 19/19 [00:00&lt;00:00, 21.89it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 19/19 [00:00&lt;00:00, 21.68it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 19/19 [00:00&lt;00:00, 26.24it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 19/19 [00:00&lt;00:00, 25.97it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1476,17 +1474,17 @@ Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Gen
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/9 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  78%|███████▊  | 7/9 [00:00&lt;00:00, 63.73it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  78%|███████▊  | 7/9 [00:00&lt;00:00, 64.99it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 9/9 [00:00&lt;00:00, 64.14it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 9/9 [00:00&lt;00:00, 64.60it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.9s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-m4qdmdm0 has 175203 rows; 78843 cols; 319761 nonzeros
+LP   linopy-problem-c996wgi4 has 175203 rows; 78843 cols; 319761 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 6e+00]
   Cost   [1e-02, 1e+05]
@@ -1512,12 +1510,12 @@ Using EKK dual simplex solver - serial
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      79836     6.5753004797e+09 Pr: 0(0); Du: 0(4.54747e-13) 7s
       79836     6.5753004797e+09 Pr: 0(0); Du: 0(4.54747e-13) 7s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-m4qdmdm0
+Model name          : linopy-problem-c996wgi4
 Model status        : Optimal
 Simplex   iterations: 79836
 Objective value     :  6.5753004797e+09
 Relative P-D gap    :  1.3053500557e-15
-HiGHS run time      :          7.42
+HiGHS run time      :          7.41
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -1529,10 +1527,10 @@ Solver model: available
 Solver message: Optimal
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-3fy3ivdw.sol
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper, Link-fix-p-lower, Link-fix-p-upper, Store-fix-e-lower, Store-fix-e-upper, StorageUnit-ext-p_dispatch-lower, StorageUnit-ext-p_dispatch-upper, StorageUnit-ext-p_store-lower, StorageUnit-ext-p_store-upper, StorageUnit-ext-state_of_charge-lower, StorageUnit-ext-state_of_charge-upper, StorageUnit-energy_balance, Store-energy_balance were not assigned to the network.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper, Link-fix-p-lower, Link-fix-p-upper, Store-fix-e-lower, Store-fix-e-upper, StorageUnit-ext-p_dispatch-lower, StorageUnit-ext-p_dispatch-upper, StorageUnit-ext-p_store-lower, StorageUnit-ext-p_store-upper, StorageUnit-ext-state_of_charge-lower, StorageUnit-ext-state_of_charge-upper, StorageUnit-energy_balance, Store-energy_balance were not assigned to the network.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-npq2d9jx.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)

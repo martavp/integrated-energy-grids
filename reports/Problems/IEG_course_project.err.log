@@ -31,26 +31,26 @@ INFO:linopy.io:Writing objective.
 ----- stderr -----
 Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/5 [00:00<?, ?it/s]
 ----- stderr -----
-Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 21.09it/s]
+Writing constraints.:  80%|[38;2;128;191;255m████████  [0m| 4/5 [00:00<00:00, 21.12it/s]
 ----- stderr -----
-Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 20.62it/s]
+Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 5/5 [00:00<00:00, 20.48it/s]
 ----- stderr -----
 
 ----- stderr -----
 Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/2 [00:00<?, ?it/s]
 ----- stderr -----
-Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 45.28it/s]
+Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 2/2 [00:00<00:00, 44.58it/s]
 ----- stderr -----
 
-INFO:linopy.io: Writing time: 0.32s
+INFO:linopy.io: Writing time: 0.31s
 ----- stdout -----
 Restricted license - for non-production use only - expires 2026-11-23
 ----- stderr -----
 INFO:gurobipy:Restricted license - for non-production use only - expires 2026-11-23
 ----- stdout -----
-Read LP format model from file /tmp/linopy-problem-cpzos3fd.lp
+Read LP format model from file /tmp/linopy-problem-lopzzep_.lp
 ----- stderr -----
-INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-cpzos3fd.lp
+INFO:gurobipy:Read LP format model from file /tmp/linopy-problem-lopzzep_.lp
 ----- stdout -----
 Reading time = 0.07 seconds
 ----- stderr -----
