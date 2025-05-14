@@ -960,7 +960,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;MW&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/54c9f126e95c0eb3d423f4540b2a488d1ce10b27d6cdf7d93dd82f8d6cbc8fc2.png" src="../_images/54c9f126e95c0eb3d423f4540b2a488d1ce10b27d6cdf7d93dd82f8d6cbc8fc2.png" />
+<img alt="../_images/d40bdf91d7e9434172ab2ebd6dc441dc37a4d8cf3eac0000972359dac0943aa1.png" src="../_images/d40bdf91d7e9434172ab2ebd6dc441dc37a4d8cf3eac0000972359dac0943aa1.png" />
 </div>
 </div>
 <p>We add now the generators and set up their capacities to be extendable so that they can be optimized together with the dispatch time series. For the wind and solar generator, we need to indicate the capacity factor or maximum power per unit ‘p_max_pu’</p>
@@ -1022,7 +1022,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;CF&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/9955017c4218a8609304c88fd82a7c3b1b1bbf7f47a761e06fc33b8edb2cdf9f.png" src="../_images/9955017c4218a8609304c88fd82a7c3b1b1bbf7f47a761e06fc33b8edb2cdf9f.png" />
+<img alt="../_images/ed79caff22453fb39b57b258944527afb7c44d8d1041bd846450db5053dfabb6.png" src="../_images/ed79caff22453fb39b57b258944527afb7c44d8d1041bd846450db5053dfabb6.png" />
 </div>
 </div>
 <p>We add the battery storage, assuming a fixed energy-to-power ratio of 2 hours, i.e. if fully charged, the battery can discharge at full capacity for 2 hours.</p>
@@ -1117,16 +1117,16 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/17 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  41%|████      | 7/17 [00:00&lt;00:00, 51.63it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  41%|████      | 7/17 [00:00&lt;00:00, 54.38it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  76%|███████▋  | 13/17 [00:00&lt;00:00, 29.81it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  76%|███████▋  | 13/17 [00:00&lt;00:00, 31.88it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 17/17 [00:00&lt;00:00, 23.55it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 17/17 [00:00&lt;00:00, 25.25it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 17/17 [00:00&lt;00:00, 26.36it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 17/17 [00:00&lt;00:00, 28.22it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1135,17 +1135,17 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/6 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 56.56it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 57.67it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 56.17it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 57.36it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.81s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.76s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-hat0enen has 140165 rows; 61324 cols; 275962 nonzeros
+LP   linopy-problem-jpqd5pl0 has 140165 rows; 61324 cols; 275962 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 2e+00]
   Cost   [1e-02, 1e+05]
@@ -1165,19 +1165,19 @@ Using EKK dual simplex solver - serial
           0     0.0000000000e+00 Pr: 8760(1.53237e+09) 0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      15077     9.7100874369e+08 Pr: 8707(2.04957e+09) 5s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      21775     1.2576741977e+09 Pr: 5885(2.87659e+09) 5s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      21687     1.4281589142e+09 Pr: 6552(3.87202e+09) 11s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      31303     1.5797132314e+09 Pr: 6532(1.24399e+10) 11s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      26230     1.9805670196e+09 Pr: 7540(1.81843e+10) 16s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      40166     2.0673903402e+09 Pr: 5996(1.25267e+09); Du: 0(1.07187e-07) 17s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      29672     2.0430720119e+09 Pr: 7074(1.80748e+10) 21s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      45532     2.3457776796e+09 Pr: 4481(1.5134e+09); Du: 0(1.34991e-07) 22s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      33456     2.1150616774e+09 Pr: 16241(2.38403e+10) 27s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      50177     2.6240159570e+09 Pr: 3644(7.35203e+08); Du: 0(7.59424e-08) 27s
 </pre></div>
 </div>
 </div>

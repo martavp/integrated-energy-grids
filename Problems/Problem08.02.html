@@ -687,7 +687,7 @@ a(r, n) = \frac{r}{1-(1+r)^{-n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(24678.157875535107)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(24798.913824044732)
 </pre></div>
 </div>
 </div>
@@ -699,7 +699,7 @@ a(r, n) = \frac{r}{1-(1+r)^{-n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(12894.531896456368)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(12957.628369768725)
 </pre></div>
 </div>
 </div>
@@ -1033,7 +1033,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;MW&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/54c9f126e95c0eb3d423f4540b2a488d1ce10b27d6cdf7d93dd82f8d6cbc8fc2.png" src="../_images/54c9f126e95c0eb3d423f4540b2a488d1ce10b27d6cdf7d93dd82f8d6cbc8fc2.png" />
+<img alt="../_images/d40bdf91d7e9434172ab2ebd6dc441dc37a4d8cf3eac0000972359dac0943aa1.png" src="../_images/d40bdf91d7e9434172ab2ebd6dc441dc37a4d8cf3eac0000972359dac0943aa1.png" />
 </div>
 </div>
 <p>We add now the generators and set up their capacities to be extendable so that they can be optimized together with the dispatch time series. For the wind and solar generator, we need to indicate the capacity factor or maximum power per unit ‘p_max_pu’</p>
@@ -1095,7 +1095,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;CF&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/9955017c4218a8609304c88fd82a7c3b1b1bbf7f47a761e06fc33b8edb2cdf9f.png" src="../_images/9955017c4218a8609304c88fd82a7c3b1b1bbf7f47a761e06fc33b8edb2cdf9f.png" />
+<img alt="../_images/ed79caff22453fb39b57b258944527afb7c44d8d1041bd846450db5053dfabb6.png" src="../_images/ed79caff22453fb39b57b258944527afb7c44d8d1041bd846450db5053dfabb6.png" />
 </div>
 </div>
 <p>We add the battery storage, assuming a fixed energy-to-power ratio of 2 hours, i.e. if fully charged, the battery can discharge at full capacity for 2 hours.</p>
@@ -1171,13 +1171,13 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/16 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  44%|████▍     | 7/16 [00:00&lt;00:00, 52.19it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  44%|████▍     | 7/16 [00:00&lt;00:00, 55.18it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  81%|████████▏ | 13/16 [00:00&lt;00:00, 23.11it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  81%|████████▏ | 13/16 [00:00&lt;00:00, 31.95it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 16/16 [00:00&lt;00:00, 22.38it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 16/16 [00:00&lt;00:00, 27.91it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1186,17 +1186,17 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/6 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 57.37it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 57.31it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 56.89it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 6/6 [00:00&lt;00:00, 57.01it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.88s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.73s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-yjvqwmnv has 140164 rows; 61324 cols; 258442 nonzeros
+LP   linopy-problem-nzsyl4bu has 140164 rows; 61324 cols; 258442 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 2e+00]
   Cost   [1e-02, 1e+05]
@@ -1210,24 +1210,22 @@ Dependent equations search removed 0 rows and 0 nonzeros in 0.00s (limit = 1000.
 Presolve : Reductions: rows 65718(-74446); columns 56962(-4362); elements 179634(-78808)
 Solving the presolved LP
 Using EKK dual simplex solver - serial
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Iteration        Objective     Infeasibilities num(sum)
+  Iteration        Objective     Infeasibilities num(sum)
           0     0.0000000000e+00 Pr: 8760(1.56078e+09) 0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      49687     2.1570560618e+09 Pr: 4171(3.88375e+08); Du: 0(1.46533e-08) 5s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      55279     2.2075212682e+09 Pr: 4304(2.50531e+09); Du: 0(1.63232e-07) 5s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      63123     2.2611491252e+09 Pr: 0(0); Du: 0(3.23205e-12) 7s
-      63123     2.2611491252e+09 Pr: 0(0); Du: 0(3.23205e-12) 7s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      66113     2.2612394444e+09 Pr: 0(0); Du: 0(2.64582e-14) 7s
+      66113     2.2612394444e+09 Pr: 0(0); Du: 0(2.64582e-14) 7s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-yjvqwmnv
+Model name          : linopy-problem-nzsyl4bu
 Model status        : Optimal
-Simplex   iterations: 63123
-Objective value     :  2.2611491252e+09
-Relative P-D gap    :  1.0544133354e-15
-HiGHS run time      :          7.28
+Simplex   iterations: 66113
+Objective value     :  2.2612394444e+09
+Relative P-D gap    :  1.0543712197e-15
+HiGHS run time      :          6.91
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -1242,7 +1240,7 @@ Solver message: Optimal
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Generator-ext-p-lower, Generator-ext-p-upper, StorageUnit-ext-p_dispatch-lower, StorageUnit-ext-p_dispatch-upper, StorageUnit-ext-p_store-lower, StorageUnit-ext-p_store-upper, StorageUnit-ext-state_of_charge-lower, StorageUnit-ext-state_of_charge-upper, StorageUnit-energy_balance were not assigned to the network.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-3y3iekw7.sol
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-txt4172e.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1258,7 +1256,7 @@ Solver message: Optimal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.2611491251719444
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.2612394444437998
 </pre></div>
 </div>
 </div>
@@ -1325,7 +1323,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;dispatch&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/8e1595bfc8fc72a97f557fdd0bfa4f80c46959caaf65d64b057d38a0c69edf3b.png" src="../_images/8e1595bfc8fc72a97f557fdd0bfa4f80c46959caaf65d64b057d38a0c69edf3b.png" />
+<img alt="../_images/ba77beff2613e852b4b755469d6d7959daedc2456e4e746b829755321f89adb8.png" src="../_images/ba77beff2613e852b4b755469d6d7959daedc2456e4e746b829755321f89adb8.png" />
 </div>
 </div>
 <p>We can also plot the charging and discharging of the battery</p>
@@ -1339,7 +1337,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;battery&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/2faa7de379c54ac9d610e5465dbfa29960caa3a7b1db2ecb20c868e0c1b81205.png" src="../_images/2faa7de379c54ac9d610e5465dbfa29960caa3a7b1db2ecb20c868e0c1b81205.png" />
+<img alt="../_images/50a8804fd33b29c275797295ec211137757b6488a87c3bf7fd68bf90bf52881c.png" src="../_images/50a8804fd33b29c275797295ec211137757b6488a87c3bf7fd68bf90bf52881c.png" />
 </div>
 </div>
 <p>and the demand time series</p>
@@ -1353,7 +1351,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;demand&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/9710331b68bcfd3b4507fc5295d3c3acf528c403b251c1e1262f81a3dc716266.png" src="../_images/9710331b68bcfd3b4507fc5295d3c3acf528c403b251c1e1262f81a3dc716266.png" />
+<img alt="../_images/2c7098f6e10fee5610ec10a38ec3aad781472baafa22c96c9b3581489bc2df0d.png" src="../_images/2c7098f6e10fee5610ec10a38ec3aad781472baafa22c96c9b3581489bc2df0d.png" />
 </div>
 </div>
 <p><strong>b) How does the CCGT power plant recover its cost?</strong></p>
@@ -1404,7 +1402,7 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>StorageUnit
-battery storage    18.457919
+battery storage    18.548238
 dtype: float64
 </pre></div>
 </div>
@@ -1419,7 +1417,7 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>StorageUnit
-battery storage    18.457919
+battery storage    18.548238
 Name: p_nom_opt, dtype: float64
 </pre></div>
 </div>

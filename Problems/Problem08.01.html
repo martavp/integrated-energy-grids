@@ -973,7 +973,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;MW&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/54c9f126e95c0eb3d423f4540b2a488d1ce10b27d6cdf7d93dd82f8d6cbc8fc2.png" src="../_images/54c9f126e95c0eb3d423f4540b2a488d1ce10b27d6cdf7d93dd82f8d6cbc8fc2.png" />
+<img alt="../_images/d40bdf91d7e9434172ab2ebd6dc441dc37a4d8cf3eac0000972359dac0943aa1.png" src="../_images/d40bdf91d7e9434172ab2ebd6dc441dc37a4d8cf3eac0000972359dac0943aa1.png" />
 </div>
 </div>
 <p>We add now the generators and set up their capacities to be extendable so that they can be optimized together with the dispatch time series. For the wind and solar generator, we need to indicate the capacity factor or maximum power per unit ‘p_max_pu’</p>
@@ -1035,7 +1035,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;CF&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/9955017c4218a8609304c88fd82a7c3b1b1bbf7f47a761e06fc33b8edb2cdf9f.png" src="../_images/9955017c4218a8609304c88fd82a7c3b1b1bbf7f47a761e06fc33b8edb2cdf9f.png" />
+<img alt="../_images/ed79caff22453fb39b57b258944527afb7c44d8d1041bd846450db5053dfabb6.png" src="../_images/ed79caff22453fb39b57b258944527afb7c44d8d1041bd846450db5053dfabb6.png" />
 </div>
 </div>
 </section>
@@ -1062,13 +1062,13 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/5 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  20%|██        | 1/5 [00:00&lt;00:00,  9.32it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  60%|██████    | 3/5 [00:00&lt;00:00, 19.40it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  80%|████████  | 4/5 [00:00&lt;00:00, 14.33it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 15.61it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 14.52it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 5/5 [00:00&lt;00:00, 16.15it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1077,14 +1077,14 @@ Index([&#39;electricity&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/2 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 45.07it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 2/2 [00:00&lt;00:00, 45.80it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.43s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.4s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-wvdaljyi has 61323 rows; 26283 cols; 100761 nonzeros
+LP   linopy-problem-c25mkkqt has 61323 rows; 26283 cols; 100761 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 1e+00]
   Cost   [1e-02, 1e+05]
@@ -1113,13 +1113,13 @@ Solver message: Optimal
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      16794     3.1120276519e+09 Pr: 0(0) 0s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-wvdaljyi
+Model name          : linopy-problem-c25mkkqt
 Model status        : Optimal
 Simplex   iterations: 16794
 Objective value     :  3.1120276519e+09
 Relative P-D gap    :  3.6773747142e-15
-HiGHS run time      :          0.48
-Writing the solution to /tmp/linopy-solve-b9nly0el.sol
+HiGHS run time      :          0.47
+Writing the solution to /tmp/linopy-solve-hmj41wzj.sol
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper were not assigned to the network.
@@ -1188,7 +1188,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;dispatch&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/2bf98b605c652b96487d8f01da67462109c1d8d91c1a5aa3d462f0b3a640f0d4.png" src="../_images/2bf98b605c652b96487d8f01da67462109c1d8d91c1a5aa3d462f0b3a640f0d4.png" />
+<img alt="../_images/42df3522612e5ad1e54bf0a3b5e684c12670a8a2439d84c1bb3e13e9a7afc0b8.png" src="../_images/42df3522612e5ad1e54bf0a3b5e684c12670a8a2439d84c1bb3e13e9a7afc0b8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1201,7 +1201,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;demand&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/9710331b68bcfd3b4507fc5295d3c3acf528c403b251c1e1262f81a3dc716266.png" src="../_images/9710331b68bcfd3b4507fc5295d3c3acf528c403b251c1e1262f81a3dc716266.png" />
+<img alt="../_images/2c7098f6e10fee5610ec10a38ec3aad781472baafa22c96c9b3581489bc2df0d.png" src="../_images/2c7098f6e10fee5610ec10a38ec3aad781472baafa22c96c9b3581489bc2df0d.png" />
 </div>
 </div>
 <p><strong>b) Calculate the revenues collected by every technology throughout the year and show that their sum is equal to their costs.</strong></p>

@@ -787,7 +787,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;MW&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/eb83cf6cc97218136506cf8b81bcf38a4a3b68b84c97ad9c65cb2b32fc54a0b5.png" src="../_images/eb83cf6cc97218136506cf8b81bcf38a4a3b68b84c97ad9c65cb2b32fc54a0b5.png" />
+<img alt="../_images/a8c7d407725100c5521bce54634880b862fa56bc8babcdce6dfdbacf28a4fb3f.png" src="../_images/a8c7d407725100c5521bce54634880b862fa56bc8babcdce6dfdbacf28a4fb3f.png" />
 </div>
 </div>
 <p>We estimate now the hourly heating demand, based on the annual demand, the population-weighted temperature and the threshold temperature.</p>
@@ -810,7 +810,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;utc_time&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/34dde277566abd36be9196be11c4cde7aeb9167b3a378c655a1611b2d0230808.png" src="../_images/34dde277566abd36be9196be11c4cde7aeb9167b3a378c655a1611b2d0230808.png" />
+<img alt="../_images/8386f3b91d89cb8d0a9c2184a49ecc78bb7ea39b071fd531acd20d57f713f30c.png" src="../_images/8386f3b91d89cb8d0a9c2184a49ecc78bb7ea39b071fd531acd20d57f713f30c.png" />
 </div>
 </div>
 <p>We can add the heating demand to the model and plot it to check that it was properly added.</p>
@@ -830,7 +830,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;MW&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/79840da679f93c433bfec7f999110fad4fa6a7dd5417c439a93acaedc943d849.png" src="../_images/79840da679f93c433bfec7f999110fad4fa6a7dd5417c439a93acaedc943d849.png" />
+<img alt="../_images/8f68b6475c39e0a0936ce9d438d620c1b98a5e046c49cc3ab5a4f7ba53948528.png" src="../_images/8f68b6475c39e0a0936ce9d438d620c1b98a5e046c49cc3ab5a4f7ba53948528.png" />
 </div>
 </div>
 <p>We add now the generators and set up their capacities to be extendable so that they can be optimized together with the dispatch time series. For the wind and solar generator, we need to indicate the capacity factor or maximum power per unit ‘p_max_pu’</p>
@@ -881,7 +881,7 @@ The Pandas package is used as a convenient way of managing the datasets.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;CF&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/9955017c4218a8609304c88fd82a7c3b1b1bbf7f47a761e06fc33b8edb2cdf9f.png" src="../_images/9955017c4218a8609304c88fd82a7c3b1b1bbf7f47a761e06fc33b8edb2cdf9f.png" />
+<img alt="../_images/ed79caff22453fb39b57b258944527afb7c44d8d1041bd846450db5053dfabb6.png" src="../_images/ed79caff22453fb39b57b258944527afb7c44d8d1041bd846450db5053dfabb6.png" />
 </div>
 </div>
 <p>We add the battery storage, assuming a fixed energy-to-power ratio of 2 hours, i.e. if fully charged, the battery can discharge at full capacity for 2 hours.</p>
@@ -981,7 +981,7 @@ COP(\Delta T) = 6.81 - 0.121 \Delta T + 0.00063 \Delta T^2
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;COP&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/de0bfb5fcdc9caa52df6bd5379b1c08414d4705f5de73a2e8bd3b68f036fefca.png" src="../_images/de0bfb5fcdc9caa52df6bd5379b1c08414d4705f5de73a2e8bd3b68f036fefca.png" />
+<img alt="../_images/99b54d5e200927bb74197ae8e2bf63bd98520d9c24d969061c12fb900149fb8a.png" src="../_images/99b54d5e200927bb74197ae8e2bf63bd98520d9c24d969061c12fb900149fb8a.png" />
 </div>
 </div>
 </section>
@@ -995,24 +995,24 @@ COP(\Delta T) = 6.81 - 0.121 \Delta T + 0.00063 \Delta T^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
-Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
-Index([&#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following storage_units have carriers which are not defined:
+Index([&#39;battery storage&#39;], dtype=&#39;object&#39;, name=&#39;StorageUnit&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
+Index([&#39;onwind&#39;, &#39;solar&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;CHP&#39;, &#39;heat pump&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following storage_units have carriers which are not defined:
-Index([&#39;battery storage&#39;], dtype=&#39;object&#39;, name=&#39;StorageUnit&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
+Index([&#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1024,19 +1024,16 @@ Index([&#39;battery storage&#39;], dtype=&#39;object&#39;, name=&#39;StorageUnit
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/23 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  35%|███▍      | 8/23 [00:00&lt;00:00, 58.72it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  35%|███▍      | 8/23 [00:00&lt;00:00, 60.90it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  61%|██████    | 14/23 [00:00&lt;00:00, 43.97it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  65%|██████▌   | 15/23 [00:00&lt;00:00, 45.95it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  83%|████████▎ | 19/23 [00:00&lt;00:00, 38.53it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  87%|████████▋ | 20/23 [00:00&lt;00:00, 39.13it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 23/23 [00:00&lt;00:00, 23.09it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 23/23 [00:00&lt;00:00, 28.97it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 23/23 [00:00&lt;00:00, 30.17it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1045,17 +1042,17 @@ Index([&#39;battery storage&#39;], dtype=&#39;object&#39;, name=&#39;StorageUnit
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/10 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  80%|████████  | 8/10 [00:00&lt;00:00, 73.95it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:  80%|████████  | 8/10 [00:00&lt;00:00, 75.00it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 10/10 [00:00&lt;00:00, 71.27it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 10/10 [00:00&lt;00:00, 72.48it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.98s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.94s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-q7w9qvnj has 183964 rows; 78844 cols; 337281 nonzeros
+LP   linopy-problem-3zqnz73v has 183964 rows; 78844 cols; 337281 nonzeros
 Coefficient ranges:
   Matrix [1e-03, 4e+00]
   Cost   [1e-02, 1e+05]
@@ -1073,34 +1070,33 @@ Presolve : Reductions: rows 56992(-126972); columns 48228(-30616); elements 1621
 Solving the presolved LP
 Using EKK dual simplex solver - serial
   Iteration        Objective     Infeasibilities num(sum)
-          0     0.0000000000e+00 Pr: 8769(1.92446e+09) 0s
+          0     0.0000000000e+00 Pr: 8769(1.92541e+09) 0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      30770     7.4451549489e+09 Pr: 0(0); Du: 0(2.01228e-16) 1s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      32091     7.4592368943e+09 Pr: 0(0) 1s
+      32091     7.4592368943e+09 Pr: 0(0) 1s
 Solving the original LP from the solution after postsolve
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name          : linopy-problem-q7w9qvnj
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model name          : linopy-problem-3zqnz73v
 Model status        : Optimal
-Simplex   iterations: 30770
-Objective value     :  7.4451549489e+09
-Relative P-D gap    :  1.0375555668e-14
-HiGHS run time      :          1.83
+Simplex   iterations: 32091
+Objective value     :  7.4592368943e+09
+Relative P-D gap    :  1.0995225433e-14
+HiGHS run time      :          1.76
+Writing the solution to /tmp/linopy-solve-t5jnrpn1.sol
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
 Status: ok
 Termination condition: optimal
 Solution: 78844 primals, 183964 duals
-Objective: 7.45e+09
+Objective: 7.46e+09
 Solver model: available
 Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-fix-e-lower, Store-fix-e-upper, StorageUnit-ext-p_dispatch-lower, StorageUnit-ext-p_dispatch-upper, StorageUnit-ext-p_store-lower, StorageUnit-ext-p_store-upper, StorageUnit-ext-state_of_charge-lower, StorageUnit-ext-state_of_charge-upper, StorageUnit-energy_balance, Store-energy_balance were not assigned to the network.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-5miv8m_a.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1116,7 +1112,7 @@ Solver message: Optimal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.445154948946167
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.459236894322368
 </pre></div>
 </div>
 </div>
@@ -1217,7 +1213,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;dispatch&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/97d4a649c269be4756eceb0f5f869efb70fbda927fc086dc4cd87a70ba084a94.png" src="../_images/97d4a649c269be4756eceb0f5f869efb70fbda927fc086dc4cd87a70ba084a94.png" />
+<img alt="../_images/a72e1cefbbc0eac0587b658f2fe3843a335e2ffc1121372e47b4106f4df2a39c.png" src="../_images/a72e1cefbbc0eac0587b658f2fe3843a335e2ffc1121372e47b4106f4df2a39c.png" />
 </div>
 </div>
 <p>We can also plot the dispatch of heating from every generator throughout January</p>
@@ -1231,7 +1227,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;dispatch&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/ff75d4b1b66a118312d0a3ee71eb63a204ee2763034eb8dbcd091ae1f52d2e69.png" src="../_images/ff75d4b1b66a118312d0a3ee71eb63a204ee2763034eb8dbcd091ae1f52d2e69.png" />
+<img alt="../_images/4af9073987a46983f5f21a7715c1d30ce03c8e1d731ba1af9ae834e114dea74f.png" src="../_images/4af9073987a46983f5f21a7715c1d30ce03c8e1d731ba1af9ae834e114dea74f.png" />
 </div>
 </div>
 <p>We can also plot the annual electricity mix and heating mix</p>
@@ -1245,7 +1241,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Electricity&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/c809d2d1729a5128a26001096328e6c829215eccc55a52c2e21cb8da424c1d1b.png" src="../_images/c809d2d1729a5128a26001096328e6c829215eccc55a52c2e21cb8da424c1d1b.png" />
+<img alt="../_images/835c50b779da089772155b3b73ca4484e46870f718f3b0390f12daf123e8e28c.png" src="../_images/835c50b779da089772155b3b73ca4484e46870f718f3b0390f12daf123e8e28c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1258,7 +1254,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Heat&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/66607ecf6e98988cedc0bd5fbd027cbbdb9be57aa42b929457cbc4056b730c54.png" src="../_images/66607ecf6e98988cedc0bd5fbd027cbbdb9be57aa42b929457cbc4056b730c54.png" />
+<img alt="../_images/b31640a321cfa0227d57ec21b02a91dfb4f582564d1680b0509253fdabb62939.png" src="../_images/b31640a321cfa0227d57ec21b02a91dfb4f582564d1680b0509253fdabb62939.png" />
 </div>
 </div>
 </section>

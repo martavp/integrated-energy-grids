@@ -1317,18 +1317,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
+Index([&#39;boiler 0&#39;, &#39;boiler 1&#39;, &#39;boiler 2&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
        &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
       dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
-Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
-Index([&#39;boiler 0&#39;, &#39;boiler 1&#39;, &#39;boiler 2&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
@@ -1337,6 +1333,10 @@ Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have zero r, which could break the linear load flow:
 Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1358,7 +1358,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-0xf8y__7 has 27 rows; 10 cols; 39 nonzeros
+LP   linopy-problem-sgvbdlk9 has 27 rows; 10 cols; 39 nonzeros
 Coefficient ranges:
   Matrix [1e+00, 2e+01]
   Cost   [2e+01, 5e+01]
@@ -1372,12 +1372,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-27); columns 0(-10); elements 0(-39) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-0xf8y__7
+Model name          : linopy-problem-sgvbdlk9
 Model status        : Optimal
 Objective value     :  2.5000000000e+03
 Relative P-D gap    :  1.8189894035e-16
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-p6wzxoem.sol
+Writing the solution to /tmp/linopy-solve-2x1_od36.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1406,7 +1406,7 @@ Writing the solution to /tmp/linopy-solve-p6wzxoem.sol
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Generator&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/34e519d7283bf1f7ea62c6b3311dd4ee52a452f8f1a711278d039bc4ab21a7b4.png" src="../_images/34e519d7283bf1f7ea62c6b3311dd4ee52a452f8f1a711278d039bc4ab21a7b4.png" />
+<img alt="../_images/b7ca75d9e445665f0eeb1844f37bbf48e8a7189eac0df54f127a6b2e8027ee2e.png" src="../_images/b7ca75d9e445665f0eeb1844f37bbf48e8a7189eac0df54f127a6b2e8027ee2e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1419,7 +1419,7 @@ Writing the solution to /tmp/linopy-solve-p6wzxoem.sol
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Link&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/1bd801220d694ce7442ba4233c87e0aa0e6113d4157a089fc472fdd93985af27.png" src="../_images/1bd801220d694ce7442ba4233c87e0aa0e6113d4157a089fc472fdd93985af27.png" />
+<img alt="../_images/f11db5af9f02945b46d97840c2bcf67917a81a65c2b935532b8e231eb954625b.png" src="../_images/f11db5af9f02945b46d97840c2bcf67917a81a65c2b935532b8e231eb954625b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1432,7 +1432,7 @@ Writing the solution to /tmp/linopy-solve-p6wzxoem.sol
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Line&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/2c16b225e964ff2d1dd053d7e01a4c8dc64da022ecf9118aed4fa3252d46466d.png" src="../_images/2c16b225e964ff2d1dd053d7e01a4c8dc64da022ecf9118aed4fa3252d46466d.png" />
+<img alt="../_images/5c80dda51277da7ad82c145342d84a2fc451cb26a472d7b78a51817ab0ee3669.png" src="../_images/5c80dda51277da7ad82c145342d84a2fc451cb26a472d7b78a51817ab0ee3669.png" />
 </div>
 </div>
 <p><strong>(b) Repeat (a) assuming that the marginal cost of heat pumps is 10 EUR/MWh.</strong></p>
@@ -1456,16 +1456,6 @@ Writing the solution to /tmp/linopy-solve-p6wzxoem.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
-       &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
-      dtype=&#39;object&#39;, name=&#39;Bus&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
-Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following generators have carriers which are not defined:
 Index([&#39;boiler 0&#39;, &#39;boiler 1&#39;, &#39;boiler 2&#39;], dtype=&#39;object&#39;, name=&#39;Generator&#39;)
 </pre></div>
@@ -1474,12 +1464,22 @@ Index([&#39;boiler 0&#39;, &#39;boiler 1&#39;, &#39;boiler 2&#39;], dtype=&#39;o
 Index([&#39;0&#39;], dtype=&#39;object&#39;, name=&#39;SubNetwork&#39;)
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electric bus 0&#39;, &#39;heat bus 0&#39;, &#39;electric bus 1&#39;, &#39;heat bus 1&#39;,
+       &#39;electric bus 2&#39;, &#39;heat bus 2&#39;],
+      dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have carriers which are not defined:
 Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following lines have zero r, which could break the linear load flow:
 Index([&#39;line 0&#39;, &#39;line 1&#39;, &#39;line 2&#39;], dtype=&#39;object&#39;, name=&#39;Line&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;heat pump 0&#39;, &#39;heat pump 1&#39;, &#39;heat pump 2&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -1501,7 +1501,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-b0rh7mz1 has 27 rows; 10 cols; 39 nonzeros
+LP   linopy-problem-e93rts_o has 27 rows; 10 cols; 39 nonzeros
 Coefficient ranges:
   Matrix [1e+00, 2e+01]
   Cost   [1e+01, 5e+01]
@@ -1515,12 +1515,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-27); columns 0(-10); elements 0(-39) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-b0rh7mz1
+Model name          : linopy-problem-e93rts_o
 Model status        : Optimal
 Objective value     :  2.7000000000e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-5lxxzqb1.sol
+Writing the solution to /tmp/linopy-solve-81xq_9gy.sol
 </pre></div>
 </div>
 </div>
@@ -1535,7 +1535,7 @@ Writing the solution to /tmp/linopy-solve-5lxxzqb1.sol
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Generator&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/f27a927de7407301ded3a87c431f49028370d79b0b5d1a8a5cea710057c0bd05.png" src="../_images/f27a927de7407301ded3a87c431f49028370d79b0b5d1a8a5cea710057c0bd05.png" />
+<img alt="../_images/cae6d20e69a3e9bf16b717b71866304828b690545a343e3e02d688dae101eb5a.png" src="../_images/cae6d20e69a3e9bf16b717b71866304828b690545a343e3e02d688dae101eb5a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1548,7 +1548,7 @@ Writing the solution to /tmp/linopy-solve-5lxxzqb1.sol
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Link&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/7a63de4e42d2c1522a0ac4fd30a33d3a34364e1ed21dd5630a7b854404ef4f2c.png" src="../_images/7a63de4e42d2c1522a0ac4fd30a33d3a34364e1ed21dd5630a7b854404ef4f2c.png" />
+<img alt="../_images/67d6f94ba1f1397315f28a0a16727c3b45b2d5883733c6abcbb5d926e446afab.png" src="../_images/67d6f94ba1f1397315f28a0a16727c3b45b2d5883733c6abcbb5d926e446afab.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1561,7 +1561,7 @@ Writing the solution to /tmp/linopy-solve-5lxxzqb1.sol
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Line&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/deb85984adaa864bf107cce8420574a314662f9ef6e01536efd9ee8e2f95040b.png" src="../_images/deb85984adaa864bf107cce8420574a314662f9ef6e01536efd9ee8e2f95040b.png" />
+<img alt="../_images/edf528140c334126796a0ca990aa759e811f58e1549fb9fd299f5ad573bc601d.png" src="../_images/edf528140c334126796a0ca990aa759e811f58e1549fb9fd299f5ad573bc601d.png" />
 </div>
 </div>
 </section>

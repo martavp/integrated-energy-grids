@@ -845,7 +845,7 @@ We add a “free” H2 store in the hydrogen bus.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;MW&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/4d66e4a5eff778149f838cc6f0bc256b102698fb9d5de4e3294f89a3c2383020.png" src="../_images/4d66e4a5eff778149f838cc6f0bc256b102698fb9d5de4e3294f89a3c2383020.png" />
+<img alt="../_images/57e9f0cec1c28961d2a7c77522011b290b414813d9dd4afb1e9ccda3bc499e6e.png" src="../_images/57e9f0cec1c28961d2a7c77522011b290b414813d9dd4afb1e9ccda3bc499e6e.png" />
 </div>
 </div>
 <p>We add now the offshore wind generator and set up the capacity to be extendable so that it can be optimized. We need to indicate the capacity factor or maximum power per unit ‘p_max_pu’</p>
@@ -881,7 +881,7 @@ We add a “free” H2 store in the hydrogen bus.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;snapshot&#39;, ylabel=&#39;CF&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/253c661c3f0976e79bae9bc4d7738b4d6c0f2a0890f871e65f490eb21e497f86.png" src="../_images/253c661c3f0976e79bae9bc4d7738b4d6c0f2a0890f871e65f490eb21e497f86.png" />
+<img alt="../_images/0a90d12cd39f963a6e8634911abf148a3c30667eef07ae26b98b66a17a17801c.png" src="../_images/0a90d12cd39f963a6e8634911abf148a3c30667eef07ae26b98b66a17a17801c.png" />
 </div>
 </div>
 <p>We add the electrolyzer.</p>
@@ -920,12 +920,12 @@ We add a “free” H2 store in the hydrogen bus.</p>
 Index([&#39;hydrogen store&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
-Index([&#39;electrolysis&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
 Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
+Index([&#39;electrolysis&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -937,10 +937,10 @@ Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:   0%|          | 0/14 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 81.13it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.:  64%|██████▍   | 9/14 [00:00&lt;00:00, 85.44it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 40.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing constraints.: 100%|██████████| 14/14 [00:00&lt;00:00, 42.35it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -949,14 +949,14 @@ Index([&#39;electricity&#39;, &#39;hydrogen&#39;], dtype=&#39;object&#39;, name=
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.:   0%|          | 0/7 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 105.40it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing continuous variables.: 100%|██████████| 7/7 [00:00&lt;00:00, 112.38it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.43s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.io: Writing time: 0.41s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-n4_7srwj has 78843 rows; 35043 cols; 140163 nonzeros
+LP   linopy-problem-ebt7urm5 has 78843 rows; 35043 cols; 140163 nonzeros
 Coefficient ranges:
   Matrix [3e-03, 1e+00]
   Cost   [2e-02, 2e+05]
@@ -974,24 +974,21 @@ Using EKK dual simplex solver - serial
           0     0.0000000000e+00 Pr: 8760(408858) 0s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      12870     6.6613408488e+03 Pr: 4651(3.06916e+08) 5s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      13021     6.7575277647e+03 Pr: 4500(2.91148e+08) 5s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      19021     1.6029643049e+07 Pr: 6585(1.88352e+07) 10s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      19185     1.6754589201e+07 Pr: 6022(2.09079e+07) 10s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      23035     2.7102188251e+07 Pr: 189(14489.5) 15s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      23228     2.7120673406e+07 Pr: 0(0) 16s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      23187     2.7120307929e+07 Pr: 47(1525.9) 15s
+      23228     2.7120673406e+07 Pr: 0(0) 15s
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-n4_7srwj
+Model name          : linopy-problem-ebt7urm5
 Model status        : Optimal
 Simplex   iterations: 23228
 Objective value     :  2.7120673406e+07
 Relative P-D gap    :  1.2018982576e-13
-HiGHS run time      :         15.70
-Writing the solution to /tmp/linopy-solve-qg745udq.sol
+HiGHS run time      :         15.41
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.constants: Optimization successful: 
@@ -1004,6 +1001,9 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-ext-p-lower, Generator-ext-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance were not assigned to the network.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing the solution to /tmp/linopy-solve-szdioh6v.sol
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ok&#39;, &#39;optimal&#39;)
@@ -1099,7 +1099,7 @@ Name: e_nom_opt, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;hours&#39;)
 </pre></div>
 </div>
-<img alt="../_images/cc262e79f5afb1dc0a70356169eabe58038a4a08a3822a09064d7f1f438b1c79.png" src="../_images/cc262e79f5afb1dc0a70356169eabe58038a4a08a3822a09064d7f1f438b1c79.png" />
+<img alt="../_images/174f92bac1cb91732cf7fba3bec8cef5e72c470f9103d29fd80baf74c26c41e4.png" src="../_images/174f92bac1cb91732cf7fba3bec8cef5e72c470f9103d29fd80baf74c26c41e4.png" />
 </div>
 </div>
 <div class="cell docutils container">

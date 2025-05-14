@@ -836,6 +836,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index([&#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
@@ -845,10 +849,6 @@ Index([&#39;OCGT&#39;, &#39;gas boiler&#39;, &#39;CHP&#39;], dtype=&#39;object&#
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:Encountered nan&#39;s in static data for columns [&#39;efficiency2&#39;] of component &#39;Link&#39;.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:linopy.model: Solve problem using Highs solver
@@ -870,7 +870,7 @@ Solver message: Optimal
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running HiGHS 1.10.0 (git hash: fd86653): Copyright (c) 2025 HiGHS under MIT licence terms
-LP   linopy-problem-gj2i2319 has 12 rows; 5 cols; 18 nonzeros
+LP   linopy-problem-rpgogiun has 12 rows; 5 cols; 18 nonzeros
 Coefficient ranges:
   Matrix [3e-01, 1e+00]
   Cost   [2e+01, 2e+01]
@@ -881,12 +881,12 @@ Presolving model
 0 rows, 0 cols, 0 nonzeros  0s
 Presolve : Reductions: rows 0(-12); columns 0(-5); elements 0(-18) - Reduced to empty
 Solving the original LP from the solution after postsolve
-Model name          : linopy-problem-gj2i2319
+Model name          : linopy-problem-rpgogiun
 Model status        : Optimal
 Objective value     :  3.2380952381e+03
 Relative P-D gap    :  0.0000000000e+00
 HiGHS run time      :          0.00
-Writing the solution to /tmp/linopy-solve-xvgseibi.sol
+Writing the solution to /tmp/linopy-solve-_5sn_esb.sol
 </pre></div>
 </div>
 </div>
@@ -1122,7 +1122,7 @@ Writing the solution to /tmp/linopy-solve-xvgseibi.sol
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/98e1becaf2d3e014e2de57f07e01c0cccb33fbdf48b9bd6da2cad85ba7c0a2a6.png" src="../_images/98e1becaf2d3e014e2de57f07e01c0cccb33fbdf48b9bd6da2cad85ba7c0a2a6.png" />
+<img alt="../_images/8763e57a6baca5d44549e0eba932331105bb572892af41d09908d49b2d69c16d.png" src="../_images/8763e57a6baca5d44549e0eba932331105bb572892af41d09908d49b2d69c16d.png" />
 </div>
 </div>
 <p>We can build the network and add the buses, loads and links representing the OCGT and CHP unit. We use two idependent link to represent the generation of electricity and heat in the CHP unit and later we will impose constraints limiting the feasible space (as shown in the figure above).</p>
@@ -1290,16 +1290,16 @@ Writing the solution to /tmp/linopy-solve-xvgseibi.sol
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index([&#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Store&#39;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index([&#39;OCGT&#39;, &#39;CHP generator&#39;, &#39;CHP boiler&#39;, &#39;gas boiler&#39;], dtype=&#39;object&#39;, name=&#39;Link&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&#39;, name=&#39;Bus&#39;)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -1320,31 +1320,31 @@ Index([&#39;electricity&#39;, &#39;heat&#39;, &#39;gas&#39;], dtype=&#39;object&
 <span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;top_iso_fuel_line&quot;</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/variables.py:415,</span> in <span class="ni">Variable.__rmul__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">411</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span><span class="sd"> Right-multiply variables with a coefficient.</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">415</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_linexpr</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span>     <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/variables.py:414,</span> in <span class="ni">Variable.__rmul__</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span><span class="sd"> Right-multiply variables with a coefficient.</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">414</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_linexpr</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span>     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/variables.py:317,</span> in <span class="ni">Variable.to_linexpr</span><span class="nt">(self, coefficient)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span> <span class="k">def</span><span class="w"> </span><span class="nf">to_linexpr</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="n">coefficient</span><span class="p">:</span> <span class="nb">int</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">301</span>     <span class="o">|</span> <span class="n">DataArray</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">expressions</span><span class="o">.</span><span class="n">LinearExpression</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span><span class="sd">     Create a linear expression from the variables.</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span><span class="sd"> </span>
-<span class="sd">   (...)    315         Linear expression with the variables and coefficients.</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">317</span>     <span class="n">coefficient</span> <span class="o">=</span> <span class="n">as_dataarray</span><span class="p">(</span><span class="n">coefficient</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">({</span><span class="s2">&quot;coeffs&quot;</span><span class="p">:</span> <span class="n">coefficient</span><span class="p">,</span> <span class="s2">&quot;vars&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">})</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="n">TERM_DIM</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="k">return</span> <span class="n">expressions</span><span class="o">.</span><span class="n">LinearExpression</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/variables.py:316,</span> in <span class="ni">Variable.to_linexpr</span><span class="nt">(self, coefficient)</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span> <span class="k">def</span><span class="w"> </span><span class="nf">to_linexpr</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="n">coefficient</span><span class="p">:</span> <span class="nb">int</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">300</span>     <span class="o">|</span> <span class="n">DataArray</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">expressions</span><span class="o">.</span><span class="n">LinearExpression</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span><span class="sd">     Create a linear expression from the variables.</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span><span class="sd"> </span>
+<span class="sd">   (...)    314         Linear expression with the variables and coefficients.</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">316</span>     <span class="n">coefficient</span> <span class="o">=</span> <span class="n">as_dataarray</span><span class="p">(</span><span class="n">coefficient</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span>     <span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">({</span><span class="s2">&quot;coeffs&quot;</span><span class="p">:</span> <span class="n">coefficient</span><span class="p">,</span> <span class="s2">&quot;vars&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">})</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>         <span class="n">TERM_DIM</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="k">return</span> <span class="n">expressions</span><span class="o">.</span><span class="n">LinearExpression</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/common.py:258,</span> in <span class="ni">as_dataarray</span><span class="nt">(arr, coords, dims, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">256</span>     <span class="n">arr</span> <span class="o">=</span> <span class="n">numpy_to_dataarray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>

@@ -45,14 +45,14 @@ network.optimize.solve_model()
 ------------------
 
 ----- stderr -----
+WARNING:pypsa.consistency:The following buses have carriers which are not defined:
+Index(['electricity', 'heat', 'gas'], dtype='object', name='Bus')
+----- stderr -----
 WARNING:pypsa.consistency:The following stores have carriers which are not defined:
 Index(['gas'], dtype='object', name='Store')
 ----- stderr -----
 WARNING:pypsa.consistency:The following links have carriers which are not defined:
 Index(['OCGT', 'CHP generator', 'CHP boiler', 'gas boiler'], dtype='object', name='Link')
------ stderr -----
-WARNING:pypsa.consistency:The following buses have carriers which are not defined:
-Index(['electricity', 'heat', 'gas'], dtype='object', name='Bus')
 ------------------
 
 [31m---------------------------------------------------------------------------[39m
@@ -73,31 +73,31 @@ Index(['electricity', 'heat', 'gas'], dtype='object', name='Bus')
 [32m     21[39m     name=[33m"[39m[33mtop_iso_fuel_line[39m[33m"[39m,
 [32m     22[39m )
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/variables.py:415[39m, in [36mVariable.__rmul__[39m[34m(self, other)[39m
-[32m    411[39m [38;5;250m[39m[33;03m"""[39;00m
-[32m    412[39m [33;03mRight-multiply variables with a coefficient.[39;00m
-[32m    413[39m [33;03m"""[39;00m
-[32m    414[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m415[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mto_linexpr[49m[43m([49m[43mother[49m[43m)[49m
-[32m    416[39m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
-[32m    417[39m     [38;5;28;01mreturn[39;00m [38;5;28mNotImplemented[39m
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/variables.py:414[39m, in [36mVariable.__rmul__[39m[34m(self, other)[39m
+[32m    410[39m [38;5;250m[39m[33;03m"""[39;00m
+[32m    411[39m [33;03mRight-multiply variables with a coefficient.[39;00m
+[32m    412[39m [33;03m"""[39;00m
+[32m    413[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m414[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mto_linexpr[49m[43m([49m[43mother[49m[43m)[49m
+[32m    415[39m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[32m    416[39m     [38;5;28;01mreturn[39;00m [38;5;28mNotImplemented[39m
 
-[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/variables.py:317[39m, in [36mVariable.to_linexpr[39m[34m(self, coefficient)[39m
-[32m    294[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mto_linexpr[39m(
-[32m    295[39m     [38;5;28mself[39m,
-[32m    296[39m     coefficient: [38;5;28mint[39m
-[32m   (...)[39m[32m    301[39m     | DataArray = [32m1[39m,
-[32m    302[39m ) -> expressions.LinearExpression:
-[32m    303[39m [38;5;250m    [39m[33;03m"""[39;00m
-[32m    304[39m [33;03m    Create a linear expression from the variables.[39;00m
-[32m    305[39m 
-[32m   (...)[39m[32m    315[39m [33;03m        Linear expression with the variables and coefficients.[39;00m
-[32m    316[39m [33;03m    """[39;00m
-[32m--> [39m[32m317[39m     coefficient = [43mas_dataarray[49m[43m([49m[43mcoefficient[49m[43m,[49m[43m [49m[43mcoords[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mcoords[49m[43m,[49m[43m [49m[43mdims[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mdims[49m[43m)[49m
-[32m    318[39m     ds = Dataset({[33m"[39m[33mcoeffs[39m[33m"[39m: coefficient, [33m"[39m[33mvars[39m[33m"[39m: [38;5;28mself[39m.labels}).expand_dims(
-[32m    319[39m         TERM_DIM, -[32m1[39m
-[32m    320[39m     )
-[32m    321[39m     [38;5;28;01mreturn[39;00m expressions.LinearExpression(ds, [38;5;28mself[39m.model)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/variables.py:316[39m, in [36mVariable.to_linexpr[39m[34m(self, coefficient)[39m
+[32m    293[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mto_linexpr[39m(
+[32m    294[39m     [38;5;28mself[39m,
+[32m    295[39m     coefficient: [38;5;28mint[39m
+[32m   (...)[39m[32m    300[39m     | DataArray = [32m1[39m,
+[32m    301[39m ) -> expressions.LinearExpression:
+[32m    302[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m    303[39m [33;03m    Create a linear expression from the variables.[39;00m
+[32m    304[39m 
+[32m   (...)[39m[32m    314[39m [33;03m        Linear expression with the variables and coefficients.[39;00m
+[32m    315[39m [33;03m    """[39;00m
+[32m--> [39m[32m316[39m     coefficient = [43mas_dataarray[49m[43m([49m[43mcoefficient[49m[43m,[49m[43m [49m[43mcoords[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mcoords[49m[43m,[49m[43m [49m[43mdims[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mdims[49m[43m)[49m
+[32m    317[39m     ds = Dataset({[33m"[39m[33mcoeffs[39m[33m"[39m: coefficient, [33m"[39m[33mvars[39m[33m"[39m: [38;5;28mself[39m.labels}).expand_dims(
+[32m    318[39m         TERM_DIM, -[32m1[39m
+[32m    319[39m     )
+[32m    320[39m     [38;5;28;01mreturn[39;00m expressions.LinearExpression(ds, [38;5;28mself[39m.model)
 
 [36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/linopy/common.py:258[39m, in [36mas_dataarray[39m[34m(arr, coords, dims, **kwargs)[39m
 [32m    256[39m     arr = numpy_to_dataarray(arr, coords=coords, dims=dims, **kwargs)
